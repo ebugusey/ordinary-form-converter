@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="Events.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="Events.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="Button">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Click"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CheckBox">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OnChange"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ComboBox">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="StartChoice"/>
+			<xs:enumeration value="StartListChoice"/>
+			<xs:enumeration value="ChoiceProcessing"/>
+			<xs:enumeration value="Opening"/>
+			<xs:enumeration value="Clearing"/>
+			<xs:enumeration value="OnChange"/>
+			<xs:enumeration value="Tuning"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Form">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BeforeOpen"/>
+			<xs:enumeration value="OnOpen"/>
+			<xs:enumeration value="OnReopen"/>
+			<xs:enumeration value="RefreshDisplay"/>
+			<xs:enumeration value="BeforeClose"/>
+			<xs:enumeration value="OnClose"/>
+			<xs:enumeration value="ChoiceProcessing"/>
+			<xs:enumeration value="ObjectActivationProcessing"/>
+			<xs:enumeration value="NewObjectWriteProcessing"/>
+			<xs:enumeration value="NotificationProcessing"/>
+			<xs:enumeration value="ExternalEvent"/>
+			<xs:enumeration value="FillCheckProcessing"/>
+			<xs:enumeration value="OnCurrentPageChange"/>
+			<xs:enumeration value="BeforeSaveValues"/>
+			<xs:enumeration value="AfterRestoreValues"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HTMLDocumentField">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="HTMLDocumentField"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Label">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Click"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ListtBox">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Selection"/>
+			<xs:enumeration value="OnActivateRow"/>
+			<xs:enumeration value="OnCheckChange"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Panel">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OnCurrentPageChange"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PictureBox">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Click"/>
+			<xs:enumeration value="DragStart"/>
+			<xs:enumeration value="DragEnd"/>
+			<xs:enumeration value="Drag"/>
+			<xs:enumeration value="DragCheck"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RadioButton">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OnChange"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpreadsheetDocumentField">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Selection"/>
+			<xs:enumeration value="DragStart"/>
+			<xs:enumeration value="DetailProcessing"/>
+			<xs:enumeration value="DragEnd"/>
+			<xs:enumeration value="Drag"/>
+			<xs:enumeration value="OnActivateArea"/>
+			<xs:enumeration value="OnChangeAreaContent"/>
+			<xs:enumeration value="DragCheck"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TableBox">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Selection"/>
+			<xs:enumeration value="ValueChoice"/>
+			<xs:enumeration value="DragStart"/>
+			<xs:enumeration value="ChoiceProcessing"/>
+			<xs:enumeration value="NewObjectWriteProcessing"/>
+			<xs:enumeration value="DragEnd"/>
+			<xs:enumeration value="BeforeAddRow"/>
+			<xs:enumeration value="BeforeRowChange"/>
+			<xs:enumeration value="BeforeEditEnd"/>
+			<xs:enumeration value="BeforeDeleteRow"/>
+			<xs:enumeration value="Drag"/>
+			<xs:enumeration value="AfterDeleteLine"/>
+			<xs:enumeration value="OnActivateColumn"/>
+			<xs:enumeration value="OnActivateRow"/>
+			<xs:enumeration value="OnActivateCell"/>
+			<xs:enumeration value="OnRowOutput"/>
+			<xs:enumeration value="OnCheckChange"/>
+			<xs:enumeration value="OnStartEdit"/>
+			<xs:enumeration value="OnEditEnd"/>
+			<xs:enumeration value="OnDataGet"/>
+			<xs:enumeration value="OnCurrentParentChange"/>
+			<xs:enumeration value="DragCheck"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TextBox">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OnChange"/>
+			<xs:enumeration value="StartChoice"/>
+			<xs:enumeration value="StartListChoice"/>
+			<xs:enumeration value="Clearing"/>
+			<xs:enumeration value="Tuning"/>
+			<xs:enumeration value="Opening"/>
+			<xs:enumeration value="ChoiceProcessing"/>
+			<xs:enumeration value="AutoCompleteText"/>
+			<xs:enumeration value="TextEditEnd"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TrackBar">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OnChange"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="Enums.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="Enums.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="DataTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Custom"/>
+			<xs:enumeration value="Number"/>
+			<xs:enumeration value="String"/>
+			<xs:enumeration value="Date"/>
+			<xs:enumeration value="Boolean"/>
+			<xs:enumeration value="GUID"/>
+			<xs:enumeration value="ValueTable"/>
+			<xs:enumeration value="ValueTree"/>
+			<xs:enumeration value="ValueList"/>
+			<xs:enumeration value="FormattedString"/>
+			<xs:enumeration value="FormattedDocument"/>
+			<xs:enumeration value="CatalogRef"/>
+			<xs:enumeration value="DocumentRef"/>
+			<xs:enumeration value="EnumRef"/>
+			<xs:enumeration value="ChartOfCharacteristicTypesRef"/>
+			<xs:enumeration value="ChartOfAccountsRef"/>
+			<xs:enumeration value="ChartOfCalculationTypesRef"/>
+			<xs:enumeration value="BusinessProcessRef"/>
+			<xs:enumeration value="BusinessProcessRoutePointRef"/>
+			<xs:enumeration value="TaskRef"/>
+			<xs:enumeration value="ExchangePlanRef"/>
+			<xs:enumeration value="AnyRef"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SimpleTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Number"/>
+			<xs:enumeration value="String"/>
+			<xs:enumeration value="Date"/>
+			<xs:enumeration value="Boolean"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ShowTabs">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DontUse"/>
+			<xs:enumeration value="Top"/>
+			<xs:enumeration value="TopMultiLine"/>
+			<xs:enumeration value="TopMultilineTransposition"/>
+			<xs:enumeration value="TopScrolling"/>
+			<xs:enumeration value="LeftVertical"/>
+			<xs:enumeration value="LeftHorizontal"/>
+			<xs:enumeration value="Bottom"/>
+			<xs:enumeration value="BottomMultiLine"/>
+			<xs:enumeration value="BottomMultilineTransposition"/>
+			<xs:enumeration value="BottomScrolling"/>
+			<xs:enumeration value="RightVertical"/>
+			<xs:enumeration value="RightHorizontal"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DateCompound">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Date"/>
+			<xs:enumeration value="Time"/>
+			<xs:enumeration value="DateTime"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BindingSite">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Center"/>
+			<xs:enumeration value="Left"/>
+			<xs:enumeration value="Right"/>
+			<xs:enumeration value="Top"/>
+			<xs:enumeration value="Bottom"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PictureTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Absolute"/>
+			<xs:enumeration value="FromLib"/>
+			<xs:enumeration value="Empty"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MenuModes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Use"/>
+			<xs:enumeration value="UseExtra"/>
+			<xs:enumeration value="DontUse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HorizontalAligns">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Auto"/>
+			<xs:enumeration value="Left"/>
+			<xs:enumeration value="Justify"/>
+			<xs:enumeration value="Right"/>
+			<xs:enumeration value="Center"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VerticalAligns">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Top"/>
+			<xs:enumeration value="Bottom"/>
+			<xs:enumeration value="Center"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FontTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="WindowsFont"/>
+			<xs:enumeration value="Absolute"/>
+			<xs:enumeration value="AutoFont"/>
+			<xs:enumeration value="StyleElement"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ColorTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="WebColor"/>
+			<xs:enumeration value="WindowsColor"/>
+			<xs:enumeration value="Absolute"/>
+			<xs:enumeration value="AutoColor"/>
+			<xs:enumeration value="StyleItem"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PictureLocations">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Left"/>
+			<xs:enumeration value="Right"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PictureSizes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AutoSize"/>
+			<xs:enumeration value="AutoSizeIgnoreScale"/>
+			<xs:enumeration value="Proportionally"/>
+			<xs:enumeration value="Stretch"/>
+			<xs:enumeration value="RealSize"/>
+			<xs:enumeration value="RealSizeIgnoreScale"/>
+			<xs:enumeration value="Tile"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ScrollingTextModes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Fast"/>
+			<xs:enumeration value="Slow"/>
+			<xs:enumeration value="DontUse"/>
+			<xs:enumeration value="Normal"/>
+			<xs:enumeration value="VeryFast"/>
+			<xs:enumeration value="VerySlow"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ChangeWindowAppearanceModes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Auto"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EnterKeyBehaviorTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DefaultButton"/>
+			<xs:enumeration value="ControlNavigation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WindowAppearanceModeVariants">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Maximized"/>
+			<xs:enumeration value="Minimized"/>
+			<xs:enumeration value="Normal"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WindowStateVariants">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Normal"/>
+			<xs:enumeration value="Docked"/>
+			<xs:enumeration value="Autohide"/>
+			<xs:enumeration value="Float"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WindowDockVariants">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Top"/>
+			<xs:enumeration value="Left"/>
+			<xs:enumeration value="Bottom"/>
+			<xs:enumeration value="Right"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WindowLocationVariants">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Auto"/>
+			<xs:enumeration value="DontOverlapOwner"/>
+			<xs:enumeration value="Center"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UseOutputs">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Auto"/>
+			<xs:enumeration value="Disable"/>
+			<xs:enumeration value="Enable"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CommandBarButtonAlignments">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Left"/>
+			<xs:enumeration value="Right"/>
+			<xs:enumeration value="Center"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Orientations">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Auto"/>
+			<xs:enumeration value="Vertical"/>
+			<xs:enumeration value="Horizontal"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CommandBarButtonTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Action"/>
+			<xs:enumeration value="Popup"/>
+			<xs:enumeration value="Separator"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CommandBarButtonRepresentations">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Auto"/>
+			<xs:enumeration value="Picture"/>
+			<xs:enumeration value="Text"/>
+			<xs:enumeration value="PictureText"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CommandBarButtonOrders">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Asc"/>
+			<xs:enumeration value="DontOrder"/>
+			<xs:enumeration value="Desc"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TitleLocations">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TitleLeft"/>
+			<xs:enumeration value="TitleRight"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TableBoxRowInputModes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="EndOfWindow"/>
+			<xs:enumeration value="EndOfList"/>
+			<xs:enumeration value="BeforCurrentRow"/>
+			<xs:enumeration value="AfterCurrentRow"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TableBoxSelectionModes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="MultiLine"/>
+			<xs:enumeration value="SingleLine"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TableBoxRowSelectionModes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Row"/>
+			<xs:enumeration value="Cell"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ScrollBarUses">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AutoUse"/>
+			<xs:enumeration value="UseAlways"/>
+			<xs:enumeration value="DontUse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="InitialListViews">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Auto"/>
+			<xs:enumeration value="End"/>
+			<xs:enumeration value="Beginning"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="InitialTreeViews">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NoExpand"/>
+			<xs:enumeration value="ExpandTopLevel"/>
+			<xs:enumeration value="ExpandAllLevels"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ColumnLocations">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SameColumn"/>
+			<xs:enumeration value="OnNextRow"/>
+			<xs:enumeration value="NewColumn"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SizeChanges">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Change"/>
+			<xs:enumeration value="DontChange"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ColumnEditModes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Enter"/>
+			<xs:enumeration value="EnterOnInput"/>
+			<xs:enumeration value="Derctly"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpreadsheetDocumentSelectionShowModeTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Alway"/>
+			<xs:enumeration value="WhenActive"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AlignmentLineTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Common"/>
+			<xs:enumeration value="EndToEnd"/>
+			<xs:enumeration value="Border"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

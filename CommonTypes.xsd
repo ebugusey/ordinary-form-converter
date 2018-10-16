@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="CommonTypes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:enum="Enums.xsd" targetNamespace="CommonTypes.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="Enums.xsd" schemaLocation="Enums.xsd"/>
+	<xs:complexType name="Element">
+		<xs:sequence>
+			<xs:element name="Position" type="ElementPosition" minOccurs="0"/>
+			<xs:element name="BorderBindings" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Left" type="BorderBinding" minOccurs="0"/>
+						<xs:element name="Right" type="BorderBinding" minOccurs="0"/>
+						<xs:element name="Top" type="BorderBinding" minOccurs="0"/>
+						<xs:element name="Bottom" type="BorderBinding" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Name" type="xs:string"/>
+		<xs:attribute name="Visible" type="xs:boolean"/>
+		<xs:attribute name="Enabled" type="xs:boolean"/>
+		<xs:attribute name="ToolTip" type="xs:string"/>
+		<xs:attribute name="ModifiesData" type="xs:boolean"/>
+		<xs:attribute name="SkipOnInput" type="xs:boolean"/>
+		<xs:attribute name="FirstInGroup" type="xs:boolean"/>
+		<xs:attribute name="ContextMenu" type="xs:string"/>
+		<xs:attribute name="AutoContextMenu" type="xs:boolean"/>
+		<xs:attribute name="Data" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="Alignment">
+		<xs:sequence>
+			<xs:element name="Line" type="AlignmentLine" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="LevelLinesEnabled" type="xs:boolean"/>
+		<xs:attribute name="GridEnabled" type="xs:boolean"/>
+		<xs:attribute name="HorizontalStep">
+			<xs:simpleType>
+				<xs:restriction base="xs:decimal">
+					<xs:minInclusive value="0"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="VerticallStep">
+			<xs:simpleType>
+				<xs:restriction base="xs:decimal">
+					<xs:minInclusive value="0"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="AlignmentLine">
+		<xs:sequence>
+			<xs:element name="Position" type="ElementPosition" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Left">
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:minInclusive value="0"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Right">
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:minInclusive value="0"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Type" type="enum:AlignmentLineTypes"/>
+	</xs:complexType>
+	<xs:complexType name="Size">
+		<xs:attribute name="Width">
+			<xs:simpleType>
+				<xs:restriction base="xs:decimal">
+					<xs:minInclusive value="0"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Height">
+			<xs:simpleType>
+				<xs:restriction base="xs:decimal">
+					<xs:minInclusive value="0"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Position"/>
+	<xs:complexType name="ElementPosition">
+		<xs:complexContent>
+			<xs:extension base="Size">
+				<xs:attribute name="Left">
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:minInclusive value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="Right">
+					<xs:simpleType>
+						<xs:restriction base="xs:decimal">
+							<xs:minInclusive value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="TabOrder" type="xs:decimal"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Attribute">
+		<xs:sequence>
+			<xs:element name="Types" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Type" type="enum:DataTypes" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Name" type="xs:string"/>
+		<xs:attribute name="FillChecking" type="xs:boolean"/>
+		<xs:attribute name="Length" type="xs:decimal"/>
+		<xs:attribute name="Precision" type="xs:decimal"/>
+		<xs:attribute name="Nonnegative" type="xs:boolean"/>
+		<xs:attribute name="Compound" type="enum:DateCompound"/>
+	</xs:complexType>
+	<xs:complexType name="BorderBinding">
+		<xs:attribute name="SizeAnchor" type="xs:string"/>
+		<xs:attribute name="SizeAnchorSite" type="enum:BindingSite"/>
+		<xs:attribute name="ProportionAnchor" type="xs:string"/>
+		<xs:attribute name="ProportionAnchorSite" type="enum:BindingSite"/>
+	</xs:complexType>
+	<xs:complexType name="Picture">
+		<xs:simpleContent>
+			<xs:extension base="xs:base64Binary">
+				<xs:attribute name="Type" type="enum:PictureTypes"/>
+				<xs:attribute name="VariantSet" type="xs:boolean"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Shortcut">
+		<xs:attribute name="Alt" type="xs:boolean"/>
+		<xs:attribute name="Ctrl" type="xs:boolean"/>
+		<xs:attribute name="Shift" type="xs:boolean"/>
+		<xs:attribute name="Key" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="Color">
+		<xs:attribute name="ColorType" type="enum:ColorTypes"/>
+		<xs:attribute name="Red" type="xs:decimal"/>
+		<xs:attribute name="Green" type="xs:decimal"/>
+		<xs:attribute name="Blue" type="xs:decimal"/>
+	</xs:complexType>
+	<xs:complexType name="Font">
+		<xs:sequence>
+			<xs:element name="Outline" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="Bold" type="xs:boolean"/>
+					<xs:attribute name="Strikeout" type="xs:boolean"/>
+					<xs:attribute name="Italic" type="xs:boolean"/>
+					<xs:attribute name="Underline" type="xs:boolean"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Type" type="enum:FontTypes"/>
+		<xs:attribute name="Name" type="xs:string"/>
+		<xs:attribute name="Scale" type="xs:decimal"/>
+		<xs:attribute name="Size" type="xs:decimal"/>
+	</xs:complexType>
+	<xs:complexType name="Border">
+		<xs:attribute name="Type">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Absolute"/>
+					<xs:enumeration value="StyleItem"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="BorderType">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="WithoutBorder"/>
+					<xs:enumeration value="Indented"/>
+					<xs:enumeration value="Embossed"/>
+					<xs:enumeration value="Double"/>
+					<xs:enumeration value="DoubleUnderline"/>
+					<xs:enumeration value="Single"/>
+					<xs:enumeration value="Underline"/>
+					<xs:enumeration value="Rounded"/>
+					<xs:enumeration value="Overline"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Width" type="xs:decimal"/>
+	</xs:complexType>
+	<xs:complexType name="Decor">
+		<xs:sequence>
+			<xs:element name="Font" type="Font" minOccurs="0"/>
+			<xs:element name="Border" type="Border" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ValueListElement">
+		<xs:sequence>
+			<xs:element name="Value" type="SimpleTypeValue" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Presentation" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="ChoisList">
+		<xs:sequence>
+			<xs:element name="ChoisListElement" type="ValueListElement" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SimpleTypeValue">
+		<xs:attribute name="SimpleType" type="enum:SimpleTypes"/>
+		<xs:attribute name="Value" type="xs:anySimpleType"/>
+	</xs:complexType>
+</xs:schema>

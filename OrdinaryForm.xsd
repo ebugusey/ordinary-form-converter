@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="Types.xsd" xmlns:type="CommonTypes.xsd" xmlns:enum="Enums.xsd" xmlns:event="Events.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="Types.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="CommonTypes.xsd" schemaLocation="CommonTypes.xsd"/>
+	<xs:import namespace="Enums.xsd" schemaLocation="Enums.xsd"/>
+	<xs:import namespace="Events.xsd" schemaLocation="Events.xsd"/>
+	<xs:element name="Form" type="Form"/>
+	<xs:complexType name="ChildItems">
+		<xs:sequence>
+			<xs:element name="CommandBar" type="CommandBar" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Panel" type="Panel" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="GroupBox" type="GroupBox" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Label" type="Label" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="PictureBox" type="PictureBox" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Button" type="Button" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="CheckBox" type="CheckBox" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="RadioButton" type="RadioButton" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="TextBox" type="TextBox" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ComboBox" type="ComboBox" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ListBox" type="ListBox" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="TableBox" type="TableBox" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="SpreadsheetDocumentField" type="SpreadsheetDocumentField" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="TextDocumentField" type="TextDocumentField" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="HTMLDocumentField" type="HTMLDocumentField" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Form">
+		<xs:sequence>
+			<xs:element name="Size" type="type:Size" minOccurs="0"/>
+			<xs:element name="CaptionPicture" type="type:Picture" minOccurs="0"/>
+			<xs:element name="SavedValues" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SavedValue" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Alignment" type="type:Alignment" minOccurs="0"/>
+			<xs:element name="Events" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="xs:string">
+										<xs:attribute name="Name" type="event:Form"/>
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Panel" type="Panel" minOccurs="0"/>
+			<xs:element name="Attributes" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Attribute" type="type:Attribute" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChildItems" type="ChildItems" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="AllowClose" type="xs:boolean"/>
+		<xs:attribute name="AutoFillCheck" type="xs:boolean"/>
+		<xs:attribute name="AutoTitle" type="xs:string"/>
+		<xs:attribute name="Caption" type="xs:string"/>
+		<xs:attribute name="ChangeWindowAppearanceMode" type="enum:ChangeWindowAppearanceModes"/>
+		<xs:attribute name="CloseOnChoice" type="xs:boolean"/>
+		<xs:attribute name="CloseOnOwnerClose" type="xs:boolean"/>
+		<xs:attribute name="ConnectableWindow" type="xs:boolean"/>
+		<xs:attribute name="Data" type="xs:string"/>
+		<xs:attribute name="DataType" type="enum:DataTypes"/>
+		<xs:attribute name="DesktopMode" type="xs:boolean"/>
+		<xs:attribute name="EnterKeyBehavior" type="enum:EnterKeyBehaviorTypes"/>
+		<xs:attribute name="FormOwner" type="xs:string"/>
+		<xs:attribute name="ModalMode" type="xs:boolean"/>
+		<xs:attribute name="MultipleChoice" type="xs:boolean"/>
+		<xs:attribute name="Name" type="xs:string"/>
+		<xs:attribute name="RestoreValuesOnOpen" type="xs:boolean"/>
+		<xs:attribute name="SaveValues" type="xs:boolean"/>
+		<xs:attribute name="SizeChange" type="xs:boolean"/>
+		<xs:attribute name="UniqueKey" type="xs:anySimpleType"/>
+		<xs:attribute name="WindowAppearanceMode" type="enum:WindowAppearanceModeVariants"/>
+		<xs:attribute name="WindowDockLocation" type="enum:WindowDockVariants"/>
+		<xs:attribute name="WindowLocation" type="enum:WindowLocationVariants"/>
+		<xs:attribute name="WindowOptionsKey" type="xs:string"/>
+		<xs:attribute name="WindowState" type="enum:WindowStateVariants"/>
+	</xs:complexType>
+	<xs:complexType name="Panel">
+		<xs:complexContent>
+			<xs:extension base="type:Element">
+				<xs:sequence>
+					<xs:element name="Pages" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Page" type="Page" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Events" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="xs:string">
+												<xs:attribute name="Name" type="event:Panel"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="AutoLink" type="xs:boolean"/>
+				<xs:attribute name="AutoTabOrder" type="xs:boolean"/>
+				<xs:attribute name="CurrentPage" type="xs:string"/>
+				<xs:attribute name="ScrollPageMode" type="xs:boolean"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Page">
+		<xs:sequence>
+			<xs:element name="TitlePicture" type="type:Picture" minOccurs="0"/>
+			<xs:element name="Position" type="type:ElementPosition" minOccurs="0"/>
+			<xs:element name="BorderBindings" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Left" type="type:BorderBinding"/>
+						<xs:element name="Right" type="type:BorderBinding"/>
+						<xs:element name="Top" type="type:BorderBinding"/>
+						<xs:element name="Bottom" type="type:BorderBinding"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ChildItems" type="ChildItems" minOccurs="0"/>
+			<xs:element name="Alignment" type="type:Alignment" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Enabled" type="xs:boolean"/>
+		<xs:attribute name="Name" type="xs:string"/>
+		<xs:attribute name="Title" type="xs:string"/>
+		<xs:attribute name="ToolTip" type="xs:string"/>
+		<xs:attribute name="Visible" type="xs:boolean"/>
+	</xs:complexType>
+	<xs:complexType name="GroupBox">
+		<xs:complexContent>
+			<xs:extension base="type:Element">
+				<xs:sequence>
+					<xs:element name="ChildItems" type="ChildItems" minOccurs="0"/>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="TextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+									</xs:sequence>
+									<xs:attribute name="Transparent" type="xs:boolean"/>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="Caption" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Label">
+		<xs:complexContent>
+			<xs:extension base="type:Element">
+				<xs:sequence>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="BackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="TextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="Picture" type="type:Picture" minOccurs="0"/>
+									</xs:sequence>
+									<xs:attribute name="PictureSize" type="enum:PictureSizes"/>
+									<xs:attribute name="PictureLocation" type="enum:PictureLocations"/>
+									<xs:attribute name="Transparent" type="xs:boolean"/>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Events" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="xs:string">
+												<xs:attribute name="Name" type="event:Label"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="Caption" type="xs:string"/>
+				<xs:attribute name="Format" type="xs:string"/>
+				<xs:attribute name="HorizontalAlign" type="enum:HorizontalAligns"/>
+				<xs:attribute name="Hyperlink" type="xs:boolean"/>
+				<xs:attribute name="MarkNegatives" type="xs:boolean"/>
+				<xs:attribute name="ScrollingText" type="enum:ScrollingTextModes"/>
+				<xs:attribute name="VerticalAlign" type="enum:VerticalAligns"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PictureBox">
+		<xs:complexContent>
+			<xs:extension base="type:Element">
+				<xs:sequence>
+					<xs:element name="Shortcut" type="type:Shortcut" minOccurs="0"/>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="BackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="TextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="Picture" type="type:Picture" minOccurs="0"/>
+									</xs:sequence>
+									<xs:attribute name="PictureSize" type="enum:PictureSizes"/>
+									<xs:attribute name="Transparent" type="xs:boolean"/>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Events" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="xs:string">
+												<xs:attribute name="Name" type="event:PictureBox"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="EnableDrag" type="xs:boolean"/>
+				<xs:attribute name="EnableStartDrag" type="xs:boolean"/>
+				<xs:attribute name="Hyperlink" type="xs:boolean"/>
+				<xs:attribute name="NonselectedPictureText" type="xs:string"/>
+				<xs:attribute name="UseContextMenu" type="xs:boolean"/>
+				<xs:attribute name="Zoomable" type="xs:boolean"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Button">
+		<xs:complexContent>
+			<xs:extension base="type:Element">
+				<xs:sequence>
+					<xs:element name="Events" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="xs:string">
+												<xs:attribute name="Name" type="event:Button"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Shortcut" type="type:Shortcut" minOccurs="0"/>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="ButtonBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="ButtonTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="Picture" type="type:Picture" minOccurs="0"/>
+									</xs:sequence>
+									<xs:attribute name="PictureLocation" type="enum:PictureLocations"/>
+									<xs:attribute name="PictureSize" type="enum:PictureSizes"/>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="ActionSource" type="xs:string"/>
+				<xs:attribute name="Caption" type="xs:string"/>
+				<xs:attribute name="DefaultButton" type="xs:boolean"/>
+				<xs:attribute name="DefaultControl" type="xs:boolean"/>
+				<xs:attribute name="HorizontalAlign" type="enum:HorizontalAligns"/>
+				<xs:attribute name="MenuMode" type="enum:MenuModes"/>
+				<xs:attribute name="MultiLine" type="xs:boolean"/>
+				<xs:attribute name="VerticalAlign" type="enum:VerticalAligns"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CheckBox">
+		<xs:complexContent>
+			<xs:extension base="type:Element">
+				<xs:sequence>
+					<xs:element name="Events" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="xs:string">
+												<xs:attribute name="Name" type="event:CheckBox"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="BackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="TextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+									</xs:sequence>
+									<xs:attribute name="Transparent" type="xs:boolean"/>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="DefaultControl" type="xs:boolean"/>
+				<xs:attribute name="HorizontalAlign" type="enum:HorizontalAligns"/>
+				<xs:attribute name="TitleLocation" type="enum:TitleLocations"/>
+				<xs:attribute name="VerticalAlign" type="enum:VerticalAligns"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RadioButton">
+		<xs:complexContent>
+			<xs:extension base="type:Element">
+				<xs:sequence>
+					<xs:element name="Events" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="xs:string">
+												<xs:attribute name="Name" type="event:RadioButton"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="SelectionValue" type="type:SimpleTypeValue" minOccurs="0"/>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="BackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="TextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+									</xs:sequence>
+									<xs:attribute name="Transparent" type="xs:boolean"/>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="DefaultControl" type="xs:boolean"/>
+				<xs:attribute name="HorizontalAlign" type="enum:HorizontalAligns"/>
+				<xs:attribute name="TitleLocation" type="enum:TitleLocations"/>
+				<xs:attribute name="VerticalAlign" type="enum:VerticalAligns"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TextBox">
+		<xs:complexContent>
+			<xs:extension base="type:Element">
+				<xs:sequence>
+					<xs:element name="Events" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="xs:string">
+												<xs:attribute name="Name" type="event:TextBox"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Buttons" minOccurs="0">
+						<xs:complexType>
+							<xs:attribute name="ChoiceButton" type="xs:boolean"/>
+							<xs:attribute name="OpenButton" type="xs:boolean"/>
+							<xs:attribute name="ClearButton" type="xs:boolean"/>
+							<xs:attribute name="SpinButton" type="xs:boolean"/>
+							<xs:attribute name="ChoiceListButton" type="xs:boolean"/>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="FieldBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="FieldTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="ButtonBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="ButtonTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="Picture" type="type:Picture" minOccurs="0"/>
+										<xs:element name="ChoiceButtonPicture" type="type:Picture" minOccurs="0"/>
+									</xs:sequence>
+									<xs:attribute name="Transparent" type="xs:boolean"/>
+									<xs:attribute name="ChoiceListHeight" type="xs:decimal"/>
+									<xs:attribute name="ChoiceListWidth" type="xs:decimal"/>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="AutoChoiceIncomplete" type="xs:boolean"/>
+				<xs:attribute name="AutoMarkIncomplete" type="xs:boolean"/>
+				<xs:attribute name="ChoiceIncomplete" type="xs:boolean"/>
+				<xs:attribute name="ChooseType" type="xs:boolean"/>
+				<xs:attribute name="DefaultControl" type="xs:boolean"/>
+				<xs:attribute name="HorizontalAlign" type="enum:HorizontalAligns"/>
+				<xs:attribute name="MarkIncomplete" type="xs:boolean"/>
+				<xs:attribute name="MarkNegatives" type="xs:boolean"/>
+				<xs:attribute name="Mask" type="xs:string"/>
+				<xs:attribute name="MaxValue" type="xs:decimal"/>
+				<xs:attribute name="MinValue" type="xs:decimal"/>
+				<xs:attribute name="MultiLine" type="xs:string"/>
+				<xs:attribute name="VerticalAlign" type="enum:VerticalAligns"/>
+				<xs:attribute name="Wrap" type="xs:boolean"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ComboBox">
+		<xs:complexContent>
+			<xs:extension base="type:Element">
+				<xs:sequence>
+					<xs:element name="Events" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="xs:string">
+												<xs:attribute name="Name" type="event:ComboBox"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Buttons" minOccurs="0">
+						<xs:complexType>
+							<xs:attribute name="ChoiceButton" type="xs:boolean"/>
+							<xs:attribute name="OpenButton" type="xs:boolean"/>
+							<xs:attribute name="ClearButton" type="xs:boolean"/>
+							<xs:attribute name="SpinButton" type="xs:boolean"/>
+							<xs:attribute name="ChoiceListButton" type="xs:boolean"/>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="FieldBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="FieldTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="ButtonBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="ButtonTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="Picture" type="type:Picture" minOccurs="0"/>
+										<xs:element name="ChoiceButtonPicture" type="type:Picture" minOccurs="0"/>
+									</xs:sequence>
+									<xs:attribute name="Transparent" type="xs:boolean"/>
+									<xs:attribute name="ChoiceListHeight" type="xs:decimal"/>
+									<xs:attribute name="ChoiceListWidth" type="xs:decimal"/>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="ChoisList" type="type:ChoisList" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="ChoiceButton" type="xs:boolean"/>
+				<xs:attribute name="ChoiceListHeight" type="xs:decimal"/>
+				<xs:attribute name="ClearButton" type="xs:boolean"/>
+				<xs:attribute name="DefaultControl" type="xs:boolean"/>
+				<xs:attribute name="OpenButton" type="xs:boolean"/>
+				<xs:attribute name="SpinButton" type="xs:boolean"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ListBox">
+		<xs:complexContent>
+			<xs:extension base="type:Element">
+				<xs:sequence>
+					<xs:element name="Events" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="xs:string">
+												<xs:attribute name="Name" type="event:ListtBox"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="FieldBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="FieldTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+									</xs:sequence>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="DefaultControl" type="xs:boolean"/>
+				<xs:attribute name="ReadOnly" type="xs:boolean"/>
+				<xs:attribute name="ShowCheckBox" type="xs:boolean"/>
+				<xs:attribute name="ShowPicture" type="xs:boolean"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TableBox">
+		<xs:complexContent>
+			<xs:extension base="type:Element">
+				<xs:sequence>
+					<xs:element name="Events" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="xs:string">
+												<xs:attribute name="Name" type="event:TableBox"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Columns" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="TableBoxColumn" type="TableBoxColumn" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="FieldBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="FieldTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="HeaderBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="HeaderTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="FooterBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="FooterTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="SelectionBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="SelectionTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="AlternationRowBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="HeaderFont" type="type:Font" minOccurs="0"/>
+										<xs:element name="FooterFont" type="type:Font" minOccurs="0"/>
+									</xs:sequence>
+									<xs:attribute name="HorizontalLines" type="xs:boolean"/>
+									<xs:attribute name="VerticalLines" type="xs:boolean"/>
+									<xs:attribute name="UseAlternationRowColor" type="xs:boolean"/>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="AutoInsertNewRow" type="xs:boolean"/>
+				<xs:attribute name="ChangePositionOfColumns" type="xs:boolean"/>
+				<xs:attribute name="ChangeRowOrder" type="xs:boolean"/>
+				<xs:attribute name="ChangeRowSet" type="xs:boolean"/>
+				<xs:attribute name="ChangeSettingOfColumns" type="xs:boolean"/>
+				<xs:attribute name="DefaultControl" type="xs:boolean"/>
+				<xs:attribute name="EnableDrag" type="xs:boolean"/>
+				<xs:attribute name="EnableStartDrag" type="xs:boolean"/>
+				<xs:attribute name="FixedLeft" type="xs:integer"/>
+				<xs:attribute name="FixedRight" type="xs:integer"/>
+				<xs:attribute name="Footer" type="xs:boolean"/>
+				<xs:attribute name="FooterHeight" type="xs:integer"/>
+				<xs:attribute name="Header" type="xs:boolean"/>
+				<xs:attribute name="HeaderHeight" type="xs:integer"/>
+				<xs:attribute name="HorizontalScrollBar" type="enum:ScrollBarUses"/>
+				<xs:attribute name="InitialListView" type="enum:InitialListViews"/>
+				<xs:attribute name="Output" type="enum:UseOutputs"/>
+				<xs:attribute name="ReadOnly" type="xs:boolean"/>
+				<xs:attribute name="RowInputMode" type="enum:TableBoxRowInputModes"/>
+				<xs:attribute name="RowSelectionMode" type="enum:TableBoxRowSelectionModes"/>
+				<xs:attribute name="SelectionMode" type="enum:TableBoxRowSelectionModes"/>
+				<xs:attribute name="VerticalScrollBar" type="enum:ScrollBarUses"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TableBoxColumn">
+		<xs:sequence>
+			<xs:element name="Control" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="TextBox" type="TextBox"/>
+						<xs:element name="CheckBox" type="CheckBox"/>
+						<xs:element name="ComboBox" type="ComboBox"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Decor" minOccurs="0">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="type:Decor">
+							<xs:sequence>
+								<xs:element name="FooterTextColor" type="type:Color" minOccurs="0"/>
+								<xs:element name="FieldTextColor" type="type:Color" minOccurs="0"/>
+								<xs:element name="HeaderTextColor" type="type:Color" minOccurs="0"/>
+								<xs:element name="FooterBackColor" type="type:Color" minOccurs="0"/>
+								<xs:element name="FieldBackColor" type="type:Color" minOccurs="0"/>
+								<xs:element name="HeaderBackColor" type="type:Color" minOccurs="0"/>
+								<xs:element name="FooterFont" type="type:Font" minOccurs="0"/>
+								<xs:element name="TextFont" type="type:Font" minOccurs="0"/>
+								<xs:element name="HeaderFont" type="type:Font" minOccurs="0"/>
+								<xs:element name="FooterPicture" type="type:Picture" minOccurs="0"/>
+								<xs:element name="HeaderPicture" type="type:Picture" minOccurs="0"/>
+								<xs:element name="HeaderAdditionalPicture" type="type:Picture" minOccurs="0"/>
+								<xs:element name="RowsPictures" type="type:Picture" minOccurs="0"/>
+							</xs:sequence>
+							<xs:attribute name="Width" type="xs:integer"/>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="AutoCellHeight" type="xs:boolean"/>
+		<xs:attribute name="AutoMarkIncomplete" type="xs:boolean"/>
+		<xs:attribute name="CellHeight" type="xs:integer"/>
+		<xs:attribute name="ChangePosition" type="xs:boolean"/>
+		<xs:attribute name="ChangeSetting" type="xs:boolean"/>
+		<xs:attribute name="ChangeVisible" type="xs:boolean"/>
+		<xs:attribute name="CheckBoxThreeState" type="xs:boolean"/>
+		<xs:attribute name="CheckData" type="xs:string"/>
+		<xs:attribute name="Data" type="xs:string"/>
+		<xs:attribute name="EditMode" type="enum:ColumnEditModes"/>
+		<xs:attribute name="Enabled" type="xs:boolean"/>
+		<xs:attribute name="FooterHorizontalAlign" type="enum:HorizontalAligns"/>
+		<xs:attribute name="HeaderHorizontalAlign" type="enum:HorizontalAligns"/>
+		<xs:attribute name="HeaderToolTip" type="xs:string"/>
+		<xs:attribute name="HorizontalAlignInColumn" type="enum:HorizontalAligns"/>
+		<xs:attribute name="Hyperlink" type="xs:boolean"/>
+		<xs:attribute name="Location" type="enum:ColumnLocations"/>
+		<xs:attribute name="MarkNegatives" type="xs:boolean"/>
+		<xs:attribute name="Name" type="xs:string"/>
+		<xs:attribute name="PictureData" type="xs:string"/>
+		<xs:attribute name="ReadOnly" type="xs:boolean"/>
+		<xs:attribute name="ShowHierarchy" type="xs:boolean"/>
+		<xs:attribute name="ShowInFooter" type="xs:boolean"/>
+		<xs:attribute name="ShowInHeader" type="xs:boolean"/>
+		<xs:attribute name="SizeChange" type="enum:SizeChanges"/>
+		<xs:attribute name="SkipOnInput" type="xs:boolean"/>
+		<xs:attribute name="TableBoxColumn" type="xs:string"/>
+		<xs:attribute name="Visible" type="xs:boolean"/>
+	</xs:complexType>
+	<xs:complexType name="SpreadsheetDocumentField">
+		<xs:complexContent>
+			<xs:extension base="type:Element">
+				<xs:sequence>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Border" type="type:Border" minOccurs="0"/>
+								<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Events" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="xs:string">
+												<xs:attribute name="Name" type="event:SpreadsheetDocumentField"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="VerticalScrollBar" type="xs:boolean"/>
+				<xs:attribute name="HorizontalScrollBar" type="xs:boolean"/>
+				<xs:attribute name="ShowSelection" type="enum:SpreadsheetDocumentSelectionShowModeTypes"/>
+				<xs:attribute name="EnableStartDrag" type="xs:boolean"/>
+				<xs:attribute name="EnableDrag" type="xs:boolean"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TextDocumentField">
+		<xs:complexContent>
+			<xs:extension base="type:Element">
+				<xs:sequence>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+									</xs:sequence>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="DefaultControl" type="xs:boolean"/>
+				<xs:attribute name="Output" type="enum:UseOutputs"/>
+				<xs:attribute name="ReadOnly" type="xs:boolean"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="HTMLDocumentField">
+		<xs:complexContent>
+			<xs:extension base="type:Element">
+				<xs:sequence>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+									</xs:sequence>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Events" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Event" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="xs:string">
+												<xs:attribute name="Name" type="event:HTMLDocumentField"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="DefaultControl" type="xs:boolean"/>
+				<xs:attribute name="Output" type="enum:UseOutputs"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CommandBar">
+		<xs:complexContent>
+			<xs:extension base="type:Element">
+				<xs:sequence>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="BackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="ButtonBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="ButtonTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+									</xs:sequence>
+									<xs:attribute name="Transparent" type="xs:boolean"/>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Buttons" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="CommandBarButton" type="CommandBarButton" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="ActionSource" type="xs:string"/>
+				<xs:attribute name="AutoFill" type="xs:boolean"/>
+				<xs:attribute name="ButtonsAlignment" type="enum:CommandBarButtonAlignments"/>
+				<xs:attribute name="DefaultControl" type="xs:boolean"/>
+				<xs:attribute name="Orientation" type="enum:Orientations"/>
+				<xs:attribute name="Secondary" type="xs:boolean"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CommandBarButton">
+		<xs:sequence>
+			<xs:element name="Buttons" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="CommandBarButton" type="CommandBarButton" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Picture" type="type:Picture" minOccurs="0"/>
+			<xs:element name="Shortcut" type="type:Shortcut" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Action" type="xs:string"/>
+		<xs:attribute name="ButtonOrder" type="enum:CommandBarButtonOrders"/>
+		<xs:attribute name="ButtonType" type="enum:CommandBarButtonTypes"/>
+		<xs:attribute name="Check" type="xs:boolean"/>
+		<xs:attribute name="DefaultButton" type="xs:boolean"/>
+		<xs:attribute name="Description" type="xs:boolean"/>
+		<xs:attribute name="Enabled" type="xs:boolean"/>
+		<xs:attribute name="ModifiesData" type="xs:boolean"/>
+		<xs:attribute name="Name" type="xs:string"/>
+		<xs:attribute name="Representation" type="enum:CommandBarButtonRepresentations"/>
+		<xs:attribute name="Text" type="xs:string"/>
+		<xs:attribute name="ToolTip" type="xs:string"/>
+	</xs:complexType>
+</xs:schema>
