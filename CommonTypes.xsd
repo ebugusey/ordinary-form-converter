@@ -3,7 +3,7 @@
 	<xs:import namespace="Enums.xsd" schemaLocation="Enums.xsd"/>
 	<xs:complexType name="Element">
 		<xs:sequence>
-			<xs:element name="Position" type="ElementPosition" minOccurs="0"/>
+			<xs:element name="AutoContextMenu" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="BorderBindings" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
@@ -14,17 +14,17 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="ContextMenu" type="xs:string" minOccurs="0"/>
+			<xs:element name="Data" type="xs:string" minOccurs="0"/>
+			<xs:element name="Enabled" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="FirstInGroup" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="ModifiesData" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="Name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Position" type="ElementPosition" minOccurs="0"/>
+			<xs:element name="SkipOnInput" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="ToolTip" type="xs:string" minOccurs="0"/>
+			<xs:element name="Visible" type="xs:boolean" minOccurs="0"/>
 		</xs:sequence>
-		<xs:attribute name="Name" type="xs:string"/>
-		<xs:attribute name="Visible" type="xs:boolean"/>
-		<xs:attribute name="Enabled" type="xs:boolean"/>
-		<xs:attribute name="ToolTip" type="xs:string"/>
-		<xs:attribute name="ModifiesData" type="xs:boolean"/>
-		<xs:attribute name="SkipOnInput" type="xs:boolean"/>
-		<xs:attribute name="FirstInGroup" type="xs:boolean"/>
-		<xs:attribute name="ContextMenu" type="xs:string"/>
-		<xs:attribute name="AutoContextMenu" type="xs:boolean"/>
-		<xs:attribute name="Data" type="xs:string"/>
 	</xs:complexType>
 	<xs:complexType name="Alignment">
 		<xs:sequence>
