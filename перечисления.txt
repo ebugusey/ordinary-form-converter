@@ -118,6 +118,10 @@
 2 Bottom
 1 Center
 
+ПоложениеЗаголовка
+0 TitleLeft
+1 TitleRight
+
 ОтображениеКнопкиКоманднойПанели
 0 Auto
 2 Picture
