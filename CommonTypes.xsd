@@ -60,22 +60,6 @@
 			<xs:element name="Position" type="Position" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="Size">
-		<xs:attribute name="Width">
-			<xs:simpleType>
-				<xs:restriction base="xs:decimal">
-					<xs:minInclusive value="0"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-		<xs:attribute name="Height">
-			<xs:simpleType>
-				<xs:restriction base="xs:decimal">
-					<xs:minInclusive value="0"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-	</xs:complexType>
 	<xs:complexType name="Position">
 		<xs:sequence>
 			<xs:element name="TopLeftX" minOccurs="0">
@@ -110,22 +94,16 @@
 	</xs:complexType>
 	<xs:complexType name="ElementPosition">
 		<xs:complexContent>
-			<xs:extension base="Size">
-				<xs:attribute name="Left">
-					<xs:simpleType>
-						<xs:restriction base="xs:decimal">
-							<xs:minInclusive value="0"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:attribute>
-				<xs:attribute name="Right">
-					<xs:simpleType>
-						<xs:restriction base="xs:decimal">
-							<xs:minInclusive value="0"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:attribute>
-				<xs:attribute name="TabOrder" type="xs:decimal"/>
+			<xs:extension base="Position">
+				<xs:sequence>
+					<xs:element name="TabOrder" minOccurs="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:decimal">
+								<xs:minInclusive value="0"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
