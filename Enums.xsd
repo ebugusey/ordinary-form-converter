@@ -144,6 +144,8 @@
 	<xs:simpleType name="ChangeWindowAppearanceModes">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Auto"/>
+			<xs:enumeration value="Disable"/>
+			<xs:enumeration value="Enable"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="EnterKeyBehaviorTypes">
