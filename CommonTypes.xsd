@@ -56,23 +56,9 @@
 	</xs:complexType>
 	<xs:complexType name="AlignmentLine">
 		<xs:sequence>
-			<xs:element name="Position" type="ElementPosition" minOccurs="0"/>
+			<xs:element name="Type" type="enum:AlignmentLineTypes" minOccurs="0"/>
+			<xs:element name="Position" type="Position" minOccurs="0"/>
 		</xs:sequence>
-		<xs:attribute name="Left">
-			<xs:simpleType>
-				<xs:restriction base="xs:integer">
-					<xs:minInclusive value="0"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-		<xs:attribute name="Right">
-			<xs:simpleType>
-				<xs:restriction base="xs:integer">
-					<xs:minInclusive value="0"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-		<xs:attribute name="Type" type="enum:AlignmentLineTypes"/>
 	</xs:complexType>
 	<xs:complexType name="Size">
 		<xs:attribute name="Width">
