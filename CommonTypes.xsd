@@ -29,24 +29,30 @@
 	</xs:complexType>
 	<xs:complexType name="Alignment">
 		<xs:sequence>
-			<xs:element name="Line" type="AlignmentLine" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="GridEnabled" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="HorizontalStep" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:minInclusive value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="LevelLinesEnabled" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="Lines" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Line" type="AlignmentLine" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="VerticallStep" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:minInclusive value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
 		</xs:sequence>
-		<xs:attribute name="LevelLinesEnabled" type="xs:boolean"/>
-		<xs:attribute name="GridEnabled" type="xs:boolean"/>
-		<xs:attribute name="HorizontalStep">
-			<xs:simpleType>
-				<xs:restriction base="xs:decimal">
-					<xs:minInclusive value="0"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-		<xs:attribute name="VerticallStep">
-			<xs:simpleType>
-				<xs:restriction base="xs:decimal">
-					<xs:minInclusive value="0"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="AlignmentLine">
 		<xs:sequence>
