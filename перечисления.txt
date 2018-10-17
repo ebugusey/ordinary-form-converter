@@ -198,3 +198,11 @@
 ИзменениеРазмераКолонки
 0 Change
 1 DontChange
+
+РежимБегущейСтроки
+0 DontUse
+1 VerySlow
+2 Slow
+3 Normal
+4 Fast
+5 VeryFast
