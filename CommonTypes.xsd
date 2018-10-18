@@ -138,10 +138,12 @@
 		<xs:attribute name="id" type="xs:string"/>
 	</xs:complexType>
 	<xs:complexType name="BorderBinding">
-		<xs:attribute name="SizeAnchor" type="xs:string"/>
-		<xs:attribute name="SizeAnchorSite" type="enum:BindingSite"/>
-		<xs:attribute name="ProportionAnchor" type="xs:string"/>
-		<xs:attribute name="ProportionAnchorSite" type="enum:BindingSite"/>
+		<xs:sequence>
+			<xs:element name="ProportionAnchor" type="xs:string" minOccurs="0"/>
+			<xs:element name="ProportionAnchorSite" type="enum:BindingSite" minOccurs="0"/>
+			<xs:element name="SizeAnchor" type="xs:string" minOccurs="0"/>
+			<xs:element name="SizeAnchorSite" type="enum:BindingSite" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="Picture">
 		<xs:simpleContent>
