@@ -109,6 +109,24 @@
 	</xs:complexType>
 	<xs:complexType name="Attribute">
 		<xs:sequence>
+			<xs:element name="DateCompound" type="enum:DateCompound" minOccurs="0"/>
+			<xs:element name="FillChecking" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="Length" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:minInclusive value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Nonnegative" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="Precision" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:minInclusive value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
 			<xs:element name="Types" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
@@ -117,12 +135,7 @@
 				</xs:complexType>
 			</xs:element>
 		</xs:sequence>
-		<xs:attribute name="Name" type="xs:string"/>
-		<xs:attribute name="FillChecking" type="xs:boolean"/>
-		<xs:attribute name="Length" type="xs:decimal"/>
-		<xs:attribute name="Precision" type="xs:decimal"/>
-		<xs:attribute name="Nonnegative" type="xs:boolean"/>
-		<xs:attribute name="Compound" type="enum:DateCompound"/>
+		<xs:attribute name="id" type="xs:string"/>
 	</xs:complexType>
 	<xs:complexType name="BorderBinding">
 		<xs:attribute name="SizeAnchor" type="xs:string"/>
