@@ -146,12 +146,11 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="Picture">
-		<xs:simpleContent>
-			<xs:extension base="xs:base64Binary">
-				<xs:attribute name="Type" type="enum:PictureTypes"/>
-				<xs:attribute name="VariantSet" type="xs:boolean"/>
-			</xs:extension>
-		</xs:simpleContent>
+		<xs:sequence>
+			<xs:element name="Content" type="xs:base64Binary" minOccurs="0"/>
+			<xs:element name="Type" type="enum:PictureTypes" minOccurs="0"/>
+			<xs:element name="VariantSet" type="xs:boolean" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="Shortcut">
 		<xs:attribute name="Alt" type="xs:boolean"/>
