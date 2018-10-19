@@ -30,13 +30,7 @@
 	<xs:complexType name="Alignment">
 		<xs:sequence>
 			<xs:element name="GridEnabled" type="xs:boolean" minOccurs="0"/>
-			<xs:element name="HorizontalStep" minOccurs="0">
-				<xs:simpleType>
-					<xs:restriction base="xs:decimal">
-						<xs:minInclusive value="0"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
+			<xs:element name="HorizontalStep" type="xs:unsignedInt" minOccurs="0"/>
 			<xs:element name="LevelLinesEnabled" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="Lines" minOccurs="0">
 				<xs:complexType>
@@ -45,13 +39,7 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="VerticallStep" minOccurs="0">
-				<xs:simpleType>
-					<xs:restriction base="xs:decimal">
-						<xs:minInclusive value="0"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
+			<xs:element name="VerticallStep" type="xs:unsignedInt" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="AlignmentLine">
@@ -62,47 +50,17 @@
 	</xs:complexType>
 	<xs:complexType name="Position">
 		<xs:sequence>
-			<xs:element name="TopLeftX" minOccurs="0">
-				<xs:simpleType>
-					<xs:restriction base="xs:decimal">
-						<xs:minInclusive value="0"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
-			<xs:element name="TopLeftY" minOccurs="0">
-				<xs:simpleType>
-					<xs:restriction base="xs:decimal">
-						<xs:minInclusive value="0"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
-			<xs:element name="BottomRightX" minOccurs="0">
-				<xs:simpleType>
-					<xs:restriction base="xs:decimal">
-						<xs:minInclusive value="0"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
-			<xs:element name="BottomRightY" minOccurs="0">
-				<xs:simpleType>
-					<xs:restriction base="xs:decimal">
-						<xs:minInclusive value="0"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
+			<xs:element name="TopLeftX" type="xs:unsignedInt" minOccurs="0"/>
+			<xs:element name="TopLeftY" type="xs:unsignedInt" minOccurs="0"/>
+			<xs:element name="BottomRightX" type="xs:unsignedInt" minOccurs="0"/>
+			<xs:element name="BottomRightY" type="xs:unsignedInt" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ElementPosition">
 		<xs:complexContent>
 			<xs:extension base="Position">
 				<xs:sequence>
-					<xs:element name="TabOrder" minOccurs="0">
-						<xs:simpleType>
-							<xs:restriction base="xs:decimal">
-								<xs:minInclusive value="0"/>
-							</xs:restriction>
-						</xs:simpleType>
-					</xs:element>
+					<xs:element name="TabOrder" type="xs:unsignedInt" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -111,22 +69,10 @@
 		<xs:sequence>
 			<xs:element name="DateCompound" type="enum:DateCompound" minOccurs="0"/>
 			<xs:element name="FillChecking" type="xs:boolean" minOccurs="0"/>
-			<xs:element name="Length" minOccurs="0">
-				<xs:simpleType>
-					<xs:restriction base="xs:integer">
-						<xs:minInclusive value="0"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
+			<xs:element name="Length" type="xs:unsignedInt" minOccurs="0"/>
 			<xs:element name="Name" type="xs:string" minOccurs="0"/>
 			<xs:element name="Nonnegative" type="xs:boolean" minOccurs="0"/>
-			<xs:element name="Precision" minOccurs="0">
-				<xs:simpleType>
-					<xs:restriction base="xs:integer">
-						<xs:minInclusive value="0"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
+			<xs:element name="Precision" type="xs:unsignedInt" minOccurs="0"/>
 			<xs:element name="Types" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
