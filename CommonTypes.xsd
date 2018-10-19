@@ -116,6 +116,7 @@
 	</xs:complexType>
 	<xs:complexType name="Font">
 		<xs:sequence>
+			<xs:element name="Name" type="xs:string" minOccurs="0"/>
 			<xs:element name="Outline" minOccurs="0">
 				<xs:complexType>
 					<xs:attribute name="Bold" type="xs:boolean"/>
@@ -124,11 +125,10 @@
 					<xs:attribute name="Underline" type="xs:boolean"/>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="Scale" type="xs:unsignedInt" minOccurs="0"/>
+			<xs:element name="Size" type="xs:unsignedInt" minOccurs="0"/>
+			<xs:element name="Type" type="enum:FontTypes" minOccurs="0"/>
 		</xs:sequence>
-		<xs:attribute name="Type" type="enum:FontTypes"/>
-		<xs:attribute name="Name" type="xs:string"/>
-		<xs:attribute name="Scale" type="xs:decimal"/>
-		<xs:attribute name="Size" type="xs:decimal"/>
 	</xs:complexType>
 	<xs:complexType name="Border">
 		<xs:attribute name="Type">
