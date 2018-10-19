@@ -180,6 +180,7 @@
 		<xs:complexContent>
 			<xs:extension base="type:Element">
 				<xs:sequence>
+					<xs:element name="Caption" type="xs:string" minOccurs="0"/>
 					<xs:element name="Decor" minOccurs="0">
 						<xs:complexType>
 							<xs:complexContent>
@@ -212,14 +213,13 @@
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
+					<xs:element name="Format" type="xs:string" minOccurs="0"/>
+					<xs:element name="HorizontalAlign" type="enum:HorizontalAligns" minOccurs="0"/>
+					<xs:element name="Hyperlink" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="MarkNegatives" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="ScrollingText" type="enum:ScrollingTextModes" minOccurs="0"/>
+					<xs:element name="VerticalAlign" type="enum:VerticalAligns" minOccurs="0"/>
 				</xs:sequence>
-				<xs:attribute name="Caption" type="xs:string"/>
-				<xs:attribute name="Format" type="xs:string"/>
-				<xs:attribute name="HorizontalAlign" type="enum:HorizontalAligns"/>
-				<xs:attribute name="Hyperlink" type="xs:boolean"/>
-				<xs:attribute name="MarkNegatives" type="xs:boolean"/>
-				<xs:attribute name="ScrollingText" type="enum:ScrollingTextModes"/>
-				<xs:attribute name="VerticalAlign" type="enum:VerticalAligns"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
