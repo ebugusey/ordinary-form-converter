@@ -298,6 +298,26 @@
 		<xs:complexContent>
 			<xs:extension base="type:Element">
 				<xs:sequence>
+					<xs:element name="ActionSource" type="xs:string" minOccurs="0"/>
+					<xs:element name="Caption" type="xs:string" minOccurs="0"/>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="ButtonBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="ButtonTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="Picture" type="type:Picture" minOccurs="0"/>
+										<xs:element name="PictureLocation" type="enum:PictureLocations" minOccurs="0"/>
+										<xs:element name="PictureSize" type="enum:PictureSizes" minOccurs="0"/>
+									</xs:sequence>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="DefaultButton" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="DefaultControl" type="xs:boolean" minOccurs="0"/>
 					<xs:element name="Events" minOccurs="0">
 						<xs:complexType>
 							<xs:sequence>
@@ -313,32 +333,12 @@
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
+					<xs:element name="HorizontalAlign" type="enum:HorizontalAligns" minOccurs="0"/>
+					<xs:element name="MenuMode" type="enum:MenuModes" minOccurs="0"/>
+					<xs:element name="MultiLine" type="xs:boolean" minOccurs="0"/>
 					<xs:element name="Shortcut" type="type:Shortcut" minOccurs="0"/>
-					<xs:element name="Decor" minOccurs="0">
-						<xs:complexType>
-							<xs:complexContent>
-								<xs:extension base="type:Decor">
-									<xs:sequence>
-										<xs:element name="ButtonBackColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="ButtonTextColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="Picture" type="type:Picture" minOccurs="0"/>
-									</xs:sequence>
-									<xs:attribute name="PictureLocation" type="enum:PictureLocations"/>
-									<xs:attribute name="PictureSize" type="enum:PictureSizes"/>
-								</xs:extension>
-							</xs:complexContent>
-						</xs:complexType>
-					</xs:element>
+					<xs:element name="VerticalAlign" type="enum:VerticalAligns" minOccurs="0"/>
 				</xs:sequence>
-				<xs:attribute name="ActionSource" type="xs:string"/>
-				<xs:attribute name="Caption" type="xs:string"/>
-				<xs:attribute name="DefaultButton" type="xs:boolean"/>
-				<xs:attribute name="DefaultControl" type="xs:boolean"/>
-				<xs:attribute name="HorizontalAlign" type="enum:HorizontalAligns"/>
-				<xs:attribute name="MenuMode" type="enum:MenuModes"/>
-				<xs:attribute name="MultiLine" type="xs:boolean"/>
-				<xs:attribute name="VerticalAlign" type="enum:VerticalAligns"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
