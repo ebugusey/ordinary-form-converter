@@ -554,6 +554,20 @@
 		<xs:complexContent>
 			<xs:extension base="type:Element">
 				<xs:sequence>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="FieldBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="FieldTextColor" type="type:Color" minOccurs="0"/>
+									</xs:sequence>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="DefaultControl" type="xs:boolean" minOccurs="0"/>
 					<xs:element name="Events" minOccurs="0">
 						<xs:complexType>
 							<xs:sequence>
@@ -569,24 +583,10 @@
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
-					<xs:element name="Decor" minOccurs="0">
-						<xs:complexType>
-							<xs:complexContent>
-								<xs:extension base="type:Decor">
-									<xs:sequence>
-										<xs:element name="FieldBackColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="FieldTextColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
-									</xs:sequence>
-								</xs:extension>
-							</xs:complexContent>
-						</xs:complexType>
-					</xs:element>
+					<xs:element name="ReadOnly" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="ShowCheckBox" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="ShowPicture" type="xs:boolean" minOccurs="0"/>
 				</xs:sequence>
-				<xs:attribute name="DefaultControl" type="xs:boolean"/>
-				<xs:attribute name="ReadOnly" type="xs:boolean"/>
-				<xs:attribute name="ShowCheckBox" type="xs:boolean"/>
-				<xs:attribute name="ShowPicture" type="xs:boolean"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
