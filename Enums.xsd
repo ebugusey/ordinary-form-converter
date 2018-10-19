@@ -326,4 +326,10 @@
 			<xs:enumeration value="Overline"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="WindowSizeChanges">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Change"/>
+			<xs:enumeration value="DontChange"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>

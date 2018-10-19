@@ -25,16 +25,23 @@
 	</xs:complexType>
 	<xs:complexType name="Form">
 		<xs:sequence>
-			<xs:element name="Size" type="type:Size" minOccurs="0"/>
-			<xs:element name="CaptionPicture" type="type:Picture" minOccurs="0"/>
-			<xs:element name="SavedValues" minOccurs="0">
+			<xs:element name="Alignment" type="type:Alignment" minOccurs="0"/>
+			<xs:element name="Attributes" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="SavedValue" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="Attribute" type="type:Attribute" minOccurs="0" maxOccurs="unbounded"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="Alignment" type="type:Alignment" minOccurs="0"/>
+			<xs:element name="AutoFillCheck" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="AutoTitle" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="Caption" type="xs:string" minOccurs="0"/>
+			<xs:element name="CaptionPicture" type="type:Picture" minOccurs="0"/>
+			<xs:element name="ChildItems" type="ChildItems" minOccurs="0"/>
+			<xs:element name="CloseOnChoice" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="CloseOnOwnerClose" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="Data" type="xs:string" minOccurs="0"/>
+			<xs:element name="EnterKeyBehavior" type="enum:EnterKeyBehaviorTypes" minOccurs="0"/>
 			<xs:element name="Events" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
@@ -50,41 +57,42 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="ModalMode" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="MultipleChoice" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="Panel" type="Panel" minOccurs="0"/>
-			<xs:element name="Attributes" minOccurs="0">
+			<xs:element name="RestoreValuesOnOpen" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="SavedValues" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="Attribute" type="type:Attribute" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="SavedValue" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="ChildItems" type="ChildItems" minOccurs="0"/>
+			<xs:element name="SaveValues" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="Size" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Width" type="xs:unsignedInt" minOccurs="0"/>
+						<xs:element name="Height" type="xs:unsignedInt" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Window" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="WindowState" type="enum:WindowStateVariants" minOccurs="0"/>
+						<xs:element name="AllowClose" type="xs:boolean" minOccurs="0"/>
+						<xs:element name="DesktopMode" type="xs:boolean" minOccurs="0"/>
+						<xs:element name="SizeChange" type="enum:WindowSizeChanges" minOccurs="0"/>
+						<xs:element name="ConnectableWindow" type="xs:boolean" minOccurs="0"/>
+						<xs:element name="WindowLocation" type="enum:WindowLocationVariants" minOccurs="0"/>
+						<xs:element name="WindowDockLocation" type="enum:WindowDockVariants" minOccurs="0"/>
+						<xs:element name="WindowAppearanceMode" type="enum:WindowAppearanceModeVariants" minOccurs="0"/>
+						<xs:element name="ChangeWindowAppearanceMode" type="enum:ChangeWindowAppearanceModes" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 		</xs:sequence>
-		<xs:attribute name="AllowClose" type="xs:boolean"/>
-		<xs:attribute name="AutoFillCheck" type="xs:boolean"/>
-		<xs:attribute name="AutoTitle" type="xs:string"/>
-		<xs:attribute name="Caption" type="xs:string"/>
-		<xs:attribute name="ChangeWindowAppearanceMode" type="enum:ChangeWindowAppearanceModes"/>
-		<xs:attribute name="CloseOnChoice" type="xs:boolean"/>
-		<xs:attribute name="CloseOnOwnerClose" type="xs:boolean"/>
-		<xs:attribute name="ConnectableWindow" type="xs:boolean"/>
-		<xs:attribute name="Data" type="xs:string"/>
-		<xs:attribute name="DataType" type="enum:DataTypes"/>
-		<xs:attribute name="DesktopMode" type="xs:boolean"/>
-		<xs:attribute name="EnterKeyBehavior" type="enum:EnterKeyBehaviorTypes"/>
-		<xs:attribute name="FormOwner" type="xs:string"/>
-		<xs:attribute name="ModalMode" type="xs:boolean"/>
-		<xs:attribute name="MultipleChoice" type="xs:boolean"/>
-		<xs:attribute name="Name" type="xs:string"/>
-		<xs:attribute name="RestoreValuesOnOpen" type="xs:boolean"/>
-		<xs:attribute name="SaveValues" type="xs:boolean"/>
-		<xs:attribute name="SizeChange" type="xs:boolean"/>
-		<xs:attribute name="UniqueKey" type="xs:anySimpleType"/>
-		<xs:attribute name="WindowAppearanceMode" type="enum:WindowAppearanceModeVariants"/>
-		<xs:attribute name="WindowDockLocation" type="enum:WindowDockVariants"/>
-		<xs:attribute name="WindowLocation" type="enum:WindowLocationVariants"/>
-		<xs:attribute name="WindowOptionsKey" type="xs:string"/>
-		<xs:attribute name="WindowState" type="enum:WindowStateVariants"/>
 	</xs:complexType>
 	<xs:complexType name="Panel">
 		<xs:complexContent>
