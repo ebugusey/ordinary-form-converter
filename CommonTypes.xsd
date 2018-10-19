@@ -131,30 +131,11 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="Border">
-		<xs:attribute name="Type">
-			<xs:simpleType>
-				<xs:restriction base="xs:string">
-					<xs:enumeration value="Absolute"/>
-					<xs:enumeration value="StyleItem"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-		<xs:attribute name="BorderType">
-			<xs:simpleType>
-				<xs:restriction base="xs:string">
-					<xs:enumeration value="WithoutBorder"/>
-					<xs:enumeration value="Indented"/>
-					<xs:enumeration value="Embossed"/>
-					<xs:enumeration value="Double"/>
-					<xs:enumeration value="DoubleUnderline"/>
-					<xs:enumeration value="Single"/>
-					<xs:enumeration value="Underline"/>
-					<xs:enumeration value="Rounded"/>
-					<xs:enumeration value="Overline"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-		<xs:attribute name="Width" type="xs:decimal"/>
+		<xs:sequence>
+			<xs:element name="BorderType" type="enum:ControlBorderTypes" minOccurs="0"/>
+			<xs:element name="Type" type="enum:BorderTypes" minOccurs="0"/>
+			<xs:element name="Width" type="xs:unsignedInt" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="Decor">
 		<xs:sequence>

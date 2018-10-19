@@ -307,4 +307,23 @@
 			<xs:enumeration value="Border"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="BorderTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Absolute"/>
+			<xs:enumeration value="StyleItem"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ControlBorderTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="WithoutBorder"/>
+			<xs:enumeration value="Indented"/>
+			<xs:enumeration value="Embossed"/>
+			<xs:enumeration value="Double"/>
+			<xs:enumeration value="DoubleUnderline"/>
+			<xs:enumeration value="Single"/>
+			<xs:enumeration value="Underline"/>
+			<xs:enumeration value="Rounded"/>
+			<xs:enumeration value="Overline"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
