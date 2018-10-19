@@ -497,6 +497,40 @@
 		<xs:complexContent>
 			<xs:extension base="type:Element">
 				<xs:sequence>
+					<xs:element name="Buttons" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="ChoiceButton" type="xs:boolean" minOccurs="0"/>
+								<xs:element name="ChoiceListButton" type="xs:boolean" minOccurs="0"/>
+								<xs:element name="ClearButton" type="xs:boolean" minOccurs="0"/>
+								<xs:element name="OpenButton" type="xs:boolean" minOccurs="0"/>
+								<xs:element name="SpinButton" type="xs:boolean" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="ChoiceListHeight" type="xs:decimal" minOccurs="0"/>
+					<xs:element name="ChoisList" type="type:ChoisList" minOccurs="0"/>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="ButtonBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="ButtonTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="ChoiceButtonPicture" type="type:Picture" minOccurs="0"/>
+										<xs:element name="ChoiceListHeight" type="xs:decimal" minOccurs="0"/>
+										<xs:element name="ChoiceListWidth" type="xs:decimal" minOccurs="0"/>
+										<xs:element name="FieldBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="FieldTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="Picture" type="type:Picture" minOccurs="0"/>
+										<xs:element name="Transparent" type="xs:boolean" minOccurs="0"/>
+									</xs:sequence>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="DefaultControl" type="xs:boolean" minOccurs="0"/>
 					<xs:element name="Events" minOccurs="0">
 						<xs:complexType>
 							<xs:sequence>
@@ -512,43 +546,7 @@
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
-					<xs:element name="Buttons" minOccurs="0">
-						<xs:complexType>
-							<xs:attribute name="ChoiceButton" type="xs:boolean"/>
-							<xs:attribute name="OpenButton" type="xs:boolean"/>
-							<xs:attribute name="ClearButton" type="xs:boolean"/>
-							<xs:attribute name="SpinButton" type="xs:boolean"/>
-							<xs:attribute name="ChoiceListButton" type="xs:boolean"/>
-						</xs:complexType>
-					</xs:element>
-					<xs:element name="Decor" minOccurs="0">
-						<xs:complexType>
-							<xs:complexContent>
-								<xs:extension base="type:Decor">
-									<xs:sequence>
-										<xs:element name="FieldBackColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="FieldTextColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="ButtonBackColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="ButtonTextColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="Picture" type="type:Picture" minOccurs="0"/>
-										<xs:element name="ChoiceButtonPicture" type="type:Picture" minOccurs="0"/>
-									</xs:sequence>
-									<xs:attribute name="Transparent" type="xs:boolean"/>
-									<xs:attribute name="ChoiceListHeight" type="xs:decimal"/>
-									<xs:attribute name="ChoiceListWidth" type="xs:decimal"/>
-								</xs:extension>
-							</xs:complexContent>
-						</xs:complexType>
-					</xs:element>
-					<xs:element name="ChoisList" type="type:ChoisList" minOccurs="0"/>
 				</xs:sequence>
-				<xs:attribute name="ChoiceButton" type="xs:boolean"/>
-				<xs:attribute name="ChoiceListHeight" type="xs:decimal"/>
-				<xs:attribute name="ClearButton" type="xs:boolean"/>
-				<xs:attribute name="DefaultControl" type="xs:boolean"/>
-				<xs:attribute name="OpenButton" type="xs:boolean"/>
-				<xs:attribute name="SpinButton" type="xs:boolean"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
