@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns="CommonTypes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:enum="Enums.xsd" targetNamespace="CommonTypes.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:import namespace="Enums.xsd" schemaLocation="Enums.xsd"/>
+	<xs:complexType name="Attribute">
+		<xs:sequence>
+			<xs:element name="DateCompound" type="enum:DateCompound" minOccurs="0"/>
+			<xs:element name="FillChecking" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="Length" type="xs:unsignedInt" minOccurs="0"/>
+			<xs:element name="Name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Nonnegative" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="Precision" type="xs:unsignedInt" minOccurs="0"/>
+			<xs:element name="Types" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Type" type="enum:DataTypes" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string"/>
+	</xs:complexType>
 	<xs:complexType name="Element">
 		<xs:sequence>
 			<xs:element name="AutoContextMenu" type="xs:boolean" minOccurs="0"/>
@@ -64,24 +82,6 @@
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="Attribute">
-		<xs:sequence>
-			<xs:element name="DateCompound" type="enum:DateCompound" minOccurs="0"/>
-			<xs:element name="FillChecking" type="xs:boolean" minOccurs="0"/>
-			<xs:element name="Length" type="xs:unsignedInt" minOccurs="0"/>
-			<xs:element name="Name" type="xs:string" minOccurs="0"/>
-			<xs:element name="Nonnegative" type="xs:boolean" minOccurs="0"/>
-			<xs:element name="Precision" type="xs:unsignedInt" minOccurs="0"/>
-			<xs:element name="Types" minOccurs="0">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="Type" type="enum:DataTypes" minOccurs="0" maxOccurs="unbounded"/>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-		</xs:sequence>
-		<xs:attribute name="id" type="xs:string"/>
 	</xs:complexType>
 	<xs:complexType name="BorderBinding">
 		<xs:sequence>
