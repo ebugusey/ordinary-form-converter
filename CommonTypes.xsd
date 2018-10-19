@@ -107,10 +107,12 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="Color">
-		<xs:attribute name="ColorType" type="enum:ColorTypes"/>
-		<xs:attribute name="Red" type="xs:decimal"/>
-		<xs:attribute name="Green" type="xs:decimal"/>
-		<xs:attribute name="Blue" type="xs:decimal"/>
+		<xs:sequence>
+			<xs:element name="ColorType" type="enum:ColorTypes" minOccurs="0"/>
+			<xs:element name="Red" type="xs:unsignedInt" minOccurs="0"/>
+			<xs:element name="Green" type="xs:unsignedInt" minOccurs="0"/>
+			<xs:element name="Blue" type="xs:unsignedInt" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="Font">
 		<xs:sequence>
