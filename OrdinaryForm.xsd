@@ -594,6 +594,46 @@
 		<xs:complexContent>
 			<xs:extension base="type:Element">
 				<xs:sequence>
+					<xs:element name="AutoInsertNewRow" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="ChangePositionOfColumns" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="ChangeRowOrder" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="ChangeRowSet" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="ChangeSettingOfColumns" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="Columns" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="TableBoxColumn" type="TableBoxColumn" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="AlternationRowBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="FieldBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="FieldTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="FooterBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="FooterFont" type="type:Font" minOccurs="0"/>
+										<xs:element name="FooterTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="HeaderBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="HeaderFont" type="type:Font" minOccurs="0"/>
+										<xs:element name="HeaderTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="HorizontalLines" type="xs:boolean" minOccurs="0"/>
+										<xs:element name="SelectionBackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="SelectionTextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="UseAlternationRowColor" type="xs:boolean" minOccurs="0"/>
+										<xs:element name="VerticalLines" type="xs:boolean" minOccurs="0"/>
+									</xs:sequence>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="DefaultControl" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="EnableDrag" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="EnableStartDrag" type="xs:boolean" minOccurs="0"/>
 					<xs:element name="Events" minOccurs="0">
 						<xs:complexType>
 							<xs:sequence>
@@ -609,128 +649,88 @@
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
-					<xs:element name="Columns" minOccurs="0">
-						<xs:complexType>
-							<xs:sequence>
-								<xs:element name="TableBoxColumn" type="TableBoxColumn" minOccurs="0" maxOccurs="unbounded"/>
-							</xs:sequence>
-						</xs:complexType>
-					</xs:element>
-					<xs:element name="Decor" minOccurs="0">
-						<xs:complexType>
-							<xs:complexContent>
-								<xs:extension base="type:Decor">
-									<xs:sequence>
-										<xs:element name="FieldBackColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="FieldTextColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="HeaderBackColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="HeaderTextColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="FooterBackColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="FooterTextColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="SelectionBackColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="SelectionTextColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="AlternationRowBackColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="HeaderFont" type="type:Font" minOccurs="0"/>
-										<xs:element name="FooterFont" type="type:Font" minOccurs="0"/>
-									</xs:sequence>
-									<xs:attribute name="HorizontalLines" type="xs:boolean"/>
-									<xs:attribute name="VerticalLines" type="xs:boolean"/>
-									<xs:attribute name="UseAlternationRowColor" type="xs:boolean"/>
-								</xs:extension>
-							</xs:complexContent>
-						</xs:complexType>
-					</xs:element>
+					<xs:element name="FixedLeft" type="xs:integer" minOccurs="0"/>
+					<xs:element name="FixedRight" type="xs:integer" minOccurs="0"/>
+					<xs:element name="Footer" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="FooterHeight" type="xs:integer" minOccurs="0"/>
+					<xs:element name="Header" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="HeaderHeight" type="xs:integer" minOccurs="0"/>
+					<xs:element name="HorizontalScrollBar" type="enum:ScrollBarUses" minOccurs="0"/>
+					<xs:element name="InitialListView" type="enum:InitialListViews" minOccurs="0"/>
+					<xs:element name="Output" type="enum:UseOutputs" minOccurs="0"/>
+					<xs:element name="ReadOnly" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="RowInputMode" type="enum:TableBoxRowInputModes" minOccurs="0"/>
+					<xs:element name="RowSelectionMode" type="enum:TableBoxRowSelectionModes" minOccurs="0"/>
+					<xs:element name="SelectionMode" type="enum:TableBoxRowSelectionModes" minOccurs="0"/>
+					<xs:element name="VerticalScrollBar" type="enum:ScrollBarUses" minOccurs="0"/>
 				</xs:sequence>
-				<xs:attribute name="AutoInsertNewRow" type="xs:boolean"/>
-				<xs:attribute name="ChangePositionOfColumns" type="xs:boolean"/>
-				<xs:attribute name="ChangeRowOrder" type="xs:boolean"/>
-				<xs:attribute name="ChangeRowSet" type="xs:boolean"/>
-				<xs:attribute name="ChangeSettingOfColumns" type="xs:boolean"/>
-				<xs:attribute name="DefaultControl" type="xs:boolean"/>
-				<xs:attribute name="EnableDrag" type="xs:boolean"/>
-				<xs:attribute name="EnableStartDrag" type="xs:boolean"/>
-				<xs:attribute name="FixedLeft" type="xs:integer"/>
-				<xs:attribute name="FixedRight" type="xs:integer"/>
-				<xs:attribute name="Footer" type="xs:boolean"/>
-				<xs:attribute name="FooterHeight" type="xs:integer"/>
-				<xs:attribute name="Header" type="xs:boolean"/>
-				<xs:attribute name="HeaderHeight" type="xs:integer"/>
-				<xs:attribute name="HorizontalScrollBar" type="enum:ScrollBarUses"/>
-				<xs:attribute name="InitialListView" type="enum:InitialListViews"/>
-				<xs:attribute name="Output" type="enum:UseOutputs"/>
-				<xs:attribute name="ReadOnly" type="xs:boolean"/>
-				<xs:attribute name="RowInputMode" type="enum:TableBoxRowInputModes"/>
-				<xs:attribute name="RowSelectionMode" type="enum:TableBoxRowSelectionModes"/>
-				<xs:attribute name="SelectionMode" type="enum:TableBoxRowSelectionModes"/>
-				<xs:attribute name="VerticalScrollBar" type="enum:ScrollBarUses"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="TableBoxColumn">
 		<xs:sequence>
+			<xs:element name="AutoCellHeight" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="AutoMarkIncomplete" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="CellHeight" type="xs:integer" minOccurs="0"/>
+			<xs:element name="ChangePosition" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="ChangeSetting" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="ChangeVisible" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="CheckBoxThreeState" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="CheckData" type="xs:string" minOccurs="0"/>
 			<xs:element name="Control" minOccurs="0">
 				<xs:complexType>
 					<xs:choice>
-						<xs:element name="TextBox" type="TextBox"/>
 						<xs:element name="CheckBox" type="CheckBox"/>
 						<xs:element name="ComboBox" type="ComboBox"/>
+						<xs:element name="TextBox" type="TextBox"/>
 					</xs:choice>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="Data" type="xs:string" minOccurs="0"/>
 			<xs:element name="Decor" minOccurs="0">
 				<xs:complexType>
 					<xs:complexContent>
 						<xs:extension base="type:Decor">
 							<xs:sequence>
-								<xs:element name="FooterTextColor" type="type:Color" minOccurs="0"/>
-								<xs:element name="FieldTextColor" type="type:Color" minOccurs="0"/>
-								<xs:element name="HeaderTextColor" type="type:Color" minOccurs="0"/>
-								<xs:element name="FooterBackColor" type="type:Color" minOccurs="0"/>
 								<xs:element name="FieldBackColor" type="type:Color" minOccurs="0"/>
-								<xs:element name="HeaderBackColor" type="type:Color" minOccurs="0"/>
+								<xs:element name="FieldTextColor" type="type:Color" minOccurs="0"/>
+								<xs:element name="FooterBackColor" type="type:Color" minOccurs="0"/>
 								<xs:element name="FooterFont" type="type:Font" minOccurs="0"/>
-								<xs:element name="TextFont" type="type:Font" minOccurs="0"/>
-								<xs:element name="HeaderFont" type="type:Font" minOccurs="0"/>
 								<xs:element name="FooterPicture" type="type:Picture" minOccurs="0"/>
-								<xs:element name="HeaderPicture" type="type:Picture" minOccurs="0"/>
+								<xs:element name="FooterTextColor" type="type:Color" minOccurs="0"/>
 								<xs:element name="HeaderAdditionalPicture" type="type:Picture" minOccurs="0"/>
+								<xs:element name="HeaderBackColor" type="type:Color" minOccurs="0"/>
+								<xs:element name="HeaderFont" type="type:Font" minOccurs="0"/>
+								<xs:element name="HeaderPicture" type="type:Picture" minOccurs="0"/>
+								<xs:element name="HeaderTextColor" type="type:Color" minOccurs="0"/>
 								<xs:element name="RowsPictures" type="type:Picture" minOccurs="0"/>
+								<xs:element name="TextFont" type="type:Font" minOccurs="0"/>
+								<xs:element name="Width" type="xs:integer" minOccurs="0"/>
 							</xs:sequence>
-							<xs:attribute name="Width" type="xs:integer"/>
 						</xs:extension>
 					</xs:complexContent>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="EditMode" type="enum:ColumnEditModes" minOccurs="0"/>
+			<xs:element name="Enabled" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="FooterHorizontalAlign" type="enum:HorizontalAligns" minOccurs="0"/>
+			<xs:element name="HeaderHorizontalAlign" type="enum:HorizontalAligns" minOccurs="0"/>
+			<xs:element name="HeaderToolTip" type="xs:string" minOccurs="0"/>
+			<xs:element name="HorizontalAlignInColumn" type="enum:HorizontalAligns" minOccurs="0"/>
+			<xs:element name="Hyperlink" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="Location" type="enum:ColumnLocations" minOccurs="0"/>
+			<xs:element name="MarkNegatives" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="Name" type="xs:string" minOccurs="0"/>
+			<xs:element name="PictureData" type="xs:string" minOccurs="0"/>
+			<xs:element name="ReadOnly" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="ShowHierarchy" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="ShowInFooter" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="ShowInHeader" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="SizeChange" type="enum:SizeChanges" minOccurs="0"/>
+			<xs:element name="SkipOnInput" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="TableBoxColumn" type="xs:string" minOccurs="0"/>
+			<xs:element name="Visible" type="xs:boolean" minOccurs="0"/>
 		</xs:sequence>
-		<xs:attribute name="AutoCellHeight" type="xs:boolean"/>
-		<xs:attribute name="AutoMarkIncomplete" type="xs:boolean"/>
-		<xs:attribute name="CellHeight" type="xs:integer"/>
-		<xs:attribute name="ChangePosition" type="xs:boolean"/>
-		<xs:attribute name="ChangeSetting" type="xs:boolean"/>
-		<xs:attribute name="ChangeVisible" type="xs:boolean"/>
-		<xs:attribute name="CheckBoxThreeState" type="xs:boolean"/>
-		<xs:attribute name="CheckData" type="xs:string"/>
-		<xs:attribute name="Data" type="xs:string"/>
-		<xs:attribute name="EditMode" type="enum:ColumnEditModes"/>
-		<xs:attribute name="Enabled" type="xs:boolean"/>
-		<xs:attribute name="FooterHorizontalAlign" type="enum:HorizontalAligns"/>
-		<xs:attribute name="HeaderHorizontalAlign" type="enum:HorizontalAligns"/>
-		<xs:attribute name="HeaderToolTip" type="xs:string"/>
-		<xs:attribute name="HorizontalAlignInColumn" type="enum:HorizontalAligns"/>
-		<xs:attribute name="Hyperlink" type="xs:boolean"/>
-		<xs:attribute name="Location" type="enum:ColumnLocations"/>
-		<xs:attribute name="MarkNegatives" type="xs:boolean"/>
-		<xs:attribute name="Name" type="xs:string"/>
-		<xs:attribute name="PictureData" type="xs:string"/>
-		<xs:attribute name="ReadOnly" type="xs:boolean"/>
-		<xs:attribute name="ShowHierarchy" type="xs:boolean"/>
-		<xs:attribute name="ShowInFooter" type="xs:boolean"/>
-		<xs:attribute name="ShowInHeader" type="xs:boolean"/>
-		<xs:attribute name="SizeChange" type="enum:SizeChanges"/>
-		<xs:attribute name="SkipOnInput" type="xs:boolean"/>
-		<xs:attribute name="TableBoxColumn" type="xs:string"/>
-		<xs:attribute name="Visible" type="xs:boolean"/>
 	</xs:complexType>
 	<xs:complexType name="SpreadsheetDocumentField">
 		<xs:complexContent>
