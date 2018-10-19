@@ -98,13 +98,9 @@
 		<xs:complexContent>
 			<xs:extension base="type:Element">
 				<xs:sequence>
-					<xs:element name="Pages" minOccurs="0">
-						<xs:complexType>
-							<xs:sequence>
-								<xs:element name="Page" type="Page" minOccurs="0" maxOccurs="unbounded"/>
-							</xs:sequence>
-						</xs:complexType>
-					</xs:element>
+					<xs:element name="AutoLink" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="AutoTabOrder" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="CurrentPage" type="xs:string" minOccurs="0"/>
 					<xs:element name="Events" minOccurs="0">
 						<xs:complexType>
 							<xs:sequence>
@@ -120,18 +116,22 @@
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
+					<xs:element name="Pages" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Page" type="Page" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="ScrollPageMode" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="ShowTabs" type="enum:ShowTabs" minOccurs="0"/>
 				</xs:sequence>
-				<xs:attribute name="AutoLink" type="xs:boolean"/>
-				<xs:attribute name="AutoTabOrder" type="xs:boolean"/>
-				<xs:attribute name="CurrentPage" type="xs:string"/>
-				<xs:attribute name="ScrollPageMode" type="xs:boolean"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="Page">
 		<xs:sequence>
-			<xs:element name="TitlePicture" type="type:Picture" minOccurs="0"/>
-			<xs:element name="Position" type="type:ElementPosition" minOccurs="0"/>
+			<xs:element name="Alignment" type="type:Alignment" minOccurs="0"/>
 			<xs:element name="BorderBindings" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
@@ -143,13 +143,15 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element name="ChildItems" type="ChildItems" minOccurs="0"/>
-			<xs:element name="Alignment" type="type:Alignment" minOccurs="0"/>
+			<xs:element name="Enabled" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="Name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Position" type="type:ElementPosition" minOccurs="0"/>
+			<xs:element name="Title" type="xs:string" minOccurs="0"/>
+			<xs:element name="TitlePicture" type="type:Picture" minOccurs="0"/>
+			<xs:element name="ToolTip" type="xs:string" minOccurs="0"/>
+			<xs:element name="Visible" type="xs:boolean" minOccurs="0"/>
 		</xs:sequence>
-		<xs:attribute name="Enabled" type="xs:boolean"/>
-		<xs:attribute name="Name" type="xs:string"/>
-		<xs:attribute name="Title" type="xs:string"/>
-		<xs:attribute name="ToolTip" type="xs:string"/>
-		<xs:attribute name="Visible" type="xs:boolean"/>
+		<xs:attribute name="id" type="xs:string"/>
 	</xs:complexType>
 	<xs:complexType name="GroupBox">
 		<xs:complexContent>
