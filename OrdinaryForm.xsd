@@ -164,10 +164,10 @@
 							<xs:complexContent>
 								<xs:extension base="type:Decor">
 									<xs:sequence>
-										<xs:element name="TextColor" type="type:Color" minOccurs="0"/>
 										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="TextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="Transparent" type="xs:boolean" minOccurs="0"/>
 									</xs:sequence>
-									<xs:attribute name="Transparent" type="xs:boolean"/>
 								</xs:extension>
 							</xs:complexContent>
 						</xs:complexType>
@@ -187,13 +187,13 @@
 								<xs:extension base="type:Decor">
 									<xs:sequence>
 										<xs:element name="BackColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="TextColor" type="type:Color" minOccurs="0"/>
 										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
 										<xs:element name="Picture" type="type:Picture" minOccurs="0"/>
+										<xs:element name="PictureLocation" type="enum:PictureLocations" minOccurs="0"/>
+										<xs:element name="PictureSize" type="enum:PictureSizes" minOccurs="0"/>
+										<xs:element name="TextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="Transparent" type="xs:boolean" minOccurs="0"/>
 									</xs:sequence>
-									<xs:attribute name="PictureSize" type="enum:PictureSizes"/>
-									<xs:attribute name="PictureLocation" type="enum:PictureLocations"/>
-									<xs:attribute name="Transparent" type="xs:boolean"/>
 								</xs:extension>
 							</xs:complexContent>
 						</xs:complexType>
