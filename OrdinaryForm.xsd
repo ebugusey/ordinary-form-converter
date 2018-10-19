@@ -387,6 +387,21 @@
 		<xs:complexContent>
 			<xs:extension base="type:Element">
 				<xs:sequence>
+					<xs:element name="Decor" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="type:Decor">
+									<xs:sequence>
+										<xs:element name="BackColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="TextColor" type="type:Color" minOccurs="0"/>
+										<xs:element name="Transparent" type="xs:boolean" minOccurs="0"/>
+									</xs:sequence>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="DefaultControl" type="xs:boolean" minOccurs="0"/>
 					<xs:element name="Events" minOccurs="0">
 						<xs:complexType>
 							<xs:sequence>
@@ -402,26 +417,11 @@
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
+					<xs:element name="HorizontalAlign" type="enum:HorizontalAligns" minOccurs="0"/>
 					<xs:element name="SelectionValue" type="type:SimpleTypeValue" minOccurs="0"/>
-					<xs:element name="Decor" minOccurs="0">
-						<xs:complexType>
-							<xs:complexContent>
-								<xs:extension base="type:Decor">
-									<xs:sequence>
-										<xs:element name="BackColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="TextColor" type="type:Color" minOccurs="0"/>
-										<xs:element name="BorderColor" type="type:Color" minOccurs="0"/>
-									</xs:sequence>
-									<xs:attribute name="Transparent" type="xs:boolean"/>
-								</xs:extension>
-							</xs:complexContent>
-						</xs:complexType>
-					</xs:element>
+					<xs:element name="TitleLocation" type="enum:TitleLocations" minOccurs="0"/>
+					<xs:element name="VerticalAlign" type="enum:VerticalAligns" minOccurs="0"/>
 				</xs:sequence>
-				<xs:attribute name="DefaultControl" type="xs:boolean"/>
-				<xs:attribute name="HorizontalAlign" type="enum:HorizontalAligns"/>
-				<xs:attribute name="TitleLocation" type="enum:TitleLocations"/>
-				<xs:attribute name="VerticalAlign" type="enum:VerticalAligns"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
