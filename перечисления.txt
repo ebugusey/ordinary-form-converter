@@ -194,3 +194,12 @@
 ИзменениеРазмераКолонки
 0 Change
 1 DontChange
+
+ВариантПроверкиОтображенияНовойСтроки
+0 DontCheck
+1 FilterMismatchMessage
+
+ПоложениеКолонки
+2 SameColumn
+1 OnNextRow
+0 NewColumn
