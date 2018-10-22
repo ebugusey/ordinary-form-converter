@@ -62,7 +62,8 @@
 	<xs:complexType name="AlignmentLine">
 		<xs:sequence>
 			<xs:element name="Type" type="enum:AlignmentLineTypes" minOccurs="0"/>
-			<xs:element name="Position" type="Position" minOccurs="0"/>
+			<xs:element name="Position" type="xs:unsignedInt" minOccurs="0"/>
+			<xs:element name="Orientation" type="enum:Orientations" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="Position">
