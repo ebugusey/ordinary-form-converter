@@ -832,7 +832,7 @@
 				<xs:sequence>
 					<xs:element name="ActionSource" type="xs:string" minOccurs="0"/>
 					<xs:element name="AutoFill" type="xs:boolean" minOccurs="0"/>
-					<xs:element name="Buttons" minOccurs="0">
+					<xs:element name="ChildElements" minOccurs="0">
 						<xs:complexType>
 							<xs:sequence>
 								<xs:element name="CommandBarButton" type="CommandBarButton" minOccurs="0" maxOccurs="unbounded"/>
@@ -866,7 +866,7 @@
 		<xs:sequence>
 			<xs:element name="Action" type="xs:string" minOccurs="0"/>
 			<xs:element name="ButtonOrder" type="enum:CommandBarButtonOrders" minOccurs="0"/>
-			<xs:element name="Buttons" minOccurs="0">
+			<xs:element name="ChildElements" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="CommandBarButton" type="CommandBarButton" minOccurs="0" maxOccurs="unbounded"/>
