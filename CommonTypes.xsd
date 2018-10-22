@@ -7,7 +7,6 @@
 			<xs:element name="DateCompound" type="enum:DateCompound" minOccurs="0"/>
 			<xs:element name="FillChecking" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="Length" type="xs:unsignedInt" minOccurs="0"/>
-			<xs:element name="Name" type="xs:string" minOccurs="0"/>
 			<xs:element name="Nonnegative" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="Precision" type="xs:unsignedInt" minOccurs="0"/>
 			<xs:element name="Types" minOccurs="0">
@@ -18,7 +17,7 @@
 				</xs:complexType>
 			</xs:element>
 		</xs:sequence>
-		<xs:attribute name="id" type="xs:string"/>
+		<xs:attribute name="name" type="xs:string"/>
 	</xs:complexType>
 	<xs:complexType name="Element">
 		<xs:sequence>
@@ -38,13 +37,12 @@
 			<xs:element name="Enabled" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="FirstInGroup" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="ModifiesData" type="xs:boolean" minOccurs="0"/>
-			<xs:element name="Name" type="xs:string" minOccurs="0"/>
 			<xs:element name="Position" type="ElementPosition" minOccurs="0"/>
 			<xs:element name="SkipOnInput" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="ToolTip" type="xs:string" minOccurs="0"/>
 			<xs:element name="Visible" type="xs:boolean" minOccurs="0"/>
 		</xs:sequence>
-		<xs:attribute name="id" type="xs:string"/>
+		<xs:attribute name="name" type="xs:string"/>
 	</xs:complexType>
 	<xs:complexType name="Alignment">
 		<xs:sequence>
