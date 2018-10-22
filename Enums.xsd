@@ -51,7 +51,7 @@
 			<xs:enumeration value="RightHorizontal"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="DateCompound">
+	<xs:simpleType name="DateFractions">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Date"/>
 			<xs:enumeration value="Time"/>
@@ -313,6 +313,18 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Change"/>
 			<xs:enumeration value="DontChange"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AllowedLength">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Variable"/>
+			<xs:enumeration value="Fixed"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AllowedSign">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Any"/>
+			<xs:enumeration value="Nonnegative"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
