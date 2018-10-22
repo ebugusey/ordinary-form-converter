@@ -97,14 +97,6 @@
 			<xs:enumeration value="Center"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="FontTypes">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="WindowsFont"/>
-			<xs:enumeration value="Absolute"/>
-			<xs:enumeration value="AutoFont"/>
-			<xs:enumeration value="StyleElement"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="PictureLocations">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Left"/>

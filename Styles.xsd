@@ -205,4 +205,22 @@
 			<xs:enumeration value="TableHeaderBackColor"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="WindowsFonts">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ANSIFixedFont"/>
+			<xs:enumeration value="ANSIVariableFont"/>
+			<xs:enumeration value="OEMFixedFont"/>
+			<xs:enumeration value="SystemFont"/>
+			<xs:enumeration value="DefaultGUIFont"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StyleFonts">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LargeTextFont"/>
+			<xs:enumeration value="SmallTextFont"/>
+			<xs:enumeration value="NormalTextFont"/>
+			<xs:enumeration value="ExtraLargeTextFont"/>
+			<xs:enumeration value="TextFont"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
