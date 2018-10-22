@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://synerdocs.ru/Schemas/OrdinaryForms/CommonTypes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:enum="http://synerdocs.ru/Schemas/OrdinaryForms/Enums.xsd" targetNamespace="http://synerdocs.ru/Schemas/OrdinaryForms/CommonTypes.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns="http://synerdocs.ru/Schemas/OrdinaryForms/CommonTypes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:enum="http://synerdocs.ru/Schemas/OrdinaryForms/Enums.xsd" xmlns:style="http://synerdocs.ru/Schemas/OrdinaryForms/Styles.xsd" targetNamespace="http://synerdocs.ru/Schemas/OrdinaryForms/CommonTypes.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:import namespace="http://synerdocs.ru/Schemas/OrdinaryForms/Enums.xsd" schemaLocation="Enums.xsd"/>
+	<xs:import namespace="http://synerdocs.ru/Schemas/OrdinaryForms/Styles.xsd" schemaLocation="Styles.xsd"/>
 	<xs:complexType name="Attribute">
 		<xs:sequence>
 			<xs:element name="DateCompound" type="enum:DateCompound" minOccurs="0"/>
@@ -104,12 +105,18 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:complexType name="Color">
-		<xs:sequence>
-			<xs:element name="ColorType" type="enum:ColorTypes" minOccurs="0"/>
-			<xs:element name="Red" type="xs:unsignedInt" minOccurs="0"/>
-			<xs:element name="Green" type="xs:unsignedInt" minOccurs="0"/>
-			<xs:element name="Blue" type="xs:unsignedInt" minOccurs="0"/>
-		</xs:sequence>
+		<xs:choice>
+			<xs:element name="Style" type="style:StyleColors"/>
+			<xs:element name="Web" type="style:WebColors"/>
+			<xs:element name="Win" type="style:WindowsColors"/>
+			<xs:element name="Absolute">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="9"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="Font">
 		<xs:sequence>
