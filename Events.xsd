@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="Events.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="Events.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns="http://synerdocs.ru/Schemas/OrdinaryForms/Events.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://synerdocs.ru/Schemas/OrdinaryForms/Events.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:simpleType name="Button">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Click"/>
