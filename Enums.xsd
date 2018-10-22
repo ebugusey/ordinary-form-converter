@@ -105,15 +105,6 @@
 			<xs:enumeration value="StyleElement"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="ColorTypes">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="WebColor"/>
-			<xs:enumeration value="WindowsColor"/>
-			<xs:enumeration value="Absolute"/>
-			<xs:enumeration value="AutoColor"/>
-			<xs:enumeration value="StyleItem"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="PictureLocations">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Left"/>
