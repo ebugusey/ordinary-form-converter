@@ -206,3 +206,7 @@
 3 Normal
 4 Fast
 5 VeryFast
+
+РежимПоляHTMLДокумента
+1 Browse
+2 Design
