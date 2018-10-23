@@ -92,9 +92,22 @@
 	</xs:complexType>
 	<xs:complexType name="Picture">
 		<xs:sequence>
-			<xs:element name="Content" type="xs:base64Binary" minOccurs="0"/>
-			<xs:element name="Type" type="enum:PictureTypes" minOccurs="0"/>
-			<xs:element name="VariantSet" type="xs:boolean" minOccurs="0"/>
+			<xs:choice>
+				<xs:element name="Absolute" type="xs:string"/>
+				<xs:element name="Standart" type="style:PictureLib"/>
+				<xs:element name="Common" type="xs:string"/>
+			</xs:choice>
+			<xs:element name="Transparent" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="TransparentPixel" minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:boolean">
+							<xs:attribute name="x" type="xs:unsignedInt"/>
+							<xs:attribute name="y"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="Shortcut">

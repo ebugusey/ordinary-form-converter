@@ -67,13 +67,6 @@
 			<xs:enumeration value="Bottom"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="PictureTypes">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="Absolute"/>
-			<xs:enumeration value="FromLib"/>
-			<xs:enumeration value="Empty"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="MenuModes">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Use"/>
