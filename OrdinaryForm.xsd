@@ -56,7 +56,7 @@
 							<xs:complexType>
 								<xs:simpleContent>
 									<xs:extension base="xs:string">
-										<xs:attribute name="Name" type="event:Form"/>
+										<xs:attribute name="name" type="event:Form"/>
 									</xs:extension>
 								</xs:simpleContent>
 							</xs:complexType>
@@ -132,7 +132,7 @@
 									<xs:complexType>
 										<xs:simpleContent>
 											<xs:extension base="xs:string">
-												<xs:attribute name="Name" type="event:Panel"/>
+												<xs:attribute name="name" type="event:Panel"/>
 											</xs:extension>
 										</xs:simpleContent>
 									</xs:complexType>
@@ -228,7 +228,7 @@
 									<xs:complexType>
 										<xs:simpleContent>
 											<xs:extension base="xs:string">
-												<xs:attribute name="Name" type="event:Label"/>
+												<xs:attribute name="name" type="event:Label"/>
 											</xs:extension>
 										</xs:simpleContent>
 									</xs:complexType>
@@ -275,7 +275,7 @@
 									<xs:complexType>
 										<xs:simpleContent>
 											<xs:extension base="xs:string">
-												<xs:attribute name="Name" type="event:PictureBox"/>
+												<xs:attribute name="name" type="event:PictureBox"/>
 											</xs:extension>
 										</xs:simpleContent>
 									</xs:complexType>
@@ -323,7 +323,7 @@
 									<xs:complexType>
 										<xs:simpleContent>
 											<xs:extension base="xs:string">
-												<xs:attribute name="Name" type="event:Button"/>
+												<xs:attribute name="name" type="event:Button"/>
 											</xs:extension>
 										</xs:simpleContent>
 									</xs:complexType>
@@ -366,7 +366,7 @@
 									<xs:complexType>
 										<xs:simpleContent>
 											<xs:extension base="xs:string">
-												<xs:attribute name="Name" type="event:CheckBox"/>
+												<xs:attribute name="name" type="event:CheckBox"/>
 											</xs:extension>
 										</xs:simpleContent>
 									</xs:complexType>
@@ -407,7 +407,7 @@
 									<xs:complexType>
 										<xs:simpleContent>
 											<xs:extension base="xs:string">
-												<xs:attribute name="Name" type="event:RadioButton"/>
+												<xs:attribute name="name" type="event:RadioButton"/>
 											</xs:extension>
 										</xs:simpleContent>
 									</xs:complexType>
@@ -470,7 +470,7 @@
 									<xs:complexType>
 										<xs:simpleContent>
 											<xs:extension base="xs:string">
-												<xs:attribute name="Name" type="event:TextBox"/>
+												<xs:attribute name="name" type="event:TextBox"/>
 											</xs:extension>
 										</xs:simpleContent>
 									</xs:complexType>
@@ -536,7 +536,7 @@
 									<xs:complexType>
 										<xs:simpleContent>
 											<xs:extension base="xs:string">
-												<xs:attribute name="Name" type="event:ComboBox"/>
+												<xs:attribute name="name" type="event:ComboBox"/>
 											</xs:extension>
 										</xs:simpleContent>
 									</xs:complexType>
@@ -573,7 +573,7 @@
 									<xs:complexType>
 										<xs:simpleContent>
 											<xs:extension base="xs:string">
-												<xs:attribute name="Name" type="event:ListtBox"/>
+												<xs:attribute name="name" type="event:ListtBox"/>
 											</xs:extension>
 										</xs:simpleContent>
 									</xs:complexType>
@@ -639,7 +639,7 @@
 									<xs:complexType>
 										<xs:simpleContent>
 											<xs:extension base="xs:string">
-												<xs:attribute name="Name" type="event:TableBox"/>
+												<xs:attribute name="name" type="event:TableBox"/>
 											</xs:extension>
 										</xs:simpleContent>
 									</xs:complexType>
@@ -751,7 +751,7 @@
 									<xs:complexType>
 										<xs:simpleContent>
 											<xs:extension base="xs:string">
-												<xs:attribute name="Name" type="event:SpreadsheetDocumentField"/>
+												<xs:attribute name="name" type="event:SpreadsheetDocumentField"/>
 											</xs:extension>
 										</xs:simpleContent>
 									</xs:complexType>
@@ -811,7 +811,7 @@
 									<xs:complexType>
 										<xs:simpleContent>
 											<xs:extension base="xs:string">
-												<xs:attribute name="Name" type="event:HTMLDocumentField"/>
+												<xs:attribute name="name" type="event:HTMLDocumentField"/>
 											</xs:extension>
 										</xs:simpleContent>
 									</xs:complexType>
