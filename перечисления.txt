@@ -203,3 +203,12 @@
 2 SameColumn
 1 OnNextRow
 0 NewColumn
+
+ИспользованиеГруппИЭлементов
+1 Folders
+2 FoldersAndItems
+0 Items
+
+РежимВыбораНезаполненного
+1 OnActivate
+0 OnEnterPressed
