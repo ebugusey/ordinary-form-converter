@@ -118,6 +118,10 @@
 2 Bottom
 1 Center
 
+ПоложениеЗаголовка
+0 TitleLeft
+1 TitleRight
+
 ОтображениеКнопкиКоманднойПанели
 0 Auto
 2 Picture
@@ -219,3 +223,14 @@
 3 Bottom
 2 Right
 4 Center
+РежимБегущейСтроки
+0 DontUse
+1 VerySlow
+2 Slow
+3 Normal
+4 Fast
+5 VeryFast
+
+РежимПоляHTMLДокумента
+1 Browse
+2 Design
