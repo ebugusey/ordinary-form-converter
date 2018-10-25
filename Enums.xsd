@@ -320,4 +320,12 @@
 			<xs:enumeration value="Nonnegative"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="FontKinds">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="WindowsFont"/>
+			<xs:enumeration value="Absolute"/>
+			<xs:enumeration value="AutoFont"/>
+			<xs:enumeration value="StyleItem"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
