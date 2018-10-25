@@ -179,13 +179,7 @@
 	</xs:complexType>
 	<xs:complexType name="DataType">
 		<xs:sequence>
-			<xs:element name="Types" minOccurs="0">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="Type" type="enum:DataTypes" minOccurs="0" maxOccurs="unbounded"/>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
+			<xs:element name="Type" type="enum:DataTypes" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="StringQualifiers" type="StringQualifiers" minOccurs="0"/>
 			<xs:element name="NumberQualifiers" type="NumberQualifiers" minOccurs="0"/>
 			<xs:element name="DateQualifiers" type="DateQualifiers" minOccurs="0"/>
