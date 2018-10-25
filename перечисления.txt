@@ -212,3 +212,10 @@
 РежимВыбораНезаполненного
 1 OnActivate
 0 OnEnterPressed
+
+ГраницаЭлементаУправления
+1 Top
+0 Left
+3 Bottom
+2 Right
+4 Center
