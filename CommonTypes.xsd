@@ -105,20 +105,15 @@
 			<xs:extension base="xs:string"/>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:complexType name="Color">
-		<xs:choice>
-			<xs:element name="Style" type="style:StyleColors"/>
-			<xs:element name="Web" type="style:WebColors"/>
-			<xs:element name="Win" type="style:WindowsColors"/>
-			<xs:element name="Absolute">
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:length value="9"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
-		</xs:choice>
-	</xs:complexType>
+	<xs:simpleType name="Color">
+		<xs:union memberTypes="style:StyleColors style:WebColors style:WindowsColors">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:length value="9"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
 	<xs:complexType name="Font">
 		<xs:sequence>
 			<xs:element name="FaceName" type="xs:string" minOccurs="0"/>
