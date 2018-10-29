@@ -1,0 +1,13 @@
+ШрифтыСтиля
+-32 LargeTextFont
+-30 SmallTextFont
+-31 NormalTextFont
+-33 ExtraLargeTextFont
+-20 TextFont
+
+WindowsШрифты
+2 ANSIFixedFont
+3 ANSIVariableFont
+1 OEMFixedFont
+4 SystemFont
+0 DefaultGUIFont

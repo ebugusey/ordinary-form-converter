@@ -1,0 +1,237 @@
+ТипПоведенияКлавишиEnter
+0 DefaultButton
+1 ControlNavigation
+
+ВариантСостоянияОкна
+4 Normal
+1 Docked
+16 Autohide
+2 Float
+
+ВариантПрикрепленияОкна
+2 Top
+1 Left
+8 Bottom
+4 Right
+
+ВариантПоложенияОкна
+0 Auto
+2 DontOverlapOwner
+1 Center
+
+ИзменениеРазмераОкна
+0 Change
+1 DontChange
+
+ВариантСпособаОтображенияОкна
+2 Maximized
+0 Minimized
+1 Normal
+
+ИзменениеСпособаОтображенияОкна
+2 Auto
+1 Disable
+0 Enable
+
+ВидКартинки
+3 Absolute
+1 FromLib
+0 Empty
+
+ОтображениеЗакладок
+0 DontUse
+1 Top
+8 TopMultiLine
+9 TopMultilineTransposition
+7 TopScrolling
+3 LeftVertical
+5 LeftHorizontal
+2 Bottom
+11 BottomMultiLine
+12 BottomMultilineTransposition
+10 BottomScrolling
+4 RightVertical
+6 RightHorizontal
+
+ВидЦвета
+2 WebColor
+1 WindowsColor
+0 Absolute
+4 AutoColor
+3 StyleItem
+
+ВидШрифта
+1 WindowsFont
+0 Absolute
+3 AutoFont
+2 StyleItem
+
+РазмерКартинки
+4 AutoSize
+6 AutoSizeIgnoreScale
+2 Proportionally
+1 Stretch
+0 RealSize
+5 RealSizeIgnoreScale
+3 Tile
+
+ПоложениеКартинкиПанели
+2 Top
+1 Left
+4 Bottom
+3 Right
+5 Center
+
+ПоложениеКартинкиКнопки
+0 Left
+1 Right
+
+ТипРамкиЭлементаУправления
+0 WithoutBorder
+3 Indented
+2 Embossed
+200 Double
+5 DoubleUnderline
+1 Single
+4 Underline
+6 Rounded
+7 Overline
+
+ВидРамки
+0 Absolute
+1 StyleItem
+
+ИспользованиеРежимаМеню
+1 Use
+2 UseExtra
+0 DontUse
+
+ГоризонтальноеПоложение
+4 Auto
+0 Left
+3 Justify
+2 Right
+1 Center
+
+ВертикальноеПоложение
+0 Top
+2 Bottom
+1 Center
+
+ПоложениеЗаголовка
+0 TitleLeft
+1 TitleRight
+
+ОтображениеКнопкиКоманднойПанели
+0 Auto
+2 Picture
+1 Text
+3 PictureText
+
+ТипКнопкиКоманднойПанели
+0 Action
+1 Popup
+2 Separator
+
+ПорядокКнопокКоманднойПанели
+1 Asc
+0 DontOrder
+2 Desc
+
+Ориентация
+2 Auto
+0 Vertical
+1 Horizontal
+
+ВыравниваниеКнопокКоманднойПанели
+0 Left
+2 Right
+1 Center
+
+ИспользованиеВывода
+0 Auto
+2 Disable
+1 Enable
+
+РежимВводаСтрокТабличногоПоля
+1 EndOfWindow
+0 EndOfList
+3 BeforeCurrentRow
+2 AfterCurrentRow
+
+РежимВыделенияТабличногоПоля
+1 MultiLine
+0 SingleLine
+
+РежимВыделенияСтрокиТабличногоПоля
+1 Row
+0 Cell
+
+ИспользованиеПолосыПрокрутки
+2 AutoUse
+1 UseAlways
+0 DontUse
+
+НачальноеОтображениеСписка
+2 Auto
+1 End
+0 Beginning
+
+ДопустимаяДлина
+1 Variable
+0 Fixed
+
+ДопустимыйЗнак
+0 Any
+1 Nonnegative
+
+ЧастиДаты
+2 Time
+1 Date
+3 DateTime
+
+РежимРедактированияКолонки
+1 Enter
+2 EnterOnInput
+0 Directly
+
+ИзменениеРазмераКолонки
+0 Change
+1 DontChange
+
+ВариантПроверкиОтображенияНовойСтроки
+0 DontCheck
+1 FilterMismatchMessage
+
+ПоложениеКолонки
+2 SameColumn
+1 OnNextRow
+0 NewColumn
+
+ИспользованиеГруппИЭлементов
+1 Folders
+2 FoldersAndItems
+0 Items
+
+РежимВыбораНезаполненного
+1 OnActivate
+0 OnEnterPressed
+
+ГраницаЭлементаУправления
+1 Top
+0 Left
+3 Bottom
+2 Right
+4 Center
+
+РежимБегущейСтроки
+0 DontUse
+1 VerySlow
+2 Slow
+3 Normal
+4 Fast
+5 VeryFast
+
+РежимПоляHTMLДокумента
+1 Browse
+2 Design
