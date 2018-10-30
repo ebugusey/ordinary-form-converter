@@ -69,13 +69,6 @@
 			<xs:element name="MultipleChoice" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="Panel" type="Panel" minOccurs="0"/>
 			<xs:element name="RestoreValuesOnOpen" type="xs:boolean" minOccurs="0"/>
-			<xs:element name="SavedValues" minOccurs="0">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="SavedValue" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
 			<xs:element name="SaveValues" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="Size" minOccurs="0">
 				<xs:complexType>
