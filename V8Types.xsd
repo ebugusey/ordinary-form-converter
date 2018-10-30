@@ -21,15 +21,6 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:simpleType name="Color">
-		<xs:union memberTypes="style:StyleColors style:WebColors style:WindowsColors">
-			<xs:simpleType>
-				<xs:restriction base="xs:string">
-					<xs:length value="9"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:union>
-	</xs:simpleType>
 	<xs:complexType name="Font">
 		<xs:attribute name="ref">
 			<xs:simpleType>

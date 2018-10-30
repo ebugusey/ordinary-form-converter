@@ -107,12 +107,12 @@
 							<xs:complexContent>
 								<xs:extension base="Decor">
 									<xs:sequence>
-										<xs:element name="BackColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="BorderColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="BackColor" type="Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
 										<xs:element name="Picture" type="v8:Picture" minOccurs="0"/>
 										<xs:element name="PictureLocation" type="enum:PictureLocations" minOccurs="0"/>
 										<xs:element name="PictureSize" type="enum:PictureSizes" minOccurs="0"/>
-										<xs:element name="TextColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="TextColor" type="Color" minOccurs="0"/>
 										<xs:element name="Transparent" type="xs:boolean" minOccurs="0"/>
 									</xs:sequence>
 								</xs:extension>
@@ -181,8 +181,8 @@
 							<xs:complexContent>
 								<xs:extension base="Decor">
 									<xs:sequence>
-										<xs:element name="BorderColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="TextColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
+										<xs:element name="TextColor" type="Color" minOccurs="0"/>
 										<xs:element name="Transparent" type="xs:boolean" minOccurs="0"/>
 									</xs:sequence>
 								</xs:extension>
@@ -203,12 +203,12 @@
 							<xs:complexContent>
 								<xs:extension base="Decor">
 									<xs:sequence>
-										<xs:element name="BackColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="BorderColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="BackColor" type="Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
 										<xs:element name="Picture" type="v8:Picture" minOccurs="0"/>
 										<xs:element name="PictureLocation" type="enum:PictureLocations" minOccurs="0"/>
 										<xs:element name="PictureSize" type="enum:PictureSizes" minOccurs="0"/>
-										<xs:element name="TextColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="TextColor" type="Color" minOccurs="0"/>
 										<xs:element name="Transparent" type="xs:boolean" minOccurs="0"/>
 									</xs:sequence>
 								</xs:extension>
@@ -249,11 +249,11 @@
 							<xs:complexContent>
 								<xs:extension base="Decor">
 									<xs:sequence>
-										<xs:element name="BackColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="BorderColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="BackColor" type="Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
 										<xs:element name="Picture" type="v8:Picture" minOccurs="0"/>
 										<xs:element name="PictureSize" type="enum:PictureSizes" minOccurs="0"/>
-										<xs:element name="TextColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="TextColor" type="Color" minOccurs="0"/>
 										<xs:element name="Transparent" type="xs:boolean" minOccurs="0"/>
 									</xs:sequence>
 								</xs:extension>
@@ -297,9 +297,9 @@
 							<xs:complexContent>
 								<xs:extension base="Decor">
 									<xs:sequence>
-										<xs:element name="BorderColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="ButtonBackColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="ButtonTextColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
+										<xs:element name="ButtonBackColor" type="Color" minOccurs="0"/>
+										<xs:element name="ButtonTextColor" type="Color" minOccurs="0"/>
 										<xs:element name="Picture" type="v8:Picture" minOccurs="0"/>
 										<xs:element name="PictureLocation" type="enum:PictureLocations" minOccurs="0"/>
 										<xs:element name="PictureSize" type="enum:PictureSizes" minOccurs="0"/>
@@ -343,9 +343,9 @@
 							<xs:complexContent>
 								<xs:extension base="Decor">
 									<xs:sequence>
-										<xs:element name="BackColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="BorderColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="TextColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="BackColor" type="Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
+										<xs:element name="TextColor" type="Color" minOccurs="0"/>
 										<xs:element name="Transparent" type="xs:boolean" minOccurs="0"/>
 									</xs:sequence>
 								</xs:extension>
@@ -384,9 +384,9 @@
 							<xs:complexContent>
 								<xs:extension base="Decor">
 									<xs:sequence>
-										<xs:element name="BackColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="BorderColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="TextColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="BackColor" type="Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
+										<xs:element name="TextColor" type="Color" minOccurs="0"/>
 										<xs:element name="Transparent" type="xs:boolean" minOccurs="0"/>
 									</xs:sequence>
 								</xs:extension>
@@ -441,14 +441,14 @@
 							<xs:complexContent>
 								<xs:extension base="Decor">
 									<xs:sequence>
-										<xs:element name="BorderColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="ButtonBackColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="ButtonTextColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
+										<xs:element name="ButtonBackColor" type="Color" minOccurs="0"/>
+										<xs:element name="ButtonTextColor" type="Color" minOccurs="0"/>
 										<xs:element name="ChoiceButtonPicture" type="v8:Picture" minOccurs="0"/>
 										<xs:element name="ChoiceListHeight" type="xs:decimal" minOccurs="0"/>
 										<xs:element name="ChoiceListWidth" type="xs:decimal" minOccurs="0"/>
-										<xs:element name="FieldBackColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="FieldTextColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="FieldBackColor" type="Color" minOccurs="0"/>
+										<xs:element name="FieldTextColor" type="Color" minOccurs="0"/>
 										<xs:element name="Picture" type="v8:Picture" minOccurs="0"/>
 										<xs:element name="Transparent" type="xs:boolean" minOccurs="0"/>
 									</xs:sequence>
@@ -507,14 +507,14 @@
 							<xs:complexContent>
 								<xs:extension base="Decor">
 									<xs:sequence>
-										<xs:element name="BorderColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="ButtonBackColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="ButtonTextColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
+										<xs:element name="ButtonBackColor" type="Color" minOccurs="0"/>
+										<xs:element name="ButtonTextColor" type="Color" minOccurs="0"/>
 										<xs:element name="ChoiceButtonPicture" type="v8:Picture" minOccurs="0"/>
 										<xs:element name="ChoiceListHeight" type="xs:decimal" minOccurs="0"/>
 										<xs:element name="ChoiceListWidth" type="xs:decimal" minOccurs="0"/>
-										<xs:element name="FieldBackColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="FieldTextColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="FieldBackColor" type="Color" minOccurs="0"/>
+										<xs:element name="FieldTextColor" type="Color" minOccurs="0"/>
 										<xs:element name="Picture" type="v8:Picture" minOccurs="0"/>
 										<xs:element name="Transparent" type="xs:boolean" minOccurs="0"/>
 									</xs:sequence>
@@ -551,9 +551,9 @@
 							<xs:complexContent>
 								<xs:extension base="Decor">
 									<xs:sequence>
-										<xs:element name="BorderColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="FieldBackColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="FieldTextColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
+										<xs:element name="FieldBackColor" type="Color" minOccurs="0"/>
+										<xs:element name="FieldTextColor" type="Color" minOccurs="0"/>
 									</xs:sequence>
 								</xs:extension>
 							</xs:complexContent>
@@ -603,19 +603,19 @@
 							<xs:complexContent>
 								<xs:extension base="Decor">
 									<xs:sequence>
-										<xs:element name="AlternationRowBackColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="BorderColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="FieldBackColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="FieldTextColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="FooterBackColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="AlternationRowBackColor" type="Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
+										<xs:element name="FieldBackColor" type="Color" minOccurs="0"/>
+										<xs:element name="FieldTextColor" type="Color" minOccurs="0"/>
+										<xs:element name="FooterBackColor" type="Color" minOccurs="0"/>
 										<xs:element name="FooterFont" type="v8:Font" minOccurs="0"/>
-										<xs:element name="FooterTextColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="HeaderBackColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="FooterTextColor" type="Color" minOccurs="0"/>
+										<xs:element name="HeaderBackColor" type="Color" minOccurs="0"/>
 										<xs:element name="HeaderFont" type="v8:Font" minOccurs="0"/>
-										<xs:element name="HeaderTextColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="HeaderTextColor" type="Color" minOccurs="0"/>
 										<xs:element name="HorizontalLines" type="xs:boolean" minOccurs="0"/>
-										<xs:element name="SelectionBackColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="SelectionTextColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="SelectionBackColor" type="Color" minOccurs="0"/>
+										<xs:element name="SelectionTextColor" type="Color" minOccurs="0"/>
 										<xs:element name="UseAlternationRowColor" type="xs:boolean" minOccurs="0"/>
 										<xs:element name="VerticalLines" type="xs:boolean" minOccurs="0"/>
 									</xs:sequence>
@@ -684,17 +684,17 @@
 					<xs:complexContent>
 						<xs:extension base="Decor">
 							<xs:sequence>
-								<xs:element name="FieldBackColor" type="v8:Color" minOccurs="0"/>
-								<xs:element name="FieldTextColor" type="v8:Color" minOccurs="0"/>
-								<xs:element name="FooterBackColor" type="v8:Color" minOccurs="0"/>
+								<xs:element name="FieldBackColor" type="Color" minOccurs="0"/>
+								<xs:element name="FieldTextColor" type="Color" minOccurs="0"/>
+								<xs:element name="FooterBackColor" type="Color" minOccurs="0"/>
 								<xs:element name="FooterFont" type="v8:Font" minOccurs="0"/>
 								<xs:element name="FooterPicture" type="v8:Picture" minOccurs="0"/>
-								<xs:element name="FooterTextColor" type="v8:Color" minOccurs="0"/>
+								<xs:element name="FooterTextColor" type="Color" minOccurs="0"/>
 								<xs:element name="HeaderAdditionalPicture" type="v8:Picture" minOccurs="0"/>
-								<xs:element name="HeaderBackColor" type="v8:Color" minOccurs="0"/>
+								<xs:element name="HeaderBackColor" type="Color" minOccurs="0"/>
 								<xs:element name="HeaderFont" type="v8:Font" minOccurs="0"/>
 								<xs:element name="HeaderPicture" type="v8:Picture" minOccurs="0"/>
-								<xs:element name="HeaderTextColor" type="v8:Color" minOccurs="0"/>
+								<xs:element name="HeaderTextColor" type="Color" minOccurs="0"/>
 								<xs:element name="RowsPictures" type="v8:Picture" minOccurs="0"/>
 								<xs:element name="TextFont" type="v8:Font" minOccurs="0"/>
 								<xs:element name="Width" type="xs:integer" minOccurs="0"/>
@@ -732,7 +732,7 @@
 						<xs:complexType>
 							<xs:sequence>
 								<xs:element name="Border" type="Border" minOccurs="0"/>
-								<xs:element name="BorderColor" type="v8:Color" minOccurs="0"/>
+								<xs:element name="BorderColor" type="Color" minOccurs="0"/>
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
@@ -769,7 +769,7 @@
 							<xs:complexContent>
 								<xs:extension base="Decor">
 									<xs:sequence>
-										<xs:element name="BorderColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
 									</xs:sequence>
 								</xs:extension>
 							</xs:complexContent>
@@ -791,7 +791,7 @@
 							<xs:complexContent>
 								<xs:extension base="Decor">
 									<xs:sequence>
-										<xs:element name="BorderColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
 									</xs:sequence>
 								</xs:extension>
 							</xs:complexContent>
@@ -837,10 +837,10 @@
 							<xs:complexContent>
 								<xs:extension base="Decor">
 									<xs:sequence>
-										<xs:element name="BackColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="BorderColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="ButtonBackColor" type="v8:Color" minOccurs="0"/>
-										<xs:element name="ButtonTextColor" type="v8:Color" minOccurs="0"/>
+										<xs:element name="BackColor" type="Color" minOccurs="0"/>
+										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
+										<xs:element name="ButtonBackColor" type="Color" minOccurs="0"/>
+										<xs:element name="ButtonTextColor" type="Color" minOccurs="0"/>
 										<xs:element name="Transparent" type="xs:boolean" minOccurs="0"/>
 									</xs:sequence>
 								</xs:extension>
