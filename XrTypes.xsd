@@ -8,7 +8,13 @@
 				<xs:element name="Abs" type="xs:string"/>
 				<xs:element name="Ref">
 					<xs:simpleType>
-						<xs:union memberTypes="style:PictureLib xs:string"/>
+						<xs:union memberTypes="style:PictureLib">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="CommonPicture\.([\p{L}\d_])*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
 					</xs:simpleType>
 				</xs:element>
 			</xs:choice>
