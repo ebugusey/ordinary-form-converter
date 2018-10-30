@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://synerdocs.ru/Schemas/OrdinaryForms/OrdinaryForm.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:enum="http://synerdocs.ru/Schemas/OrdinaryForms/Enums.xsd" xmlns:style="http://synerdocs.ru/Schemas/OrdinaryForms/Styles.xsd" xmlns:v8="http://v8.1c.ru/8.1/data/core" targetNamespace="http://synerdocs.ru/Schemas/OrdinaryForms/OrdinaryForm.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns="http://synerdocs.ru/Schemas/OrdinaryForms/OrdinaryForm.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:enum="http://synerdocs.ru/Schemas/OrdinaryForms/Enums.xsd" xmlns:style="http://synerdocs.ru/Schemas/OrdinaryForms/Styles.xsd" targetNamespace="http://synerdocs.ru/Schemas/OrdinaryForms/OrdinaryForm.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:import namespace="http://synerdocs.ru/Schemas/OrdinaryForms/Enums.xsd" schemaLocation="Enums.xsd"/>
 	<xs:import namespace="http://synerdocs.ru/Schemas/OrdinaryForms/Styles.xsd" schemaLocation="Styles.xsd"/>
-	<xs:import namespace="http://v8.1c.ru/8.1/data/core" schemaLocation="V8Types.xsd"/>
 	<xs:complexType name="Attribute">
 		<xs:sequence>
 			<xs:element name="FillCheck" type="xs:boolean" minOccurs="0"/>

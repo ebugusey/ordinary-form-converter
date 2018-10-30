@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://synerdocs.ru/Schemas/OrdinaryForms/OrdinaryForm.xsd" xmlns:enum="http://synerdocs.ru/Schemas/OrdinaryForms/Enums.xsd" xmlns:event="http://synerdocs.ru/Schemas/OrdinaryForms/Events.xsd" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://synerdocs.ru/Schemas/OrdinaryForms/OrdinaryForm.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns="http://synerdocs.ru/Schemas/OrdinaryForms/OrdinaryForm.xsd" xmlns:enum="http://synerdocs.ru/Schemas/OrdinaryForms/Enums.xsd" xmlns:event="http://synerdocs.ru/Schemas/OrdinaryForms/Events.xsd" xmlns:xr="http://v8.1c.ru/8.1/data/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://synerdocs.ru/Schemas/OrdinaryForms/OrdinaryForm.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:include schemaLocation="CommonTypes.xsd"/>
 	<xs:import namespace="http://synerdocs.ru/Schemas/OrdinaryForms/Enums.xsd" schemaLocation="Enums.xsd"/>
 	<xs:import namespace="http://synerdocs.ru/Schemas/OrdinaryForms/Events.xsd" schemaLocation="Events.xsd"/>
-	<xs:import namespace="http://v8.1c.ru/8.1/data/core" schemaLocation="V8Types.xsd"/>
+	<xs:import namespace="http://v8.1c.ru/8.1/data/core" schemaLocation="XrTypes.xsd"/>
 	<xs:element name="Form" type="Form"/>
 	<xs:complexType name="ChildItems">
 		<xs:sequence>
@@ -37,7 +37,7 @@
 			<xs:element name="AutoFillCheck" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="AutoTitle" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="Caption" type="xs:string" minOccurs="0"/>
-			<xs:element name="CaptionPicture" type="v8:Picture" minOccurs="0"/>
+			<xs:element name="CaptionPicture" type="xr:Picture" minOccurs="0"/>
 			<xs:element name="CloseOnChoice" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="CloseOnOwnerClose" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="DataPath" type="xs:string" minOccurs="0"/>
@@ -45,7 +45,7 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="Style" type="xs:string" minOccurs="0"/>
-						<xs:element name="CaptionPicture" type="v8:Picture" minOccurs="0"/>
+						<xs:element name="CaptionPicture" type="xr:Picture" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -109,7 +109,7 @@
 									<xs:sequence>
 										<xs:element name="BackColor" type="Color" minOccurs="0"/>
 										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
-										<xs:element name="Picture" type="v8:Picture" minOccurs="0"/>
+										<xs:element name="Picture" type="xr:Picture" minOccurs="0"/>
 										<xs:element name="PictureLocation" type="enum:PictureLocations" minOccurs="0"/>
 										<xs:element name="PictureSize" type="enum:PictureSizes" minOccurs="0"/>
 										<xs:element name="TextColor" type="Color" minOccurs="0"/>
@@ -164,7 +164,7 @@
 			<xs:element name="Enabled" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="Position" type="ElementPosition" minOccurs="0"/>
 			<xs:element name="Title" type="xs:string" minOccurs="0"/>
-			<xs:element name="TitlePicture" type="v8:Picture" minOccurs="0"/>
+			<xs:element name="TitlePicture" type="xr:Picture" minOccurs="0"/>
 			<xs:element name="ToolTip" type="xs:string" minOccurs="0"/>
 			<xs:element name="Visible" type="xs:boolean" minOccurs="0"/>
 		</xs:sequence>
@@ -205,7 +205,7 @@
 									<xs:sequence>
 										<xs:element name="BackColor" type="Color" minOccurs="0"/>
 										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
-										<xs:element name="Picture" type="v8:Picture" minOccurs="0"/>
+										<xs:element name="Picture" type="xr:Picture" minOccurs="0"/>
 										<xs:element name="PictureLocation" type="enum:PictureLocations" minOccurs="0"/>
 										<xs:element name="PictureSize" type="enum:PictureSizes" minOccurs="0"/>
 										<xs:element name="TextColor" type="Color" minOccurs="0"/>
@@ -251,7 +251,7 @@
 									<xs:sequence>
 										<xs:element name="BackColor" type="Color" minOccurs="0"/>
 										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
-										<xs:element name="Picture" type="v8:Picture" minOccurs="0"/>
+										<xs:element name="Picture" type="xr:Picture" minOccurs="0"/>
 										<xs:element name="PictureSize" type="enum:PictureSizes" minOccurs="0"/>
 										<xs:element name="TextColor" type="Color" minOccurs="0"/>
 										<xs:element name="Transparent" type="xs:boolean" minOccurs="0"/>
@@ -300,7 +300,7 @@
 										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
 										<xs:element name="ButtonBackColor" type="Color" minOccurs="0"/>
 										<xs:element name="ButtonTextColor" type="Color" minOccurs="0"/>
-										<xs:element name="Picture" type="v8:Picture" minOccurs="0"/>
+										<xs:element name="Picture" type="xr:Picture" minOccurs="0"/>
 										<xs:element name="PictureLocation" type="enum:PictureLocations" minOccurs="0"/>
 										<xs:element name="PictureSize" type="enum:PictureSizes" minOccurs="0"/>
 									</xs:sequence>
@@ -444,12 +444,12 @@
 										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
 										<xs:element name="ButtonBackColor" type="Color" minOccurs="0"/>
 										<xs:element name="ButtonTextColor" type="Color" minOccurs="0"/>
-										<xs:element name="ChoiceButtonPicture" type="v8:Picture" minOccurs="0"/>
+										<xs:element name="ChoiceButtonPicture" type="xr:Picture" minOccurs="0"/>
 										<xs:element name="ChoiceListHeight" type="xs:decimal" minOccurs="0"/>
 										<xs:element name="ChoiceListWidth" type="xs:decimal" minOccurs="0"/>
 										<xs:element name="FieldBackColor" type="Color" minOccurs="0"/>
 										<xs:element name="FieldTextColor" type="Color" minOccurs="0"/>
-										<xs:element name="Picture" type="v8:Picture" minOccurs="0"/>
+										<xs:element name="Picture" type="xr:Picture" minOccurs="0"/>
 										<xs:element name="Transparent" type="xs:boolean" minOccurs="0"/>
 									</xs:sequence>
 								</xs:extension>
@@ -510,12 +510,12 @@
 										<xs:element name="BorderColor" type="Color" minOccurs="0"/>
 										<xs:element name="ButtonBackColor" type="Color" minOccurs="0"/>
 										<xs:element name="ButtonTextColor" type="Color" minOccurs="0"/>
-										<xs:element name="ChoiceButtonPicture" type="v8:Picture" minOccurs="0"/>
+										<xs:element name="ChoiceButtonPicture" type="xr:Picture" minOccurs="0"/>
 										<xs:element name="ChoiceListHeight" type="xs:decimal" minOccurs="0"/>
 										<xs:element name="ChoiceListWidth" type="xs:decimal" minOccurs="0"/>
 										<xs:element name="FieldBackColor" type="Color" minOccurs="0"/>
 										<xs:element name="FieldTextColor" type="Color" minOccurs="0"/>
-										<xs:element name="Picture" type="v8:Picture" minOccurs="0"/>
+										<xs:element name="Picture" type="xr:Picture" minOccurs="0"/>
 										<xs:element name="Transparent" type="xs:boolean" minOccurs="0"/>
 									</xs:sequence>
 								</xs:extension>
@@ -688,14 +688,14 @@
 								<xs:element name="FieldTextColor" type="Color" minOccurs="0"/>
 								<xs:element name="FooterBackColor" type="Color" minOccurs="0"/>
 								<xs:element name="FooterFont" type="Font" minOccurs="0"/>
-								<xs:element name="FooterPicture" type="v8:Picture" minOccurs="0"/>
+								<xs:element name="FooterPicture" type="xr:Picture" minOccurs="0"/>
 								<xs:element name="FooterTextColor" type="Color" minOccurs="0"/>
-								<xs:element name="HeaderAdditionalPicture" type="v8:Picture" minOccurs="0"/>
+								<xs:element name="HeaderAdditionalPicture" type="xr:Picture" minOccurs="0"/>
 								<xs:element name="HeaderBackColor" type="Color" minOccurs="0"/>
 								<xs:element name="HeaderFont" type="Font" minOccurs="0"/>
-								<xs:element name="HeaderPicture" type="v8:Picture" minOccurs="0"/>
+								<xs:element name="HeaderPicture" type="xr:Picture" minOccurs="0"/>
 								<xs:element name="HeaderTextColor" type="Color" minOccurs="0"/>
-								<xs:element name="RowsPictures" type="v8:Picture" minOccurs="0"/>
+								<xs:element name="RowsPictures" type="xr:Picture" minOccurs="0"/>
 								<xs:element name="TextFont" type="Font" minOccurs="0"/>
 								<xs:element name="Width" type="xs:integer" minOccurs="0"/>
 							</xs:sequence>
@@ -871,7 +871,7 @@
 			<xs:element name="Description" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="Enabled" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="ModifiesData" type="xs:boolean" minOccurs="0"/>
-			<xs:element name="Picture" type="v8:Picture" minOccurs="0"/>
+			<xs:element name="Picture" type="xr:Picture" minOccurs="0"/>
 			<xs:element name="Representation" type="enum:CommandBarButtonRepresentations" minOccurs="0"/>
 			<xs:element name="Shortcut" type="Shortcut" minOccurs="0"/>
 			<xs:element name="Text" type="xs:string" minOccurs="0"/>
