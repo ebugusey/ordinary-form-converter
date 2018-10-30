@@ -40,7 +40,7 @@
 			<xs:element name="CaptionPicture" type="v8:Picture" minOccurs="0"/>
 			<xs:element name="CloseOnChoice" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="CloseOnOwnerClose" type="xs:boolean" minOccurs="0"/>
-			<xs:element name="Data" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataPath" type="xs:string" minOccurs="0"/>
 			<xs:element name="Decor" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
@@ -685,7 +685,7 @@
 					</xs:choice>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="Data" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataPath" type="xs:string" minOccurs="0"/>
 			<xs:element name="Decor" minOccurs="0">
 				<xs:complexType>
 					<xs:complexContent>

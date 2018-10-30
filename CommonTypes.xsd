@@ -24,7 +24,7 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element name="ContextMenu" type="xs:string" minOccurs="0"/>
-			<xs:element name="Data" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataPath" type="xs:string" minOccurs="0"/>
 			<xs:element name="Enabled" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="FirstInGroup" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="ModifiesData" type="xs:boolean" minOccurs="0"/>
