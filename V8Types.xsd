@@ -21,19 +21,4 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="Font">
-		<xs:attribute name="ref">
-			<xs:simpleType>
-				<xs:union memberTypes="style:StyleFonts style:WindowsFonts"/>
-			</xs:simpleType>
-		</xs:attribute>
-		<xs:attribute name="kind" type="enum:FontKinds"/>
-		<xs:attribute name="faceName" type="xs:string"/>
-		<xs:attribute name="height" type="xs:unsignedInt"/>
-		<xs:attribute name="bold" type="xs:boolean"/>
-		<xs:attribute name="strikeout" type="xs:boolean"/>
-		<xs:attribute name="italic" type="xs:boolean"/>
-		<xs:attribute name="underline" type="xs:boolean"/>
-		<xs:attribute name="scale" type="xs:unsignedInt"/>
-	</xs:complexType>
 </xs:schema>

@@ -608,10 +608,10 @@
 										<xs:element name="FieldBackColor" type="Color" minOccurs="0"/>
 										<xs:element name="FieldTextColor" type="Color" minOccurs="0"/>
 										<xs:element name="FooterBackColor" type="Color" minOccurs="0"/>
-										<xs:element name="FooterFont" type="v8:Font" minOccurs="0"/>
+										<xs:element name="FooterFont" type="Font" minOccurs="0"/>
 										<xs:element name="FooterTextColor" type="Color" minOccurs="0"/>
 										<xs:element name="HeaderBackColor" type="Color" minOccurs="0"/>
-										<xs:element name="HeaderFont" type="v8:Font" minOccurs="0"/>
+										<xs:element name="HeaderFont" type="Font" minOccurs="0"/>
 										<xs:element name="HeaderTextColor" type="Color" minOccurs="0"/>
 										<xs:element name="HorizontalLines" type="xs:boolean" minOccurs="0"/>
 										<xs:element name="SelectionBackColor" type="Color" minOccurs="0"/>
@@ -687,16 +687,16 @@
 								<xs:element name="FieldBackColor" type="Color" minOccurs="0"/>
 								<xs:element name="FieldTextColor" type="Color" minOccurs="0"/>
 								<xs:element name="FooterBackColor" type="Color" minOccurs="0"/>
-								<xs:element name="FooterFont" type="v8:Font" minOccurs="0"/>
+								<xs:element name="FooterFont" type="Font" minOccurs="0"/>
 								<xs:element name="FooterPicture" type="v8:Picture" minOccurs="0"/>
 								<xs:element name="FooterTextColor" type="Color" minOccurs="0"/>
 								<xs:element name="HeaderAdditionalPicture" type="v8:Picture" minOccurs="0"/>
 								<xs:element name="HeaderBackColor" type="Color" minOccurs="0"/>
-								<xs:element name="HeaderFont" type="v8:Font" minOccurs="0"/>
+								<xs:element name="HeaderFont" type="Font" minOccurs="0"/>
 								<xs:element name="HeaderPicture" type="v8:Picture" minOccurs="0"/>
 								<xs:element name="HeaderTextColor" type="Color" minOccurs="0"/>
 								<xs:element name="RowsPictures" type="v8:Picture" minOccurs="0"/>
-								<xs:element name="TextFont" type="v8:Font" minOccurs="0"/>
+								<xs:element name="TextFont" type="Font" minOccurs="0"/>
 								<xs:element name="Width" type="xs:integer" minOccurs="0"/>
 							</xs:sequence>
 						</xs:extension>
