@@ -137,7 +137,22 @@
 	</xs:complexType>
 	<xs:complexType name="DataType">
 		<xs:sequence>
-			<xs:element name="Type" type="enum:DataTypes" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Type" minOccurs="0" maxOccurs="unbounded">
+				<xs:simpleType>
+					<xs:union memberTypes="enum:DataTypes enum:SimpleTypes">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value=""/>
+								<xs:pattern value="cfg:CatalogRef\.([\p{L}\d_])*"/>
+								<xs:pattern value="cfg:DocumentRef\.([\p{L}\d_])*"/>
+								<xs:pattern value="cfg:EnumRef\.([\p{L}\d_])*"/>
+								<xs:pattern value="cfg:ChartOfCharacteristicTypesRef\.([\p{L}\d_])*"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:union>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TypeSet" type="enum:DataTypeSets" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="StringQualifiers" type="StringQualifiers" minOccurs="0"/>
 			<xs:element name="NumberQualifiers" type="NumberQualifiers" minOccurs="0"/>
 			<xs:element name="DateQualifiers" type="DateQualifiers" minOccurs="0"/>
