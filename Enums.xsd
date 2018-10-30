@@ -2,36 +2,29 @@
 <xs:schema xmlns="http://synerdocs.ru/Schemas/OrdinaryForms/Enums.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://synerdocs.ru/Schemas/OrdinaryForms/Enums.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:simpleType name="DataTypes">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Custom"/>
-			<xs:enumeration value="Number"/>
-			<xs:enumeration value="String"/>
-			<xs:enumeration value="Date"/>
-			<xs:enumeration value="Boolean"/>
-			<xs:enumeration value="GUID"/>
-			<xs:enumeration value="ValueTable"/>
-			<xs:enumeration value="ValueTree"/>
-			<xs:enumeration value="ValueList"/>
-			<xs:enumeration value="FormattedString"/>
-			<xs:enumeration value="FormattedDocument"/>
-			<xs:enumeration value="CatalogRef"/>
-			<xs:enumeration value="DocumentRef"/>
-			<xs:enumeration value="EnumRef"/>
-			<xs:enumeration value="ChartOfCharacteristicTypesRef"/>
-			<xs:enumeration value="ChartOfAccountsRef"/>
-			<xs:enumeration value="ChartOfCalculationTypesRef"/>
-			<xs:enumeration value="BusinessProcessRef"/>
-			<xs:enumeration value="BusinessProcessRoutePointRef"/>
-			<xs:enumeration value="TaskRef"/>
-			<xs:enumeration value="ExchangePlanRef"/>
-			<xs:enumeration value="AnyRef"/>
+			<xs:enumeration value="v8:UUID"/>
+			<xs:enumeration value="v8:ValueTable"/>
+			<xs:enumeration value="v8:ValueTree"/>
+			<xs:enumeration value="v8:ValueListType"/>
+			<xs:enumeration value="v8ui:FormattedString"/>
+			<xs:enumeration value="fd:FormattedDocument"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="SimpleTypes">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Number"/>
-			<xs:enumeration value="String"/>
-			<xs:enumeration value="Date"/>
-			<xs:enumeration value="Boolean"/>
+			<xs:enumeration value="xs:decimal"/>
+			<xs:enumeration value="xs:string"/>
+			<xs:enumeration value="xs:dateTime"/>
+			<xs:enumeration value="xs:boolean"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DataTypeSets">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="cfg:CatalogRef"/>
+			<xs:enumeration value="cfg:DocumentRef"/>
+			<xs:enumeration value="cfg:EnumRef"/>
+			<xs:enumeration value="cfg:ChartOfCharacteristicTypesRef"/>
+			<xs:enumeration value="cfg:AnyRef"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ShowTabs">
