@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://synerdocs.ru/Schemas/OrdinaryForms/OrdinaryForm.xsd" xmlns:enum="http://synerdocs.ru/Schemas/OrdinaryForms/Enums.xsd" xmlns:event="http://synerdocs.ru/Schemas/OrdinaryForms/Events.xsd" xmlns:xr="http://v8.1c.ru/8.1/data/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://synerdocs.ru/Schemas/OrdinaryForms/OrdinaryForm.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns="http://synerdocs.ru/Schemas/OrdinaryForms/OrdinaryForm.xsd" xmlns:enum="http://synerdocs.ru/Schemas/OrdinaryForms/Enums.xsd" xmlns:event="http://synerdocs.ru/Schemas/OrdinaryForms/Events.xsd" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://synerdocs.ru/Schemas/OrdinaryForms/OrdinaryForm.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:include schemaLocation="CommonTypes.xsd"/>
 	<xs:import namespace="http://synerdocs.ru/Schemas/OrdinaryForms/Enums.xsd" schemaLocation="Enums.xsd"/>
 	<xs:import namespace="http://synerdocs.ru/Schemas/OrdinaryForms/Events.xsd" schemaLocation="Events.xsd"/>
-	<xs:import namespace="http://v8.1c.ru/8.1/data/core" schemaLocation="XrTypes.xsd"/>
+	<xs:import namespace="http://v8.1c.ru/8.3/xcf/readable" schemaLocation="XrTypes.xsd"/>
 	<xs:element name="Form" type="Form"/>
 	<xs:complexType name="ChildItems">
 		<xs:sequence>
