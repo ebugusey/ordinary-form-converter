@@ -66,7 +66,6 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element name="ModalMode" type="xs:boolean" minOccurs="0"/>
-			<xs:element name="MultipleChoice" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="Panel" type="Panel" minOccurs="0"/>
 			<xs:element name="RestoreValuesOnOpen" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="SaveValues" type="xs:boolean" minOccurs="0"/>
