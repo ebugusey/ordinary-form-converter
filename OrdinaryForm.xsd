@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://synerdocs.ru/Schemas/OrdinaryForms/OrdinaryForm.xsd" xmlns:enum="http://synerdocs.ru/Schemas/OrdinaryForms/Enums.xsd" xmlns:event="http://synerdocs.ru/Schemas/OrdinaryForms/Events.xsd" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://synerdocs.ru/Schemas/OrdinaryForms/OrdinaryForm.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns="http://synerdocs.ru/Schemas/OrdinaryForms/OrdinaryForm.xsd" xmlns:enum="http://synerdocs.ru/Schemas/OrdinaryForms/Enums.xsd" xmlns:event="http://synerdocs.ru/Schemas/OrdinaryForms/Events.xsd" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://synerdocs.ru/Schemas/OrdinaryForms/OrdinaryForm.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:include schemaLocation="CommonTypes.xsd"/>
 	<xs:import namespace="http://synerdocs.ru/Schemas/OrdinaryForms/Enums.xsd" schemaLocation="Enums.xsd"/>
 	<xs:import namespace="http://synerdocs.ru/Schemas/OrdinaryForms/Events.xsd" schemaLocation="Events.xsd"/>
 	<xs:import namespace="http://v8.1c.ru/8.3/xcf/readable" schemaLocation="XrTypes.xsd"/>
+	<xs:import namespace="http://v8.1c.ru/8.1/data/core" schemaLocation="V8Types.xsd"/>
 	<xs:element name="Form" type="Form"/>
 	<xs:complexType name="ChildItems">
 		<xs:sequence>
@@ -36,8 +37,7 @@
 			</xs:element>
 			<xs:element name="AutoFillCheck" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="AutoTitle" type="xs:boolean" minOccurs="0"/>
-			<xs:element name="Caption" type="xs:string" minOccurs="0"/>
-			<xs:element name="CaptionPicture" type="xr:Picture" minOccurs="0"/>
+			<xs:element name="Title" type="v8:LocalizedString" minOccurs="0"/>
 			<xs:element name="CloseOnChoice" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="CloseOnOwnerClose" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="DataPath" type="xs:string" minOccurs="0"/>
@@ -174,7 +174,7 @@
 		<xs:complexContent>
 			<xs:extension base="Element">
 				<xs:sequence>
-					<xs:element name="Caption" type="xs:string" minOccurs="0"/>
+					<xs:element name="Title" type="v8:LocalizedString" minOccurs="0"/>
 					<xs:element name="ChildItems" type="ChildItems" minOccurs="0"/>
 					<xs:element name="Decor" minOccurs="0">
 						<xs:complexType>
@@ -197,7 +197,7 @@
 		<xs:complexContent>
 			<xs:extension base="Element">
 				<xs:sequence>
-					<xs:element name="Caption" type="xs:string" minOccurs="0"/>
+					<xs:element name="Title" type="v8:LocalizedString" minOccurs="0"/>
 					<xs:element name="Decor" minOccurs="0">
 						<xs:complexType>
 							<xs:complexContent>
@@ -291,7 +291,7 @@
 			<xs:extension base="Element">
 				<xs:sequence>
 					<xs:element name="ActionSource" type="xs:string" minOccurs="0"/>
-					<xs:element name="Caption" type="xs:string" minOccurs="0"/>
+					<xs:element name="Title" type="v8:LocalizedString" minOccurs="0"/>
 					<xs:element name="Decor" minOccurs="0">
 						<xs:complexType>
 							<xs:complexContent>
