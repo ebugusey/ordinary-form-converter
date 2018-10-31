@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:style="http://synerdocs.ru/Schemas/OrdinaryForms/Styles.xsd" xmlns="http://v8.1c.ru/8.3/xcf/readable" targetNamespace="http://v8.1c.ru/8.3/xcf/readable" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://synerdocs.ru/Schemas/OrdinaryForms/Styles.xsd" schemaLocation="Styles.xsd"/>
+	<xs:complexType name="Picture">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="Abs" type="xs:string"/>
+				<xs:element name="Ref">
+					<xs:simpleType>
+						<xs:union memberTypes="style:PictureLib">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="CommonPicture\.[\p{L}_]([\p{L}\d_])*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+			</xs:choice>
+			<xs:element name="LoadTransparent" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="TransparentPixel" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="x" type="xs:unsignedInt"/>
+					<xs:attribute name="y" type="xs:unsignedInt"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
