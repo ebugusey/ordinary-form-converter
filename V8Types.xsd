@@ -27,10 +27,10 @@
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
 								<xs:pattern value=""/>
-								<xs:pattern value="cfg:CatalogRef\.([\p{L}\d_])*"/>
-								<xs:pattern value="cfg:DocumentRef\.([\p{L}\d_])*"/>
-								<xs:pattern value="cfg:EnumRef\.([\p{L}\d_])*"/>
-								<xs:pattern value="cfg:ChartOfCharacteristicTypesRef\.([\p{L}\d_])*"/>
+								<xs:pattern value="cfg:CatalogRef\.[\p{L}\d]([\p{L}\d_])*"/>
+								<xs:pattern value="cfg:DocumentRef\.[\p{L}\d]([\p{L}\d_])*"/>
+								<xs:pattern value="cfg:EnumRef\.[\p{L}\d]([\p{L}\d_])*"/>
+								<xs:pattern value="cfg:ChartOfCharacteristicTypesRef\.[\p{L}\d]([\p{L}\d_])*"/>
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:union>
