@@ -152,7 +152,7 @@
 			<xs:element name="Enabled" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="Title" type="xs:string" minOccurs="0"/>
 			<xs:element name="TitlePicture" type="xr:Picture" minOccurs="0"/>
-			<xs:element name="ToolTip" type="xs:string" minOccurs="0"/>
+			<xs:element name="ToolTip" type="v8:LocalizedString" minOccurs="0"/>
 			<xs:element name="Visible" type="xs:boolean" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="name" type="xs:string"/>
@@ -694,7 +694,7 @@
 			<xs:element name="Enabled" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="FooterHorizontalAlign" type="enum:HorizontalAligns" minOccurs="0"/>
 			<xs:element name="HeaderHorizontalAlign" type="enum:HorizontalAligns" minOccurs="0"/>
-			<xs:element name="HeaderToolTip" type="xs:string" minOccurs="0"/>
+			<xs:element name="HeaderToolTip" type="v8:LocalizedString" minOccurs="0"/>
 			<xs:element name="HorizontalAlignInColumn" type="enum:HorizontalAligns" minOccurs="0"/>
 			<xs:element name="Hyperlink" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="Location" type="enum:ColumnLocations" minOccurs="0"/>
@@ -862,7 +862,7 @@
 			<xs:element name="Representation" type="enum:CommandBarButtonRepresentations" minOccurs="0"/>
 			<xs:element name="Shortcut" type="Shortcut" minOccurs="0"/>
 			<xs:element name="Text" type="xs:string" minOccurs="0"/>
-			<xs:element name="ToolTip" type="xs:string" minOccurs="0"/>
+			<xs:element name="ToolTip" type="v8:LocalizedString" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="name" type="xs:string"/>
 	</xs:complexType>
