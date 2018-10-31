@@ -10,7 +10,7 @@
 						<xs:union memberTypes="style:PictureLib">
 							<xs:simpleType>
 								<xs:restriction base="xs:string">
-									<xs:pattern value="CommonPicture\.[\p{L}\d]([\p{L}\d_])*"/>
+									<xs:pattern value="CommonPicture\.[\p{L}_]([\p{L}\d_])*"/>
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:union>
