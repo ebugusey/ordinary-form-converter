@@ -100,7 +100,6 @@
 				<xs:sequence>
 					<xs:element name="AutoLink" type="xs:boolean" minOccurs="0"/>
 					<xs:element name="AutoTabOrder" type="xs:boolean" minOccurs="0"/>
-					<xs:element name="CurrentPage" type="xs:string" minOccurs="0"/>
 					<xs:element name="Decor" minOccurs="0">
 						<xs:complexType>
 							<xs:complexContent>
