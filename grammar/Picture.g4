@@ -2,6 +2,20 @@ grammar Picture;
 
 import V8InternalsLexer, Common;
 
+picture_block
+:
+    BLOCK_START
+        NUMBER // 7
+        VS NUMBER // РазмерКартинки
+        VS picture // Картинка
+        VS empty_picture // пустая
+        VS empty_picture // пустая
+        VS NUMBER // 100
+        VS NUMBER // 0 - для панели, 2 - для страницы
+        VS NUMBER // 0
+    BLOCK_END
+;
+
 picture
 :
     empty_picture
