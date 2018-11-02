@@ -5,6 +5,10 @@ trim_trailing_whitespace = true
 charset = utf-8
 insert_final_newline = true
 
+[*.g4]
+indent_style = space
+indent_size = 4
+
 [*.{txt,md}]
 indent_style = space
 indent_size = 2
