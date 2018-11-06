@@ -1,6 +1,6 @@
 lexer grammar V8InternalsLexer;
 
-BASE64: '#base64:' BASE64_CHAR+ ;
+BASE64: '#base64:' ( BASE64_CHAR | NEWLINE )+ ;
 
 NUMBER: MINUS? INT FRAC? EXP? ;
 STRING: QUOTE_CHAR CHAR* QUOTE_CHAR ;
@@ -20,7 +20,8 @@ BLOCK_END: '}' ;
 
 VS: ',' ;
 
-WS: [ \t\r\n] -> skip ;
+WHITESPACE: [ \t] -> skip ;
+NEWLINE: [\r\n] -> skip ;
 
 // Не должно быть чисел начинающихся с нуля.
 fragment INT: ZERO | DIGIT1_9 DIGIT* ;
