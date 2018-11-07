@@ -1,6 +1,6 @@
 grammar Actions;
 
-import V8InternalsLexer, Common, Picture, CommandLink;
+import GUIDsLexer, V8InternalsLexer, Common, Picture, CommandLink;
 
 any_action
 :
@@ -12,7 +12,7 @@ any_action
 
 custom_action
 :
-    'e1692cc2-605b-4535-84dd-28440238746c'
+    CUSTOM_ACTION_GUID
     VS BLOCK_START
         NUMBER // 3
         VS STRING // имя обработчика

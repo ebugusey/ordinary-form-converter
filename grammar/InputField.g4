@@ -1,11 +1,11 @@
 grammar InputField;
 
-import V8InternalsLexer, TypeDescription, FormElement, Picture;
+import GUIDsLexer, V8InternalsLexer, TypeDescription, FormElement, Picture;
 
 input_field
 :
     BLOCK_START
-        '381ed624-9217-4e63-85db-c4c3cb87daae'
+        INPUT_FIELD_GUID
         VS NUMBER // идентификатор элемента
         VS input_field_value
         VS panel_element_extension
@@ -99,7 +99,7 @@ input_field_extension
 input_field_simple_extension
 :
     BLOCK_START
-        '9a7643d2-19e9-45e2-8893-280bc9195a97'
+        SIMPLE_EXTENSION_GUID
         VS BLOCK_START
             NUMBER // 4
             VS typed_value // МинимальноеЗначение
@@ -126,12 +126,12 @@ input_field_value_list_extension
 input_field_catalogref_extension
 :
     BLOCK_START
-        '8585207b-9ca7-425b-9385-e8fd67c4e148'
+        CATALOGREF_EXTENSION_GUID
         VS BLOCK_START
             NUMBER // 5
             VS NUMBER // БыстрыйВыбор
             VS NUMBER // ВыборГруппИЭлементов
-            VS '00000000-0000-0000-0000-000000000000'
+            VS EMPTY_GUID
             VS data_link // связь по владельцу
         BLOCK_END
     BLOCK_END
@@ -140,12 +140,12 @@ input_field_catalogref_extension
 input_field_chartype_extension
 :
     BLOCK_START
-        '5f656c99-ee3b-4bb7-92a1-e6f5a93c2c9d'
+        CHARTYPE_EXTENSION_GUID
         VS BLOCK_START
             NUMBER // 0
             VS NUMBER // БыстрыйВыбор
             VS NUMBER // ВыборГруппИЭлементов
-            VS '00000000-0000-0000-0000-000000000000'
+            VS EMPTY_GUID
             VS data_link // связь по владельцу
         BLOCK_END
     BLOCK_END
@@ -154,10 +154,10 @@ input_field_chartype_extension
 input_field_document_extension
 :
     BLOCK_START
-        '11fe1b25-97c5-4d25-ab3f-8c9a5655122e'
+        DOCUMENT_EXTENSION_GUID
         VS BLOCK_START
             NUMBER // 3
-            VS '00000000-0000-0000-0000-000000000000'
+            VS EMPTY_GUID
         BLOCK_END
     BLOCK_END
 ;
@@ -165,11 +165,11 @@ input_field_document_extension
 input_field_enum_extension
 :
     BLOCK_START
-        '30ee7b7c-8dac-4e20-b58e-e7f7742ae8d8'
+        ENUM_EXTENSION_GUID
         VS BLOCK_START
             NUMBER // 1
             VS NUMBER // БыстрыйВыбор
-            VS '00000000-0000-0000-0000-000000000000'
+            VS EMPTY_GUID
         BLOCK_END
     BLOCK_END
 ;
@@ -177,7 +177,7 @@ input_field_enum_extension
 input_field_multitype_extension
 :
     BLOCK_START
-        '763308b0-510d-4302-8689-9d9f2a562598'
+        MULTITYPE_EXTENSION_GUID
         VS BLOCK_START
             NUMBER // 0
         BLOCK_END
@@ -196,7 +196,7 @@ data_link_item
 :
     BLOCK_START
         NUMBER // 0
-        VS 'c866d8e7-76ff-4334-9d02-144f1efe5e1d'
+        VS DATA_LINK_GUID
         VS data_path
     BLOCK_END
 ;

@@ -1,11 +1,11 @@
 grammar Panel;
 
-import V8InternalsLexer, FormElement, InputField, Picture;
+import GUIDsLexer, V8InternalsLexer, FormElement, Checkbox, HTMLDocumentField, InputField, Label, Picturebox, Radiobutton, Splitter, SpreadsheetDocumentField;
 
 main_panel
 :
     BLOCK_START
-        '09ccdc77-ea1a-4a6d-ab1c-3435eada2433'
+        PANEL_GUID
         VS panel_value
         VS panel_child_elements
     BLOCK_END
@@ -14,7 +14,7 @@ main_panel
 panel
 :
     BLOCK_START
-        '09ccdc77-ea1a-4a6d-ab1c-3435eada2433'
+        PANEL_GUID
         VS NUMBER // идентификатор элемента
         VS panel_value
         VS panel_element_extension
@@ -53,20 +53,6 @@ panel_value
             VS NUMBER VS NUMBER VS NUMBER VS NUMBER // 0,0,57,0
         BLOCK_END
         VS events
-    BLOCK_END
-;
-
-picture_block
-:
-    BLOCK_START
-        NUMBER // 7
-        VS NUMBER // РазмерКартинки
-        VS picture // Картинка
-        VS empty_picture // пустая
-        VS empty_picture // пустая
-        VS NUMBER // 100
-        VS NUMBER // 0 - для панели, 2 - для страницы
-        VS NUMBER // 0
     BLOCK_END
 ;
 
@@ -128,6 +114,13 @@ panel_child_elements
 ;
 panel_child_element
 :
-    input_field
-    | panel
+    panel
+    | checkbox
+    | html_document_field
+    | input_field
+    | label
+    | picturebox
+    | radiobutton
+    | splitter
+    | spreadsheet_document_field
 ;
