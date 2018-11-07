@@ -88,6 +88,7 @@ input_field_extension_list
 input_field_extension
 :
     input_field_simple_extension
+    | input_field_value_list_extension
     | input_field_catalogref_extension
     | input_field_chartype_extension
     | input_field_document_extension
@@ -107,6 +108,17 @@ input_field_simple_extension
             VS STRING // Маска
             VS NUMBER // РежимПароля
             VS NUMBER // РасширенноеРедактирование
+        BLOCK_END
+    BLOCK_END
+;
+
+input_field_value_list_extension
+:
+    BLOCK_START
+        '83a29520-06e8-4348-989c-abe69e8e33e2'
+        VS BLOCK_START
+            NUMBER // 0
+            VS type_description // ТипЗначенияСписка
         BLOCK_END
     BLOCK_END
 ;
