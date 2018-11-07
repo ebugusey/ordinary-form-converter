@@ -1,6 +1,6 @@
 grammar Splitter;
 
-import FormElement;
+import GUIDsLexer, V8InternalsLexer, Common, FormElement;
 
 splitter
 :

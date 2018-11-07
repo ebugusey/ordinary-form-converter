@@ -1,6 +1,6 @@
 grammar HTMLDocumentField;
 
-import FormElement;
+import GUIDsLexer, V8InternalsLexer, Common, FormElement;
 
 html_document_field
 :

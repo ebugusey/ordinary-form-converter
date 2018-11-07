@@ -1,6 +1,6 @@
 grammar Label;
 
-import FormElement;
+import GUIDsLexer, V8InternalsLexer, Common, Picture, FormElement;
 
 label
 :
