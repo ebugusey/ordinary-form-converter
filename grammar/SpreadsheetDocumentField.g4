@@ -54,7 +54,7 @@ spreadsheet_document_field_value
             VS BLOCK_START
                 NUMBER // 3
                 VS NUMBER VS NUMBER VS NUMBER VS NUMBER // 0..inf, зависит от СохранятьПозицию
-                VS any_guid
+                VS EMPTY_GUID
             BLOCK_END
             VS NUMBER // 0
             VS NUMBER // 0
