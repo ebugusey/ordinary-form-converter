@@ -1,6 +1,6 @@
 grammar FormElement;
 
-import GUIDsLexer, V8InternalsLexer, Common, Picture, Font;
+import Common, Picture, Font;
 
 decoration
 :

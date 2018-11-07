@@ -1,6 +1,6 @@
 grammar Panel;
 
-import GUIDsLexer, V8InternalsLexer, FormElement, InputField, Picture;
+import FormElement, InputField;
 
 main_panel
 :

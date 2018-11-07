@@ -1,6 +1,6 @@
 grammar SpreadsheetDocumentField;
 
-import GUIDsLexer, V8InternalsLexer, Common, InputField;
+import FormElement;
 
 spreadsheet_document_field
 :

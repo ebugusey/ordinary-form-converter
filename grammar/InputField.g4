@@ -1,6 +1,6 @@
 grammar InputField;
 
-import GUIDsLexer, V8InternalsLexer, TypeDescription, FormElement, Picture;
+import FormElement, TypeDescription;
 
 input_field
 :

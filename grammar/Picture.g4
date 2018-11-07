@@ -1,6 +1,6 @@
 grammar Picture;
 
-import V8InternalsLexer, Common;
+import Common;
 
 picture_block
 :
