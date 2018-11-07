@@ -1,11 +1,11 @@
 grammar Picturebox;
 
-import V8InternalsLexer, Common, FormElement, InputField, Picture;
+import GUIDsLexer, V8InternalsLexer, Common, FormElement, InputField, Picture;
 
 picturebox
 :
     BLOCK_START
-        '151ef23e-6bb2-4681-83d0-35bc2217230c'
+        PICTURE_BOX_GUID
         VS NUMBER // идентификатор элемента
         VS picturebox_value
         VS panel_element_extension

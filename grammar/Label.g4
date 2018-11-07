@@ -1,11 +1,11 @@
 grammar Label;
 
-import V8InternalsLexer, Common, FormElement, InputField, Picture;
+import GUIDsLexer, V8InternalsLexer, Common, FormElement, InputField, Picture;
 
 label
 :
     BLOCK_START
-        '0fc7e20d-f241-460c-bdf4-5ad88e5474a5'
+        LABEL_GUID
         VS NUMBER // идентификатор элемента
         VS label_value
         VS panel_element_extension

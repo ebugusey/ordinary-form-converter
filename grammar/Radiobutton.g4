@@ -1,11 +1,11 @@
 grammar Radiobutton;
 
-import V8InternalsLexer, Common, FormElement, InputField, Picture;
+import GUIDsLexer, V8InternalsLexer, Common, FormElement, InputField, Picture;
 
 radiobutton
 :
     BLOCK_START
-        '782e569a-79a7-4a4f-a936-b48d013936ec'
+        RADIOBUTTON_GUID
         VS NUMBER // идентификатор элемента
         VS radiobutton_value
         VS panel_element_extension

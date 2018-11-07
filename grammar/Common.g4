@@ -1,6 +1,6 @@
 grammar Common;
 
-import V8InternalsLexer;
+import GUIDsLexer, V8InternalsLexer;
 
 color
 :
@@ -35,7 +35,7 @@ border
         VS NUMBER // ТипРамки
         VS NUMBER // Толщина
         VS NUMBER
-        ( VS '48312c09-257f-4b29-b280-284dd89efc1e' )?
+        ( VS BORDER_GUID )?
     BLOCK_END
 ;
 
@@ -71,7 +71,31 @@ shortcut
     BLOCK_END
 ;
 
-any_value: any_block | NUMBER | STRING | GUID ;
+any_guid
+:
+    GUID
+    | EMPTY_GUID
+    | BORDER_GUID
+    | CUSTOM_ACTION_GUID
+    | DATA_LINK_GUID
+    | SIMPLE_EXTENSION_GUID
+    | CATALOGREF_EXTENSION_GUID
+    | CHARTYPE_EXTENSION_GUID
+    | DOCUMENT_EXTENSION_GUID
+    | ENUM_EXTENSION_GUID
+    | MULTITYPE_EXTENSION_GUID
+    | CHECKBOX_GUID
+    | HTML_DOCUMENT_GUID
+    | INPUT_FIELD_GUID
+    | LABEL_GUID
+    | PANEL_GUID
+    | PICTURE_BOX_GUID
+    | RADIOBUTTON_GUID
+    | SPLITTER_GUID
+    | SPREADSHEET_DOCUMENT_GUID
+;
+
+any_value: any_block | NUMBER | STRING | any_guid ;
 
 any_block: BLOCK_START any_value ( VS any_value )* BLOCK_END ;
 

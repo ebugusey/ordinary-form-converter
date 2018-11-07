@@ -1,11 +1,11 @@
 grammar Panel;
 
-import V8InternalsLexer, FormElement, InputField, Picture;
+import GUIDsLexer, V8InternalsLexer, FormElement, InputField, Picture;
 
 main_panel
 :
     BLOCK_START
-        '09ccdc77-ea1a-4a6d-ab1c-3435eada2433'
+        PANEL_GUID
         VS panel_value
         VS panel_child_elements
     BLOCK_END
@@ -14,7 +14,7 @@ main_panel
 panel
 :
     BLOCK_START
-        '09ccdc77-ea1a-4a6d-ab1c-3435eada2433'
+        PANEL_GUID
         VS NUMBER // идентификатор элемента
         VS panel_value
         VS panel_element_extension

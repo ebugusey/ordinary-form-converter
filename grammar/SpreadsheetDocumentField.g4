@@ -1,11 +1,11 @@
 grammar SpreadsheetDocumentField;
 
-import V8InternalsLexer, Common, FormElement, InputField, Picture;
+import GUIDsLexer, V8InternalsLexer, Common, InputField;
 
 spreadsheet_document_field
 :
     BLOCK_START
-        '236a17b3-7f44-46d9-a907-75f9cdc61ab5'
+        SPREADSHEET_DOCUMENT_GUID
         VS NUMBER // идентификатор элемента
         VS spreadsheet_document_field_value
         VS panel_element_extension
@@ -54,7 +54,7 @@ spreadsheet_document_field_value
             VS BLOCK_START
                 NUMBER // 3
                 VS NUMBER VS NUMBER VS NUMBER VS NUMBER // 0..inf, зависит от СохранятьПозицию
-                VS GUID
+                VS any_guid
             BLOCK_END
             VS NUMBER // 0
             VS NUMBER // 0

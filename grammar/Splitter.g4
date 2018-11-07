@@ -1,11 +1,11 @@
 grammar Splitter;
 
-import V8InternalsLexer, Common, FormElement, InputField, Picture;
+import GUIDsLexer, V8InternalsLexer, Common, FormElement, InputField, Picture;
 
 splitter
 :
     BLOCK_START
-        '36e52348-5d60-4770-8e89-a16ed50a2006'
+        SPLITTER_GUID
         VS NUMBER // идентификатор элемента
         VS splitter_value
         VS panel_element_extension

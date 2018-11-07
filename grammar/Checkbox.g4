@@ -1,11 +1,11 @@
 grammar Checkbox;
 
-import V8InternalsLexer, Common, FormElement, InputField, Picture;
+import GUIDsLexer, V8InternalsLexer, Common, FormElement, InputField, Picture;
 
 checkbox
 :
     BLOCK_START
-        '35af3d93-d7c7-4a2e-a8eb-bac87a1a3f26'
+        CHECKBOX_GUID
         VS NUMBER // идентификатор элемента
         VS checkbox_value
         VS panel_element_extension

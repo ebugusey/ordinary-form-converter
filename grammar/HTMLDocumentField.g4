@@ -1,11 +1,11 @@
 grammar HTMLDocumentField;
 
-import V8InternalsLexer, Common, FormElement, InputField, Picture;
+import GUIDsLexer, V8InternalsLexer, Common, FormElement, InputField, Picture;
 
 html_document_field
 :
     BLOCK_START
-        'd92a805c-98ae-4750-9158-d9ce7cec2f20'
+        HTML_DOCUMENT_GUID
         VS NUMBER // идентификатор элемента
         VS html_document_field_value
         VS panel_element_extension
