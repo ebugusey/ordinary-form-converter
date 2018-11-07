@@ -29,39 +29,7 @@ spreadsheet_document_field_value
         VS any_block
         VS NUMBER // (0|1) СохранятьПозицию
         VS NUMBER // (0|1) СохранятьПозициюФиксации
-        VS BLOCK_START
-            NUMBER // 3
-            VS NUMBER VS NUMBER // 0..inf, зависит от СохранятьПозицию
-            VS NUMBER // 100
-            VS NUMBER // (0|1) ОтображатьСетку
-            VS NUMBER // (0|1) ОтображатьЗаголовки
-            VS NUMBER // 0
-            VS NUMBER VS NUMBER // (0|1), (0|1) ОтображатьГруппы
-            VS NUMBER // 0
-            VS NUMBER // (0|1) ЧерноБелыйПросмотр
-            VS NUMBER // 0
-            VS NUMBER // 0
-            VS NUMBER // 0
-            VS NUMBER // 0
-            VS NUMBER // 0
-            VS NUMBER // 0
-            VS NUMBER VS NUMBER // 0..inf, зависит от СохранятьПозицию
-            VS NUMBER // 0
-            VS NUMBER // 0
-            VS STRING // "ru"
-            VS NUMBER // 0
-            VS NUMBER // 1
-            VS BLOCK_START
-                NUMBER // 3
-                VS NUMBER VS NUMBER VS NUMBER VS NUMBER // 0..inf, зависит от СохранятьПозицию
-                VS EMPTY_GUID
-            BLOCK_END
-            VS NUMBER // 0
-            VS NUMBER // 0
-            VS NUMBER // 0
-            VS NUMBER // 0
-            VS NUMBER // 0
-        BLOCK_END
+        VS spreadsheet_document
         VS NUMBER // (0|1) ГоризонтальнаяПолосаПрокрутки?
         VS NUMBER // (0|1) ВертикальнаяПолосаПрокрутки?
         VS events
@@ -80,5 +48,42 @@ spreadsheet_document_field_value
         VS NUMBER // 0
         VS NUMBER // (0|1) ГоризонтальнаяПолосаПрокрутки?
         VS NUMBER // (0|1) ВертикальнаяПолосаПрокрутки?
+    BLOCK_END
+;
+
+spreadsheet_document
+:
+    BLOCK_START
+        NUMBER // 3
+        VS NUMBER VS NUMBER // 0..inf, зависит от СохранятьПозицию
+        VS NUMBER // 100
+        VS NUMBER // (0|1) ОтображатьСетку
+        VS NUMBER // (0|1) ОтображатьЗаголовки
+        VS NUMBER // 0
+        VS NUMBER VS NUMBER // (0|1), (0|1) ОтображатьГруппы
+        VS NUMBER // 0
+        VS NUMBER // (0|1) ЧерноБелыйПросмотр
+        VS NUMBER // 0
+        VS NUMBER // 0
+        VS NUMBER // 0
+        VS NUMBER // 0
+        VS NUMBER // 0
+        VS NUMBER // 0
+        VS NUMBER VS NUMBER // 0..inf, зависит от СохранятьПозицию
+        VS NUMBER // 0
+        VS NUMBER // 0
+        VS STRING // "ru"
+        VS NUMBER // 0
+        VS NUMBER // 1
+        VS BLOCK_START
+            NUMBER // 3
+            VS NUMBER VS NUMBER VS NUMBER VS NUMBER // 0..inf, зависит от СохранятьПозицию
+            VS EMPTY_GUID
+        BLOCK_END
+        VS NUMBER // 0
+        VS NUMBER // 0
+        VS NUMBER // 0
+        VS NUMBER // 0
+        VS NUMBER // 0
     BLOCK_END
 ;
