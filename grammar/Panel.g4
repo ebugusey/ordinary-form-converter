@@ -1,6 +1,6 @@
 grammar Panel;
 
-import FormElement, InputField;
+import FormElement, Checkbox, HTMLDocumentField, InputField, Label, Picturebox, Radiobutton, Splitter, SpreadsheetDocumentField;
 
 main_panel
 :
@@ -112,6 +112,13 @@ panel_child_elements
 ;
 panel_child_element
 :
-    input_field
-    | panel
+    panel
+    | checkbox
+    | html_document_field
+    | input_field
+    | label
+    | picturebox
+    | radiobutton
+    | splitter
+    | spreadsheet_document_field
 ;
