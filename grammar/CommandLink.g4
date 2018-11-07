@@ -6,6 +6,7 @@ command_collection_link
 :
     custom_command_collection_link
     | form_command_collection_link
+    | popup_command_collection_link
     | tabular_section_command_collection_link
 ;
 
@@ -43,6 +44,12 @@ form_command_collection_link
 :
     'b78f2e80-ec68-11d4-9dcf-0050bae2bc79'
     VS NUMBER // 4 - форма | 55 - Действия (обработка)
+;
+
+popup_command_collection_link
+:
+    '31946946-0a9b-40a2-95cf-82f200778341'
+    VS NUMBER // 0
 ;
 
 tabular_section_command_collection_link
