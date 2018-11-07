@@ -46,4 +46,4 @@ fragment CHAR: UNESCAPED | ESCAPE_SEQ ;
 fragment ESCAPE_SEQ: QUOTE_CHAR QUOTE_CHAR ;
 fragment UNESCAPED: ~'"' ;
 
-fragment BASE64_CHAR: [A-Za-z0-9+/=] ;
+fragment BASE64_CHAR: [A-Za-z0-9+/=\n\r] ;
