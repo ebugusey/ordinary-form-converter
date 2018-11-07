@@ -81,3 +81,9 @@ empty_list
         NUMBER // 0
     BLOCK_END
 ;
+
+empty_block
+:
+    BLOCK_START
+    BLOCK_END
+;
