@@ -6,15 +6,17 @@ type_description
 :
     BLOCK_START
         STRING // "Pattern"
-        VS
-        (
-            type_description_3q
-            | type_description_2q
-            | type_description_non_q
-            | type_description_datetime
-            | type_description_ref
-        )
+        ( VS type_description_value )*
     BLOCK_END
+;
+
+type_description_value
+:
+    type_description_3q
+    | type_description_2q
+    | type_description_non_q
+    | type_description_datetime
+    | type_description_ref
 ;
 
 type_description_2q
