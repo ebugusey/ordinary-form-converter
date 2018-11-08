@@ -10,6 +10,9 @@ import
     PictureBox,
     RadioButton,
     Splitter,
+    Button,
+    CommandBar,
+    TableBox,
     SpreadsheetDocumentField;
 
 mainPanel
@@ -132,5 +135,8 @@ panelChildElement
     | pictureBox
     | radioButton
     | splitter
+    | button
+    | commandBar
+    | tableBox
     | spreadsheetDocumentField
 ;
