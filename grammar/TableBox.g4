@@ -1,39 +1,39 @@
-grammar Table;
+grammar TableBox;
 
 import V8InternalsLexer, TypeDescription, FormElement;
 
-table
+tableBox
 :
     BLOCK_START
         'ea83fe3a-ac3c-4cce-8045-3dddf35b28b1'
         VS NUMBER // идентификатор элемента
-        VS tableValue
+        VS tableBoxValue
         VS panelElementExtension
         VS formElementExtension
         VS emptyList
     BLOCK_END
 ;
 
-tableValue
+tableBoxValue
 :
     BLOCK_START
         NUMBER // 5
         VS typeDescription // ТипЗначения
         VS BLOCK_START
             decoration
-            VS tableDecorationAndColumns
+            VS tableBoxDecorationAndColumns
         BLOCK_END
         VS
         (
-            tableValueTableExtension
-            | tableTabularSectionExtension
-            | tableValueTreeExtension
+            tableBoxValueTableExtension
+            | tableBoxTabularSectionExtension
+            | tableBoxValueTreeExtension
         )
         VS events
     BLOCK_END
 ;
 
-tableDecorationAndColumns
+tableBoxDecorationAndColumns
 :
     BLOCK_START
         NUMBER // 18
@@ -66,7 +66,7 @@ tableDecorationAndColumns
     BLOCK_END
 ;
 
-tableValueTableExtension
+tableBoxValueTableExtension
 :
     BLOCK_START
         '342cf854-134c-42bb-8af9-a2103d5d9723'
@@ -78,7 +78,7 @@ tableValueTableExtension
     BLOCK_END
 ;
 
-tableTabularSectionExtension
+tableBoxTabularSectionExtension
 :
     BLOCK_START
         '51d1e122-c0f3-496f-901e-806df8206ba9'
@@ -93,7 +93,7 @@ tableTabularSectionExtension
     BLOCK_END
 ;
 
-tableValueTreeExtension
+tableBoxValueTreeExtension
 :
     BLOCK_START
         '9ab3fa70-d2e0-4e44-baac-730682272ed2'
