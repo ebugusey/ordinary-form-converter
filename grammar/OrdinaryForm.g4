@@ -116,7 +116,7 @@ formExtension
 noMainAttributeFormExtension
 :
     BLOCK_START
-        '00000000-0000-0000-0000-000000000000'
+        EMPTY_GUID
         VS NUMBER // 0
     BLOCK_END
 ;
@@ -173,7 +173,7 @@ contextMenuLink
 :
     NUMBER // идентификатор элемента формы (0 - форма)
     VS NUMBER // 4294967295
-    VS '357c6a54-357d-425d-a2bd-22f4f6e86c87' //
+    VS UNKNOWN_COMMAND_GUID //
     VS NUMBER // 2147483647
     VS NUMBER // 0
 ;

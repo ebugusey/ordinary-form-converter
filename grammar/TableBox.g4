@@ -5,7 +5,7 @@ import V8InternalsLexer, TypeDescription, FormElement;
 tableBox
 :
     BLOCK_START
-        'ea83fe3a-ac3c-4cce-8045-3dddf35b28b1'
+        TABLE_BOX_GUID
         VS NUMBER // идентификатор элемента
         VS tableBoxValue
         VS panelElementExtension
@@ -69,7 +69,7 @@ tableBoxDecorationAndColumns
 tableBoxValueTableExtension
 :
     BLOCK_START
-        '342cf854-134c-42bb-8af9-a2103d5d9723'
+        TABLE_BOX_VALUE_TABLE_EXTENSION_GUID
         VS BLOCK_START
             NUMBER // 5
             VS NUMBER VS NUMBER // 0,0
@@ -81,7 +81,7 @@ tableBoxValueTableExtension
 tableBoxTabularSectionExtension
 :
     BLOCK_START
-        '51d1e122-c0f3-496f-901e-806df8206ba9'
+        TABLE_BOX_TABULAR_SECTION_EXTENSION_GUID
         VS BLOCK_START
             NUMBER // 2
             VS NUMBER // ИзменятьПорядокСтрок
@@ -96,7 +96,7 @@ tableBoxTabularSectionExtension
 tableBoxValueTreeExtension
 :
     BLOCK_START
-        '9ab3fa70-d2e0-4e44-baac-730682272ed2'
+        TABLE_BOX_VALUE_TREE_EXTENSION_GUID
         VS BLOCK_START
             NUMBER // 4
             VS NUMBER // Дерево
@@ -123,7 +123,7 @@ column
 formAttributeColumn
 :
     BLOCK_START
-        '737535a4-21e6-4971-8513-3e3173a9fedd'
+        TABLE_BOX_FORM_ATTRIBUTE_COLUMN_GUID
         VS BLOCK_START
             NUMBER // 8
             VS columnValue
@@ -134,7 +134,7 @@ formAttributeColumn
 tabularSectionColumn
 :
     BLOCK_START
-        'c2cf1953-2796-4fe2-b78c-ff84140b124e'
+        TABLE_BOX_TABULAR_SECTION_COLUMN_GUID
         VS BLOCK_START
             NUMBER // 1
             VS columnValue
@@ -160,7 +160,7 @@ columnValue
             VS picture // КартинкиСтрок
             VS picture // КартинкаПодвала
             VS NUMBER VS NUMBER // 16,16
-            VS 'd2314b5d-8da4-4e0f-822b-45e7500eae09'
+            VS TABLE_BOX_COLUMN_VALUE_GUID
             VS color // ЦветФонаПоля
             VS color // ЦветТекстаПоля
             VS color // ЦветФонаШапки
@@ -221,8 +221,8 @@ formAttributeDataSourceBlock
 
 formElementTypeId
 :
-    '381ed624-9217-4e63-85db-c4c3cb87daae' // поле ввода
-    | '00000000-0000-0000-0000-000000000000' // нет элемента (например для стандартного реквизита НомерСтроки)
+    INPUT_FIELD_GUID // поле ввода
+    | EMPTY_GUID // нет элемента (например для стандартного реквизита НомерСтроки)
 ;
 
 columnControl

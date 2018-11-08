@@ -5,7 +5,7 @@ import V8InternalsLexer, Common, Picture, FormElement, Menu;
 button
 :
     BLOCK_START
-        '6ff79819-710e-4145-97cd-1618da79e3e2'
+        BUTTON_GUID
         VS NUMBER // идентификатор элемента
         VS buttonValue
         VS panelElementExtension

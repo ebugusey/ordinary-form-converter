@@ -30,7 +30,7 @@ customAction
 
 specialAction
 :
-    'abde0c9a-18a6-4e0c-bbaa-af26b911b3e6'
+    SPECIAL_ACTION_GUID
     VS
     (
         emptyActionValue
@@ -65,7 +65,7 @@ customSubmenuValue
 
 standardSubmenu
 :
-    'c93a51ed-b2d1-47f1-948d-38373f8710af'
+    STANDARD_SUBMENU_GUID
     VS
     (
         formStandardSubmenuValue
@@ -103,7 +103,7 @@ tabularSectionStandardSubmenuValue
 
 standardAction
 :
-    'fbe38877-b914-4fd5-8540-07dde06ba2e1'
+    STANDARD_ACTION_GUID
     VS
     (
         formStandardActionValue

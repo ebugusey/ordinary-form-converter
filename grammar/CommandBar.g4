@@ -5,7 +5,7 @@ import V8InternalsLexer, FormElement, Menu, CommandLink;
 commandBar
 :
     BLOCK_START
-        'e69bf21d-97b2-4f37-86db-675aea9ec2cb'
+        COMMAND_BAR_GUID
         VS NUMBER // идентификатор элемента
         VS commandBarValue
         VS panelElementExtension
