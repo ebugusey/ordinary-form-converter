@@ -1,7 +1,7 @@
 grammar Panel;
 
 import
-    GUIDsLexer, V8InternalsLexer,
+    KeywordsLexer, V8InternalsLexer,
     Common, Picture, FormElement,
     Checkbox,
     HTMLDocumentField,

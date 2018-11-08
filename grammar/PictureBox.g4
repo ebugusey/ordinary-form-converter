@@ -1,6 +1,6 @@
 grammar PictureBox;
 
-import GUIDsLexer, V8InternalsLexer, Common, Picture, FormElement;
+import KeywordsLexer, V8InternalsLexer, Common, Picture, FormElement;
 
 pictureBox
 :

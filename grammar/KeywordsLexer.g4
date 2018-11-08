@@ -1,4 +1,4 @@
-lexer grammar GUIDsLexer;
+lexer grammar KeywordsLexer;
 
 import V8InternalsLexer;
 
