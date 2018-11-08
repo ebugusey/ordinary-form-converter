@@ -7,14 +7,14 @@ splitter
     BLOCK_START
         SPLITTER_GUID
         VS NUMBER // идентификатор элемента
-        VS splitter_value
-        VS panel_element_extension
-        VS form_element_extension
-        VS empty_list
+        VS splitterValue
+        VS panelElementExtension
+        VS formElementExtension
+        VS emptyList
     BLOCK_END
 ;
 
-splitter_value
+splitterValue
 :
     BLOCK_START
         NUMBER // 0

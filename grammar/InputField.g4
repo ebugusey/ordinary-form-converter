@@ -2,23 +2,23 @@ grammar InputField;
 
 import GUIDsLexer, V8InternalsLexer, TypeDescription, FormElement, Picture;
 
-input_field
+inputField
 :
     BLOCK_START
         INPUT_FIELD_GUID
         VS NUMBER // идентификатор элемента
-        VS input_field_value
-        VS panel_element_extension
-        VS form_element_extension
-        VS empty_list
+        VS inputFieldValue
+        VS panelElementExtension
+        VS formElementExtension
+        VS emptyList
     BLOCK_END
 ;
 
-input_field_value
+inputFieldValue
 :
     BLOCK_START
         NUMBER // 9
-        VS type_description // ТипЗначения
+        VS typeDescription // ТипЗначения
         VS BLOCK_START
             BLOCK_START
                 decoration
@@ -40,8 +40,8 @@ input_field_value
                 VS NUMBER // 0..inf
                 VS NUMBER // ГоризонтальноеПоложение
                 VS NUMBER // ВертикальноеПоложение
-                VS typed_value // Неопределено
-                VS typed_value // Неопределено
+                VS typedValue // Неопределено
+                VS typedValue // Неопределено
                 VS STRING // Маска
                 VS NUMBER // 0
                 VS NUMBER // 1
@@ -55,7 +55,7 @@ input_field_value
                 VS NUMBER // ВысотаСпискаВыбора
                 VS NUMBER // ШиринаСпискаВыбора
                 VS shortcut // СочетаниеКлавиш
-                VS localized_string // Формат
+                VS localizedString // Формат
                 VS NUMBER // АвтоОтметкаНезаполненного
                 VS NUMBER // АвтоВыборНезаполненного
                 VS NUMBER // РежимВыбораНезаполненного
@@ -67,43 +67,43 @@ input_field_value
                 VS NUMBER // 1
             BLOCK_END
         BLOCK_END
-        VS input_field_extension_list
+        VS inputFieldExtensionList
         VS events
         VS NUMBER // НЕ РедактированиеТекста
         VS NUMBER // ВыбиратьТип
         VS NUMBER // 0
-        VS data_link // связь по типу
+        VS dataLink // связь по типу
         VS NUMBER // РежимВыбораИзСписка
     BLOCK_END
 ;
 
-input_field_extension_list
+inputFieldExtensionList
 :
     BLOCK_START
         NUMBER // количество элементов
-        ( VS input_field_extension )*
+        ( VS inputFieldExtension )*
     BLOCK_END
 ;
 
-input_field_extension
+inputFieldExtension
 :
-    input_field_simple_extension
-    | input_field_value_list_extension
-    | input_field_catalogref_extension
-    | input_field_chartype_extension
-    | input_field_document_extension
-    | input_field_enum_extension
-    | input_field_multitype_extension
+    inputFieldSimpleExtension
+    | inputFieldValueListExtension
+    | inputFieldCatalogRefExtension
+    | inputFieldCharTypeExtension
+    | inputFieldDocumentExtension
+    | inputFieldEnumExtension
+    | inputFieldMultiTypeExtension
 ;
 
-input_field_simple_extension
+inputFieldSimpleExtension
 :
     BLOCK_START
         SIMPLE_EXTENSION_GUID
         VS BLOCK_START
             NUMBER // 4
-            VS typed_value // МинимальноеЗначение
-            VS typed_value // МаксимальноеЗначение
+            VS typedValue // МинимальноеЗначение
+            VS typedValue // МаксимальноеЗначение
             VS NUMBER // МногострочныйРежим
             VS STRING // Маска
             VS NUMBER // РежимПароля
@@ -112,18 +112,18 @@ input_field_simple_extension
     BLOCK_END
 ;
 
-input_field_value_list_extension
+inputFieldValueListExtension
 :
     BLOCK_START
         '83a29520-06e8-4348-989c-abe69e8e33e2'
         VS BLOCK_START
             NUMBER // 0
-            VS type_description // ТипЗначенияСписка
+            VS typeDescription // ТипЗначенияСписка
         BLOCK_END
     BLOCK_END
 ;
 
-input_field_catalogref_extension
+inputFieldCatalogRefExtension
 :
     BLOCK_START
         CATALOGREF_EXTENSION_GUID
@@ -132,12 +132,12 @@ input_field_catalogref_extension
             VS NUMBER // БыстрыйВыбор
             VS NUMBER // ВыборГруппИЭлементов
             VS EMPTY_GUID
-            VS data_link // связь по владельцу
+            VS dataLink // связь по владельцу
         BLOCK_END
     BLOCK_END
 ;
 
-input_field_chartype_extension
+inputFieldCharTypeExtension
 :
     BLOCK_START
         CHARTYPE_EXTENSION_GUID
@@ -146,12 +146,12 @@ input_field_chartype_extension
             VS NUMBER // БыстрыйВыбор
             VS NUMBER // ВыборГруппИЭлементов
             VS EMPTY_GUID
-            VS data_link // связь по владельцу
+            VS dataLink // связь по владельцу
         BLOCK_END
     BLOCK_END
 ;
 
-input_field_document_extension
+inputFieldDocumentExtension
 :
     BLOCK_START
         DOCUMENT_EXTENSION_GUID
@@ -162,7 +162,7 @@ input_field_document_extension
     BLOCK_END
 ;
 
-input_field_enum_extension
+inputFieldEnumExtension
 :
     BLOCK_START
         ENUM_EXTENSION_GUID
@@ -174,7 +174,7 @@ input_field_enum_extension
     BLOCK_END
 ;
 
-input_field_multitype_extension
+inputFieldMultiTypeExtension
 :
     BLOCK_START
         MULTITYPE_EXTENSION_GUID
@@ -184,46 +184,46 @@ input_field_multitype_extension
     BLOCK_END
 ;
 
-data_link
+dataLink
 :
     BLOCK_START
         NUMBER // 1
         VS NUMBER // 0..1 количество элементов?
-        ( VS data_link_item )?
+        ( VS dataLinkItem )?
     BLOCK_END
 ;
-data_link_item
+dataLinkItem
 :
     BLOCK_START
         NUMBER // 0
         VS DATA_LINK_GUID
-        VS data_path
+        VS dataPath
     BLOCK_END
 ;
 
-data_path
+dataPath
 :
-    attribute_data_path
-    | column_data_path
+    attributeDataPath
+    | columnDataPath
 ;
 
-attribute_data_path
+attributeDataPath
 :
     BLOCK_START
         NUMBER // 2
         VS NUMBER // 1
-        VS element_ref // идентификатор реквизита
+        VS elementRef // идентификатор реквизита
     BLOCK_END
 ;
 
-column_data_path
+columnDataPath
 :
     BLOCK_START
         NUMBER // 2
         VS NUMBER // 4
-        VS element_ref // {-2}
-        VS element_ref // идентификатор элемента формы
-        VS element_ref // {0}
-        VS element_ref // идентификатор колонки * 3
+        VS elementRef // {-2}
+        VS elementRef // идентификатор элемента формы
+        VS elementRef // {0}
+        VS elementRef // идентификатор колонки * 3
     BLOCK_END
 ;

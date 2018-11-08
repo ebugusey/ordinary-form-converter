@@ -17,7 +17,7 @@ decoration
         VS color // ЦветФонаКнопки
         VS color // ЦветТекстаКнопки
         VS border // Рамка
-        VS localized_string // Подсказка
+        VS localizedString // Подсказка
         VS NUMBER VS NUMBER VS NUMBER // 0,0,100
         VS NUMBER // ? 0 - панель, 0 - кнопка, 1 - поле ввода, 2 - табличное поле
     BLOCK_END
@@ -34,11 +34,11 @@ event
 :
     BLOCK_START
         NUMBER // идентификатор события
-        VS custom_action
+        VS customAction
     BLOCK_END
 ;
 
-form_element_extension
+formElementExtension
 :
     BLOCK_START
         NUMBER // 14
@@ -50,23 +50,23 @@ form_element_extension
     BLOCK_END
 ;
 
-panel_element_extension
+panelElementExtension
 :
     BLOCK_START
         NUMBER // 8
         VS NUMBER VS NUMBER // координаты левого верхнего угла
         VS NUMBER VS NUMBER // координаты правого нижнего угла
         VS NUMBER // Видимость
-        VS element_link // верхняя граница
-        VS element_link // нижняя граница
-        VS element_link // левая граница
-        VS element_link // правая граница
-        VS element_link // пустая
-        VS element_link // пустая
-        VS linked_element_list // к верхней границе
-        VS linked_element_list // к нижней границе
-        VS linked_element_list // к левой границе
-        VS linked_element_list // к правой границе
+        VS elementLink // верхняя граница
+        VS elementLink // нижняя граница
+        VS elementLink // левая граница
+        VS elementLink // правая граница
+        VS elementLink // пустая
+        VS elementLink // пустая
+        VS linkedElementList // к верхней границе
+        VS linkedElementList // к нижней границе
+        VS linkedElementList // к левой границе
+        VS linkedElementList // к правой границе
         VS NUMBER VS NUMBER VS NUMBER VS NUMBER // 0,0,0,0
         VS NUMBER // ПорядокОбхода
         VS NUMBER // установлена ручная горизонтальная привязка
@@ -74,15 +74,15 @@ panel_element_extension
     BLOCK_END
 ;
 
-element_link
+elementLink
 :
     BLOCK_START
         NUMBER // 0
-        VS element_link_item // Привязать к
-        VS element_link_item // Сохранять пропорции до
+        VS elementLinkItem // Привязать к
+        VS elementLinkItem // Сохранять пропорции до
     BLOCK_END
 ;
-element_link_item
+elementLinkItem
 :
     BLOCK_START
         NUMBER // 2
@@ -92,12 +92,12 @@ element_link_item
     BLOCK_END
 ;
 
-linked_element_list
+linkedElementList
 :
     NUMBER // количество элементов
-    ( VS linked_element )*
+    ( VS linkedElement )*
 ;
-linked_element
+linkedElement
 :
     BLOCK_START
         NUMBER // 0
@@ -106,7 +106,7 @@ linked_element
     BLOCK_END
 ;
 
-element_ref
+elementRef
 :
     BLOCK_START
         NUMBER // идентификатор элемента или реквизита

@@ -2,19 +2,19 @@ grammar SpreadsheetDocumentField;
 
 import GUIDsLexer, V8InternalsLexer, Common, FormElement;
 
-spreadsheet_document_field
+spreadsheetDocumentField
 :
     BLOCK_START
         SPREADSHEET_DOCUMENT_GUID
         VS NUMBER // идентификатор элемента
-        VS spreadsheet_document_field_value
-        VS panel_element_extension
-        VS form_element_extension
-        VS empty_list
+        VS spreadsheetDocumentFieldValue
+        VS panelElementExtension
+        VS formElementExtension
+        VS emptyList
     BLOCK_END
 ;
 
-spreadsheet_document_field_value
+spreadsheetDocumentFieldValue
 :
     BLOCK_START
         NUMBER // 18
@@ -26,10 +26,10 @@ spreadsheet_document_field_value
         VS NUMBER // (0|1) Доступность
         VS color
         VS border
-        VS any_block
+        VS anyBlock
         VS NUMBER // (0|1) СохранятьПозицию
         VS NUMBER // (0|1) СохранятьПозициюФиксации
-        VS spreadsheet_document
+        VS spreadsheetDocument
         VS NUMBER // (0|1) ГоризонтальнаяПолосаПрокрутки?
         VS NUMBER // (0|1) ВертикальнаяПолосаПрокрутки?
         VS events
@@ -51,7 +51,7 @@ spreadsheet_document_field_value
     BLOCK_END
 ;
 
-spreadsheet_document
+spreadsheetDocument
 :
     BLOCK_START
         NUMBER // 3

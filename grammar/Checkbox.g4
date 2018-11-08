@@ -7,14 +7,14 @@ checkbox
     BLOCK_START
         CHECKBOX_GUID
         VS NUMBER // идентификатор элемента
-        VS checkbox_value
-        VS panel_element_extension
-        VS form_element_extension
-        VS empty_list
+        VS checkboxValue
+        VS panelElementExtension
+        VS formElementExtension
+        VS emptyList
     BLOCK_END
 ;
 
-checkbox_value
+checkboxValue
 :
     BLOCK_START
         NUMBER // 1
@@ -22,7 +22,7 @@ checkbox_value
             BLOCK_START
                 decoration
                 VS NUMBER // 6
-                VS localized_string // Заголовок
+                VS localizedString // Заголовок
                 VS NUMBER // (0..1) ПоложениеЗаголовка
                 VS NUMBER // (0..2) ГоризонтальноеПоложение
                 VS NUMBER // (0..2) ВертикальноеПоложение

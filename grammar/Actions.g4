@@ -2,15 +2,15 @@ grammar Actions;
 
 import GUIDsLexer, V8InternalsLexer, Common, Picture, CommandLink;
 
-any_action
+anyAction
 :
-    custom_action
-    | special_action
-    | standard_action
-    | standard_submenu
+    customAction
+    | specialAction
+    | standardAction
+    | standardSubmenu
 ;
 
-custom_action
+customAction
 :
     CUSTOM_ACTION_GUID
     VS BLOCK_START
@@ -19,100 +19,100 @@ custom_action
         VS BLOCK_START
             NUMBER // 1
             VS STRING // имя обработчика
-            VS localized_string
-            VS localized_string
-            VS localized_string
+            VS localizedString
+            VS localizedString
+            VS localizedString
             VS picture
             VS shortcut
         BLOCK_END
     BLOCK_END
 ;
 
-special_action
+specialAction
 :
     'abde0c9a-18a6-4e0c-bbaa-af26b911b3e6'
     VS
     (
-        empty_action_value
-        | separator_value
-        | custom_submenu_value
+        emptyActionValue
+        | separatorValue
+        | customSubmenuValue
     )
 ;
 
-empty_action_value
+emptyActionValue
 :
     BLOCK_START
         NUMBER // 1
-        VS unknown_command_link
+        VS unknownCommandLink
     BLOCK_END
 ;
 
-separator_value
+separatorValue
 :
     BLOCK_START
         NUMBER // 1
-        VS command_bar_separator_command_link
+        VS commandBarSeparatorCommandLink
     BLOCK_END
 ;
 
-custom_submenu_value
+customSubmenuValue
 :
     BLOCK_START
         NUMBER // 1
-        VS custom_command_collection_link
+        VS customCommandCollectionLink
     BLOCK_END
 ;
 
-standard_submenu
+standardSubmenu
 :
     'c93a51ed-b2d1-47f1-948d-38373f8710af'
     VS
     (
-        form_standard_submenu_value
-        | tabular_section_standard_submenu_value
+        formStandardSubmenuValue
+        | tabularSectionStandardSubmenuValue
     )
 ;
 
-form_standard_submenu_value
+formStandardSubmenuValue
 :
     BLOCK_START
         NUMBER // 4
-        VS form_command_collection_link // 55 - Действия
+        VS formCommandCollectionLink // 55 - Действия
         VS BLOCK_START
             NUMBER VS NUMBER // 1,99
-            VS form_command_collection_link // 4
+            VS formCommandCollectionLink // 4
             VS NUMBER // 0
         BLOCK_END
         VS NUMBER VS NUMBER // 0,0
     BLOCK_END
 ;
 
-tabular_section_standard_submenu_value
+tabularSectionStandardSubmenuValue
 :
     BLOCK_START
         NUMBER // 4
-        VS tabular_section_command_collection_link
+        VS tabularSectionCommandCollectionLink
         VS BLOCK_START
             NUMBER VS NUMBER // 1,99
-            VS form_command_collection_link // 4
+            VS formCommandCollectionLink // 4
             VS NUMBER // 1
         BLOCK_END
         VS NUMBER VS NUMBER // 0,0
     BLOCK_END
 ;
 
-standard_action
+standardAction
 :
     'fbe38877-b914-4fd5-8540-07dde06ba2e1'
     VS
     (
-        form_standard_action_value
-        | table_standard_action_value
-        | tabular_section_standard_action_value
+        formStandardActionValue
+        | tableStandardActionValue
+        | tabularSectionStandardActionValue
     )
 ;
 
-form_standard_action_value
+formStandardActionValue
 :
     BLOCK_START
         NUMBER VS NUMBER // 6,0
@@ -122,17 +122,17 @@ form_standard_action_value
         // Форма обработки:
         // 143 - Сохранить значения...
         // 144 - Восстановить значения...
-        VS form_command_link
+        VS formCommandLink
         VS BLOCK_START
             NUMBER VS NUMBER // 1,99
-            VS form_command_collection_link
+            VS formCommandCollectionLink
             VS NUMBER // 1 - форма обработки, 0 - форма
         BLOCK_END
         VS NUMBER VS NUMBER // 0,1
     BLOCK_END
 ;
 
-table_standard_action_value
+tableStandardActionValue
 :
     BLOCK_START
         NUMBER VS NUMBER // 6,0
@@ -149,27 +149,27 @@ table_standard_action_value
         // 94 - Закончить редактирование
         // 97 - Настройка списка...
         // 99 - Вывести список...
-        VS form_command_link
+        VS formCommandLink
         VS BLOCK_START
             NUMBER VS NUMBER // 1,99
-            VS unknown_command_link // идентификатор = 2147483647
+            VS unknownCommandLink // идентификатор = 2147483647
             VS NUMBER // 0
         BLOCK_END
         VS NUMBER VS NUMBER // 0,1
     BLOCK_END
 ;
 
-tabular_section_standard_action_value
+tabularSectionStandardActionValue
 :
     BLOCK_START
         NUMBER VS NUMBER // 6,0
         // 53 - Установить отбор и сортировку списка...
         // 71 - (История отборов)
         // 72 - (Список отборов)
-        VS tabular_section_command_link
+        VS tabularSectionCommandLink
         VS BLOCK_START
             NUMBER VS NUMBER // 1,99
-            VS unknown_command_link // идентификатор = 2147483647
+            VS unknownCommandLink // идентификатор = 2147483647
             VS NUMBER // 0
         BLOCK_END
         VS NUMBER VS NUMBER // 0,1

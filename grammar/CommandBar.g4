@@ -2,19 +2,19 @@ grammar CommandBar;
 
 import V8InternalsLexer, FormElement, Menu, CommandLink;
 
-command_bar
+commandBar
 :
     BLOCK_START
         'e69bf21d-97b2-4f37-86db-675aea9ec2cb'
         VS NUMBER // идентификатор элемента
-        VS command_bar_value
-        VS panel_element_extension
-        VS form_element_extension
-        VS empty_list
+        VS commandBarValue
+        VS panelElementExtension
+        VS formElementExtension
+        VS emptyList
     BLOCK_END
 ;
 
-command_bar_value
+commandBarValue
 :
     BLOCK_START
         NUMBER // 2
@@ -27,8 +27,8 @@ command_bar_value
             VS NUMBER // Вспомогательная
             VS NUMBER // 1
             VS menu
-            VS form_command_collection_link // 4
-            VS command_bar_separator_command_link
+            VS formCommandCollectionLink // 4
+            VS commandBarSeparatorCommandLink
             VS NUMBER VS NUMBER // 0,0
         BLOCK_END
     BLOCK_END

@@ -2,24 +2,24 @@ grammar TypeDescription;
 
 import V8InternalsLexer;
 
-type_description
+typeDescription
 :
     BLOCK_START
         STRING // "Pattern"
-        ( VS type_description_value )*
+        ( VS typeDescriptionValue )*
     BLOCK_END
 ;
 
-type_description_value
+typeDescriptionValue
 :
-    type_description_3q
-    | type_description_2q
-    | type_description_non_q
-    | type_description_datetime
-    | type_description_ref
+    typeDescriptionQ3
+    | typeDescriptionQ2
+    | typeDescriptionQ0
+    | typeDescriptionDateTime
+    | typeDescriptionRef
 ;
 
-type_description_2q
+typeDescriptionQ2
 :
     // Строка или двоичные данные.
     BLOCK_START
@@ -29,7 +29,7 @@ type_description_2q
     BLOCK_END
 ;
 
-type_description_3q
+typeDescriptionQ3
 :
     // Число.
     BLOCK_START
@@ -40,7 +40,7 @@ type_description_3q
     BLOCK_END
 ;
 
-type_description_non_q
+typeDescriptionQ0
 :
     // Любой тип.
     // Для типа не указаны квалификаторы,
@@ -50,7 +50,7 @@ type_description_non_q
     BLOCK_END
 ;
 
-type_description_datetime
+typeDescriptionDateTime
 :
     // Дата.
     BLOCK_START
@@ -59,7 +59,7 @@ type_description_datetime
     BLOCK_END
 ;
 
-type_description_ref
+typeDescriptionRef
 :
     // Ссылочный тип.
     BLOCK_START
@@ -68,7 +68,7 @@ type_description_ref
     BLOCK_END
 ;
 
-typed_value
+typedValue
 :
     BLOCK_START
         STRING // U|B|N|S|D|R|#

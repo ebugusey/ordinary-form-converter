@@ -2,19 +2,19 @@ grammar HTMLDocumentField;
 
 import GUIDsLexer, V8InternalsLexer, Common, FormElement;
 
-html_document_field
+htmlDocumentField
 :
     BLOCK_START
         HTML_DOCUMENT_GUID
         VS NUMBER // идентификатор элемента
-        VS html_document_field_value
-        VS panel_element_extension
-        VS form_element_extension
-        VS empty_list
+        VS htmlDocumentFieldValue
+        VS panelElementExtension
+        VS formElementExtension
+        VS emptyList
     BLOCK_END
 ;
 
-html_document_field_value
+htmlDocumentFieldValue
 :
     BLOCK_START
         NUMBER // 5

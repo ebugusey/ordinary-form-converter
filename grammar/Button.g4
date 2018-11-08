@@ -7,21 +7,21 @@ button
     BLOCK_START
         '6ff79819-710e-4145-97cd-1618da79e3e2'
         VS NUMBER // идентификатор элемента
-        VS button_value
-        VS panel_element_extension
-        VS form_element_extension
-        VS empty_list
+        VS buttonValue
+        VS panelElementExtension
+        VS formElementExtension
+        VS emptyList
     BLOCK_END
 ;
 
-button_value
+buttonValue
 :
     BLOCK_START
         NUMBER // 1
         VS BLOCK_START
             decoration
             VS NUMBER // 14
-            VS localized_string // Заголовок
+            VS localizedString // Заголовок
             VS NUMBER // ГоризонтальноеПоложение
             VS NUMBER // ВертикальноеПоложение?
             VS NUMBER // КнопкаПоУмолчанию

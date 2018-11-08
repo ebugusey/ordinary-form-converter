@@ -1,13 +1,13 @@
 grammar Panel;
 
-import GUIDsLexer, V8InternalsLexer, FormElement, Checkbox, HTMLDocumentField, InputField, Label, Picturebox, Radiobutton, Splitter, SpreadsheetDocumentField;
+import GUIDsLexer, V8InternalsLexer, FormElement, Checkbox, HTMLDocumentField, InputField, Label, PictureBox, RadioButton, Splitter, SpreadsheetDocumentField;
 
-main_panel
+mainPanel
 :
     BLOCK_START
         PANEL_GUID
-        VS panel_value
-        VS panel_child_elements
+        VS panelValue
+        VS panelChildElements
     BLOCK_END
 ;
 
@@ -16,33 +16,33 @@ panel
     BLOCK_START
         PANEL_GUID
         VS NUMBER // идентификатор элемента
-        VS panel_value
-        VS panel_element_extension
-        VS form_element_extension
-        VS panel_child_elements
+        VS panelValue
+        VS panelElementExtension
+        VS formElementExtension
+        VS panelChildElements
     BLOCK_END
 ;
 
-panel_value
+panelValue
 :
     BLOCK_START
         NUMBER // 1
         VS BLOCK_START
             decoration
             VS NUMBER // 25
-            VS linked_element_list // к верхней границе
-            VS linked_element_list // к нижней границе
-            VS linked_element_list // к левой границе
-            VS linked_element_list // к правой границе
+            VS linkedElementList // к верхней границе
+            VS linkedElementList // к нижней границе
+            VS linkedElementList // к левой границе
+            VS linkedElementList // к правой границе
             VS NUMBER VS NUMBER // 0,0
-            VS picture_block // Картинка
+            VS pictureBlock // Картинка
             VS NUMBER // ОтображениеЗакладок
             VS NUMBER // РаспределятьПоСтраницам
-            VS panel_page_list
+            VS panelPageList
             VS NUMBER // АвтоПравила
             VS NUMBER // АвтоПорядокОбхода
             VS NUMBER // РежимПрокручиваемыхСтраниц
-            VS alignment_line_list
+            VS alignmentLineList
             VS NUMBER // Исп. только видимую область
             // идентификатор элемента, для которого установлено свойство АктивизироватьПоУмолчанию,
             // для каждой страницы свой (4294967295 - не установлено)
@@ -56,21 +56,21 @@ panel_value
     BLOCK_END
 ;
 
-panel_page_list
+panelPageList
 :
     BLOCK_START
         NUMBER // 1
         VS NUMBER // количество страниц
-        ( VS panel_page )+
+        ( VS panelPage )+
     BLOCK_END
 ;
 
-panel_page
+panelPage
 :
     BLOCK_START
         NUMBER // 4
-        VS localized_string // Заголовок
-        VS picture_block // КартинкаЗаголовка
+        VS localizedString // Заголовок
+        VS pictureBlock // КартинкаЗаголовка
         VS NUMBER // -1
         VS NUMBER // Видимость
         VS NUMBER // Доступность
@@ -81,16 +81,16 @@ panel_page
     BLOCK_END
 ;
 
-alignment_line_list
+alignmentLineList
 :
     NUMBER
-    VS alignment_line
-    VS alignment_line
-    VS alignment_line
-    VS alignment_line
-    ( VS alignment_line )*
+    VS alignmentLine
+    VS alignmentLine
+    VS alignmentLine
+    VS alignmentLine
+    ( VS alignmentLine )*
 ;
-alignment_line
+alignmentLine
 :
     BLOCK_START
         NUMBER // 2
@@ -105,22 +105,22 @@ alignment_line
     BLOCK_END
 ;
 
-panel_child_elements
+panelChildElements
 :
     BLOCK_START
         NUMBER
-        ( VS panel_child_element )*
+        ( VS panelChildElement )*
     BLOCK_END
 ;
-panel_child_element
+panelChildElement
 :
     panel
     | checkbox
-    | html_document_field
-    | input_field
+    | htmlDocumentField
+    | inputField
     | label
-    | picturebox
-    | radiobutton
+    | pictureBox
+    | radioButton
     | splitter
-    | spreadsheet_document_field
+    | spreadsheetDocumentField
 ;

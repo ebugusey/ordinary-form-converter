@@ -4,12 +4,12 @@ import V8InternalsLexer;
 
 font
 :
-    auto_font
-    | style_based_font
-    | absolute_font
+    autoFont
+    | styleBasedFont
+    | absoluteFont
 ;
 
-auto_font
+autoFont
 :
     BLOCK_START
         NUMBER // 7
@@ -26,13 +26,13 @@ auto_font
     BLOCK_END
 ;
 
-style_based_font
+styleBasedFont
 :
     BLOCK_START
         NUMBER // 7
         VS NUMBER // Вид
         VS NUMBER // маска
-        VS font_style
+        VS fontStyle
         ( VS NUMBER )? // размер * 10
         ( VS NUMBER )? // полужирный
         ( VS NUMBER )? // курсив
@@ -43,7 +43,7 @@ style_based_font
         VS NUMBER // масштаб
     BLOCK_END
 ;
-font_style
+fontStyle
 :
     BLOCK_START
         NUMBER
@@ -51,7 +51,7 @@ font_style
     BLOCK_END
 ;
 
-absolute_font
+absoluteFont
 :
     BLOCK_START
         NUMBER // 7

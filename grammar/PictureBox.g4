@@ -1,20 +1,20 @@
-grammar Picturebox;
+grammar PictureBox;
 
 import GUIDsLexer, V8InternalsLexer, Common, Picture, FormElement;
 
-picturebox
+pictureBox
 :
     BLOCK_START
         PICTURE_BOX_GUID
         VS NUMBER // идентификатор элемента
-        VS picturebox_value
-        VS panel_element_extension
-        VS form_element_extension
-        VS empty_list
+        VS pictureBoxValue
+        VS panelElementExtension
+        VS formElementExtension
+        VS emptyList
     BLOCK_END
 ;
 
-picturebox_value
+pictureBoxValue
 :
     BLOCK_START
         NUMBER // 1
@@ -38,7 +38,7 @@ picturebox_value
             VS NUMBER // (0|1) ИспользоватьКонтекстноеМеню
             VS NUMBER // (0|1) РазрешитьНачалоПеретаскивания
             VS NUMBER // (0|1) РазешитьПеретаскивание
-            VS localized_string // ТекстНевыбраннойКартинки
+            VS localizedString // ТекстНевыбраннойКартинки
             VS NUMBER // 0
             VS NUMBER // 1
         BLOCK_END

@@ -1,29 +1,29 @@
-grammar Radiobutton;
+grammar RadioButton;
 
 import GUIDsLexer, V8InternalsLexer, Common, FormElement, TypeDescription;
 
-radiobutton
+radioButton
 :
     BLOCK_START
         RADIOBUTTON_GUID
         VS NUMBER // идентификатор элемента
-        VS radiobutton_value
-        VS panel_element_extension
-        VS form_element_extension
-        VS empty_list
+        VS radioButtonValue
+        VS panelElementExtension
+        VS formElementExtension
+        VS emptyList
     BLOCK_END
 ;
 
-radiobutton_value
+radioButtonValue
 :
     BLOCK_START
         NUMBER // 4
-        VS type_description // Данные
+        VS typeDescription // Данные
         VS BLOCK_START
             BLOCK_START
                 decoration
                 VS NUMBER // 6
-                VS localized_string // Заголовок
+                VS localizedString // Заголовок
                 VS NUMBER // (0..1) ПоложениеЗаголовка
                 VS NUMBER // (0..2) ГоризонтальноеПоложение
                 VS NUMBER // (0..2) ВертикальноеПоложение
@@ -37,7 +37,7 @@ radiobutton_value
             VS NUMBER // 0
         BLOCK_END
         VS NUMBER // 0
-        VS typed_value
+        VS typedValue
         VS events
     BLOCK_END
 ;

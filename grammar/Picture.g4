@@ -2,14 +2,14 @@ grammar Picture;
 
 import V8InternalsLexer, Common;
 
-picture_block
+pictureBlock
 :
     BLOCK_START
         NUMBER // 7
         VS NUMBER // РазмерКартинки
         VS picture // Картинка
-        VS empty_picture // пустая
-        VS empty_picture // пустая
+        VS emptyPicture // пустая
+        VS emptyPicture // пустая
         VS NUMBER // 100
         VS NUMBER // 0 - для панели, 2 - для страницы
         VS NUMBER // 0
@@ -18,17 +18,17 @@ picture_block
 
 picture
 :
-    empty_picture
-    | library_picture
-    | absolute_picture
+    emptyPicture
+    | libraryPicture
+    | absolutePicture
 ;
 
-empty_picture
+emptyPicture
 :
     BLOCK_START
         NUMBER // 4
         VS NUMBER // ВидКартинки
-        VS library_picture_empty_link
+        VS libraryPictureEmptyLink
         VS STRING // ""
         VS NUMBER VS NUMBER // координаты прозрачного пикселя
         VS NUMBER // установлена прозрачность
@@ -37,12 +37,12 @@ empty_picture
     BLOCK_END
 ;
 
-library_picture
+libraryPicture
 :
     BLOCK_START
         NUMBER // 4
         VS NUMBER // ВидКартинки
-        VS library_picture_link
+        VS libraryPictureLink
         VS STRING // ""
         VS NUMBER VS NUMBER // координаты прозрачного пикселя
         VS NUMBER // установлена прозрачность
@@ -51,22 +51,22 @@ library_picture
     BLOCK_END
 ;
 
-absolute_picture
+absolutePicture
 :
     BLOCK_START
         NUMBER // 4
         VS NUMBER // ВидКартинки
-        VS library_picture_empty_link
+        VS libraryPictureEmptyLink
         VS STRING // ""
         VS NUMBER VS NUMBER // координаты прозрачного пикселя
         VS NUMBER // установлена прозрачность
-        VS absolute_picture_data
+        VS absolutePictureData
         VS NUMBER // 0
         VS STRING // ""
     BLOCK_END
 ;
 
-library_picture_link
+libraryPictureLink
 :
     // Указатель на картинку из БиблиотекаКартинок.
     // Картинка из библиотеки может быть задана как числом,
@@ -76,14 +76,14 @@ library_picture_link
         ( VS GUID )? // uuid картинки из библиотеки или конфигурации
     BLOCK_END
 ;
-library_picture_empty_link
+libraryPictureEmptyLink
 :
     BLOCK_START
         NUMBER // 0
     BLOCK_END
 ;
 
-absolute_picture_data
+absolutePictureData
 :
     // Обычно это двоичные данные.
     // Но для колонок табличного поля картинка задается

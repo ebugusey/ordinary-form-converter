@@ -2,16 +2,16 @@ grammar OrdinaryForm;
 
 import V8InternalsLexer, TypeDescription, Common, FormElement, Panel;
 
-start: ordinary_form EOF ;
+start: ordinaryForm EOF ;
 
-ordinary_form
+ordinaryForm
 :
     BLOCK_START
         NUMBER // 27
         VS BLOCK_START
             NUMBER // 18
-            VS ordinary_form_header
-            VS main_panel
+            VS ordinaryFormHeader
+            VS mainPanel
             VS NUMBER // Ширина
             VS NUMBER // Высота
             VS NUMBER // ПоведениеКлавишиEnter
@@ -24,8 +24,8 @@ ordinary_form
             VS NUMBER // Высота
             VS NUMBER // 96
         BLOCK_END
-        VS ordinary_form_attributes
-        VS form_extension
+        VS ordinaryFormAttributes
+        VS formExtension
         VS events
         VS NUMBER // АвтоЗаголовок
         VS NUMBER // СостояниеОкна
@@ -33,9 +33,9 @@ ordinary_form
         VS NUMBER // СоединяемоеОкно
         VS NUMBER // ПоложениеОкна
         VS NUMBER // ИзменениеРазмера
-        VS context_menu_list
+        VS contextMenuList
         VS style
-        VS picture_block
+        VS pictureBlock
         VS NUMBER // СпособОтображенияОкна
         VS NUMBER // ИзменятьСпособОтображенияОкна
         VS NUMBER // ПоложениеОкна
@@ -45,26 +45,26 @@ ordinary_form
     BLOCK_END
 ;
 
-ordinary_form_header
+ordinaryFormHeader
 :
     BLOCK_START
-        localized_string // Заголовок
+        localizedString // Заголовок
         VS NUMBER // свободный идентификатор элемента
         VS NUMBER // идентификатор элемента, для которого установлено свойство КнопкаПоУмолчанию (4294967295 - не установлено)
     BLOCK_END
 ;
 
-ordinary_form_attributes
+ordinaryFormAttributes
 :
     BLOCK_START
-        element_ref // идентификатор основного реквизита формы
+        elementRef // идентификатор основного реквизита формы
         VS NUMBER // свободный идентификатор реквизита
-        VS attribute_list
-        VS attribute_link_list
+        VS attributeList
+        VS attributeLinkList
     BLOCK_END
 ;
 
-attribute_list
+attributeList
 :
     BLOCK_START
         NUMBER // количество реквизитов
@@ -74,29 +74,29 @@ attribute_list
 attribute
 :
     BLOCK_START
-        element_ref // идентификатор
+        elementRef // идентификатор
         VS NUMBER // связан с элементом
         VS NUMBER // проверка заполнения
         VS NUMBER // 1
         VS STRING // имя реквизита
-        VS type_description // тип реквизита
+        VS typeDescription // тип реквизита
     BLOCK_END
 ;
 
-attribute_link_list
+attributeLinkList
 :
     BLOCK_START
         NUMBER // количество элементов
-        ( VS attribute_link )*
+        ( VS attributeLink )*
     BLOCK_END
 ;
-attribute_link
+attributeLink
 :
     BLOCK_START
         NUMBER // идентификатор элемента формы
         VS BLOCK_START
             NUMBER // 1 - реквизит формы, 2 - реквизит реквизита
-            VS element_ref // идентификатор реквизита формы
+            VS elementRef // идентификатор реквизита формы
             (
                 VS BLOCK_START
                     NUMBER // 0
@@ -107,13 +107,13 @@ attribute_link
     BLOCK_END
 ;
 
-form_extension
+formExtension
 :
-    no_main_attribute_form_extension
-    | external_data_processor_extension
+    noMainAttributeFormExtension
+    | externalDataProcessorExtension
 ;
 
-no_main_attribute_form_extension
+noMainAttributeFormExtension
 :
     BLOCK_START
         '00000000-0000-0000-0000-000000000000'
@@ -121,7 +121,7 @@ no_main_attribute_form_extension
     BLOCK_END
 ;
 
-external_data_processor_extension
+externalDataProcessorExtension
 :
     BLOCK_START
         '59d6c227-97d3-46f6-84a0-584c5a2807e1'
@@ -129,22 +129,22 @@ external_data_processor_extension
         VS BLOCK_START
             NUMBER // 2
             VS NUMBER // сохранять значения реквизитов
-            VS saved_value_list
+            VS savedValueList
             VS events
             VS NUMBER // ВосстанавливатьЗначенияПриОткрытии
         BLOCK_END
     BLOCK_END
 ;
 
-saved_value_list
+savedValueList
 :
     BLOCK_START
         NUMBER // 0
         VS NUMBER // количество значений
-        ( VS saved_value )*
+        ( VS savedValue )*
     BLOCK_END
 ;
-saved_value
+savedValue
 :
     BLOCK_START
         STRING // #
@@ -157,19 +157,19 @@ saved_value
             VS GUID
             VS STRING // имя реквизита
             VS NUMBER // это реквизит формы
-            ( VS element_ref )? // идентификатор реквизита (только для реквизитов формы)
+            ( VS elementRef )? // идентификатор реквизита (только для реквизитов формы)
         BLOCK_END
     BLOCK_END
 ;
 
-context_menu_list
+contextMenuList
 :
     BLOCK_START
         NUMBER // количество элементов
-        ( VS context_menu_link )*
+        ( VS contextMenuLink )*
     BLOCK_END
 ;
-context_menu_link
+contextMenuLink
 :
     NUMBER // идентификатор элемента формы (0 - форма)
     VS NUMBER // 4294967295

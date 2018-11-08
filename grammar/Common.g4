@@ -7,10 +7,10 @@ color
     BLOCK_START
         NUMBER // 3
         VS NUMBER // Вид
-        VS color_value
+        VS colorValue
     BLOCK_END
 ;
-color_value
+colorValue
 :
     BLOCK_START
         // Значение цвета:
@@ -39,15 +39,15 @@ border
     BLOCK_END
 ;
 
-localized_string
+localizedString
 :
     BLOCK_START
         NUMBER // 1
         VS NUMBER // количество элементов
-        ( VS localized_string_item )*
+        ( VS localizedStringItem )*
     BLOCK_END
 ;
-localized_string_item
+localizedStringItem
 :
     BLOCK_START
         STRING // код языка
@@ -71,7 +71,7 @@ shortcut
     BLOCK_END
 ;
 
-any_guid
+anyGuid
 :
     GUID
     | EMPTY_GUID
@@ -95,18 +95,18 @@ any_guid
     | SPREADSHEET_DOCUMENT_GUID
 ;
 
-any_value: any_block | NUMBER | STRING | any_guid ;
+anyValue: anyBlock | NUMBER | STRING | anyGuid ;
 
-any_block: BLOCK_START any_value ( VS any_value )* BLOCK_END ;
+anyBlock: BLOCK_START anyValue ( VS anyValue )* BLOCK_END ;
 
-empty_list
+emptyList
 :
     BLOCK_START
         NUMBER // 0
     BLOCK_END
 ;
 
-empty_block
+emptyBlock
 :
     BLOCK_START
     BLOCK_END
