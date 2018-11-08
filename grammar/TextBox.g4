@@ -1,20 +1,20 @@
-grammar InputField;
+grammar TextBox;
 
 import GUIDsLexer, V8InternalsLexer, TypeDescription, FormElement, Picture;
 
-inputField
+textBox
 :
     BLOCK_START
         INPUT_FIELD_GUID
         VS NUMBER // идентификатор элемента
-        VS inputFieldValue
+        VS textBoxValue
         VS panelElementExtension
         VS formElementExtension
         VS emptyList
     BLOCK_END
 ;
 
-inputFieldValue
+textBoxValue
 :
     BLOCK_START
         NUMBER // 9
@@ -67,7 +67,7 @@ inputFieldValue
                 VS NUMBER // 1
             BLOCK_END
         BLOCK_END
-        VS inputFieldExtensionList
+        VS textBoxExtensionList
         VS events
         VS NUMBER // НЕ РедактированиеТекста
         VS NUMBER // ВыбиратьТип
@@ -77,26 +77,26 @@ inputFieldValue
     BLOCK_END
 ;
 
-inputFieldExtensionList
+textBoxExtensionList
 :
     BLOCK_START
         NUMBER // количество элементов
-        ( VS inputFieldExtension )*
+        ( VS textBoxExtension )*
     BLOCK_END
 ;
 
-inputFieldExtension
+textBoxExtension
 :
-    inputFieldSimpleExtension
-    | inputFieldValueListExtension
-    | inputFieldCatalogRefExtension
-    | inputFieldCharTypeExtension
-    | inputFieldDocumentExtension
-    | inputFieldEnumExtension
-    | inputFieldMultiTypeExtension
+    textBoxSimpleExtension
+    | textBoxValueListExtension
+    | textBoxCatalogRefExtension
+    | textBoxCharTypeExtension
+    | textBoxDocumentExtension
+    | textBoxEnumExtension
+    | textBoxMultiTypeExtension
 ;
 
-inputFieldSimpleExtension
+textBoxSimpleExtension
 :
     BLOCK_START
         SIMPLE_EXTENSION_GUID
@@ -112,7 +112,7 @@ inputFieldSimpleExtension
     BLOCK_END
 ;
 
-inputFieldValueListExtension
+textBoxValueListExtension
 :
     BLOCK_START
         '83a29520-06e8-4348-989c-abe69e8e33e2'
@@ -123,7 +123,7 @@ inputFieldValueListExtension
     BLOCK_END
 ;
 
-inputFieldCatalogRefExtension
+textBoxCatalogRefExtension
 :
     BLOCK_START
         CATALOGREF_EXTENSION_GUID
@@ -137,7 +137,7 @@ inputFieldCatalogRefExtension
     BLOCK_END
 ;
 
-inputFieldCharTypeExtension
+textBoxCharTypeExtension
 :
     BLOCK_START
         CHARTYPE_EXTENSION_GUID
@@ -151,7 +151,7 @@ inputFieldCharTypeExtension
     BLOCK_END
 ;
 
-inputFieldDocumentExtension
+textBoxDocumentExtension
 :
     BLOCK_START
         DOCUMENT_EXTENSION_GUID
@@ -162,7 +162,7 @@ inputFieldDocumentExtension
     BLOCK_END
 ;
 
-inputFieldEnumExtension
+textBoxEnumExtension
 :
     BLOCK_START
         ENUM_EXTENSION_GUID
@@ -174,7 +174,7 @@ inputFieldEnumExtension
     BLOCK_END
 ;
 
-inputFieldMultiTypeExtension
+textBoxMultiTypeExtension
 :
     BLOCK_START
         MULTITYPE_EXTENSION_GUID

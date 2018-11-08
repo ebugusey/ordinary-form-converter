@@ -1,6 +1,6 @@
 grammar Panel;
 
-import GUIDsLexer, V8InternalsLexer, FormElement, Checkbox, HTMLDocumentField, InputField, Label, PictureBox, RadioButton, Splitter, SpreadsheetDocumentField;
+import GUIDsLexer, V8InternalsLexer, FormElement, Checkbox, HTMLDocumentField, TextBox, Label, PictureBox, RadioButton, Splitter, SpreadsheetDocumentField;
 
 mainPanel
 :
@@ -117,7 +117,7 @@ panelChildElement
     panel
     | checkbox
     | htmlDocumentField
-    | inputField
+    | textBox
     | label
     | pictureBox
     | radioButton
