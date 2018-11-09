@@ -1,6 +1,6 @@
 grammar CommandLink;
 
-import KeywordsLexer, V8InternalsLexer;
+import Common;
 
 commandCollectionLink
 :

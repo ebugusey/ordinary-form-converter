@@ -1,6 +1,6 @@
 grammar CommandBar;
 
-import V8InternalsLexer, FormElement, Menu, CommandLink;
+import FormElement, Menu, CommandLink;
 
 commandBar
 :

@@ -1,6 +1,6 @@
 grammar Actions;
 
-import KeywordsLexer, V8InternalsLexer, Common, Picture, CommandLink;
+import Common, Picture, CommandLink;
 
 anyAction
 :

@@ -1,6 +1,6 @@
 grammar Common;
 
-import KeywordsLexer, V8InternalsLexer;
+import MainLexer;
 
 color
 :

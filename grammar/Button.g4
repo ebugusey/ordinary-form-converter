@@ -1,6 +1,6 @@
 grammar Button;
 
-import V8InternalsLexer, Common, Picture, FormElement, Menu;
+import FormElement, Menu;
 
 button
 :

@@ -1,6 +1,6 @@
 grammar FormElement;
 
-import V8InternalsLexer, Common, Picture, Font, Actions;
+import Common, Picture, Font, Actions;
 
 decoration
 :

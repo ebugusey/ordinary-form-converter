@@ -1,6 +1,6 @@
 grammar Font;
 
-import V8InternalsLexer;
+import Common;
 
 font
 :

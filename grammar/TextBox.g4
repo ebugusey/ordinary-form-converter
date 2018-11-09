@@ -1,6 +1,6 @@
 grammar TextBox;
 
-import KeywordsLexer, V8InternalsLexer, TypeDescription, FormElement, Picture;
+import TypeDescription, FormElement;
 
 textBox
 :

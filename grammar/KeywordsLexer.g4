@@ -1,7 +1,5 @@
 lexer grammar KeywordsLexer;
 
-import V8InternalsLexer;
-
 EMPTY_GUID: '00000000-0000-0000-0000-000000000000';
 
 BORDER_GUID:        '48312c09-257f-4b29-b280-284dd89efc1e';

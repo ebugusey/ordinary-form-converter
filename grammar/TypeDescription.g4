@@ -1,6 +1,6 @@
 grammar TypeDescription;
 
-import V8InternalsLexer;
+import Common;
 
 typeDescription
 :

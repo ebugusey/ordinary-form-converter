@@ -1,6 +1,6 @@
 grammar OrdinaryForm;
 
-import V8InternalsLexer, TypeDescription, Common, FormElement, Panel;
+import Common, TypeDescription, FormElement, Panel;
 
 start: ordinaryForm EOF ;
 

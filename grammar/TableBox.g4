@@ -1,6 +1,6 @@
 grammar TableBox;
 
-import V8InternalsLexer, TypeDescription, FormElement;
+import TypeDescription, FormElement;
 
 tableBox
 :

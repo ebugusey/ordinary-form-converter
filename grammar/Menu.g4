@@ -1,6 +1,6 @@
 grammar Menu;
 
-import V8InternalsLexer, Common, Picture, Actions;
+import Common, Picture, Actions;
 
 menu
 :
