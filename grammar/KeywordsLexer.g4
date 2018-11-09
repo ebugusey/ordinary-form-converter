@@ -23,7 +23,7 @@ TABLE_BOX_COLUMN_VALUE_GUID:           'd2314b5d-8da4-4e0f-822b-45e7500eae09';
 
 CHECKBOX_GUID:             '35af3d93-d7c7-4a2e-a8eb-bac87a1a3f26';
 HTML_DOCUMENT_GUID:        'd92a805c-98ae-4750-9158-d9ce7cec2f20';
-INPUT_FIELD_GUID:          '381ed624-9217-4e63-85db-c4c3cb87daae';
+TEXT_BOX_GUID:             '381ed624-9217-4e63-85db-c4c3cb87daae';
 LABEL_GUID:                '0fc7e20d-f241-460c-bdf4-5ad88e5474a5';
 PANEL_GUID:                '09ccdc77-ea1a-4a6d-ab1c-3435eada2433';
 PICTURE_BOX_GUID:          '151ef23e-6bb2-4681-83d0-35bc2217230c';

@@ -221,7 +221,7 @@ formAttributeDataSourceBlock
 
 formElementTypeId
 :
-    INPUT_FIELD_GUID // поле ввода
+    TEXT_BOX_GUID // поле ввода
     | EMPTY_GUID // нет элемента (например для стандартного реквизита НомерСтроки)
 ;
 

@@ -5,7 +5,7 @@ import TypeDescription, FormElement;
 textBox
 :
     BLOCK_START
-        INPUT_FIELD_GUID
+        TEXT_BOX_GUID
         VS NUMBER // идентификатор элемента
         VS textBoxValue
         VS panelElementExtension
