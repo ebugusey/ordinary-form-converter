@@ -2,6 +2,8 @@ grammar TextBox;
 
 import TypeDescription, FormElement;
 
+start: textBox EOF ;
+
 textBox
 :
     BLOCK_START

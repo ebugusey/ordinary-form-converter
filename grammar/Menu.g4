@@ -2,6 +2,8 @@ grammar Menu;
 
 import Common, Picture, Actions;
 
+start: menu EOF ;
+
 menu
 :
     BLOCK_START

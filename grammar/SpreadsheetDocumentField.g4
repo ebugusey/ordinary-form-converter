@@ -2,6 +2,8 @@ grammar SpreadsheetDocumentField;
 
 import FormElement;
 
+start: spreadsheetDocumentField EOF ;
+
 spreadsheetDocumentField
 :
     BLOCK_START

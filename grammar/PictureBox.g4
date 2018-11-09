@@ -2,6 +2,8 @@ grammar PictureBox;
 
 import FormElement;
 
+start: pictureBox EOF ;
+
 pictureBox
 :
     BLOCK_START

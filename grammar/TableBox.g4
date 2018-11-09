@@ -2,6 +2,8 @@ grammar TableBox;
 
 import TypeDescription, FormElement;
 
+start: tableBox EOF ;
+
 tableBox
 :
     BLOCK_START

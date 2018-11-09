@@ -2,6 +2,8 @@ grammar HTMLDocumentField;
 
 import FormElement;
 
+start: htmlDocumentField EOF ;
+
 htmlDocumentField
 :
     BLOCK_START

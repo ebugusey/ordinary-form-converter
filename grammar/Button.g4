@@ -2,6 +2,8 @@ grammar Button;
 
 import FormElement, Menu;
 
+start: button EOF ;
+
 button
 :
     BLOCK_START

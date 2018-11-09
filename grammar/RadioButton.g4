@@ -2,6 +2,8 @@ grammar RadioButton;
 
 import FormElement, TypeDescription;
 
+start: radioButton EOF ;
+
 radioButton
 :
     BLOCK_START

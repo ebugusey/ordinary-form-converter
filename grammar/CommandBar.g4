@@ -2,6 +2,8 @@ grammar CommandBar;
 
 import FormElement, Menu, CommandLink;
 
+start: commandBar EOF ;
+
 commandBar
 :
     BLOCK_START

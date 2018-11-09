@@ -2,6 +2,8 @@ grammar Label;
 
 import FormElement;
 
+start: label EOF ;
+
 label
 :
     BLOCK_START

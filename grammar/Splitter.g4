@@ -2,6 +2,8 @@ grammar Splitter;
 
 import FormElement;
 
+start: splitter EOF ;
+
 splitter
 :
     BLOCK_START

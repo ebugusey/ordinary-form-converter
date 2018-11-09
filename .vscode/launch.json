@@ -8,7 +8,7 @@
             "type": "antlr-debug",
             "request": "launch",
             "name": "antlr-test",
-            "grammar": "grammar/OrdinaryForm.g4",
+            "grammar": "",
             "startRule": "start",
             "input": "grammar/_input.txt",
             "printParseTree": true,

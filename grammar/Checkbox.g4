@@ -2,6 +2,8 @@ grammar Checkbox;
 
 import FormElement;
 
+start: checkbox EOF ;
+
 checkbox
 :
     BLOCK_START

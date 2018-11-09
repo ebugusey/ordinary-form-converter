@@ -15,6 +15,8 @@ import
     GroupBox,
     SpreadsheetDocumentField;
 
+start: ( mainPanel | panel ) EOF ;
+
 mainPanel
 :
     BLOCK_START
