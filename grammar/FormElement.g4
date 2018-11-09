@@ -1,6 +1,6 @@
 grammar FormElement;
 
-import Common, Picture, Font, Actions;
+import Common, Picture, Font, Border, Actions;
 
 decoration
 :
