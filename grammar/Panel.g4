@@ -12,6 +12,7 @@ import
     Button,
     CommandBar,
     TableBox,
+    GroupBox,
     SpreadsheetDocumentField;
 
 mainPanel
@@ -137,5 +138,6 @@ panelChildElement
     | button
     | commandBar
     | tableBox
+    | groupBox
     | spreadsheetDocumentField
 ;
