@@ -1,6 +1,6 @@
 grammar Splitter;
 
-import KeywordsLexer, V8InternalsLexer, Common, FormElement;
+import FormElement;
 
 splitter
 :

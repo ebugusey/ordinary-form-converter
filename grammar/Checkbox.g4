@@ -1,6 +1,6 @@
 grammar Checkbox;
 
-import KeywordsLexer, V8InternalsLexer, Common, FormElement;
+import FormElement;
 
 checkbox
 :

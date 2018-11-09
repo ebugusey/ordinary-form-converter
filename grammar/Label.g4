@@ -1,6 +1,6 @@
 grammar Label;
 
-import KeywordsLexer, V8InternalsLexer, Common, Picture, FormElement;
+import FormElement;
 
 label
 :

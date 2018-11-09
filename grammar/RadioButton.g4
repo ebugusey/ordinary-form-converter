@@ -1,6 +1,6 @@
 grammar RadioButton;
 
-import KeywordsLexer, V8InternalsLexer, Common, FormElement, TypeDescription;
+import FormElement, TypeDescription;
 
 radioButton
 :
