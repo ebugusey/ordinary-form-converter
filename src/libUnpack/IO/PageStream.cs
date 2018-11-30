@@ -10,7 +10,7 @@ namespace libUnpack.IO
     /// Страница имеет фиксированный размер, поэтому изменить
     /// длину потока нельзя.
     /// </summary>
-    internal class PageStream : Stream
+    internal sealed class PageStream : Stream
     {
         /// <summary>
         /// Поток поддерживает чтение.

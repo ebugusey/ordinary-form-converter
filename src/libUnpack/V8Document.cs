@@ -8,7 +8,7 @@ namespace libUnpack
     /// <summary>
     /// Представляет документ внутри контейнера платформы.
     /// </summary>
-    internal class V8Document
+    internal sealed class V8Document
     {
         /// <summary>
         /// Адрес (позиция в потоке), по которому находится первая страница документа.

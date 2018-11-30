@@ -8,7 +8,7 @@ namespace libUnpack
     /// <summary>
     /// Представляет файл внутри контейнера платформы.
     /// </summary>
-    public class V8File
+    public sealed class V8File
     {
         /// <summary>
         /// Получает имя файла.

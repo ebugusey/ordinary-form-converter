@@ -9,7 +9,7 @@ namespace libUnpack.IO
     /// Представляет цепочку страниц документа.
     /// Вспомогательный класс для управления страницами в <see cref="DocumentStream"/>.
     /// </summary>
-    internal class Page : IDisposable
+    internal sealed class Page : IDisposable
     {
         /// <summary>
         /// Стартовая позиция страницы внутри документа.
@@ -367,7 +367,7 @@ namespace libUnpack.IO
 
         private bool _disposed = false;
 
-        protected virtual void Dispose(bool disposing)
+        private void Dispose(bool disposing)
         {
             if (_disposed)
             {

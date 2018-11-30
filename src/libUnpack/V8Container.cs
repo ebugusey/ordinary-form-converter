@@ -12,7 +12,7 @@ namespace libUnpack
     /// Представляет непосредственно основной формат хранения файлов платформы,
     /// таких как .epf, .erf, .cf, .cfe.
     /// </summary>
-    public class V8Container : IDisposable
+    public sealed class V8Container : IDisposable
     {
         /// <summary>
         /// Получает коллекцию файлов внутри контейнера.
@@ -322,7 +322,7 @@ namespace libUnpack
 
         private bool _disposed = false;
 
-        protected virtual void Dispose(bool disposing)
+        private void Dispose(bool disposing)
         {
             if (_disposed)
             {
