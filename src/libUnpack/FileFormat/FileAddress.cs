@@ -113,7 +113,8 @@ namespace libUnpack.FileFormat
         /// <param name="TOC">Список адресов, который нужно записать в документ-оглавление.</param>
         public static void WriteTOC(Stream output, IEnumerable<FileAddress> TOC)
         {
-            Debug.Assert(output != null && TOC != null);
+            Debug.Assert(output != null);
+            Debug.Assert(TOC != null);
             Debug.Assert(output.CanWrite);
 
             using (var writer = new BinaryWriter(output, Encoding.Default, leaveOpen: true))
