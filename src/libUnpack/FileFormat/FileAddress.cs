@@ -146,7 +146,7 @@ namespace libUnpack.FileFormat
             var buf = reader.ReadBytes(Size);
             if (buf.Length == 0)
             {
-                fileAddress = default(FileAddress);
+                fileAddress = default;
                 return false;
             }
             else if (buf.Length < Size)
