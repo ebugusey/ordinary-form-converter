@@ -36,13 +36,13 @@ namespace libUnpack.FileFormat
         /// <summary>
         /// Некая сигнатура. Всегда <see cref="Literals.V8_FF_SIGNATURE"/>.
         /// </summary>
-        public int Signature => _initialized ? _signature : V8Signature;
+        public int Signature => _explicitlyConstructed ? _signature : V8Signature;
 
         private const int V8Signature = Literals.V8_FF_SIGNATURE;
 
         private readonly int _signature;
 
-        private readonly bool _initialized;
+        private readonly bool _explicitlyConstructed;
 
         /// <summary>
         /// Инициализирует структуру адреса указанными значениями.
@@ -79,7 +79,7 @@ namespace libUnpack.FileFormat
             DataAddr = dataAddr;
             _signature = signature;
 
-            _initialized = true;
+            _explicitlyConstructed = true;
         }
 
         /// <summary>

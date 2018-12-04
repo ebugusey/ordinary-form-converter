@@ -26,12 +26,12 @@ namespace libUnpack.FileFormat
         /// или <see cref="Literals.V8_LAST_PAGE"/>, если таких страниц
         /// в контейнере нет.
         /// </summary>
-        public int NextPageAddr => _initialized ? _nextPageAddr : DefaultPageAddr;
+        public int NextPageAddr => _explicitlyConstructed ? _nextPageAddr : DefaultPageAddr;
 
         /// <summary>
         /// Размер страницы по умолчанию.
         /// </summary>
-        public int PageSize => _initialized ? _pageSize : DefaultPageSize;
+        public int PageSize => _explicitlyConstructed ? _pageSize : DefaultPageSize;
 
         /// <summary>
         /// Ревизия/версия содержимого контейнера.
@@ -49,7 +49,7 @@ namespace libUnpack.FileFormat
         private readonly int _nextPageAddr;
         private readonly int _pageSize;
 
-        private readonly bool _initialized;
+        private readonly bool _explicitlyConstructed;
 
         /// <summary>
         /// Инициализирует заголовок указанными значениями.
@@ -91,7 +91,7 @@ namespace libUnpack.FileFormat
             Revision = revision;
             Reserved = reserved;
 
-            _initialized = true;
+            _explicitlyConstructed = true;
         }
 
         /// <summary>

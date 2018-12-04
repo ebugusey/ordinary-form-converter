@@ -34,12 +34,12 @@ namespace libUnpack.FileFormat
         /// <summary>
         /// Размер страницы в байтах.
         /// </summary>
-        public int PageSize     => _initialized ? _pageSize     : DefaultPageSize;
+        public int PageSize => _explicitlyConstructed ? _pageSize : DefaultPageSize;
 
         /// <summary>
         /// Адрес следующей страницы в документе.
         /// </summary>
-        public int NextPageAddr => _initialized ? _nextPageAddr : DefaultPageAddr;
+        public int NextPageAddr => _explicitlyConstructed ? _nextPageAddr : DefaultPageAddr;
 
         /// <summary>
         /// Определяет является ли страница последней в документе.
@@ -60,7 +60,7 @@ namespace libUnpack.FileFormat
         private readonly int _pageSize;
         private readonly int _nextPageAddr;
 
-        private readonly bool _initialized;
+        private readonly bool _explicitlyConstructed;
 
         /// <summary>
         /// Инициализирует заголовок страницы указанными значениями.
@@ -92,7 +92,7 @@ namespace libUnpack.FileFormat
             _pageSize = pageSize;
             _nextPageAddr = nextPageAddr;
 
-            _initialized = true;
+            _explicitlyConstructed = true;
         }
 
         /// <summary>
