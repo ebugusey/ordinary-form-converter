@@ -58,12 +58,12 @@ namespace libUnpack.IO.Utils
 
             if (offset < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(offset), "Должен быть больше 0.");
+                throw new ArgumentOutOfRangeException(nameof(offset), "Не может быть меньше 0.");
             }
 
             if (count < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(count), "Должен быть больше 0.");
+                throw new ArgumentOutOfRangeException(nameof(count), "Не может быть меньше 0.");
             }
 
             if (offset + count > buffer.Length)
