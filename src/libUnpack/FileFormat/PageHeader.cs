@@ -195,10 +195,11 @@ namespace libUnpack.FileFormat
                 throw new InvalidPageHeader();
             }
 
+            var hex = new string(buf);
+
             int result;
             try
             {
-                var hex = new string(buf);
                 result = Convert.ToInt32(hex, 16);
             }
             catch (FormatException ex)
