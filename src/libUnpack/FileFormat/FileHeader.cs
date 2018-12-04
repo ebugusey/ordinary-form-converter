@@ -106,7 +106,7 @@ namespace libUnpack.FileFormat
                 var creationTime = ReadTime(reader);
                 var lastModified = ReadTime(reader);
                 int reserved = reader.ReadInt32();
-                var name = ReadString(reader);
+                var name = ReadName(reader);
 
                 FileHeader header;
                 try
@@ -141,7 +141,7 @@ namespace libUnpack.FileFormat
                 WriteTime(writer, CreatedAt);
                 WriteTime(writer, LastModified);
                 writer.Write(Reserved);
-                WriteString(writer, Name);
+                WriteName(writer, Name);
             }
         }
 
@@ -181,7 +181,7 @@ namespace libUnpack.FileFormat
             return value.Ticks / 1000;
         }
 
-        private static string ReadString(BinaryReader reader)
+        private static string ReadName(BinaryReader reader)
         {
             // Стандартное имя файла в контейнере не превышает 40 символов,
             // так как обычно это GUID + постфикс.
@@ -221,7 +221,7 @@ namespace libUnpack.FileFormat
             return sb.ToString();
         }
 
-        private static void WriteString(BinaryWriter writer, string value)
+        private static void WriteName(BinaryWriter writer, string value)
         {
             var buf = value.ToCharArray();
             writer.Write(buf);
