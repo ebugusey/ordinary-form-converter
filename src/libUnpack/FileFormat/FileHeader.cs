@@ -46,6 +46,8 @@ namespace libUnpack.FileFormat
         /// </summary>
         public string Name => _name ?? string.Empty;
 
+        private const string NameLastChars = "\0\0";
+
         private readonly string _name;
 
         /// <summary>
@@ -204,7 +206,7 @@ namespace libUnpack.FileFormat
             // Имя файла идет не совсем до конца. После имени файла еще идет (int)0.
             // Но так как для его обработки нужно откатывать поток, будем считать
             // его частью строки.
-            const string expectedLastChars = "\0\0";
+            var expectedLastChars = NameLastChars;
 
             var lastChars = new char[expectedLastChars.Length];
             sb.CopyTo(sb.Length - lastChars.Length, lastChars, 0, lastChars.Length);
@@ -223,8 +225,7 @@ namespace libUnpack.FileFormat
         {
             var buf = value.ToCharArray();
             writer.Write(buf);
-            writer.Write('\0');
-            writer.Write('\0');
+            writer.Write(NameLastChars.ToCharArray());
         }
 
         #region Object
