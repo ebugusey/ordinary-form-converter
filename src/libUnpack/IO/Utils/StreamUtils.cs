@@ -31,7 +31,7 @@ namespace libUnpack.IO.Utils
                     newPosition = length + offset;
                     break;
                 default:
-                    throw new ArgumentException($"Неизвестный {nameof(origin)}.", nameof(origin));
+                    throw new ArgumentOutOfRangeException(nameof(origin), $"Неизвестное значение {nameof(SeekOrigin)}.");
             }
 
             if (newPosition < 0)
