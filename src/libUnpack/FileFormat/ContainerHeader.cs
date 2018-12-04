@@ -118,9 +118,9 @@ namespace libUnpack.FileFormat
                     revision = reader.ReadInt32();
                     reserved = reader.ReadInt32();
                 }
-                catch (EndOfStreamException)
+                catch (EndOfStreamException ex)
                 {
-                    throw new InvalidContainerHeader();
+                    throw new InvalidContainerHeader(ex);
                 }
             }
 

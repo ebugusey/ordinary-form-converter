@@ -151,13 +151,13 @@ namespace libUnpack.FileFormat
                 long temp = reader.ReadInt64();
                 time = V8TimeToDateTime(temp);
             }
-            catch (EndOfStreamException)
+            catch (EndOfStreamException ex)
             {
-                throw new InvalidFileHeader();
+                throw new InvalidFileHeader(ex);
             }
-            catch (ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException ex)
             {
-                throw new InvalidFileHeader();
+                throw new InvalidFileHeader(ex);
             }
 
             return time;
