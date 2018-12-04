@@ -171,7 +171,7 @@ namespace libUnpack.FileFormat
 
         private static DateTime V8TimeToDateTime(long value)
         {
-            return new DateTime(value * 1000);
+            return new DateTime(ticks: value * 1000);
         }
 
         private static long DateTimeToV8Time(DateTime value)
