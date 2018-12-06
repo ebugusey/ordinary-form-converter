@@ -40,6 +40,8 @@ namespace libUnpack.FileFormat
 
         private const int V8Signature = Literals.V8_FF_SIGNATURE;
 
+        private static readonly Encoding AnyEncoding = Encoding.ASCII;
+
         private readonly int _signature;
 
         private readonly bool _explicitlyConstructed;
@@ -95,7 +97,7 @@ namespace libUnpack.FileFormat
             Debug.Assert(input.CanRead);
 
             var TOC = new List<FileAddress>();
-            using (var reader = new BinaryReader(input, Encoding.Default, leaveOpen: true))
+            using (var reader = new BinaryReader(input, AnyEncoding, leaveOpen: true))
             {
                 while (Read(reader, out var fileAddress))
                 {
@@ -117,7 +119,7 @@ namespace libUnpack.FileFormat
             Debug.Assert(TOC != null);
             Debug.Assert(output.CanWrite);
 
-            using (var writer = new BinaryWriter(output, Encoding.Default, leaveOpen: true))
+            using (var writer = new BinaryWriter(output, AnyEncoding, leaveOpen: true))
             {
                 foreach (var fileAddr in TOC)
                 {
@@ -135,7 +137,7 @@ namespace libUnpack.FileFormat
             Debug.Assert(output != null);
             Debug.Assert(output.CanWrite);
 
-            using (var writer = new BinaryWriter(output, Encoding.Default, leaveOpen: true))
+            using (var writer = new BinaryWriter(output, AnyEncoding, leaveOpen: true))
             {
                 Write(writer);
             }

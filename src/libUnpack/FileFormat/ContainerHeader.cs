@@ -46,6 +46,8 @@ namespace libUnpack.FileFormat
         private const int DefaultPageAddr = Literals.V8_LAST_PAGE;
         private const int DefaultPageSize = Literals.V8_DEFAULT_PAGE_SIZE;
 
+        private static readonly Encoding AnyEncoding = Encoding.ASCII;
+
         private readonly int _nextPageAddr;
         private readonly int _pageSize;
 
@@ -109,7 +111,7 @@ namespace libUnpack.FileFormat
             int revision;
             int reserved;
 
-            using (var reader = new BinaryReader(input, Encoding.Default, leaveOpen: true))
+            using (var reader = new BinaryReader(input, AnyEncoding, leaveOpen: true))
             {
                 try
                 {
@@ -151,7 +153,7 @@ namespace libUnpack.FileFormat
             Debug.Assert(output != null);
             Debug.Assert(output.CanWrite);
 
-            using (var writer = new BinaryWriter(output, Encoding.Default, leaveOpen: true))
+            using (var writer = new BinaryWriter(output, AnyEncoding, leaveOpen: true))
             {
                 writer.Write(NextPageAddr);
                 writer.Write(PageSize);

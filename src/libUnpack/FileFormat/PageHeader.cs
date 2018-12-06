@@ -56,6 +56,7 @@ namespace libUnpack.FileFormat
 
         private const int HexSize = 8;
         private const string HexFormat = "x8";
+        private static readonly Encoding HexEncoding = Encoding.ASCII;
 
         private readonly int _pageSize;
         private readonly int _nextPageAddr;
@@ -121,7 +122,7 @@ namespace libUnpack.FileFormat
             Debug.Assert(input != null);
             Debug.Assert(input.CanRead);
 
-            using (var reader = new BinaryReader(input, Encoding.ASCII, leaveOpen: true))
+            using (var reader = new BinaryReader(input, HexEncoding, leaveOpen: true))
             {
                 MatchBytes(reader, CR, LF);
 
@@ -161,7 +162,7 @@ namespace libUnpack.FileFormat
             Debug.Assert(output != null);
             Debug.Assert(output.CanWrite);
 
-            using (var writer = new BinaryWriter(output, Encoding.ASCII, leaveOpen: true))
+            using (var writer = new BinaryWriter(output, HexEncoding, leaveOpen: true))
             {
                 var CRLF = new byte[] { CR, LF };
 

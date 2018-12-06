@@ -47,6 +47,7 @@ namespace libUnpack.FileFormat
         public string Name => _name ?? string.Empty;
 
         private const string NameLastChars = "\0\0";
+        private static readonly Encoding NameEncoding = Encoding.Unicode;
 
         private readonly string _name;
 
@@ -101,7 +102,7 @@ namespace libUnpack.FileFormat
             Debug.Assert(input != null);
             Debug.Assert(input.CanRead);
 
-            using (var reader = new BinaryReader(input, Encoding.Unicode, leaveOpen: true))
+            using (var reader = new BinaryReader(input, NameEncoding, leaveOpen: true))
             {
                 var creationTime = ReadTime(reader);
                 var lastModified = ReadTime(reader);
@@ -136,7 +137,7 @@ namespace libUnpack.FileFormat
             Debug.Assert(output != null);
             Debug.Assert(output.CanWrite);
 
-            using (var writer = new BinaryWriter(output, Encoding.Unicode, leaveOpen: true))
+            using (var writer = new BinaryWriter(output, NameEncoding, leaveOpen: true))
             {
                 WriteTime(writer, CreatedAt);
                 WriteTime(writer, LastModified);
