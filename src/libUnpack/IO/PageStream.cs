@@ -1,7 +1,6 @@
 using System;
 using System.IO;
 using System.Diagnostics;
-using libUnpack.IO.Utils;
 
 namespace libUnpack.IO
 {
@@ -10,7 +9,7 @@ namespace libUnpack.IO
     /// Страница имеет фиксированный размер, поэтому изменить
     /// длину потока нельзя.
     /// </summary>
-    internal sealed class PageStream : Stream
+    internal sealed class PageStream : StreamWithValidation
     {
         /// <summary>
         /// Поток поддерживает чтение.
@@ -30,36 +29,19 @@ namespace libUnpack.IO
         /// <summary>
         /// Текущая длина потока.
         /// </summary>
-        public override long Length
-        {
-            get
-            {
-                ThrowIfDisposed();
-
-                return _length;
-            }
-        }
+        protected override long LengthCore => _length;
 
         /// <summary>
         /// Текущая позиция указателя в потоке.
         /// Не может быть больше длины потока, даже если поток поддерживает запись.
         /// </summary>
-        public override long Position
+        protected override long PositionCore
         {
-            get
-            {
-                ThrowIfDisposed();
-
-                return _position;
-            }
+            get => _position;
             set
             {
-                ThrowIfDisposed();
-                StreamUtils.ValidatePosition(value);
-
                 if (value > _length)
                 {
-                    ThrowIfCantWrite();
                     throw CantChangeLengthException();
                 }
 
@@ -110,10 +92,8 @@ namespace libUnpack.IO
         /// <summary>
         /// Сбрасывает буфер основного потока контейнера.
         /// </summary>
-        public override void Flush()
+        protected override void FlushCore()
         {
-            ThrowIfDisposed();
-
             _superStream.Flush();
         }
 
@@ -124,13 +104,8 @@ namespace libUnpack.IO
         /// <param name="offset">Смещение в <paramref name="buffer"/>, с которого нужно разместить прочитанные байты.</param>
         /// <param name="count">Количество байт, которое нужно прочитать из потока.</param>
         /// <returns>Количество прочитанных байт.</returns>
-        public override int Read(byte[] buffer, int offset, int count)
+        protected override int ReadCore(byte[] buffer, int offset, int count)
         {
-            ThrowIfDisposed();
-            ThrowIfCantRead();
-
-            StreamUtils.ValidateReadWriteArguments(buffer, offset, count);
-
             if (EndOfPage)
             {
                 return 0;
@@ -166,22 +141,13 @@ namespace libUnpack.IO
         /// <summary>
         /// Перемещает указатель потока.
         /// </summary>
-        /// <param name="offset">
-        /// Позиция относительно <paramref name="origin"/>, куда нужно переместить указатель.
-        /// </param>
-        /// <param name="origin">
-        /// Ориентир, относительно которого указан <paramref name="offset"/>.
-        /// </param>
+        /// <param name="newPosition">Новая позиция указателя.</param>
         /// <returns>Новая позиция указателя.</returns>
-        public override long Seek(long offset, SeekOrigin origin)
+        protected override long SeekCore(long newPosition)
         {
-            ThrowIfDisposed();
-
-            long newPosition = StreamUtils.GetNewPosition(_position, _length, offset, origin);
-
             if (newPosition == _position)
             {
-                return _position;
+                return newPosition;
             }
 
             // Страница имеет фиксированный размер.
@@ -201,7 +167,7 @@ namespace libUnpack.IO
         /// всегда вызывает исключение <see cref="InvalidOperationException"/>.
         /// </summary>
         /// <param name="value">Новая длина потока.</param>
-        public override void SetLength(long value)
+        protected override void SetLengthCore(long value)
         {
             throw CantChangeLengthException();
         }
@@ -216,20 +182,20 @@ namespace libUnpack.IO
         /// <param name="buffer">Массив, из которого записываются байты в поток.</param>
         /// <param name="offset">Смещение в <paramref name="buffer"/>, с которого нужно взять байты для записи в поток.</param>
         /// <param name="count">Количество байт, которое нужно записать в поток.</param>
-        public override void Write(byte[] buffer, int offset, int count)
+        protected override void WriteCore(byte[] buffer, int offset, int count)
         {
-            ThrowIfDisposed();
-            ThrowIfCantWrite();
-
-            StreamUtils.ValidateReadWriteArguments(buffer, offset, count);
-
             int remaining = _length - _position;
             if (remaining < count)
             {
                 throw CantChangeLengthException();
             }
 
-            WriteCore(buffer, offset, count);
+            SyncSuperStreamPosition();
+
+            _superStream.Write(buffer, offset, count);
+            _position += count;
+
+            Debug.Assert(_position >= 0 && _position <= _length);
         }
 
         /// <summary>
@@ -252,7 +218,7 @@ namespace libUnpack.IO
             ThrowIfDisposed();
             ThrowIfCantWrite();
 
-            StreamUtils.ValidateReadWriteArguments(buffer, offset, count);
+            ValidateReadWriteArguments(buffer, offset, count);
 
             if (EndOfPage)
             {
@@ -269,16 +235,6 @@ namespace libUnpack.IO
             return remaining;
         }
 
-        private void WriteCore(byte[] buffer, int offset, int count)
-        {
-            SyncSuperStreamPosition();
-
-            _superStream.Write(buffer, offset, count);
-            _position += count;
-
-            Debug.Assert(_position >= 0 && _position <= _length);
-        }
-
         private void SyncSuperStreamPosition()
         {
             var expecteSuperPosition = _startInSuperStream + _position;
@@ -292,34 +248,6 @@ namespace libUnpack.IO
                 throw new IOException("Не удалось установить позицию базового потока.");
             }
         }
-
-        #region Валидация состояния потока
-
-        private void ThrowIfDisposed()
-        {
-            if (_disposed)
-            {
-                throw new ObjectDisposedException(GetType().ToString());
-            }
-        }
-
-        private void ThrowIfCantRead()
-        {
-            if (!CanRead)
-            {
-                throw new NotSupportedException();
-            }
-        }
-
-        private void ThrowIfCantWrite()
-        {
-            if (!CanWrite)
-            {
-                throw new NotSupportedException();
-            }
-        }
-
-        #endregion
 
         private InvalidOperationException CantChangeLengthException()
         {
