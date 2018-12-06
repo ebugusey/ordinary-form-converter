@@ -5,12 +5,6 @@ namespace libUnpack.IO
 {
     internal abstract class StreamWithValidation : Stream
     {
-        public override bool CanRead { get; }
-
-        public override bool CanSeek { get; }
-
-        public override bool CanWrite { get; }
-
         public sealed override long Length
         {
             get
