@@ -193,7 +193,7 @@ namespace libUnpack.IO
                 newPosition = _length;
             }
 
-            int position = unchecked((int)newPosition);
+            int position = (int)newPosition;
 
             ChangePage(position, createIfDoesntExist: CanWrite);
 

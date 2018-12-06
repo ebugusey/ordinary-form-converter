@@ -45,7 +45,7 @@ namespace libUnpack.IO
                     throw CantChangeLengthException();
                 }
 
-                _position = unchecked((int)value);
+                _position = (int)value;
             }
         }
 
@@ -156,7 +156,7 @@ namespace libUnpack.IO
                 newPosition = _length;
             }
 
-            _position = unchecked((int)newPosition);
+            _position = (int)newPosition;
             Debug.Assert(_position >= 0 && _position <= _length);
 
             return newPosition;
