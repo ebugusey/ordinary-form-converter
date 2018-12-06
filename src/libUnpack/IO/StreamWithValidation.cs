@@ -10,6 +10,7 @@ namespace libUnpack.IO
             get
             {
                 ThrowIfDisposed();
+                ThrowIfCantSeek();
                 return LengthCore;
             }
         }
@@ -19,11 +20,13 @@ namespace libUnpack.IO
             get
             {
                 ThrowIfDisposed();
+                ThrowIfCantSeek();
                 return PositionCore;
             }
             set
             {
                 ThrowIfDisposed();
+                ThrowIfCantSeek();
                 ValidatePosition(value);
 
                 if (value > Length)
@@ -56,6 +59,7 @@ namespace libUnpack.IO
         public sealed override long Seek(long offset, SeekOrigin origin)
         {
             ThrowIfDisposed();
+            ThrowIfCantSeek();
 
             var newPosition = GetNewPosition(Position, Length, offset, origin);
 
@@ -66,6 +70,7 @@ namespace libUnpack.IO
         {
             ThrowIfDisposed();
             ThrowIfCantWrite();
+            ThrowIfCantSeek();
 
             if (value < 0)
             {
@@ -181,6 +186,14 @@ namespace libUnpack.IO
             if (!CanRead)
             {
                 throw new NotSupportedException("Поток не доступен для чтения.");
+            }
+        }
+
+        protected void ThrowIfCantSeek()
+        {
+            if (!CanSeek)
+            {
+                throw new NotSupportedException("Перемещение указателя потока не доступно.");
             }
         }
 
