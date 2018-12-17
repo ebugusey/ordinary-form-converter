@@ -208,6 +208,10 @@ namespace libUnpack.FileFormat
             // Но так как для его обработки нужно откатывать поток, будем считать
             // его частью строки.
             var expectedLastChars = NameLastChars;
+            if (sb.Length < expectedLastChars.Length)
+            {
+                throw new InvalidFileHeader();
+            }
 
             var lastChars = new char[expectedLastChars.Length];
             sb.CopyTo(sb.Length - lastChars.Length, lastChars, 0, lastChars.Length);
