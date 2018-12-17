@@ -105,9 +105,9 @@ namespace libUnpack.FileFormat
         /// <param name="nextPageAddr">Новый адрес следующей страницы.</param>
         public PageHeader(PageHeader oldValue, int? dataSize = null, int? nextPageAddr = null)
             : this(
-                  dataSize.GetValueOrDefault(oldValue.DataSize),
+                  dataSize ?? oldValue.DataSize,
                   oldValue.PageSize,
-                  nextPageAddr.GetValueOrDefault(oldValue.NextPageAddr)
+                  nextPageAddr ?? oldValue.NextPageAddr
             )
         {
         }
