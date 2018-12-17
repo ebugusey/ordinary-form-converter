@@ -207,7 +207,7 @@ namespace libUnpack.FileFormat
             // Имя файла идет не совсем до конца. После имени файла еще идет (int)0.
             // Но так как для его обработки нужно откатывать поток, будем считать
             // его частью строки.
-            var expectedLastChars = NameLastChars;
+            const string expectedLastChars = NameLastChars;
             if (sb.Length < expectedLastChars.Length)
             {
                 throw new InvalidFileHeader();
