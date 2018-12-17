@@ -9,13 +9,13 @@ namespace libUnpack.Exceptions
     {
         private static readonly string DefaultMessage = "Ошибка при чтении заголовка контейнера.";
 
-        public InvalidContainerHeader(string message)
+        internal InvalidContainerHeader(string message)
             : base(DefaultMessage, message)
         {
 
         }
 
-        public InvalidContainerHeader(string message, Exception innerException)
+        internal InvalidContainerHeader(string message, Exception innerException)
             : base(DefaultMessage, message, innerException)
         {
 
