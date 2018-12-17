@@ -153,7 +153,7 @@ namespace libUnpack.FileFormat
             }
             else if (buf.Length < Size)
             {
-                throw new InvalidFileAddress();
+                throw new InvalidFileAddress("Достигнут конец потока прежде чем адрес файла был прочитан полностью.");
             }
 
             int headerAddr = BitConverter.ToInt32(buf, 0);
@@ -166,7 +166,7 @@ namespace libUnpack.FileFormat
             }
             catch (Exception ex)
             {
-                throw new InvalidFileAddress(ex);
+                throw new InvalidFileAddress("Одно из полей адреса содержит некорректные данные.", ex);
             }
 
             return true;

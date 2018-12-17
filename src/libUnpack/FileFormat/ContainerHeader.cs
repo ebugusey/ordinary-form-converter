@@ -122,7 +122,7 @@ namespace libUnpack.FileFormat
                 }
                 catch (EndOfStreamException ex)
                 {
-                    throw new InvalidContainerHeader(ex);
+                    throw new InvalidContainerHeader("Достигнут конец потока прежде чем заголовок был прочитан полностью.", ex);
                 }
             }
 
@@ -138,7 +138,7 @@ namespace libUnpack.FileFormat
             }
             catch (Exception ex)
             {
-                throw new InvalidContainerHeader(ex);
+                throw new InvalidContainerHeader("Одно из полей заголовка содержит некорректные данные.", ex);
             }
 
             return header;

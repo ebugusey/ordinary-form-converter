@@ -104,8 +104,8 @@ namespace libUnpack.FileFormat
 
             using (var reader = new BinaryReader(input, NameEncoding, leaveOpen: true))
             {
-                var creationTime = ReadTime(reader);
-                var lastModified = ReadTime(reader);
+                var creationTime = ReadTime(reader, nameof(CreatedAt));
+                var lastModified = ReadTime(reader, nameof(LastModified));
                 int reserved = reader.ReadInt32();
                 var name = ReadName(reader);
 
@@ -121,7 +121,7 @@ namespace libUnpack.FileFormat
                 }
                 catch (Exception ex)
                 {
-                    throw new InvalidFileHeader(ex);
+                    throw new InvalidFileHeader("Одно из полей заголовка содержит некорректные данные.", ex);
                 }
 
                 return header;
@@ -146,7 +146,7 @@ namespace libUnpack.FileFormat
             }
         }
 
-        private static DateTime ReadTime(BinaryReader reader)
+        private static DateTime ReadTime(BinaryReader reader, string timeName)
         {
             long temp;
             try
@@ -155,7 +155,7 @@ namespace libUnpack.FileFormat
             }
             catch (EndOfStreamException ex)
             {
-                throw new InvalidFileHeader(ex);
+                throw new InvalidFileHeader("Достигнут конец потока прежде чем заголовок был прочитан полностью.", ex);
             }
 
             DateTime time;
@@ -165,7 +165,7 @@ namespace libUnpack.FileFormat
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                throw new InvalidFileHeader(ex);
+                throw new InvalidFileHeader($"{temp} выходит за пределы возможных значений даты/времени в свойстве {timeName}.", ex);
             }
 
             return time;
@@ -215,7 +215,7 @@ namespace libUnpack.FileFormat
             const string expectedLastChars = NameLastChars;
             if (sb.Length < expectedLastChars.Length)
             {
-                throw new InvalidFileHeader();
+                throw new InvalidFileHeader("После имени файла должен идти (int)0, но длина документа не позволяет его прочитать.");
             }
 
             var lastChars = new char[expectedLastChars.Length];
@@ -223,7 +223,9 @@ namespace libUnpack.FileFormat
 
             if (expectedLastChars != new string(lastChars))
             {
-                throw new InvalidFileHeader();
+                var bytes = NameEncoding.GetBytes(lastChars);
+                var value = BitConverter.ToInt32(bytes, 0);
+                throw new InvalidFileHeader($"После имени файла должен идти (int)0, а не (int){value}.");
             }
 
             sb.Remove(sb.Length - lastChars.Length, lastChars.Length);

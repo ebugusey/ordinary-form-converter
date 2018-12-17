@@ -126,11 +126,11 @@ namespace libUnpack.FileFormat
             {
                 MatchBytes(reader, CR, LF);
 
-                int dataSize = ReadHex(reader);
+                int dataSize = ReadHex(reader, nameof(DataSize));
                 MatchBytes(reader, SPACE);
-                int pageSize = ReadHex(reader);
+                int pageSize = ReadHex(reader, nameof(PageSize));
                 MatchBytes(reader, SPACE);
-                int nextPageAddr = ReadHex(reader);
+                int nextPageAddr = ReadHex(reader, nameof(NextPageAddr));
                 MatchBytes(reader, SPACE);
 
                 MatchBytes(reader, CR, LF);
@@ -146,7 +146,7 @@ namespace libUnpack.FileFormat
                 }
                 catch (Exception ex)
                 {
-                    throw new InvalidPageHeader(ex);
+                    throw new InvalidPageHeader("Одно из полей заголовка содержит некорректные данные.", ex);
                 }
 
                 return header;
@@ -184,16 +184,16 @@ namespace libUnpack.FileFormat
             var buf = reader.ReadBytes(expected.Length);
             if (!buf.SequenceEqual(expected))
             {
-                throw new InvalidPageHeader();
+                throw new InvalidPageHeader($"Ожидалась последовательность байтов: {expected.ToString()}, а получили: {buf.ToString()}.");
             }
         }
 
-        private static int ReadHex(BinaryReader reader)
+        private static int ReadHex(BinaryReader reader, string hexName)
         {
             var buf = reader.ReadChars(HexSize);
             if (buf.Length < HexSize)
             {
-                throw new InvalidPageHeader();
+                throw new InvalidPageHeader("Достигнут конец потока прежде чем заголовок был прочитан полностью.");
             }
 
             var hex = new string(buf);
@@ -205,11 +205,11 @@ namespace libUnpack.FileFormat
             }
             catch (FormatException ex)
             {
-                throw new InvalidPageHeader(ex);
+                throw new InvalidPageHeader($"Неверный формат шестнадцатеричного значения, представляющего {hexName}.", ex);
             }
             catch (OverflowException ex)
             {
-                throw new InvalidPageHeader(ex);
+                throw new InvalidPageHeader($"0x{hex} больше максимально возможного для {hexName}.", ex);
             }
 
             return result;
