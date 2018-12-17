@@ -29,7 +29,7 @@ namespace libUnpack.IO
                 ThrowIfCantSeek();
                 ValidatePosition(value);
 
-                if (value > Length)
+                if (value > LengthCore)
                 {
                     ThrowIfCantWrite();
                 }
@@ -61,7 +61,7 @@ namespace libUnpack.IO
             ThrowIfDisposed();
             ThrowIfCantSeek();
 
-            var newPosition = GetNewPosition(Position, Length, offset, origin);
+            var newPosition = GetNewPosition(PositionCore, LengthCore, offset, origin);
 
             return SeekCore(newPosition);
         }
