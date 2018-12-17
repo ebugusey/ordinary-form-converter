@@ -20,5 +20,17 @@ namespace libUnpack.Exceptions
         {
 
         }
+
+        public InvalidPageHeader(string message)
+            : base(DefaultMessage, message)
+        {
+
+        }
+
+        public InvalidPageHeader(string message, Exception innerException)
+            : base(DefaultMessage, message, innerException)
+        {
+
+        }
     }
 }

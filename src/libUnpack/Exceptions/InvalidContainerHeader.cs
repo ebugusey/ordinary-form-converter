@@ -20,5 +20,17 @@ namespace libUnpack.Exceptions
         {
 
         }
+
+        public InvalidContainerHeader(string message)
+            : base(DefaultMessage, message)
+        {
+
+        }
+
+        public InvalidContainerHeader(string message, Exception innerException)
+            : base(DefaultMessage, message, innerException)
+        {
+
+        }
     }
 }

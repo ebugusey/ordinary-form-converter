@@ -20,5 +20,17 @@ namespace libUnpack.Exceptions
         {
 
         }
+
+        public InvalidFileAddress(string message)
+            : base(DefaultMessage, message)
+        {
+
+        }
+
+        public InvalidFileAddress(string message, Exception innerException)
+            : base(DefaultMessage, message, innerException)
+        {
+
+        }
     }
 }

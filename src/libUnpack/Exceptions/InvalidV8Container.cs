@@ -17,5 +17,17 @@ namespace libUnpack.Exceptions
         {
 
         }
+
+        protected InvalidV8Container(string message1, string message2)
+            : base($"{message1}\n{message2}")
+        {
+
+        }
+
+        protected InvalidV8Container(string message1, string message2, Exception innerException)
+            : base($"{message1}\n{message2}", innerException)
+        {
+
+        }
     }
 }
