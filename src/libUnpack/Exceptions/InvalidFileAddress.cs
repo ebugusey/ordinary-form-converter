@@ -9,18 +9,6 @@ namespace libUnpack.Exceptions
     {
         private static readonly string DefaultMessage = "Ошибка при чтении адреса файла.";
 
-        public InvalidFileAddress()
-            : base(DefaultMessage)
-        {
-
-        }
-
-        public InvalidFileAddress(Exception innerException)
-            : base(DefaultMessage, innerException)
-        {
-
-        }
-
         public InvalidFileAddress(string message)
             : base(DefaultMessage, message)
         {

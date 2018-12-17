@@ -9,18 +9,6 @@ namespace libUnpack.Exceptions
     {
         private static readonly string DefaultMessage = "Ошибка при чтении заголовка страницы.";
 
-        public InvalidPageHeader()
-            : base(DefaultMessage)
-        {
-
-        }
-
-        public InvalidPageHeader(Exception innerException)
-            : base(DefaultMessage, innerException)
-        {
-
-        }
-
         public InvalidPageHeader(string message)
             : base(DefaultMessage, message)
         {

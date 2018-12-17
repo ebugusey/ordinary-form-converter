@@ -9,18 +9,6 @@ namespace libUnpack.Exceptions
     {
         private static readonly string DefaultMessage = "Ошибка при чтении заголовка файла.";
 
-        public InvalidFileHeader()
-            : base(DefaultMessage)
-        {
-
-        }
-
-        public InvalidFileHeader(Exception innerException)
-            : base(DefaultMessage, innerException)
-        {
-
-        }
-
         public InvalidFileHeader(string message)
             : base(DefaultMessage, message)
         {
