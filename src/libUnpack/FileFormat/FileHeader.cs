@@ -148,15 +148,20 @@ namespace libUnpack.FileFormat
 
         private static DateTime ReadTime(BinaryReader reader)
         {
-            DateTime time;
+            long temp;
             try
             {
-                long temp = reader.ReadInt64();
-                time = V8TimeToDateTime(temp);
+                temp = reader.ReadInt64();
             }
             catch (EndOfStreamException ex)
             {
                 throw new InvalidFileHeader(ex);
+            }
+
+            DateTime time;
+            try
+            {
+                time = V8TimeToDateTime(temp);
             }
             catch (ArgumentOutOfRangeException ex)
             {
