@@ -40,6 +40,19 @@ namespace libUnpack.IO
             set => SeekCore(value);
         }
 
+        private bool EndOfDocument => _position == _length;
+
+        private int DocumentLength
+        {
+            get => _length;
+            set
+            {
+                Debug.Assert(value >= 0 && value <= MaxLength);
+                _length = value;
+                _firstPage.DataSize = value;
+            }
+        }
+
         private int _position;
         private int _length;
 
@@ -88,14 +101,14 @@ namespace libUnpack.IO
         /// <returns>Количество прочитанных байт.</returns>
         protected override int ReadCore(byte[] buffer, int offset, int count)
         {
-            if (_position == _length)
+            if (EndOfDocument)
             {
                 return 0;
             }
 
             var remaining = Math.Min(
                 count,
-                _length - _position
+                DocumentLength - _position
             );
 
             var bytesRead = ReadFromCurrentPage(buffer, offset, remaining);
@@ -118,7 +131,7 @@ namespace libUnpack.IO
         /// <param name="value">Новая длина потока.</param>
         protected override void SetLengthCore(long value)
         {
-            if (value == _length)
+            if (value == DocumentLength)
             {
                 return;
             }
@@ -127,7 +140,7 @@ namespace libUnpack.IO
             ChangePage((int)value, createIfDoesntExist: true);
             _currentPage = currentPage;
 
-            ChangeLength((int)value);
+            DocumentLength = (int)value;
         }
 
         /// <summary>
@@ -165,9 +178,9 @@ namespace libUnpack.IO
             // Перемещение по страницам автоматически расширяет супер-поток,
             // поэтому можно без зазрения совести просто увеличить длину,
             // если она меньше текущей позиции.
-            if (_length < _position)
+            if (DocumentLength < _position)
             {
-                ChangeLength(_position);
+                DocumentLength = _position;
             }
         }
 
@@ -188,9 +201,9 @@ namespace libUnpack.IO
                 return newPosition;
             }
 
-            if (newPosition > _length && !CanWrite)
+            if (newPosition > DocumentLength && !CanWrite)
             {
-                newPosition = _length;
+                newPosition = DocumentLength;
             }
 
             int position = (int)newPosition;
@@ -201,12 +214,6 @@ namespace libUnpack.IO
             _position = position;
 
             return newPosition;
-        }
-
-        private void ChangeLength(int newLength)
-        {
-            _firstPage.DataSize = newLength;
-            _length = newLength;
         }
 
         #region Операции с текущей страницей
