@@ -77,8 +77,8 @@ namespace libUnpack.IO
             _firstPage = firstPage;
             _currentPage = firstPage;
 
-            CanRead = firstPage.Stream.CanRead;
-            CanWrite = firstPage.Stream.CanWrite;
+            CanRead = firstPage.CanRead;
+            CanWrite = firstPage.CanWrite;
 
             _position = 0;
             _length = firstPage.DataSize;
@@ -89,7 +89,7 @@ namespace libUnpack.IO
         /// </summary>
         protected override void FlushCore()
         {
-            _firstPage.Stream.Flush();
+            _firstPage.Flush();
         }
 
         /// <summary>
@@ -222,7 +222,7 @@ namespace libUnpack.IO
         {
             SyncCurrentPagePosition();
 
-            var bytesRead = _currentPage.Stream.Read(buffer, offset, count);
+            var bytesRead = _currentPage.Read(buffer, offset, count);
             _position = _currentPage.DocumentPosition;
 
             return bytesRead;
@@ -232,7 +232,7 @@ namespace libUnpack.IO
         {
             SyncCurrentPagePosition();
 
-            var bytesWritten = _currentPage.Stream.WriteWhatYouCan(buffer, offset, count);
+            var bytesWritten = _currentPage.Write(buffer, offset, count);
             _position = _currentPage.DocumentPosition;
 
             return bytesWritten;

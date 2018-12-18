@@ -47,11 +47,6 @@ namespace libUnpack.IO
         }
 
         /// <summary>
-        /// Поток для чтения и записи содержимого страницы.
-        /// </summary>
-        public PageStream Stream => _pageStream;
-
-        /// <summary>
         /// Адрес страницы, позиция внутри потока контейнера.
         /// </summary>
         public long Address => _startInSuperStream;
@@ -74,6 +69,16 @@ namespace libUnpack.IO
                 WriteHeader();
             }
         }
+
+        /// <summary>
+        /// Страница поддерживает чтение.
+        /// </summary>
+        public bool CanRead => _pageStream.CanRead;
+
+        /// <summary>
+        /// Страница поддерживает запись.
+        /// </summary>
+        public bool CanWrite => _pageStream.CanWrite;
 
         /// <summary>
         /// Определяет, является ли страница первой страницей в цепочке.
@@ -330,6 +335,58 @@ namespace libUnpack.IO
             WriteHeader();
 
             return _nextPage;
+        }
+
+        /// <summary>
+        /// Сбрасывает буфер основного потока контейнера.
+        /// </summary>
+        public void Flush()
+        {
+            _pageStream.Flush();
+        }
+
+        /// <summary>
+        /// Читает данные страницы в указанный буфер начиная с текущей позиции страницы.
+        /// </summary>
+        /// <param name="buffer">Массив для сохранения прочитанных байтов.</param>
+        /// <param name="offset">Смещение в <paramref name="buffer"/>, с которого нужно разместить прочитанные байты.</param>
+        /// <param name="count">Количество байт, которое нужно прочитать.</param>
+        /// <returns>Количество прочитанных байт.</returns>
+        public int Read(byte[] buffer, int offset, int count)
+        {
+            return _pageStream.Read(buffer, offset, count);
+        }
+
+        /// <summary>
+        /// Записывает данные из указанного буфера начиная с текущей позиции страницы.
+        /// </summary>
+        /// <remarks>
+        /// Стандартная реализация <see cref="Stream.Write(byte[], int, int)"/> должна записать все данные,
+        /// которые ей переданы и увеличить размер потока, если это нужно.
+        /// Так как страница имеет фиксированный размер, <see cref="PageStream"/> этого сделать не может.
+        /// Этот метод записывает только то, что помещается в поток и возвращает количество записанных байт.
+        /// Если достигнут конец потока и записать больше ничего нельзя, он возвращает 0.
+        /// </remarks>
+        /// <param name="buffer">Массив, из которого записываются байты в поток.</param>
+        /// <param name="offset">Смещение в <paramref name="buffer"/>, с которого нужно взять байты для записи в поток.</param>
+        /// <param name="count">Количество байт, которое нужно записать в поток.</param>
+        /// <returns>Количество записанных байт.</returns>
+        public int Write(byte[] buffer, int offset, int count)
+        {
+            if (_pageStream.EndOfPage)
+            {
+                return 0;
+            }
+
+            var remaining = Math.Min(
+                count,
+                _pageStream.RemaingBytes
+            );
+
+            _pageStream.Write(buffer, offset, remaining);
+            var bytesWritten = remaining;
+
+            return bytesWritten;
         }
 
         private void Allocate()

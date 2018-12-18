@@ -49,7 +49,15 @@ namespace libUnpack.IO
             }
         }
 
-        private bool EndOfPage => _position == _length;
+        /// <summary>
+        /// Признак того, что достигнут конец страницы.
+        /// </summary>
+        public bool EndOfPage => _position == _length;
+
+        /// <summary>
+        /// Количество байт до конца страницы.
+        /// </summary>
+        public int RemaingBytes => _length - _position;
 
         private int _position;
         private readonly int _length;
@@ -196,43 +204,6 @@ namespace libUnpack.IO
             _position += count;
 
             Debug.Assert(_position >= 0 && _position <= _length);
-        }
-
-        /// <summary>
-        /// Записывает только те данные, которые помещаются в поток.
-        /// </summary>
-        /// <remarks>
-        /// Стандартная реализация <see cref="Stream.Writer(byte[], int, int)"/> должна записать все данные,
-        /// которые ей переданы и увеличить размер потока, если это нужно.
-        /// Так как страница имеет фиксированный размер <see cref="Write(byte[], int, int)"/> этого сделать
-        /// не может и кидает исключение.
-        /// Этот метод записывает только то, что помещается в поток и возвращает количество записанных байт.
-        /// Если достигнут конец потока и записать больше ничего нельзя, он возвращает 0.
-        /// </remarks>
-        /// <param name="buffer">Массив, из которого записываются байты в поток.</param>
-        /// <param name="offset">Смещение в <paramref name="buffer"/>, с которого нужно взять байты для записи в поток.</param>
-        /// <param name="count">Количество байт, которое нужно записать в поток.</param>
-        /// <returns>Количество байт, записанных в поток.</returns>
-        public int WriteWhatYouCan(byte[] buffer, int offset, int count)
-        {
-            ThrowIfDisposed();
-            ThrowIfCantWrite();
-
-            ValidateReadWriteArguments(buffer, offset, count);
-
-            if (EndOfPage)
-            {
-                return 0;
-            }
-
-            int remaining = Math.Min(
-                count,
-                _length - _position
-            );
-
-            WriteCore(buffer, offset, remaining);
-
-            return remaining;
         }
 
         private void SyncSuperStreamPosition()
