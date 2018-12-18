@@ -43,7 +43,7 @@ namespace libUnpack
         /// </summary>
         private const int NewContainerPageSize = 4096;
 
-        private readonly int _defaultPageSize;
+        private int _defaultPageSize;
 
         private readonly Stream _baseStream;
         private readonly V8ContainerMode _mode;
@@ -52,10 +52,10 @@ namespace libUnpack
         private readonly List<V8File> _files;
         private readonly Dictionary<string, V8File> _filesDictionary;
 
-        private V8Container(Stream stream, ContainerHeader header, V8ContainerMode mode)
+        private V8Container(Stream stream, V8ContainerMode mode)
         {
             _baseStream = stream;
-            _defaultPageSize = header.PageSize;
+            _defaultPageSize = NewContainerPageSize;
 
             _mode = mode;
 
@@ -63,6 +63,8 @@ namespace libUnpack
             {
                 case V8ContainerMode.Read:
                     {
+                        ReadHeader();
+
                         var TOC = new V8Document(this);
                         _files = ReadTOC(TOC);
                         _filesDictionary = _files.ToDictionary(file => file.Name);
@@ -71,6 +73,8 @@ namespace libUnpack
 
                 case V8ContainerMode.Write:
                     {
+                        WriteHeader();
+
                         var TOC = CreateDocument();
                         _tocStream = TOC.Open();
                         _files = new List<V8File>();
@@ -96,8 +100,7 @@ namespace libUnpack
             }
 
             var stream = File.OpenRead(filename);
-
-            var container = Init(stream, V8ContainerMode.Read);
+            var container = new V8Container(stream, V8ContainerMode.Read);
 
             return container;
         }
@@ -115,36 +118,7 @@ namespace libUnpack
             }
 
             var stream = File.Create(filename);
-            var container = Init(stream, V8ContainerMode.Write);
-
-            return container;
-        }
-
-        private static V8Container Init(Stream stream, V8ContainerMode mode)
-        {
-            V8Container container;
-            switch (mode)
-            {
-                case V8ContainerMode.Read:
-                    {
-                        var header = ContainerHeader.Read(stream);
-                        container = new V8Container(stream, header, mode);
-                    }
-
-                    break;
-
-                case V8ContainerMode.Write:
-                    {
-                        var header = new ContainerHeader(pageSize: NewContainerPageSize);
-                        container = new V8Container(stream, header, mode);
-                        container.WriteHeader();
-                    }
-
-                    break;
-
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(mode));
-            }
+            var container = new V8Container(stream, V8ContainerMode.Write);
 
             return container;
         }
@@ -305,6 +279,14 @@ namespace libUnpack
                     .Select(addr => V8File.FromStream(this, addr));
                 return files.ToList();
             }
+        }
+
+        private void ReadHeader()
+        {
+            _baseStream.Position = 0;
+
+            var header = ContainerHeader.Read(_baseStream);
+            _defaultPageSize = header.PageSize;
         }
 
         private void WriteHeader()
