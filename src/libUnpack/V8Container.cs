@@ -234,7 +234,12 @@ namespace libUnpack
                 throw new ArgumentOutOfRangeException(nameof(capacity));
             }
 
-            var numberOfPages = capacity / _defaultPageSize + capacity % _defaultPageSize;
+            var numberOfPages = capacity / _defaultPageSize;
+            if (capacity % _defaultPageSize > 0)
+            {
+                numberOfPages++;
+            }
+
             var pageSize =
                 numberOfPages > 1 ?
                 _defaultPageSize :
