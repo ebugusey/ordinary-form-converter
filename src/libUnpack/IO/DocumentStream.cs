@@ -40,7 +40,7 @@ namespace libUnpack.IO
             set => SeekCore(value);
         }
 
-        private bool EndOfDocument => _position == _length;
+        private bool EndOfDocument => _position >= _length;
 
         private int DocumentLength
         {
@@ -110,6 +110,7 @@ namespace libUnpack.IO
                 count,
                 DocumentLength - _position
             );
+            Debug.Assert(remaining >= 0);
 
             var bytesRead = ReadFromCurrentPage(buffer, offset, remaining);
 
@@ -202,16 +203,14 @@ namespace libUnpack.IO
                 return newPosition;
             }
 
-            if (newPosition > DocumentLength && !CanWrite)
-            {
-                newPosition = DocumentLength;
-            }
-
             int position = (int)newPosition;
 
+            // При изменении позиции по идее не должны вносится изменения в поток,
+            // но так как изменение текущей страницы не влияет на супер-поток,
+            // а не на текущий (длина не меняется, данные не записываются),
+            // то можно забить на это ради простоты работы со страницами.
             ChangePage(position, createIfDoesntExist: CanWrite);
 
-            _currentPage.DocumentPosition = position;
             _position = position;
 
             return newPosition;
