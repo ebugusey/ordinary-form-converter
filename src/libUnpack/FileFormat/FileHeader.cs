@@ -119,9 +119,9 @@ namespace libUnpack.FileFormat
                         reserved
                     );
                 }
-                catch (Exception ex)
+                catch (ArgumentException ex)
                 {
-                    throw new InvalidFileHeader("Одно из полей заголовка содержит некорректные данные.", ex);
+                    throw new InvalidFileHeader($"{ex.ParamName} содержит некорректные данные.", ex);
                 }
 
                 return header;

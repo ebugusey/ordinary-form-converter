@@ -144,9 +144,9 @@ namespace libUnpack.FileFormat
                         nextPageAddr
                     );
                 }
-                catch (Exception ex)
+                catch (ArgumentException ex)
                 {
-                    throw new InvalidPageHeader("Одно из полей заголовка содержит некорректные данные.", ex);
+                    throw new InvalidPageHeader($"{ex.ParamName} содержит некорректные данные.", ex);
                 }
 
                 return header;

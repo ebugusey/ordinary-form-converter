@@ -164,9 +164,9 @@ namespace libUnpack.FileFormat
             {
                 fileAddress = new FileAddress(headerAddr, dataAddr, signature);
             }
-            catch (Exception ex)
+            catch (ArgumentException ex)
             {
-                throw new InvalidFileAddress("Одно из полей адреса содержит некорректные данные.", ex);
+                throw new InvalidFileAddress($"{ex.ParamName} содержит некорректные данные.", ex);
             }
 
             return true;
