@@ -136,9 +136,10 @@ namespace libUnpack.IO
                 return;
             }
 
-            var currentPage = _currentPage;
-            ChangePage((int)value, createIfDoesntExist: true);
-            _currentPage = currentPage;
+            if (value > DocumentLength)
+            {
+                ExpandStream((int)value);
+            }
 
             DocumentLength = (int)value;
         }
@@ -284,6 +285,15 @@ namespace libUnpack.IO
         }
 
         #endregion
+
+        private void ExpandStream(int newLength)
+        {
+            // Установка страницы автоматически увеличивает длину потока,
+            // но менять страницу нам не надо.
+            var temp = _currentPage;
+            ChangePage(newLength, createIfDoesntExist: true);
+            _currentPage = temp;
+        }
 
         private IOException MaxLengthReachedException()
         {
