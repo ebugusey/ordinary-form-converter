@@ -174,6 +174,11 @@ namespace libUnpack
                 throw new InvalidOperationException("Контейнер открыт в режиме чтения. Создание файлов невозможно.");
             }
 
+            if (_filesDictionary.ContainsKey(name))
+            {
+                throw new InvalidOperationException("Файл с таким именем уже существует.");
+            }
+
             var file = V8File.Create(this, name);
             file.Address.Write(_tocStream);
 
