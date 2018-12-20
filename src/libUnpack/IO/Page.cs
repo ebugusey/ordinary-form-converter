@@ -19,7 +19,18 @@ namespace libUnpack.IO
         /// <summary>
         /// Конечная позиция страницы внутри документа.
         /// </summary>
-        public int End => Start + _header.PageSize;
+        public int End
+        {
+            get
+            {
+                long end = Start + _header.PageSize;
+                if (end > DocumentStream.MaxLength)
+                {
+                    end = DocumentStream.MaxLength;
+                }
+                return (int)end;
+            }
+        }
 
         /// <summary>
         /// Текущая позиция <see cref="Stream"/> относительно документа.
