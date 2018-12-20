@@ -130,6 +130,8 @@ namespace libUnpack.IO
             }
         }
 
+        public const int MaxAddress = int.MaxValue - 1;
+
         private Stream SuperStream => _container.MainStream;
         private long HeaderPosition => _startInSuperStream;
         private long DataPosition => _startInSuperStream + PageHeader.Size;
@@ -183,7 +185,7 @@ namespace libUnpack.IO
             {
                 throw new ArgumentNullException(nameof(container));
             }
-            if (start < 0)
+            if (start < 0 || start > MaxAddress)
             {
                 throw new ArgumentOutOfRangeException(nameof(start));
             }
@@ -222,7 +224,7 @@ namespace libUnpack.IO
             {
                 throw new ArgumentNullException(nameof(container));
             }
-            if (start < 0)
+            if (start < 0 || start > MaxAddress)
             {
                 throw new ArgumentOutOfRangeException(nameof(start));
             }
