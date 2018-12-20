@@ -240,31 +240,10 @@ namespace libUnpack
                 throw new ArgumentOutOfRangeException(nameof(capacity));
             }
 
-            var numberOfPages = capacity / _defaultPageSize;
-            if (capacity % _defaultPageSize > 0)
-            {
-                numberOfPages++;
-            }
-
-            var pageSize =
-                numberOfPages > 1 ?
-                _defaultPageSize :
-                capacity;
-
             long address;
-            using (var firstPage = AllocatePage(pageSize))
+            using (var firstPage = AllocatePage(capacity))
             {
                 address = firstPage.Address;
-
-                numberOfPages--;
-
-                var page = firstPage;
-                while (numberOfPages > 0)
-                {
-                    page = page.CreateNextPage();
-                    numberOfPages--;
-                }
-
             }
 
             var document = new V8Document(this, (int)address);
@@ -278,11 +257,10 @@ namespace libUnpack
         /// <returns></returns>
         internal Page AllocatePage()
         {
-
             return AllocatePage(_defaultPageSize);
         }
 
-        private Page AllocatePage(int pageSize)
+        internal Page AllocatePage(int pageSize)
         {
             ThrowIfDisposed();
 

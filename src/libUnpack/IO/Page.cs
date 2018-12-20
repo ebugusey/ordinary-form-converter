@@ -342,21 +342,23 @@ namespace libUnpack.IO
         public Page CreateNextPage()
         {
             ThrowIfDisposed();
+            EnsureCanCreateNextPage();
 
-            if (Next != null)
-            {
-                throw new InvalidOperationException("Новые страницы можно создавать только в конце цепочки.");
-            }
+            var nextPage = _container.AllocatePage();
+            AttachNextPage(nextPage);
 
-            _nextPage = _container.AllocatePage();
-            _nextPage.Start = End;
-            _nextPage._prevPage = this;
+            return nextPage;
+        }
 
-            var nextPageAddr = (int)_nextPage.Address;
-            _header = new PageHeader(_header, nextPageAddr: nextPageAddr);
-            WriteHeader();
+        public Page CreateNextPage(int size)
+        {
+            ThrowIfDisposed();
+            EnsureCanCreateNextPage();
 
-            return _nextPage;
+            var nextPage = _container.AllocatePage(size);
+            AttachNextPage(nextPage);
+
+            return nextPage;
         }
 
         /// <summary>
@@ -432,6 +434,26 @@ namespace libUnpack.IO
 
             _pageStream.Position = 0;
             _pageStream.Write(zeroBuf, 0, size);
+        }
+
+        private void AttachNextPage(Page nextPage)
+        {
+            nextPage.Start = End;
+            nextPage._prevPage = this;
+
+            var nextPageAddr = (int)nextPage.Address;
+            _header = new PageHeader(_header, nextPageAddr: nextPageAddr);
+            WriteHeader();
+
+            _nextPage = nextPage;
+        }
+
+        private void EnsureCanCreateNextPage()
+        {
+            if (Next != null)
+            {
+                throw new InvalidOperationException("Новые страницы можно создавать только в конце цепочки.");
+            }
         }
 
         private void ThrowIfDisposed()

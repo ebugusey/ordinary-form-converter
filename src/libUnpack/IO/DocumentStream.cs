@@ -9,7 +9,7 @@ namespace libUnpack.IO
     /// </summary>
     internal sealed class DocumentStream : StreamWithValidation
     {
-        public const long MaxLength = int.MaxValue;
+        public const long MaxLength = int.MaxValue - 1;
 
         /// <summary>
         /// Поток поддерживает чтение.
@@ -275,7 +275,7 @@ namespace libUnpack.IO
                 page = Page.LastPage(_currentPage);
                 do
                 {
-                    page = page.CreateNextPage();
+                    page = page.CreateNextPage(position);
                 } while (!page.HasPosition(position));
             }
 
