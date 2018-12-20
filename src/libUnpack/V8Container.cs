@@ -26,6 +26,8 @@ namespace libUnpack
             }
         }
 
+        public const int MaxLength = Page.MaxAddress;
+
         /// <summary>
         /// Получает основной поток контейнера.
         /// Используется для чтения и записи содержимого контейнера
@@ -199,6 +201,11 @@ namespace libUnpack
                 throw new InvalidOperationException("Файл с таким именем уже существует.");
             }
 
+            if (_baseStream.Length >= MaxLength)
+            {
+                throw new InvalidOperationException("Контейнер достиг максимального размера, создание новых файлов невозможно.");
+            }
+
             var file = V8File.Create(this, name);
             file.Address.Write(_tocStream);
 
@@ -284,6 +291,8 @@ namespace libUnpack
                 throw new ArgumentOutOfRangeException(nameof(pageSize));
             }
 
+            var pageAddr = _baseStream.Length;
+
             // TODO: Не писать в поток пустые байты при создании страниц.
             //      Страница всегда размещается в конец контейнера,
             //      потому что при создании страница автоматически выделяет себе место.
@@ -292,7 +301,7 @@ namespace libUnpack
             // TODO: Добавить возможность выделения страниц из пула свободных страниц.
             //      Форма позволяет организовать пул свободных страниц,
             //      но при текущей реализации такая функциональность пока не нужна.
-            var page = Page.Create(this, _baseStream.Length, pageSize);
+            var page = Page.Create(this, pageAddr, pageSize);
             return page;
         }
 
