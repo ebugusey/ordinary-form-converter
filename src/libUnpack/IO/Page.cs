@@ -184,7 +184,16 @@ namespace libUnpack.IO
             var header = new PageHeader(pageSize: pageSize);
 
             var page = new Page(container, start, header);
-            page.Allocate();
+
+            try
+            {
+                page.Allocate();
+            }
+            catch
+            {
+                page.Dispose();
+                throw;
+            }
 
             return page;
         }
