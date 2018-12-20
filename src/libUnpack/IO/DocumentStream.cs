@@ -272,7 +272,7 @@ namespace libUnpack.IO
 
             if (page == null && createIfDoesntExist)
             {
-                page = Page.LastPage(page);
+                page = Page.LastPage(_currentPage);
                 do
                 {
                     page = page.CreateNextPage();
