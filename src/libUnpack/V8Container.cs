@@ -100,7 +100,17 @@ namespace libUnpack
             }
 
             var stream = File.OpenRead(filename);
-            var container = new V8Container(stream, V8ContainerMode.Read);
+
+            V8Container container;
+            try
+            {
+                container = new V8Container(stream, V8ContainerMode.Read);
+            }
+            catch
+            {
+                stream.Dispose();
+                throw;
+            }
 
             return container;
         }
@@ -118,7 +128,17 @@ namespace libUnpack
             }
 
             var stream = File.Create(filename);
-            var container = new V8Container(stream, V8ContainerMode.Write);
+
+            V8Container container;
+            try
+            {
+                container = new V8Container(stream, V8ContainerMode.Write);
+            }
+            catch
+            {
+                stream.Dispose();
+                throw;
+            }
 
             return container;
         }
