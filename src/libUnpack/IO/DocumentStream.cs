@@ -132,6 +132,11 @@ namespace libUnpack.IO
         /// <param name="value">Новая длина потока.</param>
         protected override void SetLengthCore(long value)
         {
+            if (value > MaxLength)
+            {
+                throw MaxLengthReachedException();
+            }
+
             if (value == DocumentLength)
             {
                 return;
