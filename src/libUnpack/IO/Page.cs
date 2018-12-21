@@ -429,11 +429,20 @@ namespace libUnpack.IO
 
         private void ErasePageStream()
         {
-            var size = _header.PageSize;
-            var zeroBuf = new byte[size];
+            int bufSize = Math.Min(
+                1024 * 16,
+                _header.PageSize
+            );
+            var zeroBuf = new byte[bufSize];
 
             _pageStream.Position = 0;
-            _pageStream.Write(zeroBuf, 0, size);
+
+            var remaining = _header.PageSize;
+            while (remaining > 0)
+            {
+                Write(zeroBuf, 0, bufSize);
+                remaining -= bufSize;
+            }
         }
 
         private void AttachNextPage(Page nextPage)
