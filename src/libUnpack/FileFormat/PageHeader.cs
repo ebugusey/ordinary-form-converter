@@ -54,6 +54,9 @@ namespace libUnpack.FileFormat
         private const byte LF    = 0x0A;
         private const byte SPACE = 0x20;
 
+        private static readonly byte[] CRLF_SEQ = new[] { CR, LF };
+        private static readonly byte[] SPACE_SEQ = new[] { SPACE };
+
         private const int HexSize = 8;
         private const string HexFormat = "x8";
         private static readonly Encoding HexEncoding = Encoding.ASCII;
@@ -124,16 +127,16 @@ namespace libUnpack.FileFormat
 
             using (var reader = new BinaryReader(input, HexEncoding, leaveOpen: true))
             {
-                MatchBytes(reader, CR, LF);
+                MatchBytes(reader, CRLF_SEQ);
 
                 int dataSize = ReadHex(reader, nameof(DataSize));
-                MatchBytes(reader, SPACE);
+                MatchBytes(reader, SPACE_SEQ);
                 int pageSize = ReadHex(reader, nameof(PageSize));
-                MatchBytes(reader, SPACE);
+                MatchBytes(reader, SPACE_SEQ);
                 int nextPageAddr = ReadHex(reader, nameof(NextPageAddr));
-                MatchBytes(reader, SPACE);
+                MatchBytes(reader, SPACE_SEQ);
 
-                MatchBytes(reader, CR, LF);
+                MatchBytes(reader, CRLF_SEQ);
 
                 PageHeader header;
                 try
@@ -164,18 +167,16 @@ namespace libUnpack.FileFormat
 
             using (var writer = new BinaryWriter(output, HexEncoding, leaveOpen: true))
             {
-                var CRLF = new byte[] { CR, LF };
-
-                writer.Write(CRLF);
+                writer.Write(CRLF_SEQ);
 
                 WriteHex(writer, DataSize);
-                writer.Write(SPACE);
+                writer.Write(SPACE_SEQ);
                 WriteHex(writer, PageSize);
-                writer.Write(SPACE);
+                writer.Write(SPACE_SEQ);
                 WriteHex(writer, NextPageAddr);
-                writer.Write(SPACE);
+                writer.Write(SPACE_SEQ);
 
-                writer.Write(CRLF);
+                writer.Write(CRLF_SEQ);
             }
         }
 
