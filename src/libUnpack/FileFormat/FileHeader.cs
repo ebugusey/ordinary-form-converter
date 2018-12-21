@@ -177,16 +177,6 @@ namespace libUnpack.FileFormat
             writer.Write(temp);
         }
 
-        private static DateTime V8TimeToDateTime(long value)
-        {
-            return new DateTime(ticks: value * 1000);
-        }
-
-        private static long DateTimeToV8Time(DateTime value)
-        {
-            return value.Ticks / 1000;
-        }
-
         private static string ReadName(BinaryReader reader)
         {
             // Стандартное имя файла в контейнере не превышает 40 символов,
@@ -238,6 +228,16 @@ namespace libUnpack.FileFormat
             var buf = value.ToCharArray();
             writer.Write(buf);
             writer.Write(NameLastChars.ToCharArray());
+        }
+
+        private static DateTime V8TimeToDateTime(long value)
+        {
+            return new DateTime(ticks: value * 1000);
+        }
+
+        private static long DateTimeToV8Time(DateTime value)
+        {
+            return value.Ticks / 1000;
         }
 
         #region Object
