@@ -27,7 +27,7 @@ namespace libUnpack
 
         /// <summary>
         /// Получает структуру <see cref="FileAddress"/>,
-        /// которую необходимо записать в TOC.
+        /// которую необходимо записать в оглавление.
         /// </summary>
         internal FileAddress Address => new FileAddress(_headerDoc.Address, _dataDoc.Address);
 

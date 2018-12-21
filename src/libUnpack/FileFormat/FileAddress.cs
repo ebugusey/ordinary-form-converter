@@ -92,37 +92,37 @@ namespace libUnpack.FileFormat
         /// </summary>
         /// <param name="input">Поток документа-оглавления.</param>
         /// <returns>Список прочитанных адресов.</returns>
-        public static List<FileAddress> ReadTOC(Stream input)
+        public static List<FileAddress> ReadToC(Stream input)
         {
             Debug.Assert(input != null);
             Debug.Assert(input.CanRead);
 
-            var TOC = new List<FileAddress>();
+            var tableOfContents = new List<FileAddress>();
             using (var reader = new BinaryReader(input, AnyEncoding, leaveOpen: true))
             {
                 while (Read(reader, out var fileAddress))
                 {
-                    TOC.Add(fileAddress);
+                    tableOfContents.Add(fileAddress);
                 }
             }
 
-            return TOC;
+            return tableOfContents;
         }
 
         /// <summary>
         /// Записывает список адресов в поток, тем самым формируя документ-оглавление.
         /// </summary>
         /// <param name="output">Поток документа-оглавления.</param>
-        /// <param name="TOC">Список адресов, который нужно записать в документ-оглавление.</param>
-        public static void WriteTOC(Stream output, IEnumerable<FileAddress> TOC)
+        /// <param name="tableOfContents">Список адресов, который нужно записать в документ-оглавление.</param>
+        public static void WriteToC(Stream output, IEnumerable<FileAddress> tableOfContents)
         {
             Debug.Assert(output != null);
-            Debug.Assert(TOC != null);
+            Debug.Assert(tableOfContents != null);
             Debug.Assert(output.CanWrite);
 
             using (var writer = new BinaryWriter(output, AnyEncoding, leaveOpen: true))
             {
-                foreach (var fileAddr in TOC)
+                foreach (var fileAddr in tableOfContents)
                 {
                     fileAddr.Write(writer);
                 }

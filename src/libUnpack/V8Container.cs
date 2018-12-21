@@ -65,8 +65,8 @@ namespace libUnpack
                     {
                         ReadHeader();
 
-                        var TOC = new V8Document(this);
-                        _files = ReadTOC(TOC);
+                        var tocDocument = new V8Document(this);
+                        _files = ReadToC(tocDocument);
                         _filesDictionary = _files.ToDictionary(file => file.Name);
                     }
                     break;
@@ -75,8 +75,8 @@ namespace libUnpack
                     {
                         WriteHeader();
 
-                        var TOC = CreateDocument();
-                        _tocStream = TOC.Open();
+                        var tocDocument = CreateDocument();
+                        _tocStream = tocDocument.Open();
                         _files = new List<V8File>();
                         _filesDictionary = new Dictionary<string, V8File>();
                     }
@@ -271,11 +271,11 @@ namespace libUnpack
             return page;
         }
 
-        private List<V8File> ReadTOC(V8Document TOC)
+        private List<V8File> ReadToC(V8Document tocDocument)
         {
-            using (var reader = TOC.Open())
+            using (var reader = tocDocument.Open())
             {
-                var files = FileAddress.ReadTOC(reader)
+                var files = FileAddress.ReadToC(reader)
                     .Select(addr => V8File.FromStream(this, addr));
                 return files.ToList();
             }
