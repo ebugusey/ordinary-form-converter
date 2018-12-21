@@ -277,11 +277,7 @@ namespace libUnpack.IO
 
             if (page == null && createIfDoesntExist)
             {
-                page = Page.LastPage(_currentPage);
-                do
-                {
-                    page = page.CreateNextPage(position);
-                } while (!page.HasPosition(position));
+                page = ExpandStream(position);
             }
 
             _currentPage = page;
@@ -290,13 +286,17 @@ namespace libUnpack.IO
 
         #endregion
 
-        private void ExpandStream(int newLength)
+        private Page ExpandStream(int newLength)
         {
-            // Установка страницы автоматически увеличивает длину потока,
-            // но менять страницу нам не надо.
-            var temp = _currentPage;
-            ChangePage(newLength, createIfDoesntExist: true);
-            _currentPage = temp;
+            var lastPage = Page.LastPage(_currentPage);
+
+            do
+            {
+                var pageSize = newLength - lastPage.End;
+                lastPage = lastPage.CreateNextPage(pageSize);
+            } while (!lastPage.HasPosition(newLength));
+
+            return lastPage;
         }
 
         private IOException MaxLengthReachedException()
