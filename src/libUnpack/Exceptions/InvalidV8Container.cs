@@ -7,14 +7,14 @@ namespace libUnpack.Exceptions
     /// </summary>
     public abstract class InvalidV8Container : Exception
     {
-        protected InvalidV8Container(string message1, string message2)
-            : base($"{message1}\n{message2}")
+        protected InvalidV8Container(string generalMessage, string specificMessage)
+            : base($"{generalMessage}\n{specificMessage}")
         {
 
         }
 
-        protected InvalidV8Container(string message1, string message2, Exception innerException)
-            : base($"{message1}\n{message2}", innerException)
+        protected InvalidV8Container(string generalMessage, string specificMessage, Exception innerException)
+            : base($"{generalMessage}\n{specificMessage}", innerException)
         {
 
         }
