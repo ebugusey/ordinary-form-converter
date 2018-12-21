@@ -72,7 +72,8 @@ namespace libUnpack.FileFormat
             if (signature != V8Signature)
             {
                 throw new ArgumentException(
-                    $"Сигнатура адреса файла должна быть всегда равна 0x{V8Signature:x8}, но на вход мы получили {signature:x8}.",
+                    $"Получена некорректная сигнатура адреса файла: 0x{signature:x8}.\n" +
+                    $"Сигнатура файла неизменна и всегда должна быть 0x{V8Signature:x8}",
                     nameof(signature)
                 );
             }
