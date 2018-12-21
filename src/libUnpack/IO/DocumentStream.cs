@@ -158,7 +158,7 @@ namespace libUnpack.IO
         /// <param name="count">Количество байт, которое нужно записать в поток.</param>
         protected override void WriteCore(byte[] buffer, int offset, int count)
         {
-            long newPosition = _position + count;
+            long newPosition = (long)_position + count;
             if (newPosition > MaxLength)
             {
                 throw MaxLengthReachedException();

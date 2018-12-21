@@ -23,7 +23,7 @@ namespace libUnpack.IO
         {
             get
             {
-                long end = Start + _header.PageSize;
+                long end = (long)Start + _header.PageSize;
                 if (end > DocumentStream.MaxLength)
                 {
                     end = DocumentStream.MaxLength;
