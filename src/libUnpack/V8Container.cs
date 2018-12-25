@@ -54,17 +54,33 @@ namespace libUnpack
         private readonly List<V8File> _files;
         private readonly Dictionary<string, V8File> _filesDictionary;
 
-        private V8Container(Stream stream, V8ContainerMode mode)
+        public V8Container(Stream stream, V8ContainerMode mode)
         {
-            _baseStream = stream;
+            _baseStream = stream ?? throw new ArgumentNullException(nameof(stream));
             _defaultPageSize = NewContainerPageSize;
 
             _mode = mode;
+
+            if (!stream.CanSeek)
+            {
+                throw new ArgumentException(
+                    "Работа с потоками, не поддерживающими операцию Seek, не поддерживается.",
+                    nameof(stream)
+                );
+            }
 
             switch (mode)
             {
                 case V8ContainerMode.Read:
                     {
+                        if (!stream.CanRead)
+                        {
+                            throw new ArgumentException(
+                                "Работа с потоками, не поддерживающими операцию Read, не поддерживается.",
+                                nameof(stream)
+                            );
+                        }
+
                         ReadHeader();
 
                         var TOC = new V8Document(this);
@@ -75,6 +91,14 @@ namespace libUnpack
 
                 case V8ContainerMode.Write:
                     {
+                        if (!stream.CanWrite)
+                        {
+                            throw new ArgumentException(
+                                "Работа с потоками, не поддерживающими операцию Write, не поддерживается.",
+                                nameof(stream)
+                            );
+                        }
+
                         WriteHeader();
 
                         var TOC = CreateDocument();

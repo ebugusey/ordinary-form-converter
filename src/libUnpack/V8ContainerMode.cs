@@ -3,7 +3,7 @@ namespace libUnpack
     /// <summary>
     /// Режим работы контейнера.
     /// </summary>
-    internal enum V8ContainerMode
+    public enum V8ContainerMode
     {
         /// <summary>
         /// Контейнер открыт только для чтения.
