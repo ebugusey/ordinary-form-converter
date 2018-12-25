@@ -145,7 +145,7 @@ namespace libUnpack.IO
         private Page _prevPage;
         private Page _nextPage;
 
-        private Page(V8Container container, long start, PageHeader header, int startInDocument = 0)
+        private Page(V8Container container, long start, in PageHeader header, int startInDocument = 0)
         {
             Debug.Assert(container != null);
             Debug.Assert(start >= 0);
@@ -162,7 +162,7 @@ namespace libUnpack.IO
             _pageStream = new PageStream(SuperStream, DataPosition, _header.PageSize);
         }
 
-        private Page(Page prevPage, long start, PageHeader header)
+        private Page(Page prevPage, long start, in PageHeader header)
             : this(prevPage._container, start, header, startInDocument: prevPage.End)
         {
             Debug.Assert(prevPage != null);

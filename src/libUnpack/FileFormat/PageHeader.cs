@@ -106,7 +106,7 @@ namespace libUnpack.FileFormat
         /// <param name="oldValue">Заголовок, из которого нужно скопировать значения.</param>
         /// <param name="dataSize">Новый размер документа.</param>
         /// <param name="nextPageAddr">Новый адрес следующей страницы.</param>
-        public PageHeader(PageHeader oldValue, int? dataSize = null, int? nextPageAddr = null)
+        public PageHeader(in PageHeader oldValue, int? dataSize = null, int? nextPageAddr = null)
             : this(
                   dataSize ?? oldValue.DataSize,
                   oldValue.PageSize,

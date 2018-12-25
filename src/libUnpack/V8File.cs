@@ -36,7 +36,7 @@ namespace libUnpack
         private readonly V8Document _headerDoc;
         private readonly V8Document _dataDoc;
 
-        private V8File(V8Container container, FileAddress fileAddress)
+        private V8File(V8Container container, in FileAddress fileAddress)
         {
             Debug.Assert(container != null);
 
@@ -85,7 +85,7 @@ namespace libUnpack
         /// <param name="container">Контейнер, из потока которого нужно прочитать файл.</param>
         /// <param name="fileAddress">Структура с адресом заголовка и содержимого файла.</param>
         /// <returns>Прочитанный файл.</returns>
-        internal static V8File FromStream(V8Container container, FileAddress fileAddress)
+        internal static V8File FromStream(V8Container container, in FileAddress fileAddress)
         {
             if (container == null)
             {
