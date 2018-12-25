@@ -9,7 +9,7 @@ namespace libUnpack.IO
     /// </summary>
     internal sealed class DocumentStream : StreamWithValidation
     {
-        public const long MaxLength = int.MaxValue;
+        public const long MaxLength = int.MaxValue - 1;
 
         /// <summary>
         /// Поток поддерживает чтение.
@@ -132,6 +132,11 @@ namespace libUnpack.IO
         /// <param name="value">Новая длина потока.</param>
         protected override void SetLengthCore(long value)
         {
+            if (value > MaxLength)
+            {
+                throw MaxLengthReachedException();
+            }
+
             if (value == DocumentLength)
             {
                 return;
@@ -153,7 +158,7 @@ namespace libUnpack.IO
         /// <param name="count">Количество байт, которое нужно записать в поток.</param>
         protected override void WriteCore(byte[] buffer, int offset, int count)
         {
-            long newPosition = _position + count;
+            long newPosition = (long)_position + count;
             if (newPosition > MaxLength)
             {
                 throw MaxLengthReachedException();
@@ -206,7 +211,7 @@ namespace libUnpack.IO
             int position = (int)newPosition;
 
             // При изменении позиции по идее не должны вносится изменения в поток,
-            // но так как изменение текущей страницы не влияет на супер-поток,
+            // но так как изменение текущей страницы влияет на супер-поток,
             // а не на текущий (длина не меняется, данные не записываются),
             // то можно забить на это ради простоты работы со страницами.
             ChangePage(position, createIfDoesntExist: CanWrite);
@@ -272,11 +277,7 @@ namespace libUnpack.IO
 
             if (page == null && createIfDoesntExist)
             {
-                page = Page.LastPage(page);
-                do
-                {
-                    page = page.CreateNextPage();
-                } while (!page.HasPosition(position));
+                page = ExpandStream(position);
             }
 
             _currentPage = page;
@@ -285,13 +286,17 @@ namespace libUnpack.IO
 
         #endregion
 
-        private void ExpandStream(int newLength)
+        private Page ExpandStream(int newLength)
         {
-            // Установка страницы автоматически увеличивает длину потока,
-            // но менять страницу нам не надо.
-            var temp = _currentPage;
-            ChangePage(newLength, createIfDoesntExist: true);
-            _currentPage = temp;
+            var lastPage = Page.LastPage(_currentPage);
+
+            do
+            {
+                var pageSize = newLength - lastPage.End;
+                lastPage = lastPage.CreateNextPage(pageSize);
+            } while (!lastPage.HasPosition(newLength));
+
+            return lastPage;
         }
 
         private IOException MaxLengthReachedException()

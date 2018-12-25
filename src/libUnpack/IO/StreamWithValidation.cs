@@ -29,11 +29,6 @@ namespace libUnpack.IO
                 ThrowIfCantSeek();
                 ValidatePosition(value);
 
-                if (value > LengthCore)
-                {
-                    ThrowIfCantWrite();
-                }
-
                 PositionCore = value;
             }
         }

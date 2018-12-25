@@ -15,6 +15,8 @@ namespace libUnpack
         /// </summary>
         public int Address => _address;
 
+        public const int MaxAddress = Page.MaxAddress;
+
         private readonly V8Container _container;
         private readonly Stream _superStream;
         private readonly int _address;
@@ -27,9 +29,13 @@ namespace libUnpack
         public V8Document(V8Container container)
             : this(container, 0)
         {
-            Debug.Assert(_superStream.CanSeek);
+            long address = _superStream.Position;
+            if (address > MaxAddress)
+            {
+                throw new ArgumentOutOfRangeException(nameof(address));
+            }
 
-            _address = checked((int)_superStream.Position);
+            _address = (int)address;
         }
 
         /// <summary>
@@ -40,7 +46,7 @@ namespace libUnpack
         /// <param name="address">Адрес документа.</param>
         public V8Document(V8Container container, int address)
         {
-            if (address < 0)
+            if (address < 0 || address > MaxAddress)
             {
                 throw new ArgumentOutOfRangeException(nameof(address));
             }
@@ -48,6 +54,8 @@ namespace libUnpack
             _container = container ?? throw new ArgumentNullException(nameof(container));
             _superStream = container.MainStream;
             _address = address;
+
+            Debug.Assert(_superStream.CanSeek);
         }
 
         /// <summary>

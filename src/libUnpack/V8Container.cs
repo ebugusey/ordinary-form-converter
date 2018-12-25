@@ -26,6 +26,8 @@ namespace libUnpack
             }
         }
 
+        public const int MaxLength = Page.MaxAddress;
+
         /// <summary>
         /// Получает основной поток контейнера.
         /// Используется для чтения и записи содержимого контейнера
@@ -52,17 +54,33 @@ namespace libUnpack
         private readonly List<V8File> _files;
         private readonly Dictionary<string, V8File> _filesDictionary;
 
-        private V8Container(Stream stream, V8ContainerMode mode)
+        public V8Container(Stream stream, V8ContainerMode mode)
         {
-            _baseStream = stream;
+            _baseStream = stream ?? throw new ArgumentNullException(nameof(stream));
             _defaultPageSize = NewContainerPageSize;
 
             _mode = mode;
+
+            if (!stream.CanSeek)
+            {
+                throw new ArgumentException(
+                    "Работа с потоками, не поддерживающими операцию Seek, не поддерживается.",
+                    nameof(stream)
+                );
+            }
 
             switch (mode)
             {
                 case V8ContainerMode.Read:
                     {
+                        if (!stream.CanRead)
+                        {
+                            throw new ArgumentException(
+                                "Работа с потоками, не поддерживающими операцию Read, не поддерживается.",
+                                nameof(stream)
+                            );
+                        }
+
                         ReadHeader();
 
                         var tocDocument = new V8Document(this);
@@ -73,6 +91,14 @@ namespace libUnpack
 
                 case V8ContainerMode.Write:
                     {
+                        if (!stream.CanWrite)
+                        {
+                            throw new ArgumentException(
+                                "Работа с потоками, не поддерживающими операцию Write, не поддерживается.",
+                                nameof(stream)
+                            );
+                        }
+
                         WriteHeader();
 
                         var tocDocument = CreateDocument();
@@ -100,7 +126,17 @@ namespace libUnpack
             }
 
             var stream = File.OpenRead(filename);
-            var container = new V8Container(stream, V8ContainerMode.Read);
+
+            V8Container container;
+            try
+            {
+                container = new V8Container(stream, V8ContainerMode.Read);
+            }
+            catch
+            {
+                stream.Dispose();
+                throw;
+            }
 
             return container;
         }
@@ -118,7 +154,17 @@ namespace libUnpack
             }
 
             var stream = File.Create(filename);
-            var container = new V8Container(stream, V8ContainerMode.Write);
+
+            V8Container container;
+            try
+            {
+                container = new V8Container(stream, V8ContainerMode.Write);
+            }
+            catch
+            {
+                stream.Dispose();
+                throw;
+            }
 
             return container;
         }
@@ -174,6 +220,16 @@ namespace libUnpack
                 throw new InvalidOperationException("Контейнер открыт в режиме чтения. Создание файлов невозможно.");
             }
 
+            if (_filesDictionary.ContainsKey(name))
+            {
+                throw new InvalidOperationException("Файл с таким именем уже существует.");
+            }
+
+            if (_baseStream.Length >= MaxLength)
+            {
+                throw new InvalidOperationException("Контейнер достиг максимального размера, создание новых файлов невозможно.");
+            }
+
             var file = V8File.Create(this, name);
             file.Address.Write(_tocStream);
 
@@ -208,31 +264,10 @@ namespace libUnpack
                 throw new ArgumentOutOfRangeException(nameof(capacity));
             }
 
-            var numberOfPages = capacity / _defaultPageSize;
-            if (capacity % _defaultPageSize > 0)
-            {
-                numberOfPages++;
-            }
-
-            var pageSize =
-                numberOfPages > 1 ?
-                _defaultPageSize :
-                capacity;
-
             long address;
-            using (var firstPage = AllocatePage(pageSize))
+            using (var firstPage = AllocatePage(capacity))
             {
                 address = firstPage.Address;
-
-                numberOfPages--;
-
-                var page = firstPage;
-                while (numberOfPages > 0)
-                {
-                    page = page.CreateNextPage();
-                    numberOfPages--;
-                }
-
             }
 
             var document = new V8Document(this, (int)address);
@@ -246,11 +281,10 @@ namespace libUnpack
         /// <returns></returns>
         internal Page AllocatePage()
         {
-
             return AllocatePage(_defaultPageSize);
         }
 
-        private Page AllocatePage(int pageSize)
+        internal Page AllocatePage(int pageSize)
         {
             ThrowIfDisposed();
 
@@ -258,6 +292,8 @@ namespace libUnpack
             {
                 throw new ArgumentOutOfRangeException(nameof(pageSize));
             }
+
+            var pageAddr = _baseStream.Length;
 
             // TODO: Не писать в поток пустые байты при создании страниц.
             //      Страница всегда размещается в конец контейнера,
@@ -267,7 +303,7 @@ namespace libUnpack
             // TODO: Добавить возможность выделения страниц из пула свободных страниц.
             //      Форма позволяет организовать пул свободных страниц,
             //      но при текущей реализации такая функциональность пока не нужна.
-            var page = Page.Create(this, _baseStream.Length, pageSize);
+            var page = Page.Create(this, pageAddr, pageSize);
             return page;
         }
 
