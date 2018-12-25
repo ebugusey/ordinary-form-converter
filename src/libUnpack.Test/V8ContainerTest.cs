@@ -90,6 +90,19 @@ namespace libUnpack.Test
             file.Should().BeNull();
         }
 
+        [TestCaseSource(nameof(FileNames))]
+        public void V8Container_CreateFile_CreatesFile(string filename)
+        {
+            var container = NewContainer();
+
+            var file = container.CreateFile(filename);
+
+            file.Should().NotBeNull();
+            file.Name.Should().Be(filename);
+
+            container.Files.Should().Contain(file);
+        }
+
         [Test]
         public void V8Container_CreateFile_ThrowsInReadOnlyContainer()
         {
