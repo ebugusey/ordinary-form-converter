@@ -10,7 +10,7 @@ namespace libUnpack.FileFormat
     /// Представляет заголовок контейнера.
     /// Предоставляет методы для чтения и записи заголовка контейнера.
     /// </summary>
-    internal struct ContainerHeader
+    internal readonly struct ContainerHeader
     {
         /// <summary>
         /// Размер заголовка в байтах.

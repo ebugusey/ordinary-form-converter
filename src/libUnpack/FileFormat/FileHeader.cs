@@ -10,7 +10,7 @@ namespace libUnpack.FileFormat
     /// Представляет формат документа с заголовком файла.
     /// Предоставляет методы для чтения и записи этого документа.
     /// </summary>
-    internal struct FileHeader
+    internal readonly struct FileHeader
     {
         /// <summary>
         /// Размер заголовка в байтах без учета длины имени файла.

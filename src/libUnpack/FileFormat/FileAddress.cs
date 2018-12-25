@@ -13,7 +13,7 @@ namespace libUnpack.FileFormat
     /// Предоставляет методы для чтения и записи как документа-оглавления целиком,
     /// так и единичных его записей.
     /// </summary>
-    internal struct FileAddress
+    internal readonly struct FileAddress
     {
         /// <summary>
         /// Размер структуры адреса в байтах.

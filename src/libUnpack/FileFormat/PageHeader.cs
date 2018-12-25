@@ -10,7 +10,7 @@ namespace libUnpack.FileFormat
     /// <summary>
     /// Представляет заголовок страницы документа.
     /// </summary>
-    internal struct PageHeader
+    internal readonly struct PageHeader
     {
         /// <summary>
         /// Размер заголовка в байтах.
