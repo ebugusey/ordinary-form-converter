@@ -29,17 +29,17 @@ namespace libUnpack.FileFormat
         /// <summary>
         /// Дата и время создания файла.
         /// </summary>
-        public readonly DateTime CreatedAt;
+        public DateTime CreatedAt { get; }
 
         /// <summary>
         /// Дата и время последней модификации файла.
         /// </summary>
-        public readonly DateTime LastModified;
+        public DateTime LastModified { get; }
 
         /// <summary>
         /// Зарезервированное поле.
         /// </summary>
-        public readonly int Reserved;
+        public int Reserved { get; }
 
         /// <summary>
         /// Имя файла.

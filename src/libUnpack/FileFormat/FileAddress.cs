@@ -26,12 +26,12 @@ namespace libUnpack.FileFormat
         /// <summary>
         /// Адрес документа с заголовком файла.
         /// </summary>
-        public readonly int HeaderAddr;
+        public int HeaderAddr { get; }
 
         /// <summary>
         /// Адрес документа с данными файла.
         /// </summary>
-        public readonly int DataAddr;
+        public int DataAddr { get; }
 
         /// <summary>
         /// Некая сигнатура. Всегда <see cref="Literals.V8_FF_SIGNATURE"/>.

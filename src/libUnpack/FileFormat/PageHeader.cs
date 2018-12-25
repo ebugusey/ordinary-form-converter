@@ -29,7 +29,7 @@ namespace libUnpack.FileFormat
         /// Размер документа в байтах.
         /// Имеет смысл только для первой страницы документа.
         /// </summary>
-        public readonly int DataSize;
+        public int DataSize { get; }
 
         /// <summary>
         /// Размер страницы в байтах.

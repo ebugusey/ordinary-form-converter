@@ -36,12 +36,12 @@ namespace libUnpack.FileFormat
         /// <summary>
         /// Ревизия/версия содержимого контейнера.
         /// </summary>
-        public readonly int Revision;
+        public int Revision { get; }
 
         /// <summary>
         /// Зарезервированное поле.
         /// </summary>
-        public readonly int Reserved;
+        public int Reserved { get; }
 
         private const int DefaultPageAddr = Literals.V8_LAST_PAGE;
         private const int DefaultPageSize = Literals.V8_DEFAULT_PAGE_SIZE;
