@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace OFP.ObjectModel.Platform
+namespace OFP.ObjectModel.Platform.Fonts
 {
     public abstract class Font
     {
@@ -43,12 +43,12 @@ namespace OFP.ObjectModel.Platform
         public override Guid Style { get; set; }
     }
 
-    class AutoFont : RelativeFont
+    public class AutoFont : RelativeFont
     {
         public override FontType Type => FontType.AutoFont;
     }
 
-    class AbsoluteFont : Font
+    public class AbsoluteFont : Font
     {
         public override FontType Type => FontType.Absolute;
 
@@ -61,29 +61,6 @@ namespace OFP.ObjectModel.Platform
         public bool Underline { get; set; }
     }
 
-    public enum FontType
-    {
-        Absolute = 0,
-        WindowsFont = 1,
-        StyleItem = 2,
-        AutoFont = 3,
-    }
 
-    public enum WindowsFontStyle
-    {
-        DefaultGUIFont = 0,
-        OEMFixedFont = 1,
-        ANSIFixedFont = 2,
-        ANSIVariableFont = 3,
-        SystemFont = 4,
-    }
 
-    public enum StandardFontStyle
-    {
-        TextFont = -20,
-        SmallTextFont = -30,
-        NormalTextFont = -31,
-        LargeTextFont = -32,
-        ExtraLargeTextFont = -33,
-    }
 }

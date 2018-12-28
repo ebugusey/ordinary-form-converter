@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using OFP.ObjectModel.Platform;
 using OFP.ObjectModel.Platform.Borders;
 using OFP.ObjectModel.Platform.Colors;
+using OFP.ObjectModel.Platform.Fonts;
 
 namespace OFP.ObjectModel.FormElements
 {
