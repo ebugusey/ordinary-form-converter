@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using OFP.ObjectModel.Platform;
+using OFP.ObjectModel.Platform.Borders;
 
 namespace OFP.ObjectModel.FormElements
 {
