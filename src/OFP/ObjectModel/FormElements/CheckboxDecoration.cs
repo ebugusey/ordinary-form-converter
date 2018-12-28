@@ -9,6 +9,6 @@ namespace OFP.ObjectModel.FormElements
         public Color BackColor { get; set; }
         public Color BorderColor { get; set; }
         public Color TextColor { get; set; }
-        public bool Transparent { get; set; }
+        public bool IsTransparent { get; set; }
     }
 }
