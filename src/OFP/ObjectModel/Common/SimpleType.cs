@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OFP.ObjectModel.Common
 {
-    enum SimpleType
+    public enum SimpleType
     {
 
         Unified = 0,
