@@ -14,6 +14,6 @@ namespace OFP.ObjectModel.FormElements
 
     public enum CheckboxEvent
     {
-        OnChange
+        OnChange = 2147483647
     }
 }
