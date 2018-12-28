@@ -7,7 +7,7 @@ namespace OFP.ObjectModel.Common
     public enum SimpleType
     {
 
-        Unified = 0,
+        Undefined = 0,
         String = 1,
         Number = 2,
         Boolean = 3,
