@@ -11,6 +11,7 @@ namespace OFP.ObjectModel.FormElements
         public bool IsDefaultControl { get; set; }
         public Event<RadioButton> Events { get; set; }
         public HorizontalAlign HorizontalAlign { get; set; }
+        public SimpleTypeValue SelectionValue { get; set; }
         public TitleLocation TitleLocation { get; set; }
         public VerticalAlign VerticalAlign { get; set; }
 
