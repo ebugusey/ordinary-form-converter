@@ -3,8 +3,8 @@ namespace OFP.ObjectModel.Common
     public enum SpreadsheetDocumentSelectionShowModeType
     {
 
-        AtActivity = 0,
-        Always = 1
+        WhenActive = 0,
+        Alway = 1
 
     }
 }
