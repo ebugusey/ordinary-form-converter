@@ -11,8 +11,9 @@ namespace OFP.ObjectModel.FormElements
         public bool EnableDrag { get; set; }
         public bool EnableStartDrag { get; set; }
         public Event<SpreadsheetDocumentField> Events { get; set; }
-        public bool HorizontalScrollBar { get; set; }
         public SpreadsheetDocumentSelectionShowModeType ShowSelection { get; set; }
+        public UseOutput Output { get; set; }
+        public bool HorizontalScrollBar { get; set; }
         public bool VerticalScrollBar { get; set; }
 
     }
