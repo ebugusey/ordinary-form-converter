@@ -429,10 +429,12 @@ namespace libUnpack.IO
 
         private void ErasePageStream()
         {
+            const int maxBufSize = 1024 * 16;
             int bufSize = Math.Min(
-                1024 * 16,
+                maxBufSize,
                 _header.PageSize
             );
+
             var zeroBuf = new byte[bufSize];
 
             _pageStream.Position = 0;
