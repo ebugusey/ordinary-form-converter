@@ -20,8 +20,10 @@ namespace libUnpack.Test
             var file = container.Files[0];
 
             using (var stream = file.Open())
+            using (var scope = new AssertionScope())
             {
-                (stream.CanRead && !stream.CanWrite).Should().BeTrue();
+                stream.CanRead.Should().BeTrue();
+                stream.CanWrite.Should().BeFalse();
             }
         }
 
