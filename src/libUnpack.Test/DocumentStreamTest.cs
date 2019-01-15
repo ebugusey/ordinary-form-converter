@@ -11,6 +11,18 @@ namespace libUnpack.Test
     [TestFixture]
     public class DocumentStreamTest : TestWithData
     {
+        public delegate V8Container ContainerFactory(DocumentStreamTest test);
+
+        private static IEnumerable<TestCaseData> AllContainers()
+        {
+            yield return
+                new TestCaseData((ContainerFactory)(t => t.ReadOnlyContainer()))
+                .SetArgDisplayNames(nameof(ReadOnlyContainer));
+            yield return
+                new TestCaseData((ContainerFactory)(t => t.NewContainerWithFile()))
+                .SetArgDisplayNames(nameof(NewContainerWithFile));
+        }
+
         private byte[] ThreeBytes => new byte[] { 1, 2, 3 };
 
         [Test]
@@ -149,35 +161,22 @@ namespace libUnpack.Test
             }
         }
 
-        [Test]
-        public void DocumentStream_Position_CanBeMoreThanLength()
+        [TestCaseSource(nameof(AllContainers))]
+        public void DocumentStream_Position_CanBeMoreThanLength(ContainerFactory getContainer)
         {
-            var containers = new List<V8Container>
+            var container = getContainer(this);
+            var file = container.Files[0];
+
+            using (var stream = file.Open())
+            using (var scope = new AssertionScope())
             {
-                ReadOnlyContainer(),
-                NewContainerWithFile()
-            };
+                var expectedLength = stream.Length;
+                var expectedPosition = expectedLength + 1;
 
-            foreach (var container in containers)
-            {
-                test(container);
-            }
+                stream.Position = stream.Length + 1;
 
-            void test(V8Container container)
-            {
-                var file = container.Files[0];
-
-                using (var stream = file.Open())
-                using (var scope = new AssertionScope())
-                {
-                    var expectedLength = stream.Length;
-                    var expectedPosition = expectedLength + 1;
-
-                    stream.Position = stream.Length + 1;
-
-                    stream.Position.Should().Be(expectedPosition);
-                    stream.Length.Should().Be(expectedLength, "длина не должна измениться");
-                }
+                stream.Position.Should().Be(expectedPosition);
+                stream.Length.Should().Be(expectedLength, "длина не должна измениться");
             }
         }
 
