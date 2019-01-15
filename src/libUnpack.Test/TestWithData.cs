@@ -120,6 +120,11 @@ namespace libUnpack.Test
             }
         }
 
+        protected static string RandomFileName()
+        {
+            return new Guid().ToString();
+        }
+
         protected V8Container ReadOnlyContainer()
         {
             var container = V8Container.Open(ReadOnlyContainerPath);
@@ -141,7 +146,7 @@ namespace libUnpack.Test
         protected V8Container NewContainerWithFile()
         {
             var container = NewContainer();
-            container.CreateFile("new file");
+            container.CreateFile(RandomFileName());
 
             return container;
         }

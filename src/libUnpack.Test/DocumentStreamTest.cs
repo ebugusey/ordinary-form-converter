@@ -62,7 +62,7 @@ namespace libUnpack.Test
         {
             var path = GetTempFileName();
 
-            const string filename = "new file";
+            var filename = RandomFileName();
 
             using (var writable = V8Container.Create(path))
             {
