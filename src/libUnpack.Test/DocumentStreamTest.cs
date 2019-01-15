@@ -58,23 +58,39 @@ namespace libUnpack.Test
         }
 
         [TestCaseSource(nameof(RandomData), new object[] { 4, 4096, 4096*4 })]
-        public void DocumentStream_Write_WritesDataCorrectly(byte[] data)
+        public void DocumentStream_Write_WritesData(byte[] data)
         {
             var path = GetTempFileName();
-
             var filename = RandomFileName();
 
             using (var writable = V8Container.Create(path))
             {
                 var file = writable.CreateFile(filename);
-
                 using (var stream = file.Open())
-                using (var scope = new AssertionScope())
                 {
                     stream.Write(data.AsSpan());
 
-                    stream.Length.Should().Be(data.Length);
-                    stream.Position.Should().Be(data.Length);
+                    using (var scope = new AssertionScope())
+                    {
+                        stream.Length.Should().Be(data.Length);
+                        stream.Position.Should().Be(data.Length);
+                    }
+                }
+            }
+        }
+
+        [TestCaseSource(nameof(RandomData), new object[] { 4, 4096, 4096*4 })]
+        public void DocumentStream_Write_WritesDataCorrectly(byte[] data)
+        {
+            var path = GetTempFileName();
+            var filename = RandomFileName();
+
+            using (var writable = V8Container.Create(path))
+            {
+                var file = writable.CreateFile(filename);
+                using (var stream = file.Open())
+                {
+                    stream.Write(data.AsSpan());
                 }
             }
 
@@ -84,12 +100,14 @@ namespace libUnpack.Test
                 var expectedHash = Hash.ComputeHash(data);
 
                 using (var stream = file.Open())
-                using (var scope = new AssertionScope())
                 {
                     var hash = Hash.ComputeHash(stream);
 
-                    stream.Length.Should().Be(data.Length);
-                    hash.Should().Equal(expectedHash);
+                    using (var scope = new AssertionScope())
+                    {
+                        stream.Length.Should().Be(data.Length);
+                        hash.Should().Equal(expectedHash);
+                    }
                 }
             }
         }
