@@ -176,7 +176,7 @@ namespace libUnpack.Test
                     stream.Position = stream.Length + 1;
 
                     stream.Position.Should().Be(expectedPosition);
-                    stream.Length.Should().Be(expectedLength, "длина не должна изменится");
+                    stream.Length.Should().Be(expectedLength, "длина не должна измениться");
                 }
             }
         }
