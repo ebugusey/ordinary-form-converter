@@ -285,18 +285,33 @@ namespace libUnpack.IO
                 return page;
             }
 
-            Page result = null;
-            if (page.Prev != null)
+            var currentPage = FirstPage(page);
+            while (!currentPage.HasPosition(position))
             {
-                result = FindPosition(page.Prev, position);
+                currentPage = currentPage.Next;
+                if (currentPage == null)
+                {
+                    break;
+                }
             }
 
-            if (result == null && page.Next != null)
+            return currentPage;
+        }
+
+        public static Page FirstPage(Page page)
+        {
+            if (page == null)
             {
-                result = FindPosition(page.Next, position);
+                throw new ArgumentNullException(nameof(page));
             }
 
-            return result;
+            var currentPage = page;
+            while (!currentPage.IsFirstPage)
+            {
+                currentPage = currentPage.Prev;
+            }
+
+            return currentPage;
         }
 
         /// <summary>
