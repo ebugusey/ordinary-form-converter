@@ -5,12 +5,11 @@ using System.Text;
 
 namespace OFP.ObjectModel.FormElements
 {
-    class HTMLDocumentField : Element
+    public class HTMLDocumentField : Element
     {
-
+        public HTMLDocumentFieldDecoration Decor { get; set; }
         public bool DefaultControl { get; set; }
         public Event<HTMLDocumentField> Events { get; set; }
         public UseOutput Output { get; set; }
-
     }
 }
