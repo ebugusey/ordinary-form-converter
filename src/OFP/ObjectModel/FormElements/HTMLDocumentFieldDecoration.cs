@@ -5,12 +5,10 @@ using System.Text;
 
 namespace OFP.ObjectModel.FormElements
 {
-    class HTMLDocumentFieldDecoration
+    public class HTMLDocumentFieldDecoration
     {
-
         public Border Border { get; set; }
         public Font Font { get; set; }
         public Color BorderColor { get; set; }
-
     }
 }
