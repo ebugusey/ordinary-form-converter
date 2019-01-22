@@ -36,8 +36,8 @@ namespace OFP.ObjectModel.FormElements
         public bool ShowInHeader { get; set; }
         public SizeChange SizeChange { get; set; }
         public bool SkipOnInput { get; set; }
-        public string FooterText { get; set; }
-        public string HeaderText { get; set; }
+        public LocalizedString FooterText { get; set; }
+        public LocalizedString HeaderText { get; set; }
         public bool Visible { get; set; }
     }
 }
