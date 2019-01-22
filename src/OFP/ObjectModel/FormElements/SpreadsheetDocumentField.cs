@@ -5,9 +5,9 @@ using System.Text;
 
 namespace OFP.ObjectModel.FormElements
 {
-    class SpreadsheetDocumentField : Element
+    public class SpreadsheetDocumentField : Element
     {
-
+        public SpreadsheetDocumentFieldDecoration Decor { get; set; }
         public bool EnableDrag { get; set; }
         public bool EnableStartDrag { get; set; }
         public Event<SpreadsheetDocumentField> Events { get; set; }
@@ -15,6 +15,5 @@ namespace OFP.ObjectModel.FormElements
         public UseOutput Output { get; set; }
         public bool HorizontalScrollBar { get; set; }
         public bool VerticalScrollBar { get; set; }
-
     }
 }
