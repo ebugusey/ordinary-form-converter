@@ -1,4 +1,7 @@
-using OFP.ObjectModel.Platform;
+using OFP.ObjectModel.Platform.Borders;
+using OFP.ObjectModel.Platform.Colors;
+using OFP.ObjectModel.Platform.Fonts;
+using OFP.ObjectModel.Platform.Pictures;
 using OFP.ObjectModel.Common;
 
 namespace OFP.ObjectModel.FormElements

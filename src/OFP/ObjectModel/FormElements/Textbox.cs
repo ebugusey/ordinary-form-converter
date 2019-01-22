@@ -26,7 +26,7 @@ namespace OFP.ObjectModel.FormElements
 
         public TextboxDecoration Decor { get; set; }
 
-        public Event<TextboxEvent>[] Events { get; set; }
+        public Events<TextboxEvent>[] Events { get; set; }
     }
 
     public enum TextboxEvent

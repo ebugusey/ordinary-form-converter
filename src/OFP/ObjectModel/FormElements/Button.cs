@@ -23,7 +23,7 @@ namespace OFP.ObjectModel.FormElements
 
         public List<Button> ChildElements { get; set; }
 
-        public Event<ButtonEvent>[] Events { get; set; }
+        public Events<ButtonEvent>[] Events { get; set; }
     }
 
     public enum ButtonEvent

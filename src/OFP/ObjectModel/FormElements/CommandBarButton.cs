@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using OFP.ObjectModel.Localization;
 using OFP.ObjectModel.Platform;
+using OFP.ObjectModel.Platform.Pictures;
 
 namespace OFP.ObjectModel.FormElements
 {
     public class CommandBarButton
     {
-        public ElementName Name { get; set; }
+        public Identifier Name { get; set; }
 
         public string Action { get; set; }
         public LocalizedString Description { get; set; }
