@@ -2,10 +2,10 @@ namespace OFP.ObjectModel.Common
 {
     public enum HorizontalAlign
     {
-        Auto = 0,
-        Left = 1,
-        Justify = 2,
-        Right = 3,
-        Center = 4
+        Left = 0,
+        Center = 1,
+        Right = 2,
+        Justify = 3,
+        Auto = 4
     }
 }
