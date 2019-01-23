@@ -1,6 +1,6 @@
 namespace OFP.ObjectModel.FormElements
 {
-    public enum TableBoxEven
+    public enum TableBoxEvent
     {
         Selection = 34,
         OnActivateRow = 35,
