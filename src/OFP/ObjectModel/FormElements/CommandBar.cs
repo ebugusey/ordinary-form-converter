@@ -18,11 +18,4 @@ namespace OFP.ObjectModel.FormElements
 
         public List<CommandBarButton> ChildElements { get; set; }
     }
-
-    public enum CommandBarButtonAlignment
-    {
-        Left = 0,
-        Center = 1,
-        Right = 2
-    }
 }

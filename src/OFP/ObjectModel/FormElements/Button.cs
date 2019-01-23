@@ -25,16 +25,4 @@ namespace OFP.ObjectModel.FormElements
 
         public Events<ButtonEvent>[] Events { get; set; }
     }
-
-    public enum ButtonEvent
-    {
-        Click = 0
-    }
-
-    public enum UseMenuMode
-    {
-        DontUse = 0,
-        Use = 1,
-        UseExtra = 2
-    }
 }

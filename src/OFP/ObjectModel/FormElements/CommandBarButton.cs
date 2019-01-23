@@ -28,26 +28,4 @@ namespace OFP.ObjectModel.FormElements
 
         public List<CommandBarButton> ChildElements { get; set; }
     }
-
-    public enum CommandBarButtonOrder
-    {
-        DontOrder = 0,
-        Asc = 1,
-        Desc = 2
-    }
-
-    public enum CommandBarButtonType
-    {
-        DontOrder = 0,
-        Asc = 1,
-        Desc = 2
-    }
-
-    public enum CommandBarButtonRepresentation
-    {
-        Auto = 0,
-        Text = 1,
-        Picture = 2,
-        PictureText = 3
-    }
 }
