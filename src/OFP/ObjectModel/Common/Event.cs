@@ -1,3 +1,5 @@
+using System;
+
 namespace OFP.ObjectModel.Common
 {
     public class Event<T> where T : Enum
