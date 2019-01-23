@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace OFP.ObjectModel.FormElements
 {
-    public readonly struct ElementName : IEquatable<ElementName>
+    public readonly struct Identifier : IEquatable<Identifier>
     {
         private static readonly StringComparer ValueComparer =
             StringComparer.OrdinalIgnoreCase;
@@ -18,7 +18,7 @@ namespace OFP.ObjectModel.FormElements
 
         private readonly string _value;
 
-        public ElementName(string name)
+        public Identifier(string name)
         {
             if (name == null)
             {
@@ -26,13 +26,13 @@ namespace OFP.ObjectModel.FormElements
             }
             if (string.IsNullOrEmpty(name))
             {
-                throw new ArgumentException("Имя элемента не может быть пустым.", nameof(name));
+                throw new ArgumentException("Идентификатор не может быть пустым.", nameof(name));
             }
             if (!NameIsValid(name))
             {
                 throw new ArgumentException(
-                    "Имя элемента должно начинаться с _ или буквы.\n" +
-                    "Имя не должно содержать пробелов и переносов строк.",
+                    "Идентификатор должен начинаться с _ или буквы.\n" +
+                    "Идентификатор не должен содержать пробелов и переносов строк.",
                     nameof(name)
                 );
             }
@@ -62,7 +62,7 @@ namespace OFP.ObjectModel.FormElements
             bool result;
             switch (obj)
             {
-                case ElementName elementName:
+                case Identifier elementName:
                     result = Equals(in elementName);
                     break;
                 default:
@@ -77,19 +77,19 @@ namespace OFP.ObjectModel.FormElements
 
         #region IEquatable
 
-        public bool Equals(ElementName other) => Equals(in other);
+        public bool Equals(Identifier other) => Equals(in other);
 
         #endregion
 
-        private bool Equals(in ElementName other) =>
+        private bool Equals(in Identifier other) =>
             ValueComparer.Equals(Value, other.Value);
 
-        public static explicit operator ElementName(string source)
+        public static explicit operator Identifier(string source)
         {
-            ElementName result;
+            Identifier result;
             try
             {
-                result = new ElementName(source);
+                result = new Identifier(source);
             }
             catch (ArgumentException ex)
             {
@@ -98,12 +98,12 @@ namespace OFP.ObjectModel.FormElements
 
             return result;
         }
-        public static explicit operator string(in ElementName source) =>
+        public static explicit operator string(in Identifier source) =>
             source.Value;
 
-        public static bool operator ==(in ElementName left, in ElementName right) =>
+        public static bool operator ==(in Identifier left, in Identifier right) =>
             left.Equals(in right);
-        public static bool operator !=(in ElementName left, in ElementName right) =>
+        public static bool operator !=(in Identifier left, in Identifier right) =>
             !left.Equals(in right);
     }
 }

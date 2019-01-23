@@ -2,13 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace OFP.ObjectModel.Platform
+namespace OFP.ObjectModel.Platform.Pictures
 {
-    public abstract class Picture
-    {
-        public abstract PictureType Type { get; }
-    }
-
     public enum PictureType
     {
         Empty = 0,

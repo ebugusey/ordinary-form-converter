@@ -9,7 +9,7 @@ namespace OFP.ObjectModel.Bindings
     {
         public Element BindTo { get; set; }
         public BindingSite BindToSite { get; set; }
-        public Element KeepProportiosTo { get; set; }
+        public Element KeepProportionsTo { get; set; }
         public BindingSite KeepProportionsToSite { get; set; }
     }
 }
