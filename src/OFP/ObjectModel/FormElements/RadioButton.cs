@@ -9,7 +9,7 @@ namespace OFP.ObjectModel.FormElements
     {
         public RadioButtonDecoration Decor { get; set; }
         public bool IsDefaultControl { get; set; }
-        public Event<RadioButtonEvent> Events { get; set; }
+        public Events<RadioButtonEvent> Events { get; set; }
         public HorizontalAlign HorizontalAlign { get; set; }
         public SimpleTypeValue SelectionValue { get; set; }
         public TitleLocation TitleLocation { get; set; }

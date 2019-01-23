@@ -1,4 +1,5 @@
 using OFP.ObjectModel.Common;
+using OFP.ObjectModel.FormElements;
 using OFP.ObjectModel.Localization;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace OFP.ObjectModel.Forms
         public string DataPath { get; set; }
         public FormDecoration Decor { get; set; }
         public EnterKeyBehaviorType EnterKeyBehavior { get; set; }
-        public Event<FormEvent> Events { get; set; }
+        public Events<FormEvent> Events { get; set; }
         public bool ModalMode { get; set; }
 
         public bool RestoreValuesOnOpen { get; set; }

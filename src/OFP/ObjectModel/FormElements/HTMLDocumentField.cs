@@ -9,7 +9,7 @@ namespace OFP.ObjectModel.FormElements
     {
         public HTMLDocumentFieldDecoration Decor { get; set; }
         public bool DefaultControl { get; set; }
-        public Event<HTMLDocumentFieldEvent> Events { get; set; }
+        public Events<HTMLDocumentFieldEvent> Events { get; set; }
         public UseOutput Output { get; set; }
     }
 }

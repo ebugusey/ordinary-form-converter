@@ -10,7 +10,7 @@ namespace OFP.ObjectModel.FormElements
         public SpreadsheetDocumentFieldDecoration Decor { get; set; }
         public bool EnableDrag { get; set; }
         public bool EnableStartDrag { get; set; }
-        public Event<SpreadsheetDocumentFieldEvent> Events { get; set; }
+        public Events<SpreadsheetDocumentFieldEvent> Events { get; set; }
         public SpreadsheetDocumentSelectionShowModeType ShowSelection { get; set; }
         public UseOutput Output { get; set; }
         public bool HorizontalScrollBar { get; set; }
