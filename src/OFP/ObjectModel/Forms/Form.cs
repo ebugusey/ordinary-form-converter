@@ -10,14 +10,14 @@ namespace OFP.ObjectModel.Forms
     {
         public Attribute Attributes { get; set; }
         public bool AutoFillCheck { get; set; }
-        public bool AutoTitle { get; set }
+        public bool AutoTitle { get; set; }
         public LocalizedString Title { get; set; }
         public bool CloseOnChoice { get; set; }
         public bool CloseOnOwnerClose { get; set; }
         public string DataPath { get; set; }
         public FormDecoration Decor { get; set; }
         public EnterKeyBehaviorType EnterKeyBehavior { get; set; }
-        public Event<Form> Events { get; set; }
+        public Event<FormEvent> Events { get; set; }
         public bool ModalMode { get; set; }
 
         public bool RestoreValuesOnOpen { get; set; }
@@ -25,3 +25,4 @@ namespace OFP.ObjectModel.Forms
         public Size Size { get; set; }
 
     }
+}
