@@ -17,7 +17,7 @@ namespace OFP.ObjectModel.FormElements
         public bool DefaultControl { get; set; }
         public bool EnableDrag { get; set; }
         public bool EnableStartDrag { get; set; }
-        public Event<TableBoxEven> Events { get; set; }
+        public Event<TableBoxEvent> Events { get; set; }
         public int FixedLeft { get; set; }
         public int FixedRight { get; set; }
         public bool Footer { get; set; }
