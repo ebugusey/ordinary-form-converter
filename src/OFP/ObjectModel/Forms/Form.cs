@@ -9,7 +9,7 @@ namespace OFP.ObjectModel.Forms
 {
     public class Form
     {
-        public Attribute Attributes { get; set; }
+        public List<Attribute> Attributes { get; }
         public bool AutoFillCheck { get; set; }
         public bool AutoTitle { get; set; }
         public LocalizedString Title { get; set; }
