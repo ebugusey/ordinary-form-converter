@@ -34,7 +34,7 @@ namespace OFP.ObjectModel.FormElements.Data
         public bool ShowHierarchy { get; set; }
         public bool ShowInFooter { get; set; }
         public bool ShowInHeader { get; set; }
-        public SizeChange SizeChange { get; set; }
+        public ColumnSizeChange SizeChange { get; set; }
         public bool SkipOnInput { get; set; }
         public LocalizedString FooterText { get; set; }
         public LocalizedString HeaderText { get; set; }

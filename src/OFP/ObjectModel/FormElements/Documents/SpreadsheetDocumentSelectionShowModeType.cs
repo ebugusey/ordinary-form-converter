@@ -1,4 +1,4 @@
-namespace OFP.ObjectModel.Common
+namespace OFP.ObjectModel.FormElements.Documents
 {
     public enum SpreadsheetDocumentSelectionShowModeType
     {

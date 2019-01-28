@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace OFP.ObjectModel.Common
+namespace OFP.ObjectModel.FormElements
 {
     public enum PictureSize
     {
