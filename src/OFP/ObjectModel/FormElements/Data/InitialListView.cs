@@ -4,6 +4,6 @@ namespace OFP.ObjectModel.FormElements.Data
     {
         Beginning = 0,
         End = 1,
-        Auto = 2
+        Auto = 2,
     }
 }

@@ -5,6 +5,6 @@ namespace OFP.ObjectModel.FormElements.Actions
         Auto = 0,
         Text = 1,
         Picture = 2,
-        PictureText = 3
+        PictureText = 3,
     }
 }

@@ -5,6 +5,6 @@ namespace OFP.ObjectModel.Forms
         Docked = 1,
         Float = 2,
         Normal = 4,
-        Autohide = 16
+        Autohide = 16,
     }
 }

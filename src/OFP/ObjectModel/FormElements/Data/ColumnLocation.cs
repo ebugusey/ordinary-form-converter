@@ -4,6 +4,6 @@ namespace OFP.ObjectModel.FormElements.Data
     {
         NewColumn = 0,
         OnNextRow = 1,
-        SameColumn =2
+        SameColumn = 2,
     }
 }

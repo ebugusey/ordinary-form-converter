@@ -10,6 +10,6 @@ namespace OFP.ObjectModel.FormElements.Data
         ChoiceProcessing = 7,
         TextEditEnd = 10,
         AutoCompleteText = 11,
-        OnChange = 2147483647
+        OnChange = 2147483647,
     }
 }

@@ -13,6 +13,6 @@ namespace OFP.ObjectModel.Forms
         OnReopen = 70008,
         RefreshDisplay = 70009,
         ExternalEvent = 70010,
-        FillCheckProcessing = 70011
+        FillCheckProcessing = 70011,
     }
 }

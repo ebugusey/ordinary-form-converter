@@ -6,6 +6,6 @@ namespace OFP.ObjectModel.FormElements
         Center = 1,
         Right = 2,
         Justify = 3,
-        Auto = 4
+        Auto = 4,
     }
 }

@@ -4,6 +4,6 @@ namespace OFP.ObjectModel.Forms
     {
         Minimized = 0,
         Normal = 1,
-        Maximized = 2
+        Maximized = 2,
     }
 }

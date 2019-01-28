@@ -4,6 +4,6 @@ namespace OFP.ObjectModel.FormElements.Data
     {
         DontUse = 0,
         UseAlways = 1,
-        AutoUse = 2
+        AutoUse = 2,
     }
 }

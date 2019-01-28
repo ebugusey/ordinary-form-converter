@@ -4,6 +4,6 @@ namespace OFP.ObjectModel.FormElements
     {
         Vertical = 0,
         Horizontal = 1,
-        Auto = 2
+        Auto = 2,
     }
 }

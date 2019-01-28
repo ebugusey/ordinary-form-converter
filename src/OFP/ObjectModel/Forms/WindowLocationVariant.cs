@@ -4,6 +4,6 @@ namespace OFP.ObjectModel.Forms
     {
         Auto = 0,
         Center = 1,
-        DontOverlapOwner = 2
+        DontOverlapOwner = 2,
     }
 }

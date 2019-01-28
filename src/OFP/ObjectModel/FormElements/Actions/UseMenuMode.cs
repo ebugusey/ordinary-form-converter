@@ -4,6 +4,6 @@ namespace OFP.ObjectModel.FormElements.Actions
     {
         DontUse = 0,
         Use = 1,
-        UseExtra = 2
+        UseExtra = 2,
     }
 }

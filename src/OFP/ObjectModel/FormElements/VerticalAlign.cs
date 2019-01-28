@@ -4,6 +4,6 @@ namespace OFP.ObjectModel.FormElements
     {
         Top = 0,
         Center = 1,
-        Bottom = 2
+        Bottom = 2,
     }
 }

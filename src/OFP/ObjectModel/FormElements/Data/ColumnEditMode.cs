@@ -4,6 +4,6 @@ namespace OFP.ObjectModel.FormElements.Data
     {
         Derctly = 0,
         Enter = 1,
-        EnterOnInput = 2
+        EnterOnInput = 2,
     }
 }

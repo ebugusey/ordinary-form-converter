@@ -4,6 +4,6 @@ namespace OFP.ObjectModel.Forms
     {
         Enable = 0,
         Disable = 1,
-        Auto = 2
+        Auto = 2,
     }
 }

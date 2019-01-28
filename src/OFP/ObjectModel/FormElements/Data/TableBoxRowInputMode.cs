@@ -5,6 +5,6 @@ namespace OFP.ObjectModel.FormElements.Data
         EndOfList = 0,
         EndOfWindow = 1,
         AfterCurrentRow = 2,
-        BeforeCurrentRow = 3
+        BeforeCurrentRow = 3,
     }
 }

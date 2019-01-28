@@ -9,6 +9,6 @@ namespace OFP.ObjectModel.FormElements.Documents
         DragCheck = 4,
         DragEnd = 5,
         Drag = 6,
-        OnChangeAreaContent = 7
+        OnChangeAreaContent = 7,
     }
 }

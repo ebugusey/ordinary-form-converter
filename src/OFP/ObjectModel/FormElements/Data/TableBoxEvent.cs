@@ -22,6 +22,6 @@ namespace OFP.ObjectModel.FormElements.Data
         DragStart = 900,
         DragCheck = 901,
         DragEnd = 902,
-        Drag = 903
+        Drag = 903,
     }
 }
