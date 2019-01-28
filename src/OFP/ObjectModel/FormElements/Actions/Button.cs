@@ -21,8 +21,8 @@ namespace OFP.ObjectModel.FormElements.Actions
         public ButtonDecoration Decor { get; set; }
         public Shortcut Shortcut { get; set; }
 
-        public List<Button> ChildElements { get; set; }
+        public List<CommandBarButton> ChildElements { get; set; }
 
-        public Events<ButtonEvent>[] Events { get; set; }
+        public Events<ButtonEvent> Events { get; set; }
     }
 }

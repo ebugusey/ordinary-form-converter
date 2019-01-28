@@ -26,6 +26,6 @@ namespace OFP.ObjectModel.FormElements.Data
 
         public TextBoxDecoration Decor { get; set; }
 
-        public Events<TextBoxEvent>[] Events { get; set; }
+        public Events<TextBoxEvent> Events { get; set; }
     }
 }

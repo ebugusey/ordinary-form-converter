@@ -8,7 +8,6 @@ namespace OFP.ObjectModel.FormElements.Actions
 {
     public class ButtonDecoration
     {
-        public Border Border { get; set; }
         public Font Font { get; set; }
         public Color BorderColor { get; set; }
         public Color ButtonBackColor { get; set; }
