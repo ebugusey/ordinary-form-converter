@@ -4,7 +4,7 @@ using OFP.ObjectModel.Platform.Fonts;
 
 namespace OFP.ObjectModel.FormElements.Data
 {
-    public class CheckboxDecoration
+    public class CheckBoxDecoration
     {
         public Border Border { get; set; }
         public Font TextFont { get; set; }

@@ -2,9 +2,9 @@ using OFP.ObjectModel.Common;
 
 namespace OFP.ObjectModel.FormElements.Data
 {
-    public class Checkbox : Element
+    public class CheckBox : Element
     {
-        public CheckboxDecoration Decor { get; set; }
+        public CheckBoxDecoration Decor { get; set; }
         public bool IsDefaultControl { get; set; }
         public HorizontalAlign HorizontalAlign { get; set; }
         public VerticalAlign VerticalAlign { get; set; }
