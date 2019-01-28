@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using OFP.ObjectModel.Common;
 using OFP.ObjectModel.Localization;
 using OFP.ObjectModel.Platform.Pictures;
 

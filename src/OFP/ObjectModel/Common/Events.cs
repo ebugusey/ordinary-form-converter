@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace OFP.ObjectModel.FormElements
+namespace OFP.ObjectModel.Common
 {
     public class Events<TEvent> : IEnumerable<KeyValuePair<TEvent, Identifier>> where TEvent : Enum
     {

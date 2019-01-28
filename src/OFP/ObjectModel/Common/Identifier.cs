@@ -4,7 +4,7 @@ using System.Text;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace OFP.ObjectModel.FormElements
+namespace OFP.ObjectModel.Common
 {
     public readonly struct Identifier : IEquatable<Identifier>
     {
