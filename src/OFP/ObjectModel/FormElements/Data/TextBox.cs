@@ -2,7 +2,7 @@ using OFP.ObjectModel.Common;
 
 namespace OFP.ObjectModel.FormElements.Data
 {
-    public class Textbox : Element
+    public class TextBox : Element
     {
         public bool AutoChoiceIncomplete { get; set; }
         public bool AutoMarkIncomplete { get; set; }
@@ -24,8 +24,8 @@ namespace OFP.ObjectModel.FormElements.Data
         public HorizontalAlign HorizontalAlign { get; set; }
         public VerticalAlign VerticalAlign { get; set; }
 
-        public TextboxDecoration Decor { get; set; }
+        public TextBoxDecoration Decor { get; set; }
 
-        public Events<TextboxEvent>[] Events { get; set; }
+        public Events<TextBoxEvent>[] Events { get; set; }
     }
 }

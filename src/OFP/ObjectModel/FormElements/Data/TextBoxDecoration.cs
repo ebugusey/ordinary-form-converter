@@ -5,7 +5,7 @@ using OFP.ObjectModel.Platform.Pictures;
 
 namespace OFP.ObjectModel.FormElements.Data
 {
-    public class TextboxDecoration
+    public class TextBoxDecoration
     {
         public bool IsTransparent { get; set; }
         public ushort ChoiceListHeight { get; set; }

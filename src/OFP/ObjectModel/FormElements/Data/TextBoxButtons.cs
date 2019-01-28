@@ -1,6 +1,6 @@
 namespace OFP.ObjectModel.FormElements.Data
 {
-    public class TextboxButtons
+    public class TextBoxButtons
     {
         public bool HasChoiceButton { get; set; }
         public bool HasChoiceListButton { get; set; }

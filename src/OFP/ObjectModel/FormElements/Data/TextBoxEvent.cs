@@ -1,6 +1,6 @@
 namespace OFP.ObjectModel.FormElements.Data
 {
-    public enum TextboxEvent
+    public enum TextBoxEvent
     {
         StartListChoice = 1,
         StartChoice = 2,
