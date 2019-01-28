@@ -9,11 +9,6 @@ namespace OFP.ObjectModel.FormElements.Data
         public HorizontalAlign HorizontalAlign { get; set; }
         public VerticalAlign VerticalAlign { get; set; }
         public TitleLocation TitleLocation { get; set; }
-        public Events<CheckboxEvent> Events { get; set; }
-    }
-
-    public enum CheckboxEvent
-    {
-        OnChange = 2147483647
+        public Events<CheckBoxEvent> Events { get; set; }
     }
 }

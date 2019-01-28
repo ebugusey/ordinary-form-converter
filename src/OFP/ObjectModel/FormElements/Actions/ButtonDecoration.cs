@@ -17,10 +17,4 @@ namespace OFP.ObjectModel.FormElements.Actions
         public ButtonPictureLocation PictureLocation { get; set; }
         public PictureSize PictureSize { get; set; }
     }
-
-    public enum ButtonPictureLocation
-    {
-        Left = 0,
-        Right = 1
-    }
 }
