@@ -4,9 +4,19 @@ using System.Text;
 
 namespace OFP.ObjectModel.Platform
 {
+    /// <summary>
+    /// СочетаниеКлавиш.
+    /// </summary>
     public struct Shortcut
     {
+        /// <summary>
+        /// Alt, Ctrl, Shift.
+        /// </summary>
         public KeyModifier Modifiers { get; }
+
+        /// <summary>
+        /// Клавиша.
+        /// </summary>
         public Key Key { get; }
 
         public Shortcut(Key key, KeyModifier modifiers = KeyModifier.None)

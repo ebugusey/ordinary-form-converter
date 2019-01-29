@@ -4,6 +4,9 @@ using System.Text;
 
 namespace OFP.ObjectModel.Platform
 {
+    /// <summary>
+    /// Клавиша.
+    /// </summary>
     public enum Key
     {
         None = 0,
