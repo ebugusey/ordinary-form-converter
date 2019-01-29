@@ -8,10 +8,26 @@ using System.Text;
 
 namespace OFP.ObjectModel.FormElements.Documents
 {
+
+    /// <summary>
+    /// Оформление ПолеHTMLДокумента.
+    /// </summary>
     public class HTMLDocumentFieldDecoration
     {
+
+        /// <summary>
+        /// Рамка.
+        /// </summary>
         public Border Border { get; set; }
+
+        /// <summary>
+        /// Шрифт.
+        /// </summary>
         public Font Font { get; set; }
+
+        /// <summary>
+        /// ЦветРамки.
+        /// </summary>
         public Color BorderColor { get; set; }
     }
 }

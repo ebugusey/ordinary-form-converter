@@ -4,6 +4,7 @@ using System.Text;
 
 namespace OFP.ObjectModel.FormElements
 {
+    //FIXME: Тип неверный.
     public enum PicturePosition
     {
         Left = 1,
