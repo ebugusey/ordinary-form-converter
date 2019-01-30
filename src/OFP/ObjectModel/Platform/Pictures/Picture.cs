@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Reflection;
 using System.Linq;
+using OFP.ObjectModel.Common;
 
 namespace OFP.ObjectModel.Platform.Pictures
 {
@@ -57,7 +58,7 @@ namespace OFP.ObjectModel.Platform.Pictures
         /// <summary>
         /// Англоязычное имя картинки.
         /// </summary>
-        public abstract string Name { get; }
+        public abstract Identifier Name { get; }
     }
 
     /// <summary>
@@ -71,17 +72,22 @@ namespace OFP.ObjectModel.Platform.Pictures
         /// <summary>
         /// Англоязычное имя картинки в библиотеке картинок.
         /// </summary>
-        public override string Name { get; }
+        public override Identifier Name { get; }
 
         /// <summary>
         /// Значение, используемое платформой для идентификации картинки.
         /// </summary>
         public T Value { get; }
 
-        public StdPicture(string name, T value)
+        public StdPicture(Identifier name, T value)
         {
             Name = name;
             Value = value;
+        }
+
+        public StdPicture(string name, T value)
+            : this((Identifier)name, value)
+        {
         }
 
         public override string ToString() => $"StdPicture.{Name}";
@@ -95,7 +101,7 @@ namespace OFP.ObjectModel.Platform.Pictures
         /// <summary>
         /// Имя картинки в конфигурации.
         /// </summary>
-        public override string Name { get; }
+        public override Identifier Name { get; }
 
         /// <summary>
         /// Идентификатор картинки в конфигурации.

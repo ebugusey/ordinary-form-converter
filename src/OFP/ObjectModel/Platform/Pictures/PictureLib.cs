@@ -24,8 +24,8 @@ namespace OFP.ObjectModel.Platform.Pictures
             _numericValues = numeric.ToDictionary(v => v.Value);
             _guidValues = guids.ToDictionary(v => v.Value);
 
-            _numericValueByName = numeric.ToDictionary(v => (Identifier)v.Name);
-            _guidValuesByName = guids.ToDictionary(v => (Identifier)v.Name);
+            _numericValueByName = numeric.ToDictionary(v => v.Name);
+            _guidValuesByName = guids.ToDictionary(v => v.Name);
         }
 
         public static bool TryGetPicture(int value, out StdPicture<int> picture)

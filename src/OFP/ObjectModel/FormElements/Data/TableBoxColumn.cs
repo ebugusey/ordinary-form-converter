@@ -114,7 +114,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Имя.
         /// </summary>
-        public string Name { get; set; }
+        public Identifier Name { get; set; }
 
         /// <summary>
         /// ДанныеКартинки.
