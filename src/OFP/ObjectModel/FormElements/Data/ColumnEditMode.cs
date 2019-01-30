@@ -8,7 +8,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Непосредственно.
         /// </summary>
-        Derctly = 0,
+        Directly = 0,
 
         /// <summary>
         /// Вход.
