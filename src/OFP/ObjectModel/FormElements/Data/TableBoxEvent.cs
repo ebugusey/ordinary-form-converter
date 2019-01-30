@@ -75,11 +75,10 @@ namespace OFP.ObjectModel.FormElements.Data
         /// </summary>
         NewObjectWriteProcessing = 50,
 
-        // FIXME: Row.
         /// <summary>
         /// ПослеУдаления.
         /// </summary>
-        AfterDeleteLine = 51,
+        AfterDeleteRow = 51,
 
         /// <summary>
         /// ОбработкаВыбора.
