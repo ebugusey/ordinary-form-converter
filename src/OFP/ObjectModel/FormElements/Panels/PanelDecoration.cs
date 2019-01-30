@@ -17,7 +17,7 @@ namespace OFP.ObjectModel.FormElements.Panels
         public Color BorderColor { get; set; }
         public Color TextColor { get; set; }
         public Picture Picture { get; set; }
-        public PicturePosition PicturePosition { get; set; }
+        public PanelPicturePosition PicturePosition { get; set; }
         public PictureSize PictureSize { get; set; }
         public bool IsTransparent { get; set; }
     }
