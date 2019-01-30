@@ -3,7 +3,7 @@ namespace OFP.ObjectModel.FormElements.Actions
     /// <summary>
     /// ПоложениеКартинкиКнопки.
     /// </summary>
-    public enum ButtonPictureLocation
+    public enum ButtonPicturePosition
     {
         /// <summary>
         /// Лево.

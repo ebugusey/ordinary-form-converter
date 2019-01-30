@@ -39,7 +39,7 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// ПоложениеКартинки.
         /// </summary>
-        public ButtonPictureLocation PictureLocation { get; set; }
+        public ButtonPicturePosition PicturePosition { get; set; }
 
         /// <summary>
         /// РазмерКартинки.
