@@ -44,11 +44,10 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// </summary>
         public Picture Picture { get; set; }
 
-        //FIXME: Исправить тип.
         /// <summary>
         /// ПоложениеКартинкиНадписи.
         /// </summary>
-        public PicturePosition PicturePosition { get; set; }
+        public LabelPicturePosition PicturePosition { get; set; }
 
         /// <summary>
         /// РазмерКартинки.
