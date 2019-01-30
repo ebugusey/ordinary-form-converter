@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using OFP.ObjectModel.Common;
 
 namespace OFP.ObjectModel.Platform.Pictures
 {
@@ -12,8 +13,8 @@ namespace OFP.ObjectModel.Platform.Pictures
         private static readonly Dictionary<int, StdPicture<int>> _numericValues;
         private static readonly Dictionary<Guid, StdPicture<Guid>> _guidValues;
 
-        private static readonly Dictionary<string, StdPicture<int>> _numericValueByName;
-        private static readonly Dictionary<string, StdPicture<Guid>> _guidValuesByName;
+        private static readonly Dictionary<Identifier, StdPicture<int>> _numericValueByName;
+        private static readonly Dictionary<Identifier, StdPicture<Guid>> _guidValuesByName;
 
         static PictureLib()
         {
@@ -23,8 +24,8 @@ namespace OFP.ObjectModel.Platform.Pictures
             _numericValues = numeric.ToDictionary(v => v.Value);
             _guidValues = guids.ToDictionary(v => v.Value);
 
-            _numericValueByName = numeric.ToDictionary(v => v.Name);
-            _guidValuesByName = guids.ToDictionary(v => v.Name);
+            _numericValueByName = numeric.ToDictionary(v => (Identifier)v.Name);
+            _guidValuesByName = guids.ToDictionary(v => (Identifier)v.Name);
         }
 
         public static bool TryGetPicture(int value, out StdPicture<int> picture)
@@ -37,7 +38,7 @@ namespace OFP.ObjectModel.Platform.Pictures
             return _guidValues.TryGetValue(value, out picture);
         }
 
-        public static bool TryGetPicture(string name, out PictureFromLib picture)
+        public static bool TryGetPicture(Identifier name, out PictureFromLib picture)
         {
             bool result;
             if (_numericValueByName.TryGetValue(name, out var numeric))
