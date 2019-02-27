@@ -23,17 +23,17 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// КнопкаПоУмолчанию.
         /// </summary>
-        public bool DefaultButton { get; set; }
+        public bool IsDefaultButton { get; set; }
 
         /// <summary>
         /// АктивизироватьПоУмолчанию.
         /// </summary>
-        public bool DefaultControl { get; set; }
+        public bool IsActivateByDefault{ get; set; }
 
         /// <summary>
         /// МногострочныйРежим.
         /// </summary>
-        public bool MultiLine { get; set; }
+        public bool IsMultiLineMode { get; set; }
 
         /// <summary>
         /// ГоризонтальноеПоложение.
@@ -53,12 +53,12 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// Оформление кнопки.
         /// </summary>
-        public ButtonDecoration Decor { get; set; }
+        public ButtonDecoration Decoration { get; set; }
 
         /// <summary>
         /// СочетаниеКлавиш.
         /// </summary>
-        public Shortcut Shortcut { get; set; }
+        public Shortcut KeyboardShortcut { get; set; }
 
         /// <summary>
         /// Дочерние элементы кнопки,
