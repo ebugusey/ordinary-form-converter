@@ -16,22 +16,22 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// АктивизироватьПоУмолчанию.
         /// </summary>
-        public bool DefaultControl { get; set; }
+        public bool IsActivateByDefault { get; set; }
 
         /// <summary>
         /// Вспомогательная.
         /// </summary>
-        public bool Secondary { get; set; }
+        public bool IsSecondary { get; set; }
 
         /// <summary>
         /// АвтоЗаполнение.
         /// </summary>
-        public bool AutoFill { get; set; }
+        public bool IsAutoFill { get; set; }
 
         /// <summary>
         /// Оформление командной панели.
         /// </summary>
-        public CommandBarDecoration Decor { get; set; }
+        public CommandBarDecoration Decoration { get; set; }
 
         /// <summary>
         /// Ориентация.
