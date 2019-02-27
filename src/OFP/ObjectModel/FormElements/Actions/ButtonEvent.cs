@@ -8,6 +8,6 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// Нажатие.
         /// </summary>
-        Click = 0,
+        OnClick = 0,
     }
 }
