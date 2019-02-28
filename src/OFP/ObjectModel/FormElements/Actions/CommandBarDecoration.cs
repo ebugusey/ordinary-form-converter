@@ -22,7 +22,7 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// Шрифт.
         /// </summary>
-        public Font Font { get; set; }
+        public Font TextFont { get; set; }
 
         /// <summary>
         /// ЦветФона.
