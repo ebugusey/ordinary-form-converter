@@ -14,12 +14,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// АвтоВысотаЯчейки.
         /// </summary>
-        public bool AutoCellHeight { get; set; }
+        public bool IsAutoCellHeight { get; set; }
 
         /// <summary>
         /// АвтоОтметкаНезаполненного.
         /// </summary>
-        public bool AutoMarkIncomplete { get; set; }
+        public bool IsAutoBlankMark { get; set; }
 
         /// <summary>
         /// ВысотаЯчейки.
@@ -29,42 +29,42 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ИзменятьПозицию.
         /// </summary>
-        public bool ChangePosition { get; set; }
+        public bool IsChangePosition { get; set; }
 
         /// <summary>
         /// ИзменятьНастройку.
         /// </summary>
-        public bool ChangeSetting { get; set; }
+        public bool IsChangeSetting { get; set; }
 
         /// <summary>
         /// ИзменятьВидимость.
         /// </summary>
-        public bool ChangeVisible { get; set; }
+        public bool IsChangeVisible { get; set; }
 
         /// <summary>
         /// ТриСостоянияФлажка.
         /// </summary>
-        public bool CheckBoxThreeState { get; set; }
+        public bool HasThreeStatesCheckBox { get; set; }
 
         /// <summary>
         /// ДанныеФлажка.
         /// </summary>
-        public bool CheckData { get; set; }
+        public bool IsCheckBoxData { get; set; }
 
         /// <summary>
         /// ЭлементУправления.
         /// </summary>
-        public Element Control { get; set; }
+        public Element ControlElement { get; set; }
 
         /// <summary>
         /// Данные.
         /// </summary>
-        public string DataPath { get; set; }
+        public string NameDataColumn { get; set; }
 
         /// <summary>
         /// Оформление колонки.
         /// </summary>
-        public TableBoxColumnDecoration Decor { get; set; }
+        public TableBoxColumnDecoration Decoration { get; set; }
 
         /// <summary>
         /// РежимРедактирования.
@@ -74,7 +74,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Доступность.
         /// </summary>
-        public bool Enabled { get; set; }
+        public bool IsEnable { get; set; }
 
         /// <summary>
         /// ГоризонтальноеПоложениеВПодвале.
@@ -89,7 +89,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ПодсказкаВШапке.
         /// </summary>
-        public LocalizedString HeaderToolTip { get; set; }
+        public LocalizedString HeaderToolTipText { get; set; }
 
         /// <summary>
         /// ГоризонтальноеПоложениеВКолонке.
@@ -99,17 +99,17 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Гиперссылка.
         /// </summary>
-        public bool Hyperlink { get; set; }
+        public bool IsHyperlink { get; set; }
 
         /// <summary>
         /// Положение.
         /// </summary>
-        public ColumnLocation Location { get; set; }
+        public ColumnLocation Position { get; set; }
 
         /// <summary>
         /// ВыделятьОтрицательные.
         /// </summary>
-        public bool MarkNegatives { get; set; }
+        public bool IsMarkNegativeNumbers { get; set; }
 
         /// <summary>
         /// Имя.
@@ -124,32 +124,32 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ТолькоПросмотр.
         /// </summary>
-        public bool ReadOnly { get; set; }
+        public bool IsReadOnly { get; set; }
 
         /// <summary>
         /// ОтображатьИерархию.
         /// </summary>
-        public bool ShowHierarchy { get; set; }
+        public bool IsShowHierarchy { get; set; }
 
         /// <summary>
         /// ОтображатьВПодвале.
         /// </summary>
-        public bool ShowInFooter { get; set; }
+        public bool IsShowFooter { get; set; }
 
         /// <summary>
         /// ОтображатьВШапке.
         /// </summary>
-        public bool ShowInHeader { get; set; }
+        public bool IsShowHeader { get; set; }
 
         /// <summary>
         /// ИзменениеРазмера.
         /// </summary>
-        public ColumnSizeChange SizeChange { get; set; }
+        public ColumnSizeChange SizeChangeMode { get; set; }
 
         /// <summary>
         /// ПропускатьПриВводе.
         /// </summary>
-        public bool SkipOnInput { get; set; }
+        public bool IsSkipOnInput { get; set; }
 
         /// <summary>
         /// ТекстПодвала.
@@ -164,6 +164,6 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Видимость.
         /// </summary>
-        public bool Visible { get; set; }
+        public bool IsVisible { get; set; }
     }
 }
