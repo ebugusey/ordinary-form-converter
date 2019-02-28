@@ -13,27 +13,27 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// АвтоВводНовойСтроки.
         /// </summary>
-        public bool AutoInsertNewRow { get; set; }
+        public bool IsAutoInsertNewRow { get; set; }
 
         /// <summary>
         /// ИзменятьПозициюКолонок.
         /// </summary>
-        public bool ChangePositionOfColumns { get; set; }
+        public bool IsChangePositionOfColumns { get; set; }
 
         /// <summary>
         /// ИзменятьПорядокСтрок.
         /// </summary>
-        public bool ChangeRowOrder { get; set; }
+        public bool IsChangeRowOrder { get; set; }
 
         /// <summary>
         /// ИзменятьСоставСтрок.
         /// </summary>
-        public bool ChangeRowSet { get; set; }
+        public bool IsChangeRowSet { get; set; }
 
         /// <summary>
         /// ИзменятьНастройкуКолонок.
         /// </summary>
-        public bool ChangeSettingOfColumns { get; set; }
+        public bool IsChangeSettingOfColumns { get; set; }
 
         /// <summary>
         /// Колонки.
@@ -43,22 +43,22 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Оформление табличного поля.
         /// </summary>
-        public TableBoxDecoration Decor { get; set; }
+        public TableBoxDecoration Decoration { get; set; }
 
         /// <summary>
         /// АктивизироватьПоУмолчанию.
         /// </summary>
-        public bool DefaultControl { get; set; }
+        public bool IsActivateByDefault { get; set; }
 
         /// <summary>
         /// РазрешитьПеретаскивание.
         /// </summary>
-        public bool EnableDrag { get; set; }
+        public bool IsEnableDragAndDrop { get; set; }
 
         /// <summary>
         /// РазрешитьНачалоПеретаскивания.
         /// </summary>
-        public bool EnableStartDrag { get; set; }
+        public bool IsEnableStartDragAndDrop { get; set; }
 
         /// <summary>
         /// События табличного поля.
@@ -68,17 +68,17 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ФиксацияСлева.
         /// </summary>
-        public int FixedLeft { get; set; }
+        public int CountColumnsFixedLeft { get; set; }
 
         /// <summary>
         /// ФиксацияСправа.
         /// </summary>
-        public int FixedRight { get; set; }
+        public int CountColomnsFixedRight { get; set; }
 
         /// <summary>
         /// Подвал.
         /// </summary>
-        public bool Footer { get; set; }
+        public bool HasFooter { get; set; }
 
         /// <summary>
         /// ВысотаПодвала.
@@ -88,7 +88,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Шапка.
         /// </summary>
-        public bool Header { get; set; }
+        public bool HasHeader { get; set; }
 
         /// <summary>
         /// ВысотаШапки.
@@ -98,22 +98,22 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ГоризонтальнаяПолосаПрокрутки.
         /// </summary>
-        public ScrollBarUse HorizontalScrollBar { get; set; }
+        public ScrollBarUse HorizontalScrollBarUse { get; set; }
 
         /// <summary>
         /// НачальноеОтображениеСписка.
         /// </summary>
-        public InitialListView InitialListView { get; set; }
+        public InitialListView InitialListViewMode { get; set; }
 
         /// <summary>
         /// Вывод.
         /// </summary>
-        public UseOutput Output { get; set; }
+        public UseOutput OutputUse { get; set; }
 
         /// <summary>
         /// ТолькоПросмотр.
         /// </summary>
-        public bool ReadOnly { get; set; }
+        public bool IsReadOnly { get; set; }
 
         /// <summary>
         /// РежимВводаСтрок.
@@ -133,6 +133,6 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ВертикальнаяПолосаПрокрутки.
         /// </summary>
-        public ScrollBarUse VerticalScrollBar { get; set; }
+        public ScrollBarUse VerticalScrollBarUse { get; set; }
     }
 }
