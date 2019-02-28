@@ -18,6 +18,6 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ВТойЖеКолонке.
         /// </summary>
-        SameColumn = 2,
+        InSameColumn = 2,
     }
 }
