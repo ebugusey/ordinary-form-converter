@@ -8,12 +8,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Начало.
         /// </summary>
-        Beginning = 0,
+        FirstRow = 0,
 
         /// <summary>
         /// Конец.
         /// </summary>
-        End = 1,
+        LastRow = 1,
 
         /// <summary>
         /// Авто.
