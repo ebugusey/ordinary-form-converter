@@ -10,12 +10,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Оформление флажка.
         /// </summary>
-        public CheckBoxDecoration Decor { get; set; }
+        public CheckBoxDecoration Decoration { get; set; }
 
         /// <summary>
         /// АктивизироватьПоУмолчанию.
         /// </summary>
-        public bool IsDefaultControl { get; set; }
+        public bool IsActivateByDefault { get; set; }
 
         /// <summary>
         /// ГоризонтальноеПоложение.
@@ -30,7 +30,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ПоложениеЗаголовка.
         /// </summary>
-        public TitleLocation TitleLocation { get; set; }
+        public TitleLocation TitlePosition { get; set; }
 
         /// <summary>
         /// События флажка.
