@@ -18,6 +18,6 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ИспользоватьАвтоматически.
         /// </summary>
-        AutoUse = 2,
+        UseAuto = 2,
     }
 }
