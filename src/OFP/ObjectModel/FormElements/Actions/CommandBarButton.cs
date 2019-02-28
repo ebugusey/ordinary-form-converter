@@ -24,7 +24,7 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// Пояснение.
         /// </summary>
-        public LocalizedString Description { get; set; }
+        public LocalizedString Explanation { get; set; }
 
         /// <summary>
         /// Текст.
@@ -39,17 +39,17 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// Пометка.
         /// </summary>
-        public bool Check { get; set; }
+        public bool Flag { get; set; }
 
         /// <summary>
         /// КнопкаПоУмолчанию.
         /// </summary>
-        public bool DefaultButton { get; set; }
+        public bool IsDefaultButton { get; set; }
 
         /// <summary>
         /// Доступность.
         /// </summary>
-        public bool Enabled { get; set; }
+        public bool IsAvailable { get; set; }
 
         /// <summary>
         /// ИзменяетДанные.
