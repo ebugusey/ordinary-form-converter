@@ -13,12 +13,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Оформление переключателя.
         /// </summary>
-        public RadioButtonDecoration Decor { get; set; }
+        public RadioButtonDecoration Decoration { get; set; }
 
         /// <summary>
         /// АктивизироватьПоУмолчанию.
         /// </summary>
-        public bool IsDefaultControl { get; set; }
+        public bool IsActivateByDefault { get; set; }
 
         /// <summary>
         /// События переключателя.
@@ -38,7 +38,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ПоложениеЗаголовка.
         /// </summary>
-        public TitleLocation TitleLocation { get; set; }
+        public TitleLocation TitlePosition { get; set; }
 
         /// <summary>
         /// ВертикальноеПоложение.
