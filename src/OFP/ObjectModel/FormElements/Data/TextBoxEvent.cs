@@ -8,27 +8,27 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// НачалоВыбораИзСписка.
         /// </summary>
-        StartListChoice = 1,
+        OnActivateChoiceListButton = 1,
 
         /// <summary>
         /// НачалоВыбора.
         /// </summary>
-        StartChoice = 2,
+        OnStartChoice = 2,
 
         /// <summary>
         /// Очистка.
         /// </summary>
-        Clearing = 3,
+        OnActivateClearButton = 3,
 
         /// <summary>
         /// Регулирование.
         /// </summary>
-        Tuning = 4,
+        OnActivateSpinButton = 4,
 
         /// <summary>
         /// Открытие.
         /// </summary>
-        Opening = 5,
+        OnActivateOpenButton = 5,
 
         /// <summary>
         /// ОбработкаВыбора.
@@ -38,7 +38,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ОкончаниеВводаТекста.
         /// </summary>
-        TextEditEnd = 10,
+        OnEndTextEdit= 10,
 
         /// <summary>
         /// АвтоПодборТекста.
