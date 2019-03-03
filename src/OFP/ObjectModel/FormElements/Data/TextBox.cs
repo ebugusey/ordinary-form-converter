@@ -10,12 +10,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// АвтоВыборНезаполненного.
         /// </summary>
-        public bool AutoChoiceIncomplete { get; set; }
+        public bool IsAutoChoiceBlank { get; set; }
 
         /// <summary>
         /// АвтоОтметкаНезаполненного.
         /// </summary>
-        public bool AutoMarkIncomplete { get; set; }
+        public bool IsAutoMarkBlank { get; set; }
 
         public bool ChoiceIncomplete { get; set; }
         public bool MarkIncomplete { get; set; }
@@ -23,17 +23,17 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ВыбиратьТип.
         /// </summary>
-        public bool ChooseType { get; set; }
+        public bool IsChooseType { get; set; }
 
         /// <summary>
         /// ВыделятьОтрицательные.
         /// </summary>
-        public bool MarkNegatives { get; set; }
+        public bool IsMarkNegativeNumbers { get; set; }
 
         /// <summary>
         /// АктивизироватьПоУмолчанию.
         /// </summary>
-        public bool IsDefaultControl { get; set; }
+        public bool IsActivateByDefault { get; set; }
 
         /// <summary>
         /// МногострочныйРежим.
@@ -43,17 +43,17 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// РежимПароля.
         /// </summary>
-        public bool PasswordMode { get; set; }
+        public bool IsPasswordMode { get; set; }
 
         /// <summary>
         /// РасширенноеРедактирование.
         /// </summary>
-        public bool ExtendedEdit { get; set; }
+        public bool IsExtendedEdit { get; set; }
 
         /// <summary>
         /// АвтоПереносСтрок.
         /// </summary>
-        public bool Wrap { get; set; }
+        public bool IsWrapText { get; set; }
 
         /// <summary>
         /// МинимальноеЗначение.
@@ -61,7 +61,7 @@ namespace OFP.ObjectModel.FormElements.Data
         public decimal MinValue { get; set; }
 
         /// <summary>
-        /// МаксимальноеЗначение
+        /// МаксимальноеЗначение.
         /// </summary>
         public decimal MaxValue { get; set; }
 
@@ -83,7 +83,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Оформление поля ввода.
         /// </summary>
-        public TextBoxDecoration Decor { get; set; }
+        public TextBoxDecoration Decoration { get; set; }
 
         /// <summary>
         /// События поля ввода.
