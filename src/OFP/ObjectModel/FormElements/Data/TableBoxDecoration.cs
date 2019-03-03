@@ -21,12 +21,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Шрифт.
         /// </summary>
-        public Font Font { get; set; }
+        public Font TextFont { get; set; }
 
         /// <summary>
         /// ЦветФонаЧередованияСтрок.
         /// </summary>
-        public Color AlternationRowBackColor { get; set; }
+        public Color InterlacedColor { get; set; }
 
         /// <summary>
         /// ЦветРамки.
@@ -36,7 +36,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ЦветФонаПоля.
         /// </summary>
-        public Color FieldBackColor { get; set; }
+        public Color FieldBackgroundColor { get; set; }
 
         /// <summary>
         /// ЦветТекстаПоля.
@@ -46,12 +46,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ЦветТекстаПодвала.
         /// </summary>
-        public Color FooterBackColor { get; set; }
+        public Color FooterBackgroundColor { get; set; }
 
         /// <summary>
         /// ШрифтПодвала.
         /// </summary>
-        public Font FooterFont { get; set; }
+        public Font FooterTextFont { get; set; }
 
         /// <summary>
         /// ЦветТекстаПодвала.
@@ -61,12 +61,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ЦветФонаШапки.
         /// </summary>
-        public Color HeaderBackColor { get; set; }
+        public Color HeaderBackgroundColor { get; set; }
 
         /// <summary>
         /// ШрифтШапки.
         /// </summary>
-        public Font HeaderFont { get; set; }
+        public Font HeaderTextFont { get; set; }
 
         /// <summary>
         /// ЦветТекстаШапки.
@@ -76,12 +76,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ГоризонтальныеЛинии.
         /// </summary>
-        public bool HorizontalLines { get; set; }
+        public bool VisibleHorizontalLines { get; set; }
 
         /// <summary>
         /// ЦветФонаВыделения.
         /// </summary>
-        public Color SelectionBackColor { get; set; }
+        public Color SelectionBackgroundColor { get; set; }
 
         /// <summary>
         /// ЦветТекстаВыделения.
@@ -91,11 +91,11 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ЧередованиеЦветовСтрок.
         /// </summary>
-        public bool UseAlternationRowColor { get; set; }
+        public bool UseInterlacedColor { get; set; }
 
         /// <summary>
         /// ВертикальныеЛинии.
         /// </summary>
-        public bool VerticalLines { get; set; }
+        public bool VisibleVerticalLines { get; set; }
     }
 }
