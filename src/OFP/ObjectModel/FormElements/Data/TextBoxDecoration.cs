@@ -13,7 +13,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ПрозрачныйФон.
         /// </summary>
-        public bool IsTransparent { get; set; }
+        public bool IsTransparentBackground { get; set; }
 
         /// <summary>
         /// ВысотаСпискаВыбора.
@@ -33,7 +33,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Шрифт.
         /// </summary>
-        public Font Font { get; set; }
+        public Font TextFont { get; set; }
 
         /// <summary>
         /// ЦветРамки.
@@ -43,7 +43,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ЦветФонаКнопки.
         /// </summary>
-        public Color ButtonBackColor { get; set; }
+        public Color ButtonBackgroundColor { get; set; }
 
         /// <summary>
         /// ЦветТекстаКнопки.
@@ -53,7 +53,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ЦветФонаПоля.
         /// </summary>
-        public Color FieldBackColor { get; set; }
+        public Color FieldBackgroundColor { get; set; }
 
         /// <summary>
         /// ЦветТекстаПоля.
