@@ -20,7 +20,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ЦветФонаПоля.
         /// </summary>
-        public Color FieldBackColor { get; set; }
+        public Color FieldBackgroundColor { get; set; }
 
         /// <summary>
         /// ЦветТекстаПоля.
@@ -30,12 +30,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ЦветТекстаПодвала.
         /// </summary>
-        public Color FooterBackColor { get; set; }
+        public Color FooterBackgroundColor { get; set; }
 
         /// <summary>
         /// ШрифтПодвала.
         /// </summary>
-        public Font FooterFont { get; set; }
+        public Font FooterTextFont { get; set; }
 
         /// <summary>
         /// КартинкаПодвала.
@@ -52,12 +52,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ЦветФонаШапки.
         /// </summary>
-        public Color HeaderBackColor { get; set; }
+        public Color HeaderBackgroundColor { get; set; }
 
         /// <summary>
         /// ШрифтШапки.
         /// </summary>
-        public Font HeaderFont { get; set; }
+        public Font HeaderTextFont { get; set; }
 
         /// <summary>
         /// КартинкаШапки.
