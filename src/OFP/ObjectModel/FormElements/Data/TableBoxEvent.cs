@@ -93,21 +93,21 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// НачалоПеретаскивания.
         /// </summary>
-        OnStartDrag = 900,
+        OnStartDragAndDrop = 900,
 
         /// <summary>
         /// ПроверкаПеретаскивания.
         /// </summary>
-        OnCheckDrag = 901,
+        OnCheckDragAndDrop = 901,
 
         /// <summary>
         /// ОкончаниеПеретаскивания.
         /// </summary>
-        OnEndDragInSourceData = 902,
+        OnEndDragAndDropInSourceData = 902,
 
         /// <summary>
         /// Перетаскивание.
         /// </summary>
-        OnEndDragInReceiverData = 903,
+        OnEndDragAndDropInReceiverData = 903,
     }
 }
