@@ -13,17 +13,17 @@ namespace OFP.ObjectModel.FormElements.Documents
         /// <summary>
         /// Оформление ПолеТабличногоДокумента.
         /// </summary>
-        public SpreadsheetDocumentFieldDecoration Decor { get; set; }
+        public SpreadsheetDocumentFieldDecoration Decoration { get; set; }
 
         /// <summary>
         /// РазрешитьПеретаскивание.
         /// </summary>
-        public bool EnableDrag { get; set; }
+        public bool IsEnableDragAndDrop { get; set; }
 
         /// <summary>
         /// РазрешитьНачалоПеретаскивания.
         /// </summary>
-        public bool EnableStartDrag { get; set; }
+        public bool IsEnableStartDragAndDrop { get; set; }
 
         /// <summary>
         /// События SpreadsheetDocumentField.
@@ -33,21 +33,21 @@ namespace OFP.ObjectModel.FormElements.Documents
         /// <summary>
         /// ОтображатьВыделение.
         /// </summary>
-        public SpreadsheetDocumentSelectionShowModeType ShowSelection { get; set; }
+        public SpreadsheetDocumentSelectionShowModeType SelectionShowModeType { get; set; }
 
         /// <summary>
         /// Вывод.
         /// </summary>
-        public UseOutput Output { get; set; }
+        public UseOutput OutputUse { get; set; }
 
         /// <summary>
         /// ГоризонтальнаяПолосаПрокрутки.
         /// </summary>
-        public bool HorizontalScrollBar { get; set; }
+        public bool HasHorizontalScrollBar { get; set; }
 
         /// <summary>
         /// ВертикальнаяПолосаПрокрутки.
         /// </summary>
-        public bool VerticalScrollBar { get; set; }
+        public bool HasVerticalScrollBar { get; set; }
     }
 }
