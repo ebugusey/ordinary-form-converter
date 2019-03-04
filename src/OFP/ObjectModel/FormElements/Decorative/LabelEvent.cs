@@ -12,6 +12,6 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// Нажатие.
         /// </summary>
-        Click = 0,
+        OnClick = 0,
     }
 }
