@@ -23,7 +23,7 @@ namespace OFP.ObjectModel.FormElements.Documents
         /// <summary>
         /// Шрифт.
         /// </summary>
-        public Font Font { get; set; }
+        public Font TextFont { get; set; }
 
         /// <summary>
         /// ЦветРамки.
