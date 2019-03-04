@@ -15,6 +15,6 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// Оформление рамки группы.
         /// </summary>
-        public GroupBoxDecoration Decor { get; set; }
+        public GroupBoxDecoration Decoration { get; set; }
     }
 }
