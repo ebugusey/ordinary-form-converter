@@ -12,7 +12,7 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// ПрозрачныйФон.
         /// </summary>
-        public bool IsTransparent { get; set; }
+        public bool IsTransparentBackground { get; set; }
 
         /// <summary>
         /// Рамка.
@@ -22,7 +22,7 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// Шрифт.
         /// </summary>
-        public Font Font { get; set; }
+        public Font TextFont { get; set; }
 
         /// <summary>
         /// ЦветРамки.
