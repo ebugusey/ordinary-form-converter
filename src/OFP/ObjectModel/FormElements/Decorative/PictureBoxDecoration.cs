@@ -27,7 +27,7 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// ЦветФона.
         /// </summary>
-        public Color BackColor { get; set; }
+        public Color BackgroundColor { get; set; }
 
         /// <summary>
         /// ЦветРамки.
@@ -47,11 +47,11 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// РазмерКартинки.
         /// </summary>
-        public PictureSize PictureSize { get; set; }
+        public PictureSize PictureSizeMode { get; set; }
 
         /// <summary>
         /// ПрозрачныйФон.
         /// </summary>
-        public bool IsTransparent { get; set; }
+        public bool IsTransparentBackground { get; set; }
     }
 }
