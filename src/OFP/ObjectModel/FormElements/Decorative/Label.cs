@@ -19,7 +19,7 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// Оформление надписи.
         /// </summary>
-        public LabelDecoration Decor { get; set; }
+        public LabelDecoration Decoration { get; set; }
 
         /// <summary>
         /// События надписи.
@@ -49,11 +49,11 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// ВыделятьОтрицательные.
         /// </summary>
-        public bool MarkNegatives { get; set; }
+        public bool IsMarkNegativeNumbers { get; set; }
 
         /// <summary>
         /// БегущаяСтрока.
         /// </summary>
-        public ScrollingTextMode ScrollingText { get; set; }
+        public ScrollingTextMode ScrollingTextMode { get; set; }
     }
 }
