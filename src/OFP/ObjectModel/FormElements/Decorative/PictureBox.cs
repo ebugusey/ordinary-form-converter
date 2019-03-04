@@ -15,17 +15,17 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// Оформление ПолеКартинки.
         /// </summary>
-        public PictureBoxDecoration Decor { get; set; }
+        public PictureBoxDecoration Decoration { get; set; }
 
         /// <summary>
         /// РазрешитьПеретаскивание.
         /// </summary>
-        public bool DragEnabled { get; set; }
+        public bool IsEnableDragAndDrop { get; set; }
 
         /// <summary>
         /// РазрешитьНачалоПеретаскивания.
         /// </summary>
-        public bool StartDragEnabled { get; set; }
+        public bool IsEnableStartDragAndDrop { get; set; }
 
         /// <summary>
         /// Гиперссылка.
@@ -40,12 +40,12 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// ИспользоватьКонтекстноеМеню.
         /// </summary>
-        public bool ContextMenuEnabled { get; set; }
+        public bool IsEnableContextMenu { get; set; }
 
         /// <summary>
         /// Масштабировать.
         /// </summary>
-        public bool Zoomable { get; set; }
+        public bool HasScalability { get; set; }
 
         /// <summary>
         /// СочетаниеКлавиш.
