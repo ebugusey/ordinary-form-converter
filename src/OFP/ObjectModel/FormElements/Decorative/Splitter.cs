@@ -15,6 +15,6 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// Оформление Разделитель.
         /// </summary>
-        public SplitterDecoration Decor { get; set; }
+        public SplitterDecoration Decoration { get; set; }
     }
 }
