@@ -74,7 +74,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Доступность.
         /// </summary>
-        public bool IsEnable { get; set; }
+        public bool Enabled { get; set; }
 
         /// <summary>
         /// ГоризонтальноеПоложениеВПодвале.

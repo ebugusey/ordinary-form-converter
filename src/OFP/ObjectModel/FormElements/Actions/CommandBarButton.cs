@@ -49,7 +49,7 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// Доступность.
         /// </summary>
-        public bool IsAvailable { get; set; }
+        public bool Enabled { get; set; }
 
         /// <summary>
         /// ИзменяетДанные.
