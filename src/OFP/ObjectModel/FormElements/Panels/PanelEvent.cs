@@ -12,6 +12,6 @@ namespace OFP.ObjectModel.FormElements.Panels
         /// <summary>
         /// ПриСменеСтраницы.
         /// </summary>
-        OnCurrentPageChange = 0,
+        OnChangeCurrentPage = 0,
     }
 }
