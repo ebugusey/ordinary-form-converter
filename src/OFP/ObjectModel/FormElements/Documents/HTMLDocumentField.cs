@@ -13,12 +13,12 @@ namespace OFP.ObjectModel.FormElements.Documents
         /// <summary>
         /// Оформление ПолеHTMLДокумента.
         /// </summary>
-        public HTMLDocumentFieldDecoration Decor { get; set; }
+        public HTMLDocumentFieldDecoration Decoration { get; set; }
 
         /// <summary>
         /// АктивизироватьПоУмолчанию.
         /// </summary>
-        public bool DefaultControl { get; set; }
+        public bool IsActivateByDefault { get; set; }
 
         /// <summary>
         /// События ПолеHTMLДокумента.
@@ -28,6 +28,6 @@ namespace OFP.ObjectModel.FormElements.Documents
         /// <summary>
         /// Вывод.
         /// </summary>
-        public UseOutput Output { get; set; }
+        public UseOutput OutputUse { get; set; }
     }
 }
