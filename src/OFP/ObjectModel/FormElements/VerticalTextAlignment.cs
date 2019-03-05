@@ -3,7 +3,7 @@ namespace OFP.ObjectModel.FormElements
     /// <summary>
     /// ВертикальноеПоложение.
     /// </summary>
-    public enum VerticalAlign
+    public enum VerticalTextAlignment
     {
         /// <summary>
         /// Верх.

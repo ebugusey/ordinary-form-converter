@@ -3,7 +3,7 @@ namespace OFP.ObjectModel.FormElements
     /// <summary>
     /// ГоризонтальноеПоложение.
     /// </summary>
-    public enum HorizontalAlign
+    public enum HorizontalTextAlignment
     {
         /// <summary>
         /// Лево.

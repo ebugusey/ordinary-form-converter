@@ -87,16 +87,16 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ГоризонтальноеПоложениеВШапке.
         /// </summary>
-        public HorizontalAlign HeaderHorizontalAlign { get; set; }
+        public HorizontalTextAlignment HeaderHorizontalAlign { get; set; }
 
         /// <summary>
         /// ГоризонтальноеПоложениеВКолонке.
         /// </summary>
-        public HorizontalAlign ColumnHorizontalAlign { get; set; }
+        public HorizontalTextAlignment ColumnHorizontalAlign { get; set; }
 
         /// <summary>
         /// ГоризонтальноеПоложениеВПодвале.
         /// </summary>
-        public HorizontalAlign FooterHorizontalAlign { get; set; }
+        public HorizontalTextAlignment FooterHorizontalAlign { get; set; }
     }
 }

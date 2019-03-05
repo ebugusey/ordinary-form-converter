@@ -12,11 +12,11 @@ namespace OFP.ObjectModel.FormElements
         /// <summary>
         /// ГоризонтальноеПоложение.
         /// </summary>
-        public HorizontalAlign Horizontal { get; set; }
+        public HorizontalTextAlignment Horizontal { get; set; }
 
         /// <summary>
         /// ВертикальноеПоложение.
         /// </summary>
-        public VerticalAlign Vertical { get; set; }
+        public VerticalTextAlignment Vertical { get; set; }
     }
 }
