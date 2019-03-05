@@ -54,7 +54,7 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// ИзменяетДанные.
         /// </summary>
-        public bool ModifiesData { get; set; }
+        public bool IsModifiesData { get; set; }
 
         /// <summary>
         /// СочетаниеКлавиш.
