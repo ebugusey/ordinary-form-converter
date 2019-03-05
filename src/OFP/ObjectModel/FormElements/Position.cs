@@ -11,7 +11,7 @@ namespace OFP.ObjectModel.FormElements
     public class Position
     {
         /// <summary>
-        /// Координаты верхневого левого угла.
+        /// Координаты верхнего левого угла.
         /// </summary>
         public Point TopLeft { get; set; }
 
