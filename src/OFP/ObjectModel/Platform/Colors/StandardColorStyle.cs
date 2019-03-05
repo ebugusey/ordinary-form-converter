@@ -17,7 +17,7 @@ namespace OFP.ObjectModel.Platform.Colors
         /// <summary>
         /// ЦветФонаКнопки.
         /// </summary>
-        ButtonBackColor = -7,
+        ButtonBackgroundColor = -7,
 
         /// <summary>
         /// ЦветРамкиКнопки.
@@ -37,17 +37,17 @@ namespace OFP.ObjectModel.Platform.Colors
         /// <summary>
         /// ЦветФонаПоля.
         /// </summary>
-        FieldBackColor = -10,
+        FieldBackgroundColor = -10,
 
         /// <summary>
         /// ЦветТекстаВыделенияПоля.
         /// </summary>
-        FieldSelectedTextColor = -15,
+        FieldSelectionTextColor = -15,
 
         /// <summary>
         /// ЦветФонаВыделенияПоля.
         /// </summary>
-        FieldSelectionBackColor = -14,
+        FieldSelectionBackgroundColor = -14,
 
         /// <summary>
         /// ЦветТекстаПоля.
@@ -57,7 +57,7 @@ namespace OFP.ObjectModel.Platform.Colors
         /// <summary>
         /// ЦветФонаФормы.
         /// </summary>
-        FormBackColor = -1,
+        FormBackgroundColor = -1,
 
         /// <summary>
         /// ЦветТекстаФормы.
@@ -72,17 +72,17 @@ namespace OFP.ObjectModel.Platform.Colors
         /// <summary>
         /// ЦветФонаГруппировкиОтчета1.
         /// </summary>
-        ReportGroup1BackColor = -26,
+        ReportGroup1BackgroundColor = -26,
 
         /// <summary>
         /// ЦветФонаГруппировкиОтчета2.
         /// </summary>
-        ReportGroup2BackColor = -27,
+        ReportGroup2BackgroundColor = -27,
 
         /// <summary>
         /// ЦветФонаШапкиОтчета.
         /// </summary>
-        ReportHeaderBackColor = -25,
+        ReportHeaderBackgroundColor = -25,
 
         /// <summary>
         /// ЦветЛинииОтчета.
@@ -97,7 +97,7 @@ namespace OFP.ObjectModel.Platform.Colors
         /// <summary>
         /// ЦветФонаПодвалаТаблицы.
         /// </summary>
-        TableFooterBackColor = -37,
+        TableFooterBackgroundColor = -37,
 
         /// <summary>
         /// ЦветТекстаПодвалаТаблицы.
@@ -107,7 +107,7 @@ namespace OFP.ObjectModel.Platform.Colors
         /// <summary>
         /// ЦветФонаШапкиТаблицы.
         /// </summary>
-        TableHeaderBackColor = -35,
+        TableHeaderBackgroundColor = -35,
 
         /// <summary>
         /// ЦветТекстаШапкиТаблицы.
@@ -117,7 +117,7 @@ namespace OFP.ObjectModel.Platform.Colors
         /// <summary>
         /// ЦветФонаПодсказки.
         /// </summary>
-        ToolTipBackColor = -23,
+        ToolTipBackgroundColor = -23,
 
         /// <summary>
         /// ЦветТекстаПодсказки.
