@@ -32,16 +32,6 @@ namespace OFP.ObjectModel.FormElements.Decorative
         public string Format { get; set; }
 
         /// <summary>
-        /// ГоризонтальноеПоложение.
-        /// </summary>
-        public HorizontalAlign HorizontalAlign { get; set; }
-
-        /// <summary>
-        /// ВертикальноеПоложение.
-        /// </summary>
-        public VerticalAlign VerticalAlign { get; set; }
-
-        /// <summary>
         /// Гиперссылка.
         /// </summary>
         public bool IsHyperlink { get; set; }

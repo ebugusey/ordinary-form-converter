@@ -26,11 +26,6 @@ namespace OFP.ObjectModel.FormElements.Data
         public Events<RadioButtonEvent> Events { get; set; }
 
         /// <summary>
-        /// ГоризонтальноеПоложение.
-        /// </summary>
-        public HorizontalAlign HorizontalAlign { get; set; }
-
-        /// <summary>
         /// ВыбираемоеЗначение.
         /// </summary>
         public SimpleTypeValue SelectionValue { get; set; }
@@ -39,10 +34,5 @@ namespace OFP.ObjectModel.FormElements.Data
         /// ПоложениеЗаголовка.
         /// </summary>
         public TitleLocation TitleLocation { get; set; }
-
-        /// <summary>
-        /// ВертикальноеПоложение.
-        /// </summary>
-        public VerticalAlign VerticalAlign { get; set; }
     }
 }

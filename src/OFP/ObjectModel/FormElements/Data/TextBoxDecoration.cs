@@ -69,5 +69,10 @@ namespace OFP.ObjectModel.FormElements.Data
         /// КартинкаКнопкиВыбора.
         /// </summary>
         public Picture ChoiceButtonPicture { get; set; }
+
+        /// <summary>
+        /// Выравнивание текста поля ввода.
+        /// </summary>
+        public TextAlignment TextAlignment { get; }
     }
 }

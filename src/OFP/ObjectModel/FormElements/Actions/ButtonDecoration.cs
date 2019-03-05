@@ -45,5 +45,10 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// РазмерКартинки.
         /// </summary>
         public PictureSize PictureSize { get; set; }
+
+        /// <summary>
+        /// Выравнивание текста кнопки.
+        /// </summary>
+        public TextAlignment TextAlignment { get; }
     }
 }

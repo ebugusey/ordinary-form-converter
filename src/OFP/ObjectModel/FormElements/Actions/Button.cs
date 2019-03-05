@@ -36,16 +36,6 @@ namespace OFP.ObjectModel.FormElements.Actions
         public bool MultiLine { get; set; }
 
         /// <summary>
-        /// ГоризонтальноеПоложение.
-        /// </summary>
-        public HorizontalAlign HorizontalAlign { get; set; }
-
-        /// <summary>
-        /// ВертикальноеПоложение.
-        /// </summary>
-        public VerticalAlign VerticalAlign { get; set; }
-
-        /// <summary>
         /// РежимМеню.
         /// </summary>
         public UseMenuMode MenuMode { get; set; }

@@ -77,24 +77,9 @@ namespace OFP.ObjectModel.FormElements.Data
         public bool Enabled { get; set; }
 
         /// <summary>
-        /// ГоризонтальноеПоложениеВПодвале.
-        /// </summary>
-        public HorizontalAlign FooterHorizontalAlign { get; set; }
-
-        /// <summary>
-        /// ГоризонтальноеПоложениеВШапке.
-        /// </summary>
-        public HorizontalAlign HeaderHorizontalAlign { get; set; }
-
-        /// <summary>
         /// ПодсказкаВШапке.
         /// </summary>
         public LocalizedString HeaderToolTip { get; set; }
-
-        /// <summary>
-        /// ГоризонтальноеПоложениеВКолонке.
-        /// </summary>
-        public HorizontalAlign HorizontalAlignInColumn { get; set; }
 
         /// <summary>
         /// Гиперссылка.

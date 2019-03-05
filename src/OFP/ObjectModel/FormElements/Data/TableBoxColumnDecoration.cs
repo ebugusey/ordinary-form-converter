@@ -83,5 +83,20 @@ namespace OFP.ObjectModel.FormElements.Data
         /// Ширина.
         /// </summary>
         public int Width { get; set; }
+
+        /// <summary>
+        /// ГоризонтальноеПоложениеВШапке.
+        /// </summary>
+        public HorizontalAlign HeaderHorizontalAlign { get; set; }
+
+        /// <summary>
+        /// ГоризонтальноеПоложениеВКолонке.
+        /// </summary>
+        public HorizontalAlign ColumnHorizontalAlign { get; set; }
+
+        /// <summary>
+        /// ГоризонтальноеПоложениеВПодвале.
+        /// </summary>
+        public HorizontalAlign FooterHorizontalAlign { get; set; }
     }
 }

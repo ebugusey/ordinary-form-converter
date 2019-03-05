@@ -71,16 +71,6 @@ namespace OFP.ObjectModel.FormElements.Data
         public string Mask { get; set; }
 
         /// <summary>
-        /// ГоризонтальноеПоложение.
-        /// </summary>
-        public HorizontalAlign HorizontalAlign { get; set; }
-
-        /// <summary>
-        /// ВертикальноеПоложение.
-        /// </summary>
-        public VerticalAlign VerticalAlign { get; set; }
-
-        /// <summary>
         /// Оформление поля ввода.
         /// </summary>
         public TextBoxDecoration Decor { get; set; }

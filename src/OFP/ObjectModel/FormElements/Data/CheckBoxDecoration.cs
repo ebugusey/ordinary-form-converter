@@ -38,5 +38,10 @@ namespace OFP.ObjectModel.FormElements.Data
         /// ПрозрачныйФон.
         /// </summary>
         public bool IsTransparent { get; set; }
+
+        /// <summary>
+        /// Выравнивание текста флажка.
+        /// </summary>
+        public TextAlignment TextAlignment { get; }
     }
 }

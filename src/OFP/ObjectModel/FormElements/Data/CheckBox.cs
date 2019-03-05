@@ -18,16 +18,6 @@ namespace OFP.ObjectModel.FormElements.Data
         public bool IsDefaultControl { get; set; }
 
         /// <summary>
-        /// ГоризонтальноеПоложение.
-        /// </summary>
-        public HorizontalAlign HorizontalAlign { get; set; }
-
-        /// <summary>
-        /// ВертикальноеПоложение.
-        /// </summary>
-        public VerticalAlign VerticalAlign { get; set; }
-
-        /// <summary>
         /// ПоложениеЗаголовка.
         /// </summary>
         public TitleLocation TitleLocation { get; set; }
