@@ -8,14 +8,9 @@ namespace OFP.ObjectModel.FormElements.Data
     public class CheckBox : Element
     {
         /// <summary>
-        /// Оформление флажка.
+        /// ПоложениеЗаголовка.
         /// </summary>
-        public CheckBoxDecoration Decoration { get; set; }
-
-        /// <summary>
-        /// АктивизироватьПоУмолчанию.
-        /// </summary>
-        public bool ActivetedByDefault { get; set; }
+        public TitleLocation TitlePosition { get; set; }
 
         /// <summary>
         /// ГоризонтальноеПоложение.
@@ -28,9 +23,14 @@ namespace OFP.ObjectModel.FormElements.Data
         public VerticalAlign VerticalAlign { get; set; }
 
         /// <summary>
-        /// ПоложениеЗаголовка.
+        /// Оформление флажка.
         /// </summary>
-        public TitleLocation TitlePosition { get; set; }
+        public CheckBoxDecoration Decoration { get; set; }
+
+        /// <summary>
+        /// АктивизироватьПоУмолчанию.
+        /// </summary>
+        public bool ActivetedByDefault { get; set; }
 
         /// <summary>
         /// События флажка.
