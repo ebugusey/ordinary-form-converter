@@ -11,6 +11,11 @@ namespace OFP.ObjectModel.FormElements.Documents
     public class HTMLDocumentField : Element
     {
         /// <summary>
+        /// Вывод.
+        /// </summary>
+        public UseOutput OutputMode { get; set; }
+
+        /// <summary>
         /// Оформление ПолеHTMLДокумента.
         /// </summary>
         public HTMLDocumentFieldDecoration Decoration { get; set; }
@@ -24,10 +29,5 @@ namespace OFP.ObjectModel.FormElements.Documents
         /// События ПолеHTMLДокумента.
         /// </summary>
         public Events<HTMLDocumentFieldEvent> Events { get; set; }
-
-        /// <summary>
-        /// Вывод.
-        /// </summary>
-        public UseOutput OutputMode { get; set; }
     }
 }
