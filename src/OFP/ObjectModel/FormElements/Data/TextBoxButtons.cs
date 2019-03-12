@@ -6,14 +6,14 @@ namespace OFP.ObjectModel.FormElements.Data
     public class TextBoxButtons
     {
         /// <summary>
-        /// КнопкаВыбора.
-        /// </summary>
-        public bool HasChoiceButton { get; set; }
-
-        /// <summary>
         /// КнопкаСпискаВыбора.
         /// </summary>
         public bool HasChoiceListButton { get; set; }
+
+        /// <summary>
+        /// КнопкаВыбора.
+        /// </summary>
+        public bool HasChoiceButton { get; set; }
 
         /// <summary>
         /// КнопкаОчистки.
@@ -21,13 +21,13 @@ namespace OFP.ObjectModel.FormElements.Data
         public bool HasClearButton { get; set; }
 
         /// <summary>
-        /// КнопкаОткрытия.
-        /// </summary>
-        public bool HasOpenButton { get; set; }
-
-        /// <summary>
         /// КнопкаРегулирования.
         /// </summary>
         public bool HasSpinButton { get; set; }
+
+        /// <summary>
+        /// КнопкаОткрытия.
+        /// </summary>
+        public bool HasOpenButton { get; set; }
     }
 }
