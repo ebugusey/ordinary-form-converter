@@ -13,34 +13,14 @@ namespace OFP.ObjectModel.FormElements.Decorative
     public class PictureBox : Element
     {
         /// <summary>
-        /// Оформление ПолеКартинки.
-        /// </summary>
-        public PictureBoxDecoration Decoration { get; set; }
-
-        /// <summary>
-        /// РазрешитьПеретаскивание.
-        /// </summary>
-        public bool DropEnabled { get; set; }
-
-        /// <summary>
-        /// РазрешитьНачалоПеретаскивания.
-        /// </summary>
-        public bool DragEnabled { get; set; }
-
-        /// <summary>
         /// Гиперссылка.
         /// </summary>
         public bool IsHyperlink { get; set; }
 
         /// <summary>
-        /// ТекстНевыбраннойКартинки.
+        /// СочетаниеКлавиш.
         /// </summary>
-        public LocalizedString NonselectedPictureText { get; set; }
-
-        /// <summary>
-        /// ИспользоватьКонтекстноеМеню.
-        /// </summary>
-        public bool ContextMenuEnabled { get; set; }
+        public Shortcut Shortcut { get; set; }
 
         /// <summary>
         /// Масштабировать.
@@ -48,9 +28,29 @@ namespace OFP.ObjectModel.FormElements.Decorative
         public bool Scalabale { get; set; }
 
         /// <summary>
-        /// СочетаниеКлавиш.
+        /// ИспользоватьКонтекстноеМеню.
         /// </summary>
-        public Shortcut Shortcut { get; set; }
+        public bool ContextMenuEnabled { get; set; }
+
+        /// <summary>
+        /// РазрешитьНачалоПеретаскивания.
+        /// </summary>
+        public bool DragEnabled { get; set; }
+
+        /// <summary>
+        /// РазрешитьПеретаскивание.
+        /// </summary>
+        public bool DropEnabled { get; set; }
+
+        /// <summary>
+        /// ТекстНевыбраннойКартинки.
+        /// </summary>
+        public LocalizedString NonselectedPictureText { get; set; }
+
+        /// <summary>
+        /// Оформление ПолеКартинки.
+        /// </summary>
+        public PictureBoxDecoration Decoration { get; set; }
 
         /// <summary>
         /// События ПолеКартинки.
