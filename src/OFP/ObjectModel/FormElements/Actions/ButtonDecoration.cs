@@ -24,12 +24,12 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// ЦветФонаКнопки.
         /// </summary>
-        public Color ButtonBackgroundColor { get; set; }
+        public Color BackgroundColor { get; set; }
 
         /// <summary>
         /// ЦветТекстаКнопки.
         /// </summary>
-        public Color ButtonTextColor { get; set; }
+        public Color TextColor { get; set; }
 
         /// <summary>
         /// Картинка.

@@ -10,12 +10,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// АвтоВыборНезаполненного.
         /// </summary>
-        public bool IsAutoChoiceBlank { get; set; }
+        public bool AutoChoiceBlank { get; set; }
 
         /// <summary>
         /// АвтоОтметкаНезаполненного.
         /// </summary>
-        public bool IsAutoMarkBlank { get; set; }
+        public bool AutoMarkBlank { get; set; }
 
         public bool ChoiceIncomplete { get; set; }
         public bool MarkIncomplete { get; set; }
@@ -33,17 +33,17 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// АктивизироватьПоУмолчанию.
         /// </summary>
-        public bool IsActivateByDefault { get; set; }
+        public bool ActivetedByDefault { get; set; }
 
         /// <summary>
         /// МногострочныйРежим.
         /// </summary>
-        public bool IsMultiLine { get; set; }
+        public bool InMultiLineMode { get; set; }
 
         /// <summary>
         /// РежимПароля.
         /// </summary>
-        public bool IsPasswordMode { get; set; }
+        public bool InPasswordMode { get; set; }
 
         /// <summary>
         /// РасширенноеРедактирование.

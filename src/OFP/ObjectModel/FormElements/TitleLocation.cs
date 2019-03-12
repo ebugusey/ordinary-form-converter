@@ -8,11 +8,11 @@ namespace OFP.ObjectModel.FormElements
         /// <summary>
         /// ЗаголовокСлева.
         /// </summary>
-        TitleOnLeft = 0,
+        Left = 0,
 
         /// <summary>
         /// ЗаголовокСправа.
         /// </summary>
-        TitleOnRight = 1,
+        Right = 1,
     }
 }

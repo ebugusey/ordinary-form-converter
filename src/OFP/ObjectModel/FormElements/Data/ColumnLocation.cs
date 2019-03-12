@@ -13,11 +13,11 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// НаСледующейСтроке.
         /// </summary>
-        OnNextRow = 1,
+        OnTheNextRow = 1,
 
         /// <summary>
         /// ВТойЖеКолонке.
         /// </summary>
-        InSameColumn = 2,
+        InTheSameColumn = 2,
     }
 }

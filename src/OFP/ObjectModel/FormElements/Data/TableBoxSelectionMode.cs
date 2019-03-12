@@ -8,11 +8,11 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Одиночный.
         /// </summary>
-        SingleLineSelection = 0,
+        SingleLine = 0,
 
         /// <summary>
         /// Множественный.
         /// </summary>
-        MultiLineSelection = 1,
+        MultiLine = 1,
     }
 }

@@ -26,7 +26,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ЦветФонаЧередованияСтрок.
         /// </summary>
-        public Color InterlacedColor { get; set; }
+        public Color InterlacingColor { get; set; }
 
         /// <summary>
         /// ЦветРамки.
@@ -76,7 +76,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ГоризонтальныеЛинии.
         /// </summary>
-        public bool VisibleHorizontalLines { get; set; }
+        public bool HorizontalLinesVisible { get; set; }
 
         /// <summary>
         /// ЦветФонаВыделения.
@@ -91,11 +91,11 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ЧередованиеЦветовСтрок.
         /// </summary>
-        public bool UseInterlacedColor { get; set; }
+        public bool InterlacingEnabled { get; set; }
 
         /// <summary>
         /// ВертикальныеЛинии.
         /// </summary>
-        public bool VisibleVerticalLines { get; set; }
+        public bool VerticalLinesVisible { get; set; }
     }
 }

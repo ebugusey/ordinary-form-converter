@@ -53,7 +53,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ПриИзмененииФлажка.
         /// </summary>
-        OnChangeCheckBox = 45,
+        OnCheckBoxChange = 45,
 
         /// <summary>
         /// ПриВыводеСтроки.
@@ -63,12 +63,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ВыборЗначения.
         /// </summary>
-        OnChoiceValue = 48,
+        OnValueChoice = 48,
 
         /// <summary>
         /// ПриОкончанииРедактирования.
         /// </summary>
-        OnEndEdit = 49,
+        OnEditEnd = 49,
 
         /// <summary>
         /// ОбработкаЗаписиНовогоОбъекта.
@@ -88,26 +88,26 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ПриПолученииДанных.
         /// </summary>
-        OnGetData = 53,
+        OnDataGet = 53,
 
         /// <summary>
         /// НачалоПеретаскивания.
         /// </summary>
-        OnStartDragAndDrop = 900,
+        OnDrag = 900,
 
         /// <summary>
         /// ПроверкаПеретаскивания.
         /// </summary>
-        OnCheckDragAndDrop = 901,
+        OnDragAndDropCheck = 901,
 
         /// <summary>
         /// ОкончаниеПеретаскивания.
         /// </summary>
-        OnEndDragAndDropInSourceData = 902,
+        OnDropInDataSourse = 902,
 
         /// <summary>
         /// Перетаскивание.
         /// </summary>
-        OnEndDragAndDropInReceiverData = 903,
+        OnDropInDataReceiver = 903,
     }
 }

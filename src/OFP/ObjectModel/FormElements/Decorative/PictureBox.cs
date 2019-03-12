@@ -20,12 +20,12 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// РазрешитьПеретаскивание.
         /// </summary>
-        public bool IsEnableDragAndDrop { get; set; }
+        public bool DropEnabled { get; set; }
 
         /// <summary>
         /// РазрешитьНачалоПеретаскивания.
         /// </summary>
-        public bool IsEnableStartDragAndDrop { get; set; }
+        public bool DragEnabled { get; set; }
 
         /// <summary>
         /// Гиперссылка.
@@ -40,12 +40,12 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// ИспользоватьКонтекстноеМеню.
         /// </summary>
-        public bool IsEnableContextMenu { get; set; }
+        public bool ContextMenuEnabled { get; set; }
 
         /// <summary>
         /// Масштабировать.
         /// </summary>
-        public bool HasScalability { get; set; }
+        public bool Scalabale { get; set; }
 
         /// <summary>
         /// СочетаниеКлавиш.

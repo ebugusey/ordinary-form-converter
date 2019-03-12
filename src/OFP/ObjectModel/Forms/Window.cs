@@ -17,12 +17,12 @@ namespace OFP.ObjectModel.Forms
         /// <summary>
         /// РазрешитьЗакрытие.
         /// </summary>
-        public bool IsAllowClose { get; set; }
+        public bool CloseAllowed { get; set; }
 
         /// <summary>
         /// РежимРабочегоСтола.
         /// </summary>
-        public bool IsDesktopMode { get; set; }
+        public bool DesktopModeEnabled { get; set; }
 
         /// <summary>
         /// ИзменениеРазмера.
@@ -47,11 +47,11 @@ namespace OFP.ObjectModel.Forms
         /// <summary>
         /// СпособОтображенияОкна.
         /// </summary>
-        public WindowAppearanceModeVariant WindowAppearanceMode { get; set; }
+        public WindowAppearanceModeVariant WindowAppearance { get; set; }
 
         /// <summary>
         /// ИзменятьСпособОтображенияОкна.
         /// </summary>
-        public WindowAppearanceModeChange WindowAppearanceChangeMode { get; set; }
+        public WindowAppearanceModeChange CanChangeWindowAppearance { get; set; }
     }
 }

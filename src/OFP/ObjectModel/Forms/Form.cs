@@ -20,12 +20,12 @@ namespace OFP.ObjectModel.Forms
         /// <summary>
         /// ПроверятьЗаполнениеАвтоматически.
         /// </summary>
-        public bool HasAutoFillCheck { get; set; }
+        public bool AutoCheckForBlankFields { get; set; }
 
         /// <summary>
         /// АвтоЗаголовок.
         /// </summary>
-        public bool HasAutoTitle { get; set; }
+        public bool AutoTitleEnabled { get; set; }
 
         /// <summary>
         /// Заголовок.
@@ -38,7 +38,7 @@ namespace OFP.ObjectModel.Forms
         /// <summary>
         /// Данные.
         /// </summary>
-        public string NameData { get; set; }
+        public string DataPath { get; set; }
 
         /// <summary>
         /// Оформление формы.
@@ -60,12 +60,12 @@ namespace OFP.ObjectModel.Forms
         /// <summary>
         /// ВосстанавливатьЗначенияПриОткрытии.
         /// </summary>
-        public bool IsRestoreValuesOnOpen { get; set; }
+        public bool RestoreValuesOnOpen { get; set; }
 
         /// <summary>
         /// Сохранять значения.
         /// </summary>
-        public bool IsSaveValues { get; set; }
+        public bool SavingValuesEnabled { get; set; }
 
         /// <summary>
         /// Размеры формы.

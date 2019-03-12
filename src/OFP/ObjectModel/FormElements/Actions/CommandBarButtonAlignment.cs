@@ -8,16 +8,16 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// Лево.
         /// </summary>
-        OnLeft = 0,
+        Left = 0,
 
         /// <summary>
         /// Право.
         /// </summary>
-        OnCenter = 1,
+        Center = 1,
 
         /// <summary>
         /// Центр.
         /// </summary>
-        OnRight = 2,
+        Right = 2,
     }
 }

@@ -14,12 +14,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// АвтоВысотаЯчейки.
         /// </summary>
-        public bool IsAutoCellHeight { get; set; }
+        public bool AutoCellHeight { get; set; }
 
         /// <summary>
         /// АвтоОтметкаНезаполненного.
         /// </summary>
-        public bool IsAutoBlankMark { get; set; }
+        public bool AutoMarkBlank { get; set; }
 
         /// <summary>
         /// ВысотаЯчейки.
@@ -29,17 +29,17 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ИзменятьПозицию.
         /// </summary>
-        public bool IsChangePosition { get; set; }
+        public bool CanChangePosition { get; set; }
 
         /// <summary>
         /// ИзменятьНастройку.
         /// </summary>
-        public bool IsChangeSetting { get; set; }
+        public bool CanChangeSetting { get; set; }
 
         /// <summary>
         /// ИзменятьВидимость.
         /// </summary>
-        public bool IsChangeVisible { get; set; }
+        public bool CanChangeVisible { get; set; }
 
         /// <summary>
         /// ТриСостоянияФлажка.
@@ -49,17 +49,17 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ДанныеФлажка.
         /// </summary>
-        public bool IsCheckBoxData { get; set; }
+        public string CheckBoxDataPath { get; set; }
 
         /// <summary>
         /// ЭлементУправления.
         /// </summary>
-        public Element ControlElement { get; set; }
+        public Element Control { get; set; }
 
         /// <summary>
         /// Данные.
         /// </summary>
-        public string NameDataColumn { get; set; }
+        public string DataPath { get; set; }
 
         /// <summary>
         /// Оформление колонки.
@@ -89,7 +89,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ПодсказкаВШапке.
         /// </summary>
-        public LocalizedString HeaderToolTipText { get; set; }
+        public LocalizedString HeaderToolTip { get; set; }
 
         /// <summary>
         /// ГоризонтальноеПоложениеВКолонке.
@@ -129,17 +129,17 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ОтображатьИерархию.
         /// </summary>
-        public bool IsShowHierarchy { get; set; }
+        public bool HierarchyVisible { get; set; }
 
         /// <summary>
         /// ОтображатьВПодвале.
         /// </summary>
-        public bool IsShowFooter { get; set; }
+        public bool VisibleInFooter { get; set; }
 
         /// <summary>
         /// ОтображатьВШапке.
         /// </summary>
-        public bool IsShowHeader { get; set; }
+        public bool VisibleInHeader { get; set; }
 
         /// <summary>
         /// ИзменениеРазмера.

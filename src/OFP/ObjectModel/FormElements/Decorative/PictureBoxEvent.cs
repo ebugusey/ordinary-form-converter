@@ -17,21 +17,21 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// НачалоПеретаскивания.
         /// </summary>
-        OnStartDragAndDrop = 3,
+        OnDrag = 3,
 
         /// <summary>
         /// ПроверкаПеретаскивания.
         /// </summary>
-        OnCheckDragAndDrop = 4,
+        OnDragAndDropCheck = 4,
 
         /// <summary>
         /// ОкончаниеПеретаскивания.
         /// </summary>
-        OnEndDragAndDropInSourceData = 5,
+        OnDropInDataSourse = 5,
 
         /// <summary>
         /// Перетаскивание.
         /// </summary>
-        OnEndDragAndDropInReceiverData = 6,
+        OnDropInDataReceiver = 6,
     }
 }

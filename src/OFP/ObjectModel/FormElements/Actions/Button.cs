@@ -28,12 +28,12 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// АктивизироватьПоУмолчанию.
         /// </summary>
-        public bool IsActivateByDefault{ get; set; }
+        public bool ActivatedByDefault{ get; set; }
 
         /// <summary>
         /// МногострочныйРежим.
         /// </summary>
-        public bool IsMultiLineMode { get; set; }
+        public bool InMultiLineMode { get; set; }
 
         /// <summary>
         /// ГоризонтальноеПоложение.
@@ -58,7 +58,7 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// СочетаниеКлавиш.
         /// </summary>
-        public Shortcut KeyboardShortcut { get; set; }
+        public Shortcut Shortcut { get; set; }
 
         /// <summary>
         /// Дочерние элементы кнопки,

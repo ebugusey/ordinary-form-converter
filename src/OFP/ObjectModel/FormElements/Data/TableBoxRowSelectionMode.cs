@@ -8,11 +8,11 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Ячейка.
         /// </summary>
-        CellSelection = 0,
+        OneCell = 0,
 
         /// <summary>
         /// Строка.
         /// </summary>
-        RowSelection = 1,
+        EntireRow = 1,
     }
 }

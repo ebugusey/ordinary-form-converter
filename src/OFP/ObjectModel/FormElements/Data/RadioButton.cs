@@ -18,7 +18,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// АктивизироватьПоУмолчанию.
         /// </summary>
-        public bool IsActivateByDefault { get; set; }
+        public bool ActivetedByDefault { get; set; }
 
         /// <summary>
         /// События переключателя.

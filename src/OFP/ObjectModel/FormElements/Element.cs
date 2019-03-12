@@ -30,7 +30,7 @@ namespace OFP.ObjectModel.FormElements
         /// <summary>
         /// Данные.
         /// </summary>
-        public string NameData { get; set; }
+        public string DataPath { get; set; }
 
         /// <summary>
         /// Доступность.
@@ -45,17 +45,17 @@ namespace OFP.ObjectModel.FormElements
         /// <summary>
         /// ПервыйВГруппе.
         /// </summary>
-        public bool IsFirstInGroupElements { get; set; }
+        public bool IsFirstInGroupOfElements { get; set; }
 
         /// <summary>
         /// ИзменяетДанные.
         /// </summary>
-        public bool IsModifiesData { get; set; }
+        public bool ModifiesData { get; set; }
 
         /// <summary>
         /// ПропускатьПриВводе.
         /// </summary>
-        public bool IsSkipOnInput { get; set; }
+        public bool SkipedOnInput { get; set; }
 
         /// <summary>
         /// Подсказка.

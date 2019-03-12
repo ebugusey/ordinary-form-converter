@@ -13,12 +13,12 @@ namespace OFP.ObjectModel.FormElements.Panels
         /// <summary>
         /// АвтоПравила.
         /// </summary>
-        public bool HasAutoBindings { get; set; }
+        public bool AutoBindingsEnabled { get; set; }
 
         /// <summary>
         /// АвтоПорядокОбхода.
         /// </summary>
-        public bool HasAutoTabOrder { get; set; }
+        public bool AutoTabOrderEnabled { get; set; }
 
         /// <summary>
         /// Оформление панели.
@@ -38,7 +38,7 @@ namespace OFP.ObjectModel.FormElements.Panels
         /// <summary>
         /// РежимПрокручиваемыхСтраниц.
         /// </summary>
-        public bool IsEnableScrollPageMode { get; set; }
+        public bool ScrollPageModeEnabled { get; set; }
 
         /// <summary>
         /// Страницы.

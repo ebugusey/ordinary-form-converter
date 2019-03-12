@@ -13,7 +13,7 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// Подменю.
         /// </summary>
-        Submenu = 1,
+        Popup = 1,
 
         /// <summary>
         /// Разделитель.

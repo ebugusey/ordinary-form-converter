@@ -13,27 +13,27 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// АвтоВводНовойСтроки.
         /// </summary>
-        public bool IsAutoInsertNewRow { get; set; }
+        public bool AutoInsertNewRow { get; set; }
 
         /// <summary>
         /// ИзменятьПозициюКолонок.
         /// </summary>
-        public bool IsChangePositionOfColumns { get; set; }
+        public bool CanChangePositionOfColumns { get; set; }
 
         /// <summary>
         /// ИзменятьПорядокСтрок.
         /// </summary>
-        public bool IsChangeRowOrder { get; set; }
+        public bool CanChangeRowOrder { get; set; }
 
         /// <summary>
         /// ИзменятьСоставСтрок.
         /// </summary>
-        public bool IsChangeRowSet { get; set; }
+        public bool CanChangeRowSet { get; set; }
 
         /// <summary>
         /// ИзменятьНастройкуКолонок.
         /// </summary>
-        public bool IsChangeSettingOfColumns { get; set; }
+        public bool CanChangeSettingOfColumns { get; set; }
 
         /// <summary>
         /// Колонки.
@@ -48,17 +48,17 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// АктивизироватьПоУмолчанию.
         /// </summary>
-        public bool IsActivateByDefault { get; set; }
+        public bool ActivetedByDefault { get; set; }
 
         /// <summary>
         /// РазрешитьПеретаскивание.
         /// </summary>
-        public bool IsEnableDragAndDrop { get; set; }
+        public bool DropEnabled { get; set; }
 
         /// <summary>
         /// РазрешитьНачалоПеретаскивания.
         /// </summary>
-        public bool IsEnableStartDragAndDrop { get; set; }
+        public bool DragEnabled { get; set; }
 
         /// <summary>
         /// События табличного поля.
@@ -68,12 +68,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ФиксацияСлева.
         /// </summary>
-        public int CountColumnsFixedLeft { get; set; }
+        public int CountOfColumnsFixedLeft { get; set; }
 
         /// <summary>
         /// ФиксацияСправа.
         /// </summary>
-        public int CountColomnsFixedRight { get; set; }
+        public int CountOfColomnsFixedRight { get; set; }
 
         /// <summary>
         /// Подвал.
@@ -98,7 +98,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ГоризонтальнаяПолосаПрокрутки.
         /// </summary>
-        public ScrollBarUse HorizontalScrollBarUse { get; set; }
+        public ScrollBarUse HorizontalScrollBarMode { get; set; }
 
         /// <summary>
         /// НачальноеОтображениеСписка.
@@ -108,7 +108,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Вывод.
         /// </summary>
-        public UseOutput OutputUse { get; set; }
+        public UseOutput OutputMode { get; set; }
 
         /// <summary>
         /// ТолькоПросмотр.
@@ -133,6 +133,6 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ВертикальнаяПолосаПрокрутки.
         /// </summary>
-        public ScrollBarUse VerticalScrollBarUse { get; set; }
+        public ScrollBarUse VerticalScrollBarMode { get; set; }
     }
 }

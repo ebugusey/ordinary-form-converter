@@ -18,7 +18,7 @@ namespace OFP.ObjectModel.FormElements.Documents
         /// <summary>
         /// АктивизироватьПоУмолчанию.
         /// </summary>
-        public bool IsActivateByDefault { get; set; }
+        public bool ActivetedByDefault { get; set; }
 
         /// <summary>
         /// События ПолеHTMLДокумента.
@@ -28,6 +28,6 @@ namespace OFP.ObjectModel.FormElements.Documents
         /// <summary>
         /// Вывод.
         /// </summary>
-        public UseOutput OutputUse { get; set; }
+        public UseOutput OutputMode { get; set; }
     }
 }
