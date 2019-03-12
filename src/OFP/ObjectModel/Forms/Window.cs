@@ -15,21 +15,6 @@ namespace OFP.ObjectModel.Forms
         public WindowStateVariant WindowState { get; set; }
 
         /// <summary>
-        /// РазрешитьЗакрытие.
-        /// </summary>
-        public bool CloseAllowed { get; set; }
-
-        /// <summary>
-        /// РежимРабочегоСтола.
-        /// </summary>
-        public bool DesktopModeEnabled { get; set; }
-
-        /// <summary>
-        /// ИзменениеРазмера.
-        /// </summary>
-        public WindowSizeChange SizeChange { get; set; }
-
-        /// <summary>
         /// СоединяемоеОкно.
         /// </summary>
         public bool IsConnectableWindow { get; set; }
@@ -45,6 +30,16 @@ namespace OFP.ObjectModel.Forms
         public WindowDockVariant WindowDockPosition { get; set; }
 
         /// <summary>
+        /// ИзменениеРазмера.
+        /// </summary>
+        public WindowSizeChange SizeChange { get; set; }
+
+        /// <summary>
+        /// РазрешитьЗакрытие.
+        /// </summary>
+        public bool CloseAllowed { get; set; }
+
+        /// <summary>
         /// СпособОтображенияОкна.
         /// </summary>
         public WindowAppearanceModeVariant WindowAppearance { get; set; }
@@ -53,5 +48,10 @@ namespace OFP.ObjectModel.Forms
         /// ИзменятьСпособОтображенияОкна.
         /// </summary>
         public WindowAppearanceModeChange CanChangeWindowAppearance { get; set; }
+
+        /// <summary>
+        /// РежимРабочегоСтола.
+        /// </summary>
+        public bool DesktopModeEnabled { get; set; }
     }
 }
