@@ -16,9 +16,14 @@ namespace OFP.ObjectModel.FormElements.Documents
         public SpreadsheetDocumentFieldDecoration Decoration { get; set; }
 
         /// <summary>
-        /// РазрешитьПеретаскивание.
+        /// ВертикальнаяПолосаПрокрутки.
         /// </summary>
-        public bool DropEnabled { get; set; }
+        public bool VerticalScrollBarVisible { get; set; }
+
+        /// <summary>
+        /// ГоризонтальнаяПолосаПрокрутки.
+        /// </summary>
+        public bool HorizontalScrollBarVisible { get; set; }
 
         /// <summary>
         /// РазрешитьНачалоПеретаскивания.
@@ -26,9 +31,9 @@ namespace OFP.ObjectModel.FormElements.Documents
         public bool DragEnabled { get; set; }
 
         /// <summary>
-        /// События SpreadsheetDocumentField.
+        /// РазрешитьПеретаскивание.
         /// </summary>
-        public Events<SpreadsheetDocumentFieldEvent> Events { get; set; }
+        public bool DropEnabled { get; set; }
 
         /// <summary>
         /// ОтображатьВыделение.
@@ -41,13 +46,8 @@ namespace OFP.ObjectModel.FormElements.Documents
         public UseOutput OutputMode { get; set; }
 
         /// <summary>
-        /// ГоризонтальнаяПолосаПрокрутки.
+        /// События SpreadsheetDocumentField.
         /// </summary>
-        public bool HorizontalScrollBarVisible { get; set; }
-
-        /// <summary>
-        /// ВертикальнаяПолосаПрокрутки.
-        /// </summary>
-        public bool VerticalScrollBarVisible { get; set; }
+        public Events<SpreadsheetDocumentFieldEvent> Events { get; set; }
     }
 }
