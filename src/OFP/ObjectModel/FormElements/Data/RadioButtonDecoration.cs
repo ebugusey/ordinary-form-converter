@@ -11,14 +11,9 @@ namespace OFP.ObjectModel.FormElements.Data
    public class RadioButtonDecoration
     {
         /// <summary>
-        /// Рамка.
+        /// ПрозрачныйФон.
         /// </summary>
-        public Border Border { get; set; }
-
-        /// <summary>
-        /// Шрифт.
-        /// </summary>
-        public Font TextFont { get; set; }
+        public bool IsTransparentBackground { get; set; }
 
         /// <summary>
         /// ЦветФона.
@@ -26,18 +21,23 @@ namespace OFP.ObjectModel.FormElements.Data
         public Color BackgroundColor { get; set; }
 
         /// <summary>
-        /// ЦветРамки.
-        /// </summary>
-        public Color BorderColor { get; set; }
-
-        /// <summary>
         /// ЦветТекста.
         /// </summary>
         public Color TextColor { get; set; }
 
         /// <summary>
-        /// ПрозрачныйФон.
+        /// Рамка.
         /// </summary>
-        public bool IsTransparentBackground { get; set; }
+        public Border Border { get; set; }
+
+        /// <summary>
+        /// ЦветРамки.
+        /// </summary>
+        public Color BorderColor { get; set; }
+
+        /// <summary>
+        /// Шрифт.
+        /// </summary>
+        public Font TextFont { get; set; }
     }
 }
