@@ -18,34 +18,9 @@ namespace OFP.ObjectModel.FormElements
         public Identifier Name { get; set; }
 
         /// <summary>
-        /// АвтоКонтекстноеМеню.
-        /// </summary>
-        public bool AutoContextMenu { get; set; }
-
-        /// <summary>
-        /// Привязки.
-        /// </summary>
-        public BorderBindings Bindings { get; set; }
-
-        /// <summary>
         /// Данные.
         /// </summary>
         public string DataPath { get; set; }
-
-        /// <summary>
-        /// Доступность.
-        /// </summary>
-        public bool Enabled { get; set; }
-
-        /// <summary>
-        /// Видимость.
-        /// </summary>
-        public bool Visible { get; set; }
-
-        /// <summary>
-        /// ПервыйВГруппе.
-        /// </summary>
-        public bool IsFirstInGroupOfElements { get; set; }
 
         /// <summary>
         /// ИзменяетДанные.
@@ -58,9 +33,34 @@ namespace OFP.ObjectModel.FormElements
         public bool SkipedOnInput { get; set; }
 
         /// <summary>
+        /// ПервыйВГруппе.
+        /// </summary>
+        public bool IsFirstInGroupOfElements { get; set; }
+
+        /// <summary>
+        /// Видимость.
+        /// </summary>
+        public bool Visible { get; set; }
+
+        /// <summary>
+        /// Доступность.
+        /// </summary>
+        public bool Enabled { get; set; }
+
+        /// <summary>
+        /// АвтоКонтекстноеМеню.
+        /// </summary>
+        public bool AutoContextMenu { get; set; }
+
+        /// <summary>
         /// Подсказка.
         /// </summary>
         public LocalizedString ToolTip { get; set; }
+
+        /// <summary>
+        /// Привязки.
+        /// </summary>
+        public BorderBindings Bindings { get; set; }
 
         /// <summary>
         /// Расположение.
