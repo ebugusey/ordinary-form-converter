@@ -21,14 +21,9 @@ namespace OFP.ObjectModel.FormElements.Panels
         public bool AutoTabOrderEnabled { get; set; }
 
         /// <summary>
-        /// Оформление панели.
+        /// РежимПрокручиваемыхСтраниц.
         /// </summary>
-        public PanelDecoration Decoration { get; set; }
-
-        /// <summary>
-        /// События панели.
-        /// </summary>
-        public Events<PanelEvent> Events { get; }
+        public bool ScrollPageModeEnabled { get; set; }
 
         /// <summary>
         /// ОтображениеЗакладок.
@@ -36,13 +31,18 @@ namespace OFP.ObjectModel.FormElements.Panels
         public ShowTabs TabsStyle { get; set; }
 
         /// <summary>
-        /// РежимПрокручиваемыхСтраниц.
+        /// Оформление панели.
         /// </summary>
-        public bool ScrollPageModeEnabled { get; set; }
+        public PanelDecoration Decoration { get; set; }
 
         /// <summary>
         /// Страницы.
         /// </summary>
         public List<PanelPage> Pages { get; }
+
+        /// <summary>
+        /// События панели.
+        /// </summary>
+        public Events<PanelEvent> Events { get; }
     }
 }
