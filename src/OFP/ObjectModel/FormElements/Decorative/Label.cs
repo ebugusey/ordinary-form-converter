@@ -17,19 +17,24 @@ namespace OFP.ObjectModel.FormElements.Decorative
         public LocalizedString Title { get; set; }
 
         /// <summary>
-        /// Оформление надписи.
+        /// Гиперссылка.
         /// </summary>
-        public LabelDecoration Decoration { get; set; }
+        public bool IsHyperlink { get; set; }
 
         /// <summary>
-        /// События надписи.
+        /// БегущаяСтрока.
         /// </summary>
-        public Events<LabelEvent> Events { get; set; }
+        public ScrollingTextMode ScrollingTextMode { get; set; }
 
         /// <summary>
         /// Формат.
         /// </summary>
         public string Format { get; set; }
+
+        /// <summary>
+        /// ВыделятьОтрицательные.
+        /// </summary>
+        public bool IsMarkNegativeNumbers { get; set; }
 
         /// <summary>
         /// ГоризонтальноеПоложение.
@@ -42,18 +47,13 @@ namespace OFP.ObjectModel.FormElements.Decorative
         public VerticalAlign VerticalAlign { get; set; }
 
         /// <summary>
-        /// Гиперссылка.
+        /// Оформление надписи.
         /// </summary>
-        public bool IsHyperlink { get; set; }
+        public LabelDecoration Decoration { get; set; }
 
         /// <summary>
-        /// ВыделятьОтрицательные.
+        /// События надписи.
         /// </summary>
-        public bool IsMarkNegativeNumbers { get; set; }
-
-        /// <summary>
-        /// БегущаяСтрока.
-        /// </summary>
-        public ScrollingTextMode ScrollingTextMode { get; set; }
+        public Events<LabelEvent> Events { get; set; }
     }
 }
