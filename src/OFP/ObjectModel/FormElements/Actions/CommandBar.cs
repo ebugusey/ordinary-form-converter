@@ -9,16 +9,6 @@ namespace OFP.ObjectModel.FormElements.Actions
     public class CommandBar : Element
     {
         /// <summary>
-        /// ИсточникДействий.
-        /// </summary>
-        public string ActionSource { get; set; }
-
-        /// <summary>
-        /// АктивизироватьПоУмолчанию.
-        /// </summary>
-        public bool ActivetedByDefault { get; set; }
-
-        /// <summary>
         /// Вспомогательная.
         /// </summary>
         public bool IsSecondary { get; set; }
@@ -29,9 +19,9 @@ namespace OFP.ObjectModel.FormElements.Actions
         public bool IsAutoFill { get; set; }
 
         /// <summary>
-        /// Оформление командной панели.
+        /// ИсточникДействий.
         /// </summary>
-        public CommandBarDecoration Decoration { get; set; }
+        public string ActionSource { get; set; }
 
         /// <summary>
         /// Ориентация.
@@ -42,6 +32,16 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// ВыравниваниеКнопок.
         /// </summary>
         public CommandBarButtonAlignment ButtonsAlignment { get; set; }
+
+        /// <summary>
+        /// Оформление командной панели.
+        /// </summary>
+        public CommandBarDecoration Decoration { get; set; }
+
+        /// <summary>
+        /// АктивизироватьПоУмолчанию.
+        /// </summary>
+        public bool ActivetedByDefault { get; set; }
 
         /// <summary>
         /// Дочерние элементы (кнопки и подменю).
