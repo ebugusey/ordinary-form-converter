@@ -59,6 +59,11 @@ namespace OFP.ObjectModel.Forms
         public bool CloseOnOwnerClose { get; set; }
 
         /// <summary>
+        /// Сетка.
+        /// </summary>
+        public Grid Grid { get; set; }
+
+        /// <summary>
         /// Оформление формы.
         /// </summary>
         public FormDecoration Decoration { get; set; }
