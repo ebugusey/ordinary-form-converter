@@ -11,19 +11,9 @@ namespace OFP.ObjectModel.FormElements.Data
     public class TableBox : Element
     {
         /// <summary>
-        /// АвтоВводНовойСтроки.
+        /// ТолькоПросмотр.
         /// </summary>
-        public bool AutoInsertNewRow { get; set; }
-
-        /// <summary>
-        /// ИзменятьПозициюКолонок.
-        /// </summary>
-        public bool CanChangePositionOfColumns { get; set; }
-
-        /// <summary>
-        /// ИзменятьПорядокСтрок.
-        /// </summary>
-        public bool CanChangeRowOrder { get; set; }
+        public bool IsReadOnly { get; set; }
 
         /// <summary>
         /// ИзменятьСоставСтрок.
@@ -31,14 +21,99 @@ namespace OFP.ObjectModel.FormElements.Data
         public bool CanChangeRowSet { get; set; }
 
         /// <summary>
+        /// РазрешитьНачалоПеретаскивания.
+        /// </summary>
+        public bool DragEnabled { get; set; }
+
+        /// <summary>
+        /// РазрешитьПеретаскивание.
+        /// </summary>
+        public bool DropEnabled { get; set; }
+
+        /// <summary>
         /// ИзменятьНастройкуКолонок.
         /// </summary>
         public bool CanChangeSettingOfColumns { get; set; }
 
         /// <summary>
-        /// Колонки.
+        /// ИзменятьПозициюКолонок.
         /// </summary>
-        public List<TableBoxColumn> Columns { get; }
+        public bool CanChangePositionOfColumns { get; set; }
+
+        /// <summary>
+        /// Вывод.
+        /// </summary>
+        public UseOutput OutputMode { get; set; }
+
+        /// <summary>
+        /// ИзменятьПорядокСтрок.
+        /// </summary>
+        public bool CanChangeRowOrder { get; set; }
+
+        /// <summary>
+        /// РежимВводаСтрок.
+        /// </summary>
+        public TableBoxRowInputMode RowInputMode { get; set; }
+
+        /// <summary>
+        /// РежимВыделения.
+        /// </summary>
+        public TableBoxSelectionMode SelectionMode { get; set; }
+
+        /// <summary>
+        /// РежимВыделенияСтроки.
+        /// </summary>
+        public TableBoxRowSelectionMode RowSelectionMode { get; set; }
+
+        /// <summary>
+        /// Шапка.
+        /// </summary>
+        public bool HasHeader { get; set; }
+
+        /// <summary>
+        /// Подвал.
+        /// </summary>
+        public bool HasFooter { get; set; }
+
+        /// <summary>
+        /// ВысотаШапки.
+        /// </summary>
+        public int HeaderHeight { get; set; }
+
+        /// <summary>
+        /// ВысотаПодвала.
+        /// </summary>
+        public int FooterHeight { get; set; }
+
+        /// <summary>
+        /// ГоризонтальнаяПолосаПрокрутки.
+        /// </summary>
+        public ScrollBarUse HorizontalScrollBarMode { get; set; }
+
+        /// <summary>
+        /// ВертикальнаяПолосаПрокрутки.
+        /// </summary>
+        public ScrollBarUse VerticalScrollBarMode { get; set; }
+
+        /// <summary>
+        /// ФиксацияСлева.
+        /// </summary>
+        public int CountColumnsFixedLeft { get; set; }
+
+        /// <summary>
+        /// ФиксацияСправа.
+        /// </summary>
+        public int CountColumnsFixedRight { get; set; }
+
+        /// <summary>
+        /// АвтоВводНовойСтроки.
+        /// </summary>
+        public bool AutoInsertNewRow { get; set; }
+
+        /// <summary>
+        /// НачальноеОтображениеСписка.
+        /// </summary>
+        public InitialListView InitialListViewMode { get; set; }
 
         /// <summary>
         /// Оформление табличного поля.
@@ -51,88 +126,13 @@ namespace OFP.ObjectModel.FormElements.Data
         public bool ActivetedByDefault { get; set; }
 
         /// <summary>
-        /// РазрешитьПеретаскивание.
+        /// Колонки.
         /// </summary>
-        public bool DropEnabled { get; set; }
-
-        /// <summary>
-        /// РазрешитьНачалоПеретаскивания.
-        /// </summary>
-        public bool DragEnabled { get; set; }
+        public List<TableBoxColumn> Columns { get; }
 
         /// <summary>
         /// События табличного поля.
         /// </summary>
         public Events<TableBoxEvent> Events { get; set; }
-
-        /// <summary>
-        /// ФиксацияСлева.
-        /// </summary>
-        public int CountOfColumnsFixedLeft { get; set; }
-
-        /// <summary>
-        /// ФиксацияСправа.
-        /// </summary>
-        public int CountOfColomnsFixedRight { get; set; }
-
-        /// <summary>
-        /// Подвал.
-        /// </summary>
-        public bool HasFooter { get; set; }
-
-        /// <summary>
-        /// ВысотаПодвала.
-        /// </summary>
-        public int FooterHeight { get; set; }
-
-        /// <summary>
-        /// Шапка.
-        /// </summary>
-        public bool HasHeader { get; set; }
-
-        /// <summary>
-        /// ВысотаШапки.
-        /// </summary>
-        public int HeaderHeight { get; set; }
-
-        /// <summary>
-        /// ГоризонтальнаяПолосаПрокрутки.
-        /// </summary>
-        public ScrollBarUse HorizontalScrollBarMode { get; set; }
-
-        /// <summary>
-        /// НачальноеОтображениеСписка.
-        /// </summary>
-        public InitialListView InitialListViewMode { get; set; }
-
-        /// <summary>
-        /// Вывод.
-        /// </summary>
-        public UseOutput OutputMode { get; set; }
-
-        /// <summary>
-        /// ТолькоПросмотр.
-        /// </summary>
-        public bool IsReadOnly { get; set; }
-
-        /// <summary>
-        /// РежимВводаСтрок.
-        /// </summary>
-        public TableBoxRowInputMode RowInputMode { get; set; }
-
-        /// <summary>
-        /// РежимВыделенияСтроки.
-        /// </summary>
-        public TableBoxRowSelectionMode RowSelectionMode { get; set; }
-
-        /// <summary>
-        /// РежимВыделения.
-        /// </summary>
-        public TableBoxSelectionMode SelectionMode { get; set; }
-
-        /// <summary>
-        /// ВертикальнаяПолосаПрокрутки.
-        /// </summary>
-        public ScrollBarUse VerticalScrollBarMode { get; set; }
     }
 }
