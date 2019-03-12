@@ -15,14 +15,14 @@ namespace OFP.ObjectModel.FormElements.Decorative
         public bool IsTransparentBackground { get; set; }
 
         /// <summary>
+        /// ЦветТекста.
+        /// </summary>
+        public Color TextColor { get; set; }
+
+        /// <summary>
         /// Рамка.
         /// </summary>
         public Border Border { get; set; }
-
-        /// <summary>
-        /// Шрифт.
-        /// </summary>
-        public Font TextFont { get; set; }
 
         /// <summary>
         /// ЦветРамки.
@@ -30,8 +30,8 @@ namespace OFP.ObjectModel.FormElements.Decorative
         public Color BorderColor { get; set; }
 
         /// <summary>
-        /// ЦветТекста.
+        /// Шрифт.
         /// </summary>
-        public Color TextColor { get; set; }
+        public Font TextFont { get; set; }
     }
 }
