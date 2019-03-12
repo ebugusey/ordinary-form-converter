@@ -11,11 +11,6 @@ namespace OFP.ObjectModel.FormElements.Actions
     class Button : Element
     {
         /// <summary>
-        /// ИсточникДействий.
-        /// </summary>
-        public string ActionSource { get; set; }
-
-        /// <summary>
         /// Заголовок.
         /// </summary>
         public LocalizedString Title { get; set; }
@@ -26,14 +21,19 @@ namespace OFP.ObjectModel.FormElements.Actions
         public bool IsDefaultButton { get; set; }
 
         /// <summary>
-        /// АктивизироватьПоУмолчанию.
+        /// ИсточникДействий.
         /// </summary>
-        public bool ActivatedByDefault{ get; set; }
+        public string ActionSource { get; set; }
 
         /// <summary>
-        /// МногострочныйРежим.
+        /// СочетаниеКлавиш.
         /// </summary>
-        public bool InMultiLineMode { get; set; }
+        public Shortcut Shortcut { get; set; }
+
+        /// <summary>
+        /// РежимМеню.
+        /// </summary>
+        public UseMenuMode MenuMode { get; set; }
 
         /// <summary>
         /// ГоризонтальноеПоложение.
@@ -46,9 +46,9 @@ namespace OFP.ObjectModel.FormElements.Actions
         public VerticalAlign VerticalAlign { get; set; }
 
         /// <summary>
-        /// РежимМеню.
+        /// МногострочныйРежим.
         /// </summary>
-        public UseMenuMode MenuMode { get; set; }
+        public bool InMultiLineMode { get; set; }
 
         /// <summary>
         /// Оформление кнопки.
@@ -56,9 +56,9 @@ namespace OFP.ObjectModel.FormElements.Actions
         public ButtonDecoration Decoration { get; set; }
 
         /// <summary>
-        /// СочетаниеКлавиш.
+        /// АктивизироватьПоУмолчанию.
         /// </summary>
-        public Shortcut Shortcut { get; set; }
+        public bool ActivatedByDefault { get; set; }
 
         /// <summary>
         /// Дочерние элементы кнопки,
