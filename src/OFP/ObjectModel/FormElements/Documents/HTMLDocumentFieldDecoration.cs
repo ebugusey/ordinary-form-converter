@@ -14,12 +14,12 @@ namespace OFP.ObjectModel.FormElements.Documents
     /// </summary>
     public class HTMLDocumentFieldDecoration
     {
-
         /// <summary>
         /// Рамка.
         /// </summary>
         public Border Border { get; set; }
 
+        //FIXME: Нет такого свойства в платформе. 
         /// <summary>
         /// Шрифт.
         /// </summary>
