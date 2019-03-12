@@ -12,7 +12,22 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// ПрозрачныйФон.
         /// </summary>
-        public bool IsTransparent { get; set; }
+        public bool IsTransparentBackground { get; set; }
+
+        /// <summary>
+        /// ЦветФона.
+        /// </summary>
+        public Color BackgroundColor { get; set; }
+
+        /// <summary>
+        /// ЦветФонаКнопки.
+        /// </summary>
+        public Color ButtonBackgroundColor { get; set; }
+
+        /// <summary>
+        /// ЦветТекстаКнопки.
+        /// </summary>
+        public Color ButtonTextColor { get; set; }
 
         /// <summary>
         /// Рамка.
@@ -20,28 +35,13 @@ namespace OFP.ObjectModel.FormElements.Actions
         public Border Border { get; set; }
 
         /// <summary>
-        /// Шрифт.
-        /// </summary>
-        public Font Font { get; set; }
-
-        /// <summary>
-        /// ЦветФона.
-        /// </summary>
-        public Color BackColor { get; set; }
-
-        /// <summary>
         /// ЦветРамки.
         /// </summary>
         public Color BorderColor { get; set; }
 
         /// <summary>
-        /// ЦветФонаКнопки.
+        /// Шрифт.
         /// </summary>
-        public Color ButtonBackColor { get; set; }
-
-        /// <summary>
-        /// ЦветТекстаКнопки.
-        /// </summary>
-        public Color ButtonTextColor { get; set; }
+        public Font TextFont { get; set; }
     }
 }

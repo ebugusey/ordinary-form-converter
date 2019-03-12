@@ -23,6 +23,6 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// НадписьКартинка.
         /// </summary>
-        PictureText = 3,
+        PictureAndText = 3,
     }
 }

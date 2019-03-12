@@ -12,9 +12,14 @@ namespace OFP.ObjectModel.FormElements.Actions
     public class ButtonDecoration
     {
         /// <summary>
-        /// Шрифт.
+        /// ЦветФонаКнопки.
         /// </summary>
-        public Font Font { get; set; }
+        public Color BackgroundColor { get; set; }
+
+        /// <summary>
+        /// ЦветТекстаКнопки.
+        /// </summary>
+        public Color TextColor { get; set; }
 
         /// <summary>
         /// ЦветРамки.
@@ -22,24 +27,19 @@ namespace OFP.ObjectModel.FormElements.Actions
         public Color BorderColor { get; set; }
 
         /// <summary>
-        /// ЦветФонаКнопки.
+        /// Шрифт.
         /// </summary>
-        public Color ButtonBackColor { get; set; }
-
-        /// <summary>
-        /// ЦветТекстаКнопки.
-        /// </summary>
-        public Color ButtonTextColor { get; set; }
-
-        /// <summary>
-        /// Картинка.
-        /// </summary>
-        public Picture Picture { get; set; }
+        public Font TextFont { get; set; }
 
         /// <summary>
         /// ПоложениеКартинки.
         /// </summary>
         public ButtonPicturePosition PicturePosition { get; set; }
+
+        /// <summary>
+        /// Картинка.
+        /// </summary>
+        public Picture Picture { get; set; }
 
         /// <summary>
         /// РазмерКартинки.

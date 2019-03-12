@@ -11,24 +11,14 @@ namespace OFP.ObjectModel.FormElements.Data
    public class RadioButtonDecoration
     {
         /// <summary>
-        /// Рамка.
+        /// ПрозрачныйФон.
         /// </summary>
-        public Border Border { get; set; }
-
-        /// <summary>
-        /// Шрифт.
-        /// </summary>
-        public Font Font { get; set; }
+        public bool IsTransparentBackground { get; set; }
 
         /// <summary>
         /// ЦветФона.
         /// </summary>
-        public Color BackColor { get; set; }
-
-        /// <summary>
-        /// ЦветРамки.
-        /// </summary>
-        public Color BorderColor { get; set; }
+        public Color BackgroundColor { get; set; }
 
         /// <summary>
         /// ЦветТекста.
@@ -36,9 +26,19 @@ namespace OFP.ObjectModel.FormElements.Data
         public Color TextColor { get; set; }
 
         /// <summary>
-        /// ПрозрачныйФон.
+        /// Рамка.
         /// </summary>
-        public bool IsTransparent { get; set; }
+        public Border Border { get; set; }
+
+        /// <summary>
+        /// ЦветРамки.
+        /// </summary>
+        public Color BorderColor { get; set; }
+
+        /// <summary>
+        /// Шрифт.
+        /// </summary>
+        public Font TextFont { get; set; }
 
         /// <summary>
         /// Выравнивание текста переключателя.

@@ -8,19 +8,19 @@ namespace OFP.ObjectModel.FormElements.Data
     public class CheckBox : Element
     {
         /// <summary>
+        /// ПоложениеЗаголовка.
+        /// </summary>
+        public TitleLocation TitlePosition { get; set; }
+
+        /// <summary>
         /// Оформление флажка.
         /// </summary>
-        public CheckBoxDecoration Decor { get; set; }
+        public CheckBoxDecoration Decoration { get; set; }
 
         /// <summary>
         /// АктивизироватьПоУмолчанию.
         /// </summary>
-        public bool IsDefaultControl { get; set; }
-
-        /// <summary>
-        /// ПоложениеЗаголовка.
-        /// </summary>
-        public TitleLocation TitleLocation { get; set; }
+        public bool ActivetedByDefault { get; set; }
 
         /// <summary>
         /// События флажка.

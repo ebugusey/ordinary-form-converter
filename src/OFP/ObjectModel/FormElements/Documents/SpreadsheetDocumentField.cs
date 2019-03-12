@@ -13,41 +13,41 @@ namespace OFP.ObjectModel.FormElements.Documents
         /// <summary>
         /// Оформление ПолеТабличногоДокумента.
         /// </summary>
-        public SpreadsheetDocumentFieldDecoration Decor { get; set; }
+        public SpreadsheetDocumentFieldDecoration Decoration { get; set; }
 
         /// <summary>
-        /// РазрешитьПеретаскивание.
+        /// ВертикальнаяПолосаПрокрутки.
         /// </summary>
-        public bool EnableDrag { get; set; }
+        public bool VerticalScrollBarVisible { get; set; }
+
+        /// <summary>
+        /// ГоризонтальнаяПолосаПрокрутки.
+        /// </summary>
+        public bool HorizontalScrollBarVisible { get; set; }
 
         /// <summary>
         /// РазрешитьНачалоПеретаскивания.
         /// </summary>
-        public bool EnableStartDrag { get; set; }
+        public bool DragEnabled { get; set; }
+
+        /// <summary>
+        /// РазрешитьПеретаскивание.
+        /// </summary>
+        public bool DropEnabled { get; set; }
+
+        /// <summary>
+        /// ОтображатьВыделение.
+        /// </summary>
+        public SpreadsheetDocumentSelectionShowModeType SelectionViewMode { get; set; }
+
+        /// <summary>
+        /// Вывод.
+        /// </summary>
+        public UseOutput OutputMode { get; set; }
 
         /// <summary>
         /// События SpreadsheetDocumentField.
         /// </summary>
         public Events<SpreadsheetDocumentFieldEvent> Events { get; set; }
-
-        /// <summary>
-        /// ОтображатьВыделение.
-        /// </summary>
-        public SpreadsheetDocumentSelectionShowModeType ShowSelection { get; set; }
-
-        /// <summary>
-        /// Вывод.
-        /// </summary>
-        public UseOutput Output { get; set; }
-
-        /// <summary>
-        /// ГоризонтальнаяПолосаПрокрутки.
-        /// </summary>
-        public bool HorizontalScrollBar { get; set; }
-
-        /// <summary>
-        /// ВертикальнаяПолосаПрокрутки.
-        /// </summary>
-        public bool VerticalScrollBar { get; set; }
     }
 }

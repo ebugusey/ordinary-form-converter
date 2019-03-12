@@ -15,19 +15,24 @@ namespace OFP.ObjectModel.FormElements.Decorative
     public class PictureBoxDecoration
     {
         /// <summary>
-        /// Рамка.
+        /// ПрозрачныйФон.
         /// </summary>
-        public Border Border { get; set; }
-
-        /// <summary>
-        /// ШрифтТекста.
-        /// </summary>
-        public Font TextFont { get; set; }
+        public bool IsTransparentBackground { get; set; }
 
         /// <summary>
         /// ЦветФона.
         /// </summary>
-        public Color BackColor { get; set; }
+        public Color BackgroundColor { get; set; }
+
+        /// <summary>
+        /// ЦветТекста.
+        /// </summary>
+        public Color TextColor { get; set; }
+
+        /// <summary>
+        /// Рамка.
+        /// </summary>
+        public Border Border { get; set; }
 
         /// <summary>
         /// ЦветРамки.
@@ -35,9 +40,9 @@ namespace OFP.ObjectModel.FormElements.Decorative
         public Color BorderColor { get; set; }
 
         /// <summary>
-        /// ЦветТекста.
+        /// ШрифтТекста.
         /// </summary>
-        public Color TextColor { get; set; }
+        public Font TextFont { get; set; }
 
         /// <summary>
         /// Картинка.
@@ -47,11 +52,6 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// РазмерКартинки.
         /// </summary>
-        public PictureSize PictureSize { get; set; }
-
-        /// <summary>
-        /// ПрозрачныйФон.
-        /// </summary>
-        public bool IsTransparent { get; set; }
+        public PictureSize PictureSizeMode { get; set; }
     }
 }

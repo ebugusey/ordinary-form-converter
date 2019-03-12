@@ -13,29 +13,19 @@ namespace OFP.ObjectModel.FormElements.Decorative
     public class PictureBox : Element
     {
         /// <summary>
-        /// Оформление ПолеКартинки.
-        /// </summary>
-        public PictureBoxDecoration Decor { get; set; }
-
-        /// <summary>
-        /// РазрешитьПеретаскивание.
-        /// </summary>
-        public bool DragEnabled { get; set; }
-
-        /// <summary>
-        /// РазрешитьНачалоПеретаскивания.
-        /// </summary>
-        public bool StartDragEnabled { get; set; }
-
-        /// <summary>
         /// Гиперссылка.
         /// </summary>
         public bool IsHyperlink { get; set; }
 
         /// <summary>
-        /// ТекстНевыбраннойКартинки.
+        /// СочетаниеКлавиш.
         /// </summary>
-        public LocalizedString NonselectedPictureText { get; set; }
+        public Shortcut Shortcut { get; set; }
+
+        /// <summary>
+        /// Масштабировать.
+        /// </summary>
+        public bool Scalabale { get; set; }
 
         /// <summary>
         /// ИспользоватьКонтекстноеМеню.
@@ -43,14 +33,24 @@ namespace OFP.ObjectModel.FormElements.Decorative
         public bool ContextMenuEnabled { get; set; }
 
         /// <summary>
-        /// Масштабировать.
+        /// РазрешитьНачалоПеретаскивания.
         /// </summary>
-        public bool Zoomable { get; set; }
+        public bool DragEnabled { get; set; }
 
         /// <summary>
-        /// СочетаниеКлавиш.
+        /// РазрешитьПеретаскивание.
         /// </summary>
-        public Shortcut Shortcut { get; set; }
+        public bool DropEnabled { get; set; }
+
+        /// <summary>
+        /// ТекстНевыбраннойКартинки.
+        /// </summary>
+        public LocalizedString NonselectedPictureText { get; set; }
+
+        /// <summary>
+        /// Оформление ПолеКартинки.
+        /// </summary>
+        public PictureBoxDecoration Decoration { get; set; }
 
         /// <summary>
         /// События ПолеКартинки.

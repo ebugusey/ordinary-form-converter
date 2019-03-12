@@ -17,14 +17,39 @@ namespace OFP.ObjectModel.FormElements.Actions
         public Identifier Name { get; set; }
 
         /// <summary>
+        /// ПорядокКнопок.
+        /// </summary>
+        public CommandBarButtonOrder ButtonOrder { get; set; }
+
+        /// <summary>
+        /// ТипКнопки.
+        /// </summary>
+        public CommandBarButtonType ButtonType { get; set; }
+
+        /// <summary>
+        /// Доступность.
+        /// </summary>
+        public bool Enabled { get; set; }
+
+        /// <summary>
         /// Действие.
         /// </summary>
         public string Action { get; set; }
 
         /// <summary>
-        /// Пояснение.
+        /// КнопкаПоУмолчанию.
         /// </summary>
-        public LocalizedString Description { get; set; }
+        public bool IsDefaultButton { get; set; }
+
+        /// <summary>
+        /// ИзменяетДанные.
+        /// </summary>
+        public bool ModifiesData { get; set; }
+
+        /// <summary>
+        /// Пометка.
+        /// </summary>
+        public bool Marked { get; set; }
 
         /// <summary>
         /// Текст.
@@ -37,29 +62,9 @@ namespace OFP.ObjectModel.FormElements.Actions
         public LocalizedString ToolTip { get; set; }
 
         /// <summary>
-        /// Пометка.
+        /// Пояснение.
         /// </summary>
-        public bool Check { get; set; }
-
-        /// <summary>
-        /// КнопкаПоУмолчанию.
-        /// </summary>
-        public bool DefaultButton { get; set; }
-
-        /// <summary>
-        /// Доступность.
-        /// </summary>
-        public bool Enabled { get; set; }
-
-        /// <summary>
-        /// ИзменяетДанные.
-        /// </summary>
-        public bool ModifiesData { get; set; }
-
-        /// <summary>
-        /// СочетаниеКлавиш.
-        /// </summary>
-        public Shortcut Shortcut { get; set; }
+        public LocalizedString Description { get; set; }
 
         /// <summary>
         /// Картинка.
@@ -67,19 +72,14 @@ namespace OFP.ObjectModel.FormElements.Actions
         public Picture Picture { get; set; }
 
         /// <summary>
-        /// ПорядокКнопок.
-        /// </summary>
-        public CommandBarButtonOrder ButtonOrder { get; set; }
-
-        /// <summary>
-        /// ТипКнопки.
-        /// </summary>
-        public CommandBarButtonType ButtonType { get; set; }
-
-        /// <summary>
         /// Отображение.
         /// </summary>
         public CommandBarButtonRepresentation Representation { get; set; }
+
+        /// <summary>
+        /// СочетаниеКлавиш.
+        /// </summary>
+        public Shortcut Shortcut { get; set; }
 
         /// <summary>
         /// Дочерние элементы кнопки.

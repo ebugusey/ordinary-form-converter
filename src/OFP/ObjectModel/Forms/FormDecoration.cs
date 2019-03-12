@@ -19,6 +19,6 @@ namespace OFP.ObjectModel.Forms
         /// <summary>
         /// КартинкаЗаголовка.
         /// </summary>
-        public Picture CaptionPicture { get; set; }
+        public Picture TitlePicture { get; set; }
     }
 }

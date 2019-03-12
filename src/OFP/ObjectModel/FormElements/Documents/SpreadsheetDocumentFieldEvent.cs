@@ -9,12 +9,12 @@ namespace OFP.ObjectModel.FormElements.Documents
         /// <summary>
         /// Выбор.
         /// </summary>
-        Selection = 0,
+        OnSelection = 0,
 
         /// <summary>
         /// ОбработкаРасшифровки.
         /// </summary>
-        DetailProcessing = 1,
+        OnDetailProcessing = 1,
 
         /// <summary>
         /// ПриАктивизацииОбласти.
@@ -24,22 +24,22 @@ namespace OFP.ObjectModel.FormElements.Documents
         /// <summary>
         /// НачалоПеретаскивания.
         /// </summary>
-        DragStart = 3,
+        OnDrag = 3,
 
         /// <summary>
         /// ПроверкаПеретаскивания.
         /// </summary>
-        DragCheck = 4,
+        OnDragAndDropCheck = 4,
 
         /// <summary>
         /// ОкончаниеПеретаскивания.
         /// </summary>
-        DragEnd = 5,
+        OnDropInDataSourse = 5,
 
         /// <summary>
         /// Перетаскивание.
         /// </summary>
-        Drag = 6,
+        OnDropInDataReceiver = 6,
 
         /// <summary>
         /// ПриИзмененииСодержимогоОбласти.

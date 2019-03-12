@@ -15,24 +15,14 @@ namespace OFP.ObjectModel.FormElements.Panels
     public class PanelDecoration
     {
         /// <summary>
-        /// Рамка.
+        /// ПрозрачныйФон.
         /// </summary>
-        public Border Border { get; set; }
-
-        /// <summary>
-        /// ШрифтТекста.
-        /// </summary>
-        public Font TextFont { get; set; }
+        public bool IsTransparentBackground { get; set; }
 
         /// <summary>
         /// ЦветФона.
         /// </summary>
-        public Color BackColor { get; set; }
-
-        /// <summary>
-        /// ЦветРамки.
-        /// </summary>
-        public Color BorderColor { get; set; }
+        public Color BackgroundColor { get; set; }
 
         /// <summary>
         /// ЦветТекста.
@@ -40,14 +30,24 @@ namespace OFP.ObjectModel.FormElements.Panels
         public Color TextColor { get; set; }
 
         /// <summary>
+        /// Рамка.
+        /// </summary>
+        public Border Border { get; set; }
+
+        /// <summary>
+        /// ЦветРамки.
+        /// </summary>
+        public Color BorderColor { get; set; }
+
+        /// <summary>
+        /// ШрифтТекста.
+        /// </summary>
+        public Font TextFont { get; set; }
+
+        /// <summary>
         /// Картинка.
         /// </summary>
         public Picture Picture { get; set; }
-
-        /// <summary>
-        /// ПоложениеКартинкиПанели.
-        /// </summary>
-        public PanelPicturePosition PicturePosition { get; set; }
 
         /// <summary>
         /// РазмерКартинки.
@@ -55,8 +55,8 @@ namespace OFP.ObjectModel.FormElements.Panels
         public PictureSize PictureSize { get; set; }
 
         /// <summary>
-        /// ПрозрачныйФон.
+        /// ПоложениеКартинкиПанели.
         /// </summary>
-        public bool IsTransparent { get; set; }
+        public PanelPicturePosition PicturePosition { get; set; }
     }
 }

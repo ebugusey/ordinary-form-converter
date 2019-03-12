@@ -8,12 +8,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ВКонецСписка.
         /// </summary>
-        EndOfList = 0,
+        AtTheEndOfList = 0,
 
         /// <summary>
         /// ВКонецОкна.
         /// </summary>
-        EndOfWindow = 1,
+        AtTheEndOfWindow = 1,
 
         /// <summary>
         /// ПослеТекущейСтроки.

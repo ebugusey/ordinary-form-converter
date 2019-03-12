@@ -6,55 +6,16 @@ using System.Text;
 
 namespace OFP.ObjectModel.FormElements.Data
 {
+    // FIXME: Нет свойств: Формат, АктивизироватьПоУмолчанию.
     /// <summary>
     /// КолонкаТабличногоПоля.
     /// </summary>
     public class TableBoxColumn
     {
         /// <summary>
-        /// АвтоВысотаЯчейки.
+        /// Имя.
         /// </summary>
-        public bool AutoCellHeight { get; set; }
-
-        /// <summary>
-        /// АвтоОтметкаНезаполненного.
-        /// </summary>
-        public bool AutoMarkIncomplete { get; set; }
-
-        /// <summary>
-        /// ВысотаЯчейки.
-        /// </summary>
-        public int CellHeight { get; set; }
-
-        /// <summary>
-        /// ИзменятьПозицию.
-        /// </summary>
-        public bool ChangePosition { get; set; }
-
-        /// <summary>
-        /// ИзменятьНастройку.
-        /// </summary>
-        public bool ChangeSetting { get; set; }
-
-        /// <summary>
-        /// ИзменятьВидимость.
-        /// </summary>
-        public bool ChangeVisible { get; set; }
-
-        /// <summary>
-        /// ТриСостоянияФлажка.
-        /// </summary>
-        public bool CheckBoxThreeState { get; set; }
-
-        /// <summary>
-        /// ДанныеФлажка.
-        /// </summary>
-        public bool CheckData { get; set; }
-
-        /// <summary>
-        /// ЭлементУправления.
-        /// </summary>
-        public Element Control { get; set; }
+        public Identifier Name { get; set; }
 
         /// <summary>
         /// Данные.
@@ -62,44 +23,14 @@ namespace OFP.ObjectModel.FormElements.Data
         public string DataPath { get; set; }
 
         /// <summary>
-        /// Оформление колонки.
+        /// ЭлементУправления.
         /// </summary>
-        public TableBoxColumnDecoration Decor { get; set; }
+        public Element Control { get; set; }
 
         /// <summary>
-        /// РежимРедактирования.
+        /// ДанныеФлажка.
         /// </summary>
-        public ColumnEditMode EditMode { get; set; }
-
-        /// <summary>
-        /// Доступность.
-        /// </summary>
-        public bool Enabled { get; set; }
-
-        /// <summary>
-        /// ПодсказкаВШапке.
-        /// </summary>
-        public LocalizedString HeaderToolTip { get; set; }
-
-        /// <summary>
-        /// Гиперссылка.
-        /// </summary>
-        public bool Hyperlink { get; set; }
-
-        /// <summary>
-        /// Положение.
-        /// </summary>
-        public ColumnLocation Location { get; set; }
-
-        /// <summary>
-        /// ВыделятьОтрицательные.
-        /// </summary>
-        public bool MarkNegatives { get; set; }
-
-        /// <summary>
-        /// Имя.
-        /// </summary>
-        public Identifier Name { get; set; }
+        public bool CheckBoxDataPath { get; set; }
 
         /// <summary>
         /// ДанныеКартинки.
@@ -107,39 +38,19 @@ namespace OFP.ObjectModel.FormElements.Data
         public string PictureData { get; set; }
 
         /// <summary>
+        /// Доступность.
+        /// </summary>
+        public bool Enabled { get; set; }
+
+        /// <summary>
+        /// Видимость.
+        /// </summary>
+        public bool Visible { get; set; }
+
+        /// <summary>
         /// ТолькоПросмотр.
         /// </summary>
-        public bool ReadOnly { get; set; }
-
-        /// <summary>
-        /// ОтображатьИерархию.
-        /// </summary>
-        public bool ShowHierarchy { get; set; }
-
-        /// <summary>
-        /// ОтображатьВПодвале.
-        /// </summary>
-        public bool ShowInFooter { get; set; }
-
-        /// <summary>
-        /// ОтображатьВШапке.
-        /// </summary>
-        public bool ShowInHeader { get; set; }
-
-        /// <summary>
-        /// ИзменениеРазмера.
-        /// </summary>
-        public ColumnSizeChange SizeChange { get; set; }
-
-        /// <summary>
-        /// ПропускатьПриВводе.
-        /// </summary>
-        public bool SkipOnInput { get; set; }
-
-        /// <summary>
-        /// ТекстПодвала.
-        /// </summary>
-        public LocalizedString FooterText { get; set; }
+        public bool IsReadOnly { get; set; }
 
         /// <summary>
         /// ТекстШапки.
@@ -147,8 +58,98 @@ namespace OFP.ObjectModel.FormElements.Data
         public LocalizedString HeaderText { get; set; }
 
         /// <summary>
-        /// Видимость.
+        /// ТекстПодвала.
         /// </summary>
-        public bool Visible { get; set; }
+        public LocalizedString FooterText { get; set; }
+
+        /// <summary>
+        /// Гиперссылка.
+        /// </summary>
+        public bool IsHyperlink { get; set; }
+
+        /// <summary>
+        /// АвтоОтметкаНезаполненного.
+        /// </summary>
+        public bool AutoMarkBlank { get; set; }
+
+        /// <summary>
+        /// ВыделятьОтрицательные.
+        /// </summary>
+        public bool IsMarkNegativeNumbers { get; set; }
+
+        /// <summary>
+        /// ТриСостоянияФлажка.
+        /// </summary>
+        public bool HasThreeStatesCheckBox { get; set; }
+
+        /// <summary>
+        /// Положение.
+        /// </summary>
+        public ColumnLocation Position { get; set; }
+
+        /// <summary>
+        /// ПодсказкаВШапке.
+        /// </summary>
+        public LocalizedString HeaderToolTip { get; set; }
+
+        /// <summary>
+        /// ОтображатьВШапке.
+        /// </summary>
+        public bool VisibleInHeader { get; set; }
+
+        /// <summary>
+        /// ОтображатьВПодвале.
+        /// </summary>
+        public bool VisibleInFooter { get; set; }
+
+        /// <summary>
+        /// ОтображатьИерархию.
+        /// </summary>
+        public bool HierarchyVisible { get; set; }
+
+        /// <summary>
+        /// РежимРедактирования.
+        /// </summary>
+        public ColumnEditMode EditMode { get; set; }
+
+        /// <summary>
+        /// ИзменениеРазмера.
+        /// </summary>
+        public ColumnSizeChange SizeChangeMode { get; set; }
+
+        /// <summary>
+        /// ИзменятьВидимость.
+        /// </summary>
+        public bool CanChangeVisible { get; set; }
+
+        /// <summary>
+        /// ИзменятьНастройку.
+        /// </summary>
+        public bool CanChangeSetting { get; set; }
+
+        /// <summary>
+        /// ИзменятьПозицию.
+        /// </summary>
+        public bool CanChangePosition { get; set; }
+
+        /// <summary>
+        /// ПропускатьПриВводе.
+        /// </summary>
+        public bool IsSkipOnInput { get; set; }
+
+        /// <summary>
+        /// ВысотаЯчейки.
+        /// </summary>
+        public int CellHeight { get; set; }
+
+        /// <summary>
+        /// АвтоВысотаЯчейки.
+        /// </summary>
+        public bool AutoCellHeight { get; set; }
+
+        /// <summary>
+        /// Оформление колонки.
+        /// </summary>
+        public TableBoxColumnDecoration Decoration { get; set; }
     }
 }

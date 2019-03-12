@@ -14,29 +14,9 @@ namespace OFP.ObjectModel.FormElements.Data
     public class TableBoxDecoration
     {
         /// <summary>
-        /// Рамка.
-        /// </summary>
-        public Border Border { get; set; }
-
-        /// <summary>
-        /// Шрифт.
-        /// </summary>
-        public Font Font { get; set; }
-
-        /// <summary>
-        /// ЦветФонаЧередованияСтрок.
-        /// </summary>
-        public Color AlternationRowBackColor { get; set; }
-
-        /// <summary>
-        /// ЦветРамки.
-        /// </summary>
-        public Color BorderColor { get; set; }
-
-        /// <summary>
         /// ЦветФонаПоля.
         /// </summary>
-        public Color FieldBackColor { get; set; }
+        public Color FieldBackgroundColor { get; set; }
 
         /// <summary>
         /// ЦветТекстаПоля.
@@ -44,14 +24,45 @@ namespace OFP.ObjectModel.FormElements.Data
         public Color FieldTextColor { get; set; }
 
         /// <summary>
-        /// ЦветТекстаПодвала.
+        /// Рамка.
         /// </summary>
-        public Color FooterBackColor { get; set; }
+        public Border Border { get; set; }
 
         /// <summary>
-        /// ШрифтПодвала.
+        /// ЦветРамки.
         /// </summary>
-        public Font FooterFont { get; set; }
+        public Color BorderColor { get; set; }
+
+        /// <summary>
+        /// Шрифт.
+        /// </summary>
+        public Font TextFont { get; set; }
+
+        /// <summary>
+        /// ГоризонтальныеЛинии.
+        /// </summary>
+        public bool HorizontalLinesVisible { get; set; }
+
+        /// <summary>
+        /// ВертикальныеЛинии.
+        /// </summary>
+        public bool VerticalLinesVisible { get; set; }
+
+        /// <summary>
+        /// ЦветФонаШапки.
+        /// </summary>
+        public Color HeaderBackgroundColor { get; set; }
+
+        /// <summary>
+        /// ЦветТекстаШапки.
+        /// </summary>
+        public Color HeaderTextColor { get; set; }
+
+        //FIXME: Исправить описание свойства на ЦветФонаПодвала.
+        /// <summary>
+        /// ЦветТекстаПодвала.
+        /// </summary>
+        public Color FooterBackgroundColor { get; set; }
 
         /// <summary>
         /// ЦветТекстаПодвала.
@@ -59,29 +70,9 @@ namespace OFP.ObjectModel.FormElements.Data
         public Color FooterTextColor { get; set; }
 
         /// <summary>
-        /// ЦветФонаШапки.
-        /// </summary>
-        public Color HeaderBackColor { get; set; }
-
-        /// <summary>
-        /// ШрифтШапки.
-        /// </summary>
-        public Font HeaderFont { get; set; }
-
-        /// <summary>
-        /// ЦветТекстаШапки.
-        /// </summary>
-        public Color HeaderTextColor { get; set; }
-
-        /// <summary>
-        /// ГоризонтальныеЛинии.
-        /// </summary>
-        public bool HorizontalLines { get; set; }
-
-        /// <summary>
         /// ЦветФонаВыделения.
         /// </summary>
-        public Color SelectionBackColor { get; set; }
+        public Color SelectionBackgroundColor { get; set; }
 
         /// <summary>
         /// ЦветТекстаВыделения.
@@ -89,13 +80,23 @@ namespace OFP.ObjectModel.FormElements.Data
         public Color SelectionTextColor { get; set; }
 
         /// <summary>
-        /// ЧередованиеЦветовСтрок.
+        /// ЦветФонаЧередованияСтрок.
         /// </summary>
-        public bool UseAlternationRowColor { get; set; }
+        public Color InterlacingColor { get; set; }
 
         /// <summary>
-        /// ВертикальныеЛинии.
+        /// ЧередованиеЦветовСтрок.
         /// </summary>
-        public bool VerticalLines { get; set; }
+        public bool InterlacingEnabled { get; set; }
+
+        /// <summary>
+        /// ШрифтШапки.
+        /// </summary>
+        public Font HeaderTextFont { get; set; }
+
+        /// <summary>
+        /// ШрифтПодвала.
+        /// </summary>
+        public Font FooterTextFont { get; set; }
     }
 }

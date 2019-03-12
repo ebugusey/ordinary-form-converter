@@ -15,14 +15,19 @@ namespace OFP.ObjectModel.Forms
         public WindowStateVariant WindowState { get; set; }
 
         /// <summary>
-        /// РазрешитьЗакрытие.
+        /// СоединяемоеОкно.
         /// </summary>
-        public bool AllowClose { get; set; }
+        public bool IsConnectableWindow { get; set; }
 
         /// <summary>
-        /// РежимРабочегоСтола.
+        /// ПоложениеОкна.
         /// </summary>
-        public bool DesktopMode { get; set; }
+        public WindowLocationVariant WindowPosition { get; set; }
+
+        /// <summary>
+        /// ПоложениеПрикрепленногоОкна.
+        /// </summary>
+        public WindowDockVariant WindowDockPosition { get; set; }
 
         /// <summary>
         /// ИзменениеРазмера.
@@ -30,28 +35,23 @@ namespace OFP.ObjectModel.Forms
         public WindowSizeChange SizeChange { get; set; }
 
         /// <summary>
-        /// СоединяемоеОкно.
+        /// РазрешитьЗакрытие.
         /// </summary>
-        public bool ConnectableWindow { get; set; }
-
-        /// <summary>
-        /// ПоложениеОкна.
-        /// </summary>
-        public WindowLocationVariant WindowLocation { get; set; }
-
-        /// <summary>
-        /// ПоложениеПрикрепленногоОкна.
-        /// </summary>
-        public WindowDockVariant WindowDockLocation { get; set; }
+        public bool CloseAllowed { get; set; }
 
         /// <summary>
         /// СпособОтображенияОкна.
         /// </summary>
-        public WindowAppearanceModeVariant WindowAppearanceMode { get; set; }
+        public WindowAppearanceModeVariant WindowAppearance { get; set; }
 
         /// <summary>
         /// ИзменятьСпособОтображенияОкна.
         /// </summary>
-        public WindowAppearanceModeChange ChangeWindowAppearanceMode { get; set; }
+        public WindowAppearanceModeChange CanChangeWindowAppearance { get; set; }
+
+        /// <summary>
+        /// РежимРабочегоСтола.
+        /// </summary>
+        public bool DesktopModeEnabled { get; set; }
     }
 }

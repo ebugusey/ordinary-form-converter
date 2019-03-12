@@ -5,26 +5,12 @@ using System.Text;
 
 namespace OFP.ObjectModel.FormElements.Data
 {
+    //FIXME: Нет свойства Заголовок.
     /// <summary>
     /// Переключатель.
     /// </summary>
     public class RadioButton : Element
     {
-        /// <summary>
-        /// Оформление переключателя.
-        /// </summary>
-        public RadioButtonDecoration Decor { get; set; }
-
-        /// <summary>
-        /// АктивизироватьПоУмолчанию.
-        /// </summary>
-        public bool IsDefaultControl { get; set; }
-
-        /// <summary>
-        /// События переключателя.
-        /// </summary>
-        public Events<RadioButtonEvent> Events { get; set; }
-
         /// <summary>
         /// ВыбираемоеЗначение.
         /// </summary>
@@ -33,6 +19,22 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ПоложениеЗаголовка.
         /// </summary>
-        public TitleLocation TitleLocation { get; set; }
+        public TitleLocation TitlePosition { get; set; }
+
+        /// <summary>
+        /// Оформление переключателя.
+        /// </summary>
+        public RadioButtonDecoration Decoration { get; set; }
+
+        //FIXME: Нет такого свойства в платформе.
+        /// <summary>
+        /// АктивизироватьПоУмолчанию.
+        /// </summary>
+        public bool ActivetedByDefault { get; set; }
+
+        /// <summary>
+        /// События переключателя.
+        /// </summary>
+        public Events<RadioButtonEvent> Events { get; set; }
     }
 }

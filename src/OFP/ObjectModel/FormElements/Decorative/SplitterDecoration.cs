@@ -9,23 +9,23 @@ namespace OFP.ObjectModel.FormElements.Decorative
     public class SplitterDecoration
     {
         /// <summary>
+        /// ПрозрачныйФон.
+        /// </summary>
+        public bool IsTransparentBackground { get; set; }
+
+        /// <summary>
+        /// ЦветФона.
+        /// </summary>
+        public Color BackgroundColor { get; set; }
+
+        /// <summary>
         /// Рамка.
         /// </summary>
         public Border Border { get; set; }
 
         /// <summary>
-        /// ЦветФона.
-        /// </summary>
-        public Color BackColor { get; set; }
-
-        /// <summary>
         /// ЦветРамки.
         /// </summary>
         public Color BorderColor { get; set; }
-
-        /// <summary>
-        /// ПрозрачныйФон.
-        /// </summary>
-        public bool IsTransparent { get; set; }
     }
 }

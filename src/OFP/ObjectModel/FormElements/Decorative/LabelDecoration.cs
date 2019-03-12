@@ -15,24 +15,14 @@ namespace OFP.ObjectModel.FormElements.Decorative
     public class LabelDecoration
     {
         /// <summary>
-        /// Рамка.
+        /// ПрозрачныйФон.
         /// </summary>
-        public Border Border { get; set; }
-
-        /// <summary>
-        /// ШрифтТекста.
-        /// </summary>
-        public Font TextFont { get; set; }
+        public bool IsTransparentBackground { get; set; }
 
         /// <summary>
         /// ЦветФона.
         /// </summary>
-        public Color BackColor { get; set; }
-
-        /// <summary>
-        /// ЦветРамки.
-        /// </summary>
-        public Color BorderColor { get; set; }
+        public Color BackgroundColor { get; set; }
 
         /// <summary>
         /// ЦветТекста.
@@ -40,9 +30,19 @@ namespace OFP.ObjectModel.FormElements.Decorative
         public Color TextColor { get; set; }
 
         /// <summary>
-        /// Картинка.
+        /// Рамка.
         /// </summary>
-        public Picture Picture { get; set; }
+        public Border Border { get; set; }
+
+        /// <summary>
+        /// ЦветРамки.
+        /// </summary>
+        public Color BorderColor { get; set; }
+
+        /// <summary>
+        /// ШрифтТекста.
+        /// </summary>
+        public Font TextFont { get; set; }
 
         /// <summary>
         /// ПоложениеКартинкиНадписи.
@@ -50,14 +50,14 @@ namespace OFP.ObjectModel.FormElements.Decorative
         public LabelPicturePosition PicturePosition { get; set; }
 
         /// <summary>
+        /// Картинка.
+        /// </summary>
+        public Picture Picture { get; set; }
+
+        /// <summary>
         /// РазмерКартинки.
         /// </summary>
         public PictureSize PictureSize { get; set; }
-
-        /// <summary>
-        /// ПрозрачныйФон.
-        /// </summary>
-        public bool IsTransparent { get; set; }
 
         /// <summary>
         /// Выравнивание текста надписи.

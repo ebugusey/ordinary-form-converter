@@ -12,26 +12,26 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// Нажатие.
         /// </summary>
-        Click = 0,
+        OnClick = 0,
 
         /// <summary>
         /// НачалоПеретаскивания.
         /// </summary>
-        DragStart = 3,
+        OnDrag = 3,
 
         /// <summary>
         /// ПроверкаПеретаскивания.
         /// </summary>
-        DragCheck = 4,
+        OnDragAndDropCheck = 4,
 
         /// <summary>
         /// ОкончаниеПеретаскивания.
         /// </summary>
-        DragEnd = 5,
+        OnDropInDataSourse = 5,
 
         /// <summary>
         /// Перетаскивание.
         /// </summary>
-        Drag = 6,
+        OnDropInDataReceiver = 6,
     }
 }

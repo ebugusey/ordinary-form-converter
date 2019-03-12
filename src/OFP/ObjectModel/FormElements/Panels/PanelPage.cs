@@ -23,11 +23,6 @@ namespace OFP.ObjectModel.FormElements.Panels
         public LocalizedString Title { get; set; }
 
         /// <summary>
-        /// Подсказка.
-        /// </summary>
-        public LocalizedString ToolTip { get; set; }
-
-        /// <summary>
         /// КартинкаЗаголовка.
         /// </summary>
         public Picture TitlePicture { get; set; }
@@ -41,6 +36,12 @@ namespace OFP.ObjectModel.FormElements.Panels
         /// Доступность.
         /// </summary>
         public bool Enabled { get; set; }
+
+        //FIXME: Удалить: отсутствует в платформе 1С.
+        /// <summary>
+        /// Подсказка.
+        /// </summary>
+        public LocalizedString ToolTip { get; set; }
 
         /// <summary>
         /// Дочерние элементы страницы.

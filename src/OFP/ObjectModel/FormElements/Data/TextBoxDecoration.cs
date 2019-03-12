@@ -13,37 +13,22 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ПрозрачныйФон.
         /// </summary>
-        public bool IsTransparent { get; set; }
+        public bool IsTransparentBackground { get; set; }
 
         /// <summary>
-        /// ВысотаСпискаВыбора.
+        /// ЦветФонаПоля.
         /// </summary>
-        public ushort ChoiceListHeight { get; set; }
+        public Color FieldBackgroundColor { get; set; }
 
         /// <summary>
-        /// ШиринаСпискаВыбора.
+        /// ЦветТекстаПоля.
         /// </summary>
-        public ushort ChoiceListWidth { get; set; }
-
-        /// <summary>
-        /// Рамка.
-        /// </summary>
-        public Border Border { get; set; }
-
-        /// <summary>
-        /// Шрифт.
-        /// </summary>
-        public Font Font { get; set; }
-
-        /// <summary>
-        /// ЦветРамки.
-        /// </summary>
-        public Color BorderColor { get; set; }
+        public Color FieldTextColor { get; set; }
 
         /// <summary>
         /// ЦветФонаКнопки.
         /// </summary>
-        public Color ButtonBackColor { get; set; }
+        public Color ButtonBackgroundColor { get; set; }
 
         /// <summary>
         /// ЦветТекстаКнопки.
@@ -51,14 +36,19 @@ namespace OFP.ObjectModel.FormElements.Data
         public Color ButtonTextColor { get; set; }
 
         /// <summary>
-        /// ЦветФонаПоля.
+        /// Рамка.
         /// </summary>
-        public Color FieldBackColor { get; set; }
+        public Border Border { get; set; }
 
         /// <summary>
-        /// ЦветТекстаПоля.
+        /// ЦветРамки.
         /// </summary>
-        public Color FieldTextColor { get; set; }
+        public Color BorderColor { get; set; }
+
+        /// <summary>
+        /// Шрифт.
+        /// </summary>
+        public Font TextFont { get; set; }
 
         /// <summary>
         /// Картинка.
@@ -69,6 +59,16 @@ namespace OFP.ObjectModel.FormElements.Data
         /// КартинкаКнопкиВыбора.
         /// </summary>
         public Picture ChoiceButtonPicture { get; set; }
+
+        /// <summary>
+        /// ВысотаСпискаВыбора.
+        /// </summary>
+        public ushort ChoiceListHeight { get; set; }
+
+        /// <summary>
+        /// ШиринаСпискаВыбора.
+        /// </summary>
+        public ushort ChoiceListWidth { get; set; }
 
         /// <summary>
         /// Выравнивание текста поля ввода.
