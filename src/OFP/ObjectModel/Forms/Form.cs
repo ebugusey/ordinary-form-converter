@@ -7,43 +7,16 @@ using System.Text;
 
 namespace OFP.ObjectModel.Forms
 {
+    //FIXME: Нет свойств: Сохраняемые значения, Окно (Window).
     /// <summary>
     /// Форма обычного интерфейса.
     /// </summary>
     public class Form
     {
         /// <summary>
-        /// Реквизиты формы.
-        /// </summary>
-        public List<Attribute> Attributes { get; }
-
-        /// <summary>
-        /// ПроверятьЗаполнениеАвтоматически.
-        /// </summary>
-        public bool AutoCheckForBlankFields { get; set; }
-
-        /// <summary>
-        /// АвтоЗаголовок.
-        /// </summary>
-        public bool AutoTitleEnabled { get; set; }
-
-        /// <summary>
         /// Заголовок.
         /// </summary>
         public LocalizedString Title { get; set; }
-
-        public bool CloseOnChoice { get; set; }
-        public bool CloseOnOwnerClose { get; set; }
-
-        /// <summary>
-        /// Данные.
-        /// </summary>
-        public string DataPath { get; set; }
-
-        /// <summary>
-        /// Оформление формы.
-        /// </summary>
-        public FormDecoration Decoration { get; set; }
 
         /// <summary>
         /// ПоведениеКлавишиEnter.
@@ -51,16 +24,14 @@ namespace OFP.ObjectModel.Forms
         public EnterKeyBehaviorType EnterKeyBehavior { get; set; }
 
         /// <summary>
-        /// События формы.
+        /// Данные.
         /// </summary>
-        public Events<FormEvent> Events { get; set; }
-
-        public bool ModalMode { get; set; }
+        public string DataPath { get; set; }
 
         /// <summary>
-        /// ВосстанавливатьЗначенияПриОткрытии.
+        /// АвтоЗаголовок.
         /// </summary>
-        public bool RestoreValuesOnOpen { get; set; }
+        public bool AutoTitleEnabled { get; set; }
 
         /// <summary>
         /// Сохранять значения.
@@ -68,8 +39,41 @@ namespace OFP.ObjectModel.Forms
         public bool SavingValuesEnabled { get; set; }
 
         /// <summary>
+        /// ВосстанавливатьЗначенияПриОткрытии.
+        /// </summary>
+        public bool RestoreValuesOnOpen { get; set; }
+
+        /// <summary>
         /// Размеры формы.
         /// </summary>
         public Size Size { get; set; }
+
+        /// <summary>
+        /// ПроверятьЗаполнениеАвтоматически.
+        /// </summary>
+        public bool AutoCheckForBlankFields { get; set; }
+
+        //FIXME: Надо удалить свойство.
+        public bool CloseOnChoice { get; set; }
+        //FIXME: Надо удалить свойство.
+        public bool CloseOnOwnerClose { get; set; }
+
+        /// <summary>
+        /// Оформление формы.
+        /// </summary>
+        public FormDecoration Decoration { get; set; }
+
+        //FIXME: Надо удалить свойство.
+        public bool ModalMode { get; set; }
+
+        /// <summary>
+        /// Реквизиты формы.
+        /// </summary>
+        public List<Attribute> Attributes { get; }
+
+        /// <summary>
+        /// События формы.
+        /// </summary>
+        public Events<FormEvent> Events { get; set; }
     }
 }
