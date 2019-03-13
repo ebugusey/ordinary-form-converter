@@ -8,7 +8,7 @@ namespace OFP.ObjectModel.FormElements.Actions
     /// <summary>
     /// Кнопка.
     /// </summary>
-    class Button : Element
+    public class Button : Element
     {
         /// <summary>
         /// Заголовок.
