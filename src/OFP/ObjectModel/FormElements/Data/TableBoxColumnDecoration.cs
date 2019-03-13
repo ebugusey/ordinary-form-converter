@@ -102,5 +102,32 @@ namespace OFP.ObjectModel.FormElements.Data
         /// ГоризонтальноеПоложениеВПодвале.
         /// </summary>
         public HorizontalTextAlignment FooterHorizontalAlign { get; set; }
+
+        public TableBoxColumnDecoration()
+        {
+            Width = 100;
+
+            FieldBackgroundColor = new AutoColor();
+            FieldTextColor = new AutoColor();
+
+            HeaderBackgroundColor = new AutoColor();
+            HeaderTextColor = new AutoColor();
+
+            FooterBackgroundColor = new AutoColor();
+            FooterTextColor = new AutoColor();
+
+            TextFont = new AutoFont();
+            HeaderTextFont = new AutoFont();
+            FooterTextFont = new AutoFont();
+
+            HeaderPicture = new EmptyPicture();
+            RowsPictures = new EmptyPicture();
+            FooterPicture = new EmptyPicture();
+
+
+            HeaderHorizontalAlign = HorizontalTextAlignment.Left;
+            ColumnHorizontalAlign = HorizontalTextAlignment.Auto;
+            FooterHorizontalAlign = HorizontalTextAlignment.Left;
+        }
     }
 }

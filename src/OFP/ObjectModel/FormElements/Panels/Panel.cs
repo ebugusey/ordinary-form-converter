@@ -44,5 +44,18 @@ namespace OFP.ObjectModel.FormElements.Panels
         /// События панели.
         /// </summary>
         public Events<PanelEvent> Events { get; }
+
+        public Panel()
+        {
+            AutoBindingsEnabled = true;
+            AutoTabOrderEnabled = true;
+
+            TabsStyle = ShowTabs.Top;
+
+            Decoration = new PanelDecoration();
+            Events = new Events<PanelEvent>();
+
+            Pages = new List<PanelPage>();
+        }
     }
 }

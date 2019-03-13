@@ -56,5 +56,16 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// События ПолеКартинки.
         /// </summary>
         public Events<PictureBoxEvent> Events { get; set; }
+
+        public PictureBox()
+        {
+            Scalabale = true;
+            ContextMenuEnabled = true;
+
+            NonselectedPictureText = new LocalizedString();
+
+            Decoration = new PictureBoxDecoration();
+            Events = new Events<PictureBoxEvent>();
+        }
     }
 }

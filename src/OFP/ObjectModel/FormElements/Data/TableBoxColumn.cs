@@ -151,5 +151,35 @@ namespace OFP.ObjectModel.FormElements.Data
         /// Оформление колонки.
         /// </summary>
         public TableBoxColumnDecoration Decoration { get; set; }
+
+        public TableBoxColumn()
+        {
+            DataPath = string.Empty;
+            Control = new TextBox();
+
+            CheckBoxDataPath = string.Empty;
+            PictureData = string.Empty;
+
+            Enabled = true;
+            Visible = true;
+
+            HeaderText = new LocalizedString();
+            FooterText = new LocalizedString();
+
+            HeaderToolTip = new LocalizedString();
+
+            VisibleInHeader = true;
+            VisibleInFooter = true;
+
+            EditMode = ColumnEditMode.Enter;
+
+            CanChangeVisible = true;
+            CanChangeSetting = true;
+            CanChangePosition = true;
+
+            CellHeight = 1;
+
+            Decoration = new TableBoxColumnDecoration();
+        }
     }
 }

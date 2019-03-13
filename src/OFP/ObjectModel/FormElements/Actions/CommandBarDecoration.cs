@@ -43,5 +43,18 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// Шрифт.
         /// </summary>
         public Font TextFont { get; set; }
+
+        public CommandBarDecoration()
+        {
+            BackgroundColor = new AutoColor();
+
+            ButtonBackgroundColor = new AutoColor();
+            ButtonTextColor = new AutoColor();
+
+            Border = new Border();
+            BorderColor = new AutoColor();
+
+            TextFont = new AutoFont();
+        }
     }
 }

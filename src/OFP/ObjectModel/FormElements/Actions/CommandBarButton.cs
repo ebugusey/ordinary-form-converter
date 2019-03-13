@@ -86,5 +86,20 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// Заполняется если <c><see cref="ButtonType"/> == <see cref="CommandBarButtonType.Popup"/></c>.
         /// </summary>
         public List<CommandBarButton> ChildElements { get; set; }
+
+        public CommandBarButton()
+        {
+            Enabled = true;
+
+            Action = string.Empty;
+
+            Text = new LocalizedString();
+            ToolTip = new LocalizedString();
+            Description = new LocalizedString();
+
+            Picture = new EmptyPicture();
+
+            ChildElements = new List<CommandBarButton>();
+        }
     }
 }

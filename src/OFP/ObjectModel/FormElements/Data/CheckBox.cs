@@ -26,5 +26,13 @@ namespace OFP.ObjectModel.FormElements.Data
         /// События флажка.
         /// </summary>
         public Events<CheckBoxEvent> Events { get; set; }
+
+        public CheckBox()
+        {
+            TitlePosition = TitleLocation.Right;
+
+            Decoration = new CheckBoxDecoration();
+            Events = new Events<CheckBoxEvent>();
+        }
     }
 }

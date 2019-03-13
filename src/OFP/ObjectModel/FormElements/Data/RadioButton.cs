@@ -36,5 +36,13 @@ namespace OFP.ObjectModel.FormElements.Data
         /// События переключателя.
         /// </summary>
         public Events<RadioButtonEvent> Events { get; set; }
+
+        public RadioButton()
+        {
+            TitlePosition = TitleLocation.Right;
+
+            Decoration = new RadioButtonDecoration();
+            Events = new Events<RadioButtonEvent>();
+        }
     }
 }

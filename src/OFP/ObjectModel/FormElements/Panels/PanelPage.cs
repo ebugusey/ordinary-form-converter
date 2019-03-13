@@ -47,5 +47,16 @@ namespace OFP.ObjectModel.FormElements.Panels
         /// Дочерние элементы страницы.
         /// </summary>
         public List<Element> ChildItems { get; }
+
+        public PanelPage()
+        {
+            Title = new LocalizedString();
+            TitlePicture = new EmptyPicture();
+
+            Visible = true;
+            Enabled = true;
+
+            ChildItems = new List<Element>();
+        }
     }
 }

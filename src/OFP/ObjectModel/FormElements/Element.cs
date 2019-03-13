@@ -66,5 +66,17 @@ namespace OFP.ObjectModel.FormElements
         /// Расположение.
         /// </summary>
         public Position Position { get; set; }
+
+        public Element()
+        {
+            DataPath = string.Empty;
+
+            Visible = true;
+            Enabled = true;
+
+            ToolTip = new LocalizedString();
+
+            Position = new Position();
+        }
     }
 }

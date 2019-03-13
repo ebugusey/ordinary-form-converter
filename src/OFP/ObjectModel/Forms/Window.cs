@@ -53,5 +53,16 @@ namespace OFP.ObjectModel.Forms
         /// РежимРабочегоСтола.
         /// </summary>
         public bool DesktopModeEnabled { get; set; }
+
+        public Window()
+        {
+            State = WindowStateVariant.Normal;
+            DockPosition = WindowDockVariant.Left;
+
+            CloseAllowed = true;
+
+            Appearance = WindowAppearanceModeVariant.Normal;
+            CanChangeAppearance = WindowAppearanceModeChange.Auto;
+        }
     }
 }

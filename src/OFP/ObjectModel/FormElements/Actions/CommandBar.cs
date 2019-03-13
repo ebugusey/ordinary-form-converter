@@ -47,5 +47,16 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// Дочерние элементы (кнопки и подменю).
         /// </summary>
         public List<CommandBarButton> ChildElements { get; set; }
+
+        public CommandBar()
+        {
+            ActionSource = string.Empty;
+
+            Orientation = Orientation.Auto;
+
+            Decoration = new CommandBarDecoration();
+
+            ChildElements = new List<CommandBarButton>();
+        }
     }
 }

@@ -45,5 +45,15 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// События надписи.
         /// </summary>
         public Events<LabelEvent> Events { get; set; }
+
+        public Label()
+        {
+            Title = new LocalizedString();
+
+            Format = string.Empty;
+
+            Decoration = new LabelDecoration();
+            Events = new Events<LabelEvent>();
+        }
     }
 }

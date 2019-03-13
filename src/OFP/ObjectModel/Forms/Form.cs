@@ -75,5 +75,25 @@ namespace OFP.ObjectModel.Forms
         /// События формы.
         /// </summary>
         public Events<FormEvent> Events { get; set; }
+
+        public Form()
+        {
+            Title = new LocalizedString();
+
+            EnterKeyBehavior = EnterKeyBehaviorType.ControlNavigation;
+
+            DataPath = string.Empty;
+
+            AutoTitleEnabled = true;
+
+            RestoreValuesOnOpen = true;
+
+            Size = new Size();
+
+            Decoration = new FormDecoration();
+            Events = new Events<FormEvent>();
+
+            Attributes = new List<Attribute>();
+        }
     }
 }

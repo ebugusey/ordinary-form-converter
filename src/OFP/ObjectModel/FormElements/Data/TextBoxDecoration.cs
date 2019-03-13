@@ -74,5 +74,28 @@ namespace OFP.ObjectModel.FormElements.Data
         /// Выравнивание текста поля ввода.
         /// </summary>
         public TextAlignment TextAlignment { get; }
+
+        public TextBoxDecoration()
+        {
+            FieldBackgroundColor = new AutoColor();
+            FieldTextColor = new AutoColor();
+
+            ButtonBackgroundColor = new AutoColor();
+            ButtonTextColor = new AutoColor();
+
+            Border = new Border();
+            BorderColor = new AutoColor();
+
+            TextFont = new AutoFont();
+
+            Picture = new EmptyPicture();
+            ChoiceButtonPicture = new EmptyPicture();
+
+            TextAlignment = new TextAlignment
+            {
+                Horizontal = HorizontalTextAlignment.Auto,
+                Vertical = VerticalTextAlignment.Top,
+            };
+        }
     }
 }

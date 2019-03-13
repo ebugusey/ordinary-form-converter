@@ -49,5 +49,14 @@ namespace OFP.ObjectModel.FormElements.Documents
         /// События SpreadsheetDocumentField.
         /// </summary>
         public Events<SpreadsheetDocumentFieldEvent> Events { get; set; }
+
+        public SpreadsheetDocumentField()
+        {
+            VerticalScrollBarVisible = true;
+            HorizontalScrollBarVisible = true;
+
+            Decoration = new SpreadsheetDocumentFieldDecoration();
+            Events = new Events<SpreadsheetDocumentFieldEvent>();
+        }
     }
 }

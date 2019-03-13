@@ -27,5 +27,13 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// ЦветРамки.
         /// </summary>
         public Color BorderColor { get; set; }
+
+        public SplitterDecoration()
+        {
+            BackgroundColor = new AutoColor();
+
+            Border = new Border();
+            BorderColor = new AutoColor();
+        }
     }
 }

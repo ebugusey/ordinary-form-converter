@@ -33,5 +33,15 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// Шрифт.
         /// </summary>
         public Font TextFont { get; set; }
+
+        public GroupBoxDecoration()
+        {
+            TextColor = new AutoColor();
+
+            Border = new Border();
+            BorderColor = new AutoColor();
+
+            TextFont = new AutoFont();
+        }
     }
 }

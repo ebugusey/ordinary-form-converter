@@ -63,5 +63,26 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// Выравнивание текста надписи.
         /// </summary>
         public TextAlignment TextAlignment { get; }
+
+        public LabelDecoration()
+        {
+            BackgroundColor = new AutoColor();
+            TextColor = new AutoColor();
+
+            Border = new Border();
+            BorderColor = new AutoColor();
+
+            TextFont = new AutoFont();
+
+            PicturePosition = LabelPicturePosition.Left;
+            Picture = new EmptyPicture();
+            PictureSize = PictureSize.AutoSize;
+
+            TextAlignment = new TextAlignment
+            {
+                Horizontal = HorizontalTextAlignment.Auto,
+                Vertical = VerticalTextAlignment.Center,
+            };
+        }
     }
 }

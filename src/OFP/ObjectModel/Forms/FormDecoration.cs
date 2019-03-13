@@ -20,5 +20,12 @@ namespace OFP.ObjectModel.Forms
         /// КартинкаЗаголовка.
         /// </summary>
         public Picture TitlePicture { get; set; }
+
+        public FormDecoration()
+        {
+            Style = string.Empty;
+
+            TitlePicture = new EmptyPicture();
+        }
     }
 }

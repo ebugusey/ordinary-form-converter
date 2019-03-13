@@ -53,5 +53,19 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// РазмерКартинки.
         /// </summary>
         public PictureSize PictureSize { get; set; }
+
+        public PictureBoxDecoration()
+        {
+            BackgroundColor = new AutoColor();
+            TextColor = new AutoColor();
+
+            Border = new Border();
+            BorderColor = new AutoColor();
+
+            TextFont = new AutoFont();
+
+            Picture = new EmptyPicture();
+            PictureSize = PictureSize.RealSize;
+        }
     }
 }

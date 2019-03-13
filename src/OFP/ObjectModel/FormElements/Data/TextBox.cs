@@ -69,6 +69,11 @@ namespace OFP.ObjectModel.FormElements.Data
         public bool IsMarkNegativeNumbers { get; set; }
 
         /// <summary>
+        /// Кнопки поля ввода.
+        /// </summary>
+        public TextBoxButtons Buttons { get; set; }
+
+        /// <summary>
         /// Оформление поля ввода.
         /// </summary>
         public TextBoxDecoration Decoration { get; set; }
@@ -82,5 +87,18 @@ namespace OFP.ObjectModel.FormElements.Data
         /// События поля ввода.
         /// </summary>
         public Events<TextBoxEvent> Events { get; set; }
+
+        public TextBox()
+        {
+            Mask = string.Empty;
+
+            IsChooseType = true;
+            IsWrapText = true;
+
+            Buttons = new TextBoxButtons();
+
+            Decoration = new TextBoxDecoration();
+            Events = new Events<TextBoxEvent>();
+        }
     }
 }

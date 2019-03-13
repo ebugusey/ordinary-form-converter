@@ -29,5 +29,13 @@ namespace OFP.ObjectModel.FormElements.Documents
         /// ЦветРамки.
         /// </summary>
         public Color BorderColor { get; set; }
+
+        public HTMLDocumentFieldDecoration()
+        {
+            Border = new Border();
+            BorderColor = new AutoColor();
+
+            TextFont = new AutoFont();
+        }
     }
 }

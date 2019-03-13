@@ -134,5 +134,29 @@ namespace OFP.ObjectModel.FormElements.Data
         /// События табличного поля.
         /// </summary>
         public Events<TableBoxEvent> Events { get; set; }
+
+        public TableBox()
+        {
+            CanChangeRowSet = true;
+
+            CanChangeSettingOfColumns = true;
+            CanChangePositionOfColumns = true;
+
+            CanChangeRowOrder = true;
+
+            HasHeader = true;
+
+            HeaderHeight = 1;
+
+            HorizontalScrollBarMode = ScrollBarUse.UseAuto;
+            VerticalScrollBarMode = ScrollBarUse.UseAuto;
+
+            InitialListViewMode = InitialListView.Auto;
+
+            Decoration = new TableBoxDecoration();
+            Events = new Events<TableBoxEvent>();
+
+            Columns = new List<TableBoxColumn>();
+        }
     }
 }

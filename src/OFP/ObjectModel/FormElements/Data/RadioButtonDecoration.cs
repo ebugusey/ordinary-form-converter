@@ -44,5 +44,22 @@ namespace OFP.ObjectModel.FormElements.Data
         /// Выравнивание текста переключателя.
         /// </summary>
         public TextAlignment TextAlignment { get; }
+
+        public RadioButtonDecoration()
+        {
+            BackgroundColor = new AutoColor();
+            TextColor = new AutoColor();
+
+            Border = new Border();
+            BorderColor = new AutoColor();
+
+            TextFont = new AutoFont();
+
+            TextAlignment = new TextAlignment
+            {
+                Horizontal = HorizontalTextAlignment.Left,
+                Vertical = VerticalTextAlignment.Center,
+            };
+        }
     }
 }

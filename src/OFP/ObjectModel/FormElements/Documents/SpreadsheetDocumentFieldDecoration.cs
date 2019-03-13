@@ -21,5 +21,11 @@ namespace OFP.ObjectModel.FormElements.Documents
         /// ЦветРамки.
         /// </summary>
         public Color BorderColor { get; set; }
+
+        public SpreadsheetDocumentFieldDecoration()
+        {
+            Border = new Border();
+            BorderColor = new AutoColor();
+        }
     }
 }

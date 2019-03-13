@@ -29,5 +29,11 @@ namespace OFP.ObjectModel.FormElements.Documents
         /// События ПолеHTMLДокумента.
         /// </summary>
         public Events<HTMLDocumentFieldEvent> Events { get; set; }
+
+        public HTMLDocumentField()
+        {
+            Decoration = new HTMLDocumentFieldDecoration();
+            Events = new Events<HTMLDocumentFieldEvent>();
+        }
     }
 }

@@ -60,5 +60,16 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// События кнопки.
         /// </summary>
         public Events<ButtonEvent> Events { get; set; }
+
+        public Button()
+        {
+            Title = new LocalizedString();
+            ActionSource = string.Empty;
+
+            Decoration = new ButtonDecoration();
+            Events = new Events<ButtonEvent>();
+
+            ChildElements = new List<CommandBarButton>();
+        }
     }
 }

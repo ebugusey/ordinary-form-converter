@@ -18,5 +18,11 @@ namespace OFP.ObjectModel.FormElements
         /// ВертикальноеПоложение.
         /// </summary>
         public VerticalTextAlignment Vertical { get; set; }
+
+        public TextAlignment()
+        {
+            Horizontal = HorizontalTextAlignment.Auto;
+            Vertical = VerticalTextAlignment.Top;
+        }
     }
 }

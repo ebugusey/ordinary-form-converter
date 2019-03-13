@@ -98,5 +98,33 @@ namespace OFP.ObjectModel.FormElements.Data
         /// ШрифтПодвала.
         /// </summary>
         public Font FooterTextFont { get; set; }
+
+        public TableBoxDecoration()
+        {
+            FieldBackgroundColor = new AutoColor();
+            FieldTextColor = new AutoColor();
+
+            Border = new Border();
+            BorderColor = new AutoColor();
+
+            TextFont = new AutoFont();
+
+            HorizontalLinesVisible = true;
+            VerticalLinesVisible = true;
+
+            HeaderBackgroundColor = new AutoColor();
+            HeaderTextColor = new AutoColor();
+
+            FooterBackgroundColor = new AutoColor();
+            FooterTextColor = new AutoColor();
+
+            SelectionBackgroundColor = new AutoColor();
+            SelectionTextColor = new AutoColor();
+
+            InterlacingColor = new AutoColor();
+
+            HeaderTextFont = new AutoFont();
+            FooterTextFont = new AutoFont();
+        }
     }
 }

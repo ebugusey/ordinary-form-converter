@@ -50,5 +50,25 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// Выравнивание текста кнопки.
         /// </summary>
         public TextAlignment TextAlignment { get; }
+
+        public ButtonDecoration()
+        {
+            BackgroundColor = new AutoColor();
+            TextColor = new AutoColor();
+
+            BorderColor = new AutoColor();
+
+            TextFont = new AutoFont();
+
+            PicturePosition = ButtonPicturePosition.Left;
+            Picture = new EmptyPicture();
+            PictureSize = PictureSize.AutoSize;
+
+            TextAlignment = new TextAlignment
+            {
+                Horizontal = HorizontalTextAlignment.Center,
+                Vertical = VerticalTextAlignment.Center,
+            };
+        }
     }
 }

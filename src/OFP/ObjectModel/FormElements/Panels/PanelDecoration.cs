@@ -58,5 +58,20 @@ namespace OFP.ObjectModel.FormElements.Panels
         /// ПоложениеКартинкиПанели.
         /// </summary>
         public PanelPicturePosition PicturePosition { get; set; }
+
+        public PanelDecoration()
+        {
+            BackgroundColor = new AutoColor();
+            TextColor = new AutoColor();
+
+            Border = new Border();
+            BorderColor = new AutoColor();
+
+            TextFont = new AutoFont();
+
+            Picture = new EmptyPicture();
+            PictureSize = PictureSize.Stretch;
+            PicturePosition = PanelPicturePosition.Center;
+        }
     }
 }
