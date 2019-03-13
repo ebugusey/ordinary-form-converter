@@ -7,7 +7,6 @@ using System.Text;
 
 namespace OFP.ObjectModel.Forms
 {
-    //FIXME: Нет свойств: Сохраняемые значения, Окно (Window).
     /// <summary>
     /// Форма обычного интерфейса.
     /// </summary>
@@ -70,6 +69,11 @@ namespace OFP.ObjectModel.Forms
 
         //FIXME: Надо удалить свойство.
         public bool ModalMode { get; set; }
+
+        /// <summary>
+        /// Окно.
+        /// </summary>
+        public Window Window { get; set; }
 
         /// <summary>
         /// Реквизиты формы.
