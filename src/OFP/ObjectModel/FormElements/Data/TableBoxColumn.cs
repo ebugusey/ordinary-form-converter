@@ -30,7 +30,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ДанныеФлажка.
         /// </summary>
-        public bool CheckBoxDataPath { get; set; }
+        public string CheckBoxDataPath { get; set; }
 
         /// <summary>
         /// ДанныеКартинки.
