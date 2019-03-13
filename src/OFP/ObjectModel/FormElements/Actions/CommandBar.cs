@@ -41,7 +41,7 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// АктивизироватьПоУмолчанию.
         /// </summary>
-        public bool ActivetedByDefault { get; set; }
+        public bool ActivatedByDefault { get; set; }
 
         /// <summary>
         /// Дочерние элементы (кнопки и подменю).

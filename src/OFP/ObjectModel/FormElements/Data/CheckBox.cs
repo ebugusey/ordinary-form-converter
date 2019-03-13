@@ -20,7 +20,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// АктивизироватьПоУмолчанию.
         /// </summary>
-        public bool ActivetedByDefault { get; set; }
+        public bool ActivatedByDefault { get; set; }
 
         /// <summary>
         /// События флажка.

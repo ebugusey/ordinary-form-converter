@@ -23,7 +23,7 @@ namespace OFP.ObjectModel.FormElements.Documents
         /// <summary>
         /// АктивизироватьПоУмолчанию.
         /// </summary>
-        public bool ActivetedByDefault { get; set; }
+        public bool ActivatedByDefault { get; set; }
 
         /// <summary>
         /// События ПолеHTMLДокумента.
