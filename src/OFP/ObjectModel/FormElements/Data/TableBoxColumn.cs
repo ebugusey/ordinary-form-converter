@@ -157,9 +157,24 @@ namespace OFP.ObjectModel.FormElements.Data
         public bool AutoCellHeight { get; set; }
 
         /// <summary>
-        /// Оформление колонки.
+        /// Ширина.
         /// </summary>
-        public TableBoxColumnDecoration Decoration { get; set; }
+        public ushort Width { get; set; }
+
+        /// <summary>
+        /// Оформление шапки.
+        /// </summary>
+        public TableBoxColumnDecoration HeaderDecoration { get; set; }
+
+        /// <summary>
+        /// Оформление ячейки.
+        /// </summary>
+        public TableBoxColumnDecoration CellDecoration { get; set; }
+
+        /// <summary>
+        /// Оформление подвала.
+        /// </summary>
+        public TableBoxColumnDecoration FooterDecoration { get; set; }
 
         public TableBoxColumn()
         {
@@ -190,7 +205,22 @@ namespace OFP.ObjectModel.FormElements.Data
 
             CellHeight = 1;
 
-            Decoration = new TableBoxColumnDecoration();
+            Width = 100;
+
+            HeaderDecoration = new TableBoxColumnDecoration
+            {
+                HorizontalAlign = HorizontalTextAlignment.Left,
+            };
+
+            CellDecoration = new TableBoxColumnDecoration
+            {
+                HorizontalAlign = HorizontalTextAlignment.Auto,
+            };
+
+            FooterDecoration = new TableBoxColumnDecoration
+            {
+                HorizontalAlign = HorizontalTextAlignment.Left,
+            };
         }
     }
 }

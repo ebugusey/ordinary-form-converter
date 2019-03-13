@@ -11,113 +11,45 @@ namespace OFP.ObjectModel.FormElements.Data
 {
     /// <summary>
     /// Оформление колонки табличного поля.
+    /// Представляет оформление одной из частей колонки: Шапки, Ячейки или Подвала.
     /// </summary>
     public class TableBoxColumnDecoration
     {
         /// <summary>
-        /// ГоризонтальноеПоложениеВШапке.
+        /// ГоризонтальноеПоложениеВ...
         /// </summary>
-        public HorizontalTextAlignment HeaderHorizontalAlign { get; set; }
+        public HorizontalTextAlignment HorizontalAlign { get; set; }
 
         /// <summary>
-        /// ГоризонтальноеПоложениеВКолонке.
+        /// ЦветФона...
         /// </summary>
-        public HorizontalTextAlignment ColumnHorizontalAlign { get; set; }
+        public Color BackgroundColor { get; set; }
 
         /// <summary>
-        /// ГоризонтальноеПоложениеВПодвале.
+        /// ЦветТекста...
         /// </summary>
-        public HorizontalTextAlignment FooterHorizontalAlign { get; set; }
+        public Color TextColor { get; set; }
 
         /// <summary>
-        /// Ширина.
-        /// </summary>
-        public ushort Width { get; set; }
-
-        /// <summary>
-        /// ЦветФонаПоля.
-        /// </summary>
-        public Color FieldBackgroundColor { get; set; }
-
-        /// <summary>
-        /// ЦветТекстаПоля.
-        /// </summary>
-        public Color FieldTextColor { get; set; }
-
-        /// <summary>
-        /// ЦветФонаШапки.
-        /// </summary>
-        public Color HeaderBackgroundColor { get; set; }
-
-        /// <summary>
-        /// ЦветТекстаШапки
-        /// </summary>
-        public Color HeaderTextColor { get; set; }
-
-        /// <summary>
-        /// ЦветФонаПодвала.
-        /// </summary>
-        public Color FooterBackgroundColor { get; set; }
-
-        /// <summary>
-        /// ЦветТекстаПодвала.
-        /// </summary>
-        public Color FooterTextColor { get; set; }
-
-        /// <summary>
-        /// ШрифтТекста.
+        /// ШрифтТекста...
         /// </summary>
         public Font TextFont { get; set; }
 
         /// <summary>
-        /// ШрифтШапки.
+        /// Картинка...
         /// </summary>
-        public Font HeaderTextFont { get; set; }
-
-        /// <summary>
-        /// ШрифтПодвала.
-        /// </summary>
-        public Font FooterTextFont { get; set; }
-
-        /// <summary>
-        /// КартинкаШапки.
-        /// </summary>
-        public Picture HeaderPicture { get; set; }
-
-        /// <summary>
-        /// КартинкиСтрок.
-        /// </summary>
-        public Picture RowsPictures { get; set; }
-
-        /// <summary>
-        /// КартинкаПодвала.
-        /// </summary>
-        public Picture FooterPicture { get; set; }
+        public Picture Picture { get; set; }
 
         public TableBoxColumnDecoration()
         {
-            HeaderHorizontalAlign = HorizontalTextAlignment.Left;
-            ColumnHorizontalAlign = HorizontalTextAlignment.Auto;
-            FooterHorizontalAlign = HorizontalTextAlignment.Left;
+            HorizontalAlign = HorizontalTextAlignment.Auto;
 
-            Width = 100;
-
-            FieldBackgroundColor = new AutoColor();
-            FieldTextColor = new AutoColor();
-
-            HeaderBackgroundColor = new AutoColor();
-            HeaderTextColor = new AutoColor();
-
-            FooterBackgroundColor = new AutoColor();
-            FooterTextColor = new AutoColor();
+            BackgroundColor = new AutoColor();
+            TextColor = new AutoColor();
 
             TextFont = new AutoFont();
-            HeaderTextFont = new AutoFont();
-            FooterTextFont = new AutoFont();
 
-            HeaderPicture = new EmptyPicture();
-            RowsPictures = new EmptyPicture();
-            FooterPicture = new EmptyPicture();
+            Picture = new EmptyPicture();
         }
     }
 }
