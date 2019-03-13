@@ -49,7 +49,7 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// Выравнивание текста кнопки.
         /// </summary>
-        public TextAlignment TextAlignment { get; }
+        public TextAlignment TextAlignment { get; set; }
 
         public ButtonDecoration()
         {

@@ -38,12 +38,12 @@ namespace OFP.ObjectModel.FormElements.Panels
         /// <summary>
         /// Страницы.
         /// </summary>
-        public List<PanelPage> Pages { get; }
+        public List<PanelPage> Pages { get; set; }
 
         /// <summary>
         /// События панели.
         /// </summary>
-        public Events<PanelEvent> Events { get; }
+        public Events<PanelEvent> Events { get; set; }
 
         public Panel()
         {

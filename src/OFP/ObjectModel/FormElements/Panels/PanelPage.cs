@@ -46,7 +46,7 @@ namespace OFP.ObjectModel.FormElements.Panels
         /// <summary>
         /// Дочерние элементы страницы.
         /// </summary>
-        public List<Element> ChildItems { get; }
+        public List<Element> ChildItems { get; set; }
 
         public PanelPage()
         {

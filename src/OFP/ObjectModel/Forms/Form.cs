@@ -69,7 +69,7 @@ namespace OFP.ObjectModel.Forms
         /// <summary>
         /// Реквизиты формы.
         /// </summary>
-        public List<Attribute> Attributes { get; }
+        public List<Attribute> Attributes { get; set; }
 
         /// <summary>
         /// События формы.

@@ -62,7 +62,7 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// Выравнивание текста надписи.
         /// </summary>
-        public TextAlignment TextAlignment { get; }
+        public TextAlignment TextAlignment { get; set; }
 
         public LabelDecoration()
         {

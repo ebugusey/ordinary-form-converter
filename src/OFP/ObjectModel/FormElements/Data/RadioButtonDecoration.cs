@@ -43,7 +43,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Выравнивание текста переключателя.
         /// </summary>
-        public TextAlignment TextAlignment { get; }
+        public TextAlignment TextAlignment { get; set; }
 
         public RadioButtonDecoration()
         {

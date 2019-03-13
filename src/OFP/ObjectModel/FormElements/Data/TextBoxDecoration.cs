@@ -73,7 +73,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Выравнивание текста поля ввода.
         /// </summary>
-        public TextAlignment TextAlignment { get; }
+        public TextAlignment TextAlignment { get; set; }
 
         public TextBoxDecoration()
         {

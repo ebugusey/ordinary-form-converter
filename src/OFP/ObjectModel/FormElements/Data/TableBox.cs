@@ -128,7 +128,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Колонки.
         /// </summary>
-        public List<TableBoxColumn> Columns { get; }
+        public List<TableBoxColumn> Columns { get; set; }
 
         /// <summary>
         /// События табличного поля.

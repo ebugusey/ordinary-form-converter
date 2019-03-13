@@ -42,7 +42,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Выравнивание текста флажка.
         /// </summary>
-        public TextAlignment TextAlignment { get; }
+        public TextAlignment TextAlignment { get; set; }
 
         public CheckBoxDecoration()
         {
