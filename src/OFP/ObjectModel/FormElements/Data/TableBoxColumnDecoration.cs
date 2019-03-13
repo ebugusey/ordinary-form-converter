@@ -22,7 +22,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// Ширина.
         /// </summary>
-        public int Width { get; set; }
+        public ushort Width { get; set; }
 
         /// <summary>
         /// ЦветФонаПоля.

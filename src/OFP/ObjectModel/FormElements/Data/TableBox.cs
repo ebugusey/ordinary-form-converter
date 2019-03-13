@@ -78,7 +78,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ВысотаШапки.
         /// </summary>
-        public int HeaderHeight { get; set; }
+        public ushort HeaderHeight { get; set; }
 
         /// <summary>
         /// ВысотаПодвала.
@@ -98,12 +98,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ФиксацияСлева.
         /// </summary>
-        public int CountOfColumnsFixedLeft { get; set; }
+        public ushort CountOfColumnsFixedLeft { get; set; }
 
         /// <summary>
         /// ФиксацияСправа.
         /// </summary>
-        public int CountOfColumnsFixedRight { get; set; }
+        public ushort CountOfColumnsFixedRight { get; set; }
 
         /// <summary>
         /// АвтоВводНовойСтроки.

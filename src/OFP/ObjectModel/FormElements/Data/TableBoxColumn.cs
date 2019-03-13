@@ -140,7 +140,7 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ВысотаЯчейки.
         /// </summary>
-        public int CellHeight { get; set; }
+        public ushort CellHeight { get; set; }
 
         /// <summary>
         /// АвтоВысотаЯчейки.
