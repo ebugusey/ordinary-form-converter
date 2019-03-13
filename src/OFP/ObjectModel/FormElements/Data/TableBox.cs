@@ -98,12 +98,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// <summary>
         /// ФиксацияСлева.
         /// </summary>
-        public int CountColumnsFixedLeft { get; set; }
+        public int CountOfColumnsFixedLeft { get; set; }
 
         /// <summary>
         /// ФиксацияСправа.
         /// </summary>
-        public int CountColumnsFixedRight { get; set; }
+        public int CountOfColumnsFixedRight { get; set; }
 
         /// <summary>
         /// АвтоВводНовойСтроки.

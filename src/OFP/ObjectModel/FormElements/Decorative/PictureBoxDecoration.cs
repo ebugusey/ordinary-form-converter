@@ -52,6 +52,6 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// <summary>
         /// РазмерКартинки.
         /// </summary>
-        public PictureSize PictureSizeMode { get; set; }
+        public PictureSize PictureSize { get; set; }
     }
 }
