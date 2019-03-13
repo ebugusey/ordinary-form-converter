@@ -2,7 +2,6 @@ using OFP.ObjectModel.Common;
 
 namespace OFP.ObjectModel.FormElements.Data
 {
-    //FIXME: Нет свойств: ФиксДробнаяЧасть, РедактированиеТекста, РежимВыбораНезаполненного, РежимВыбораИзСписка.
     /// <summary>
     /// ПолеВвода.
     /// </summary>
@@ -49,9 +48,24 @@ namespace OFP.ObjectModel.FormElements.Data
         public bool AutoChoiceBlank { get; set; }
 
         /// <summary>
+        /// РежимВыбораИзСписка.
+        /// </summary>
+        public bool InListChoiceMode { get; set; }
+
+        /// <summary>
         /// ВыбиратьТип.
         /// </summary>
         public bool IsChooseType { get; set; }
+
+        /// <summary>
+        /// РежимВыбораНезаполненного.
+        /// </summary>
+        public IncompleteChoiceMode AutoChoiceMode { get; set; }
+
+        /// <summary>
+        /// РедактированиеТекста.
+        /// </summary>
+        public bool TextEditEnabled { get; set; }
 
         /// <summary>
         /// АвтоПереносСтрок.
@@ -62,6 +76,11 @@ namespace OFP.ObjectModel.FormElements.Data
         /// ВыделятьОтрицательные.
         /// </summary>
         public bool IsMarkNegativeNumbers { get; set; }
+
+        /// <summary>
+        /// ФиксДробнаяЧасть.
+        /// </summary>
+        public bool FixedFractionPoint { get; set; }
 
         /// <summary>
         /// Кнопки поля ввода.
@@ -88,6 +107,7 @@ namespace OFP.ObjectModel.FormElements.Data
             Mask = string.Empty;
 
             IsChooseType = true;
+            TextEditEnabled = true;
             IsWrapText = true;
 
             Buttons = new TextBoxButtons();

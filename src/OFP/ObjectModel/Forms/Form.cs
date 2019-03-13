@@ -7,7 +7,6 @@ using System.Text;
 
 namespace OFP.ObjectModel.Forms
 {
-    //FIXME: Нет свойств: Сохраняемые значения, Окно (Window).
     /// <summary>
     /// Форма обычного интерфейса.
     /// </summary>
@@ -54,6 +53,11 @@ namespace OFP.ObjectModel.Forms
         public bool AutoCheckForBlankFields { get; set; }
 
         /// <summary>
+        /// Свойства окна формы.
+        /// </summary>
+        public Window Window { get; set; }
+
+        /// <summary>
         /// Оформление формы.
         /// </summary>
         public FormDecoration Decoration { get; set; }
@@ -81,6 +85,8 @@ namespace OFP.ObjectModel.Forms
             RestoreValuesOnOpen = true;
 
             Size = new Size();
+
+            Window = new Window();
 
             Decoration = new FormDecoration();
             Events = new Events<FormEvent>();

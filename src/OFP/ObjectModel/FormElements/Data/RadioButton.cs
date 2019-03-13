@@ -1,16 +1,21 @@
 using OFP.ObjectModel.Common;
+using OFP.ObjectModel.Localization;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace OFP.ObjectModel.FormElements.Data
 {
-    //FIXME: Нет свойства Заголовок.
     /// <summary>
     /// Переключатель.
     /// </summary>
     public class RadioButton : Element
     {
+        /// <summary>
+        /// Заголовок.
+        /// </summary>
+        public LocalizedString Title { get; set; }
+
         /// <summary>
         /// ВыбираемоеЗначение.
         /// </summary>
@@ -33,6 +38,8 @@ namespace OFP.ObjectModel.FormElements.Data
 
         public RadioButton()
         {
+            Title = new LocalizedString();
+
             TitlePosition = TitleLocation.Right;
 
             Decoration = new RadioButtonDecoration();

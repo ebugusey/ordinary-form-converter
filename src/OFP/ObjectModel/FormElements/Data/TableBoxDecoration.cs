@@ -58,9 +58,8 @@ namespace OFP.ObjectModel.FormElements.Data
         /// </summary>
         public Color HeaderTextColor { get; set; }
 
-        //FIXME: Исправить описание свойства на ЦветФонаПодвала.
         /// <summary>
-        /// ЦветТекстаПодвала.
+        /// ЦветФонаПодвала.
         /// </summary>
         public Color FooterBackgroundColor { get; set; }
 

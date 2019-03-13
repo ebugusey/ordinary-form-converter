@@ -6,7 +6,6 @@ using System.Text;
 
 namespace OFP.ObjectModel.FormElements.Data
 {
-    // FIXME: Нет свойств: Формат, АктивизироватьПоУмолчанию.
     /// <summary>
     /// КолонкаТабличногоПоля.
     /// </summary>
@@ -113,6 +112,11 @@ namespace OFP.ObjectModel.FormElements.Data
         public ColumnEditMode EditMode { get; set; }
 
         /// <summary>
+        /// АктивизироватьПоУмолчанию.
+        /// </summary>
+        public bool ActivatedByDefault { get; set; }
+
+        /// <summary>
         /// ИзменениеРазмера.
         /// </summary>
         public ColumnSizeChange SizeChangeMode { get; set; }
@@ -136,6 +140,11 @@ namespace OFP.ObjectModel.FormElements.Data
         /// ПропускатьПриВводе.
         /// </summary>
         public bool IsSkipOnInput { get; set; }
+
+        /// <summary>
+        /// Формат.
+        /// </summary>
+        public string Format { get; set; }
 
         /// <summary>
         /// ВысотаЯчейки.
@@ -176,6 +185,8 @@ namespace OFP.ObjectModel.FormElements.Data
             CanChangeVisible = true;
             CanChangeSetting = true;
             CanChangePosition = true;
+
+            Format = string.Empty;
 
             CellHeight = 1;
 
