@@ -15,6 +15,11 @@ namespace OFP.ObjectModel.FormElements.Decorative
     public class LabelDecoration
     {
         /// <summary>
+        /// Выравнивание текста надписи.
+        /// </summary>
+        public TextAlignment TextAlignment { get; set; }
+
+        /// <summary>
         /// ПрозрачныйФон.
         /// </summary>
         public bool IsTransparentBackground { get; set; }
@@ -59,13 +64,14 @@ namespace OFP.ObjectModel.FormElements.Decorative
         /// </summary>
         public PictureSize PictureSize { get; set; }
 
-        /// <summary>
-        /// Выравнивание текста надписи.
-        /// </summary>
-        public TextAlignment TextAlignment { get; set; }
-
         public LabelDecoration()
         {
+            TextAlignment = new TextAlignment
+            {
+                Horizontal = HorizontalTextAlignment.Auto,
+                Vertical = VerticalTextAlignment.Center,
+            };
+
             BackgroundColor = new AutoColor();
             TextColor = new AutoColor();
 
@@ -77,12 +83,6 @@ namespace OFP.ObjectModel.FormElements.Decorative
             PicturePosition = LabelPicturePosition.Left;
             Picture = new EmptyPicture();
             PictureSize = PictureSize.AutoSize;
-
-            TextAlignment = new TextAlignment
-            {
-                Horizontal = HorizontalTextAlignment.Auto,
-                Vertical = VerticalTextAlignment.Center,
-            };
         }
     }
 }

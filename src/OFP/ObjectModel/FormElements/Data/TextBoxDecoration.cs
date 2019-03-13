@@ -11,6 +11,11 @@ namespace OFP.ObjectModel.FormElements.Data
     public class TextBoxDecoration
     {
         /// <summary>
+        /// Выравнивание текста поля ввода.
+        /// </summary>
+        public TextAlignment TextAlignment { get; set; }
+
+        /// <summary>
         /// ПрозрачныйФон.
         /// </summary>
         public bool IsTransparentBackground { get; set; }
@@ -70,13 +75,14 @@ namespace OFP.ObjectModel.FormElements.Data
         /// </summary>
         public ushort ChoiceListWidth { get; set; }
 
-        /// <summary>
-        /// Выравнивание текста поля ввода.
-        /// </summary>
-        public TextAlignment TextAlignment { get; set; }
-
         public TextBoxDecoration()
         {
+            TextAlignment = new TextAlignment
+            {
+                Horizontal = HorizontalTextAlignment.Auto,
+                Vertical = VerticalTextAlignment.Top,
+            };
+
             FieldBackgroundColor = new AutoColor();
             FieldTextColor = new AutoColor();
 
@@ -90,12 +96,6 @@ namespace OFP.ObjectModel.FormElements.Data
 
             Picture = new EmptyPicture();
             ChoiceButtonPicture = new EmptyPicture();
-
-            TextAlignment = new TextAlignment
-            {
-                Horizontal = HorizontalTextAlignment.Auto,
-                Vertical = VerticalTextAlignment.Top,
-            };
         }
     }
 }

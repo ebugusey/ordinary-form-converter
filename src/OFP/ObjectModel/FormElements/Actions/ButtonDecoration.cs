@@ -12,6 +12,11 @@ namespace OFP.ObjectModel.FormElements.Actions
     public class ButtonDecoration
     {
         /// <summary>
+        /// Выравнивание текста кнопки.
+        /// </summary>
+        public TextAlignment TextAlignment { get; set; }
+
+        /// <summary>
         /// ЦветФонаКнопки.
         /// </summary>
         public Color BackgroundColor { get; set; }
@@ -46,13 +51,14 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// </summary>
         public PictureSize PictureSize { get; set; }
 
-        /// <summary>
-        /// Выравнивание текста кнопки.
-        /// </summary>
-        public TextAlignment TextAlignment { get; set; }
-
         public ButtonDecoration()
         {
+            TextAlignment = new TextAlignment
+            {
+                Horizontal = HorizontalTextAlignment.Center,
+                Vertical = VerticalTextAlignment.Center,
+            };
+
             BackgroundColor = new AutoColor();
             TextColor = new AutoColor();
 
@@ -63,12 +69,6 @@ namespace OFP.ObjectModel.FormElements.Actions
             PicturePosition = ButtonPicturePosition.Left;
             Picture = new EmptyPicture();
             PictureSize = PictureSize.AutoSize;
-
-            TextAlignment = new TextAlignment
-            {
-                Horizontal = HorizontalTextAlignment.Center,
-                Vertical = VerticalTextAlignment.Center,
-            };
         }
     }
 }

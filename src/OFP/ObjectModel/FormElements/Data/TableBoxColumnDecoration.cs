@@ -20,6 +20,21 @@ namespace OFP.ObjectModel.FormElements.Data
         public Font Font { get; set; }
 
         /// <summary>
+        /// ГоризонтальноеПоложениеВШапке.
+        /// </summary>
+        public HorizontalTextAlignment HeaderHorizontalAlign { get; set; }
+
+        /// <summary>
+        /// ГоризонтальноеПоложениеВКолонке.
+        /// </summary>
+        public HorizontalTextAlignment ColumnHorizontalAlign { get; set; }
+
+        /// <summary>
+        /// ГоризонтальноеПоложениеВПодвале.
+        /// </summary>
+        public HorizontalTextAlignment FooterHorizontalAlign { get; set; }
+
+        /// <summary>
         /// Ширина.
         /// </summary>
         public ushort Width { get; set; }
@@ -88,23 +103,12 @@ namespace OFP.ObjectModel.FormElements.Data
         /// </summary>
         public Picture FooterPicture { get; set; }
 
-        /// <summary>
-        /// ГоризонтальноеПоложениеВШапке.
-        /// </summary>
-        public HorizontalTextAlignment HeaderHorizontalAlign { get; set; }
-
-        /// <summary>
-        /// ГоризонтальноеПоложениеВКолонке.
-        /// </summary>
-        public HorizontalTextAlignment ColumnHorizontalAlign { get; set; }
-
-        /// <summary>
-        /// ГоризонтальноеПоложениеВПодвале.
-        /// </summary>
-        public HorizontalTextAlignment FooterHorizontalAlign { get; set; }
-
         public TableBoxColumnDecoration()
         {
+            HeaderHorizontalAlign = HorizontalTextAlignment.Left;
+            ColumnHorizontalAlign = HorizontalTextAlignment.Auto;
+            FooterHorizontalAlign = HorizontalTextAlignment.Left;
+
             Width = 100;
 
             FieldBackgroundColor = new AutoColor();
@@ -123,11 +127,6 @@ namespace OFP.ObjectModel.FormElements.Data
             HeaderPicture = new EmptyPicture();
             RowsPictures = new EmptyPicture();
             FooterPicture = new EmptyPicture();
-
-
-            HeaderHorizontalAlign = HorizontalTextAlignment.Left;
-            ColumnHorizontalAlign = HorizontalTextAlignment.Auto;
-            FooterHorizontalAlign = HorizontalTextAlignment.Left;
         }
     }
 }
