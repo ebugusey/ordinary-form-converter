@@ -12,27 +12,27 @@ namespace OFP.ObjectModel.Forms
         /// <summary>
         /// СостояниеОкна.
         /// </summary>
-        public WindowStateVariant WindowState { get; set; }
+        public WindowStateVariant State { get; set; }
 
         /// <summary>
         /// СоединяемоеОкно.
         /// </summary>
-        public bool IsConnectableWindow { get; set; }
+        public bool IsConnectable { get; set; }
 
         /// <summary>
         /// ПоложениеОкна.
         /// </summary>
-        public WindowLocationVariant WindowPosition { get; set; }
+        public WindowLocationVariant Position { get; set; }
 
         /// <summary>
         /// ПоложениеПрикрепленногоОкна.
         /// </summary>
-        public WindowDockVariant WindowDockPosition { get; set; }
+        public WindowDockVariant DockPosition { get; set; }
 
         /// <summary>
         /// ИзменениеРазмера.
         /// </summary>
-        public WindowSizeChange SizeChange { get; set; }
+        public WindowSizeChange CanChangeSize { get; set; }
 
         /// <summary>
         /// РазрешитьЗакрытие.
@@ -42,12 +42,12 @@ namespace OFP.ObjectModel.Forms
         /// <summary>
         /// СпособОтображенияОкна.
         /// </summary>
-        public WindowAppearanceModeVariant WindowAppearance { get; set; }
+        public WindowAppearanceModeVariant Appearance { get; set; }
 
         /// <summary>
         /// ИзменятьСпособОтображенияОкна.
         /// </summary>
-        public WindowAppearanceModeChange CanChangeWindowAppearance { get; set; }
+        public WindowAppearanceModeChange CanChangeAppearance { get; set; }
 
         /// <summary>
         /// РежимРабочегоСтола.
