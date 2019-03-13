@@ -31,6 +31,8 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// </summary>
         public bool Enabled { get; set; }
 
+        // TODO: Добавить класс для описания действия.
+        //      Действием может быть не только обработчик, но и стандартная команда.
         /// <summary>
         /// Действие.
         /// </summary>
