@@ -53,18 +53,10 @@ namespace OFP.ObjectModel.Forms
         /// </summary>
         public bool AutoCheckForBlankFields { get; set; }
 
-        //FIXME: Надо удалить свойство.
-        public bool CloseOnChoice { get; set; }
-        //FIXME: Надо удалить свойство.
-        public bool CloseOnOwnerClose { get; set; }
-
         /// <summary>
         /// Оформление формы.
         /// </summary>
         public FormDecoration Decoration { get; set; }
-
-        //FIXME: Надо удалить свойство.
-        public bool ModalMode { get; set; }
 
         /// <summary>
         /// Реквизиты формы.

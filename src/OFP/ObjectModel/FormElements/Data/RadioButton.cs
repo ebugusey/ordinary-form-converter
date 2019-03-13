@@ -26,12 +26,6 @@ namespace OFP.ObjectModel.FormElements.Data
         /// </summary>
         public RadioButtonDecoration Decoration { get; set; }
 
-        //FIXME: Нет такого свойства в платформе.
-        /// <summary>
-        /// АктивизироватьПоУмолчанию.
-        /// </summary>
-        public bool ActivetedByDefault { get; set; }
-
         /// <summary>
         /// События переключателя.
         /// </summary>

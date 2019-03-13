@@ -37,12 +37,6 @@ namespace OFP.ObjectModel.FormElements.Panels
         /// </summary>
         public bool Enabled { get; set; }
 
-        //FIXME: Удалить: отсутствует в платформе 1С.
-        /// <summary>
-        /// Подсказка.
-        /// </summary>
-        public LocalizedString ToolTip { get; set; }
-
         /// <summary>
         /// Дочерние элементы страницы.
         /// </summary>

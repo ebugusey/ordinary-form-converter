@@ -8,11 +8,6 @@ namespace OFP.ObjectModel.FormElements.Data
     /// </summary>
     public class TextBox : Element
     {
-        //FIXME: Надо удалить свойство.
-        public bool ChoiceIncomplete { get; set; }
-        //FIXME: Надо удалить свойство.
-        public bool MarkIncomplete { get; set; }
-
         /// <summary>
         /// МногострочныйРежим.
         /// </summary>

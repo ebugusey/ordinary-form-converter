@@ -19,12 +19,6 @@ namespace OFP.ObjectModel.FormElements.Documents
         /// </summary>
         public Border Border { get; set; }
 
-        //FIXME: Нет такого свойства в платформе. 
-        /// <summary>
-        /// Шрифт.
-        /// </summary>
-        public Font TextFont { get; set; }
-
         /// <summary>
         /// ЦветРамки.
         /// </summary>
@@ -34,8 +28,6 @@ namespace OFP.ObjectModel.FormElements.Documents
         {
             Border = new Border();
             BorderColor = new AutoColor();
-
-            TextFont = new AutoFont();
         }
     }
 }

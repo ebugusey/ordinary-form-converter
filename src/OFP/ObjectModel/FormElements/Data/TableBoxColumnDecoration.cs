@@ -14,11 +14,6 @@ namespace OFP.ObjectModel.FormElements.Data
     /// </summary>
     public class TableBoxColumnDecoration
     {
-        //FIXME: Надо удалить свойство.
-        public Border Border { get; set; }
-        //FIXME: Надо удалить свойство.
-        public Font Font { get; set; }
-
         /// <summary>
         /// ГоризонтальноеПоложениеВШапке.
         /// </summary>
@@ -69,9 +64,6 @@ namespace OFP.ObjectModel.FormElements.Data
         /// ЦветТекстаПодвала.
         /// </summary>
         public Color FooterTextColor { get; set; }
-
-        //FIXME: Надо удалить свойство.
-        public Picture HeaderAdditionalPicture { get; set; }
 
         /// <summary>
         /// ШрифтТекста.
