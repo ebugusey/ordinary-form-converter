@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using OFP.ObjectModel.Common;
 using OFP.ObjectModel.Platform;
 using OFP.ObjectModel.Localization;

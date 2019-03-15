@@ -1,5 +1,3 @@
-using OFP.ObjectModel.Common;
-
 namespace OFP.ObjectModel.FormElements.Decorative
 {
     /// <summary>

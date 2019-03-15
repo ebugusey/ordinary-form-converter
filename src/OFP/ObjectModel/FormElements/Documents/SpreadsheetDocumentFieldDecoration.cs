@@ -1,9 +1,5 @@
-using OFP.ObjectModel.Platform;
 using OFP.ObjectModel.Platform.Borders;
 using OFP.ObjectModel.Platform.Colors;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OFP.ObjectModel.FormElements.Documents
 {

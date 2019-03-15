@@ -1,8 +1,4 @@
-using OFP.ObjectModel.Platform;
 using OFP.ObjectModel.Platform.Pictures;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OFP.ObjectModel.Forms
 {

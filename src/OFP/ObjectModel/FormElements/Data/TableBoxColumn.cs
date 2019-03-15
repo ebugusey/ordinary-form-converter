@@ -1,8 +1,5 @@
 using OFP.ObjectModel.Common;
 using OFP.ObjectModel.Localization;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OFP.ObjectModel.FormElements.Data
 {

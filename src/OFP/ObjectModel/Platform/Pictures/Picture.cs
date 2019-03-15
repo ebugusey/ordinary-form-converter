@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Reflection;
-using System.Linq;
 using OFP.ObjectModel.Common;
 
 namespace OFP.ObjectModel.Platform.Pictures

@@ -1,7 +1,4 @@
 using OFP.ObjectModel.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OFP.ObjectModel.FormElements.Documents
 {

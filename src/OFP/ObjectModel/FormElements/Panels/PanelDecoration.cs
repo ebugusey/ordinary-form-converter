@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using OFP.ObjectModel.Common;
 using OFP.ObjectModel.Platform.Borders;
 using OFP.ObjectModel.Platform.Colors;
 using OFP.ObjectModel.Platform.Fonts;
