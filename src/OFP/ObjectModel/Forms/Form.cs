@@ -63,9 +63,19 @@ namespace OFP.ObjectModel.Forms
         public bool AlignmentLinesEnabled { get; set; }
 
         /// <summary>
+        /// Сетка.
+        /// </summary>
+        public Grid Grid { get; set; }
+
+        /// <summary>
         /// Оформление формы.
         /// </summary>
         public FormDecoration Decoration { get; set; }
+
+        /// <summary>
+        /// Окно.
+        /// </summary>
+        public Window Window { get; set; }
 
         /// <summary>
         /// Реквизиты формы.
