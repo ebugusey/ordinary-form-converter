@@ -17,7 +17,7 @@ namespace OFP.ObjectModel.Forms
         /// <summary>
         /// ГоризонтальныйШагСетки.
         /// </summary>
-        public uint HorisontalStep { get; set; }
+        public uint HorizontalStep { get; set; }
 
         /// <summary>
         /// ВертикальныйШагСетки.
