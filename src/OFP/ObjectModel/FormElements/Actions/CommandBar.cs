@@ -45,7 +45,7 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// <summary>
         /// Дочерние элементы (кнопки и подменю).
         /// </summary>
-        public List<CommandBarButton> ChildElements { get; set; }
+        public List<CommandBarButton> ChildItems { get; set; }
 
         public CommandBar()
         {
@@ -55,7 +55,7 @@ namespace OFP.ObjectModel.FormElements.Actions
 
             Decoration = new CommandBarDecoration();
 
-            ChildElements = new List<CommandBarButton>();
+            ChildItems = new List<CommandBarButton>();
         }
     }
 }

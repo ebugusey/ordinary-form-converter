@@ -54,7 +54,7 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// Дочерние элементы кнопки,
         /// заполняется если <c><see cref="MenuMode"/> != <see cref="UseMenuMode.DontUse"/></c>
         /// </summary>
-        public List<CommandBarButton> ChildElements { get; set; }
+        public List<CommandBarButton> ChildItems { get; set; }
 
         /// <summary>
         /// События кнопки.
@@ -69,7 +69,7 @@ namespace OFP.ObjectModel.FormElements.Actions
             Decoration = new ButtonDecoration();
             Events = new Events<ButtonEvent>();
 
-            ChildElements = new List<CommandBarButton>();
+            ChildItems = new List<CommandBarButton>();
         }
     }
 }

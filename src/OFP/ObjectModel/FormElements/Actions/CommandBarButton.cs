@@ -87,7 +87,7 @@ namespace OFP.ObjectModel.FormElements.Actions
         /// Дочерние элементы кнопки.
         /// Заполняется если <c><see cref="ButtonType"/> == <see cref="CommandBarButtonType.Popup"/></c>.
         /// </summary>
-        public List<CommandBarButton> ChildElements { get; set; }
+        public List<CommandBarButton> ChildItems { get; set; }
 
         public CommandBarButton()
         {
@@ -101,7 +101,7 @@ namespace OFP.ObjectModel.FormElements.Actions
 
             Picture = new EmptyPicture();
 
-            ChildElements = new List<CommandBarButton>();
+            ChildItems = new List<CommandBarButton>();
         }
     }
 }
