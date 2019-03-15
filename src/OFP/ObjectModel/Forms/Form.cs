@@ -53,11 +53,6 @@ namespace OFP.ObjectModel.Forms
         public bool AutoCheckForBlankFields { get; set; }
 
         /// <summary>
-        /// Свойства окна формы.
-        /// </summary>
-        public Window Window { get; set; }
-
-        /// <summary>
         /// ИспользоватьВыравнивающиеЛинии.
         /// </summary>
         public bool AlignmentLinesEnabled { get; set; }
