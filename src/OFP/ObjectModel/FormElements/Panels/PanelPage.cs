@@ -55,6 +55,8 @@ namespace OFP.ObjectModel.FormElements.Panels
             Visible = true;
             Enabled = true;
 
+            AlignmentLines = new List<AlignmentLine>();
+
             ChildItems = new List<Element>();
         }
     }

@@ -60,6 +60,8 @@ namespace OFP.ObjectModel.FormElements.Panels
             Decoration = new PanelDecoration();
             Events = new Events<PanelEvent>();
 
+            AlignmentLines = new List<AlignmentLine>();
+
             Pages = new List<PanelPage>();
         }
     }

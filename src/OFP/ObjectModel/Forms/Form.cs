@@ -96,6 +96,9 @@ namespace OFP.ObjectModel.Forms
 
             Size = new Size();
 
+            AlignmentLinesEnabled = true;
+            Grid = new Grid();
+
             Window = new Window();
 
             Decoration = new FormDecoration();
