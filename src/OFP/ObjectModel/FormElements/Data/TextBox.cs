@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using OFP.ObjectModel.Common;
+using OFP.ObjectModel.FormElements.Data.Extensions;
 
 namespace OFP.ObjectModel.FormElements.Data
 {
@@ -7,36 +9,6 @@ namespace OFP.ObjectModel.FormElements.Data
     /// </summary>
     public class TextBox : Element
     {
-        /// <summary>
-        /// МногострочныйРежим.
-        /// </summary>
-        public bool InMultiLineMode { get; set; }
-
-        /// <summary>
-        /// Маска.
-        /// </summary>
-        public string Mask { get; set; }
-
-        /// <summary>
-        /// РежимПароля.
-        /// </summary>
-        public bool InPasswordMode { get; set; }
-
-        /// <summary>
-        /// РасширенноеРедактирование.
-        /// </summary>
-        public bool IsExtendedEdit { get; set; }
-
-        /// <summary>
-        /// МинимальноеЗначение.
-        /// </summary>
-        public decimal MinValue { get; set; }
-
-        /// <summary>
-        /// МаксимальноеЗначение.
-        /// </summary>
-        public decimal MaxValue { get; set; }
-
         /// <summary>
         /// АвтоОтметкаНезаполненного.
         /// </summary>
@@ -102,10 +74,14 @@ namespace OFP.ObjectModel.FormElements.Data
         /// </summary>
         public Events<TextBoxEvent> Events { get; set; }
 
+        /// <summary>
+        /// Расширения поля ввода.
+        /// Зависит от типа значения в поле ввода.
+        /// </summary>
+        public List<ElementExtension> Extensions { get; set; }
+
         public TextBox()
         {
-            Mask = string.Empty;
-
             IsChooseType = true;
             TextEditEnabled = true;
             IsWrapText = true;
@@ -114,6 +90,8 @@ namespace OFP.ObjectModel.FormElements.Data
 
             Decoration = new TextBoxDecoration();
             Events = new Events<TextBoxEvent>();
+
+            Extensions = new List<ElementExtension>();
         }
     }
 }
