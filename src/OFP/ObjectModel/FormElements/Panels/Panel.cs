@@ -36,6 +36,11 @@ namespace OFP.ObjectModel.FormElements.Panels
         public PanelDecoration Decoration { get; set; }
 
         /// <summary>
+        /// Выравнивающие линии.
+        /// </summary>
+        public List<AlignmentLine> AlignmentLines { get; set; }
+
+        /// <summary>
         /// Страницы.
         /// </summary>
         public List<PanelPage> Pages { get; set; }

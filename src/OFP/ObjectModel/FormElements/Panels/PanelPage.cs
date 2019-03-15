@@ -38,6 +38,11 @@ namespace OFP.ObjectModel.FormElements.Panels
         public bool Enabled { get; set; }
 
         /// <summary>
+        /// Выравнивающие линии.
+        /// </summary>
+        public List<AlignmentLine> AlignmentLines { get; set; }
+
+        /// <summary>
         /// Дочерние элементы страницы.
         /// </summary>
         public List<Element> ChildItems { get; set; }

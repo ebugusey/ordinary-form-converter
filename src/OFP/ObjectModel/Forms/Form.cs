@@ -58,6 +58,11 @@ namespace OFP.ObjectModel.Forms
         public Window Window { get; set; }
 
         /// <summary>
+        /// ИспользоватьВыравнивающиеЛинии.
+        /// </summary>
+        public bool AlignmentLinesEnabled { get; set; }
+
+        /// <summary>
         /// Оформление формы.
         /// </summary>
         public FormDecoration Decoration { get; set; }
