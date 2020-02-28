@@ -6,4 +6,8 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OFP.Abstractions\OFP.Abstractions.csproj" />
+  </ItemGroup>
+
 </Project>

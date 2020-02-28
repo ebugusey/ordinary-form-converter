@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "libUnpack.Test", "libUnpack
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OFP", "OFP\OFP.csproj", "{EA706CA0-4873-407A-9D93-3A00ABE5FED4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OFP.Abstractions", "OFP.Abstractions\OFP.Abstractions.csproj", "{7BE42B9F-1872-4894-8918-DF70CAA7441D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{EA706CA0-4873-407A-9D93-3A00ABE5FED4}.Release|x64.Build.0 = Release|Any CPU
 		{EA706CA0-4873-407A-9D93-3A00ABE5FED4}.Release|x86.ActiveCfg = Release|Any CPU
 		{EA706CA0-4873-407A-9D93-3A00ABE5FED4}.Release|x86.Build.0 = Release|Any CPU
+		{7BE42B9F-1872-4894-8918-DF70CAA7441D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BE42B9F-1872-4894-8918-DF70CAA7441D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BE42B9F-1872-4894-8918-DF70CAA7441D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7BE42B9F-1872-4894-8918-DF70CAA7441D}.Debug|x64.Build.0 = Debug|Any CPU
+		{7BE42B9F-1872-4894-8918-DF70CAA7441D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7BE42B9F-1872-4894-8918-DF70CAA7441D}.Debug|x86.Build.0 = Debug|Any CPU
+		{7BE42B9F-1872-4894-8918-DF70CAA7441D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BE42B9F-1872-4894-8918-DF70CAA7441D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BE42B9F-1872-4894-8918-DF70CAA7441D}.Release|x64.ActiveCfg = Release|Any CPU
+		{7BE42B9F-1872-4894-8918-DF70CAA7441D}.Release|x64.Build.0 = Release|Any CPU
+		{7BE42B9F-1872-4894-8918-DF70CAA7441D}.Release|x86.ActiveCfg = Release|Any CPU
+		{7BE42B9F-1872-4894-8918-DF70CAA7441D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
