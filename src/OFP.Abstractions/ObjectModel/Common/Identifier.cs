@@ -71,17 +71,11 @@ namespace OFP.ObjectModel.Common
 
         public override bool Equals(object obj)
         {
-            bool result;
-            switch (obj)
+            var result = obj switch
             {
-                case Identifier elementName:
-                    result = Equals(in elementName);
-                    break;
-                default:
-                    result = false;
-                    break;
-            }
-
+                Identifier elementName => Equals(in elementName),
+                _ => false,
+            };
             return result;
         }
 
