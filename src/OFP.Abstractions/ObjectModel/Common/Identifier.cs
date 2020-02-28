@@ -3,18 +3,33 @@ using System.Text.RegularExpressions;
 
 namespace OFP.ObjectModel.Common
 {
+    /// <summary>
+    /// Строка представляющая идентификатор чего-либо.
+    /// Это может быть имя колонки в таблице, имя метода в форме или имя элемента.
+    /// </summary>
     public readonly struct Identifier : IEquatable<Identifier>
     {
         private static readonly StringComparer ValueComparer =
             StringComparer.OrdinalIgnoreCase;
 
+        /// <summary>
+        /// Строковое представление идентификатора.
+        /// </summary>
+        /// <exception cref="InvalidOperationException">Если значение не было инициализировано из строки.</exception>
         public string Value =>
             _value ?? throw new InvalidOperationException("Значение не инициализировано.");
 
+        /// <summary>
+        /// Значение было инициализировано из строки.
+        /// </summary>
         public bool HasValue => _value != null;
 
         private readonly string _value;
 
+        /// <summary>
+        /// Инициализировать идентификатор указанным значением.
+        /// </summary>
+        /// <param name="value">Строковое представление идентификатора.</param>
         public Identifier(string value)
         {
             if (value == null)
