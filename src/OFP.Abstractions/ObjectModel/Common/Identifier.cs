@@ -15,29 +15,29 @@ namespace OFP.ObjectModel.Common
 
         private readonly string _value;
 
-        public Identifier(string name)
+        public Identifier(string value)
         {
-            if (name == null)
+            if (value == null)
             {
-                throw new ArgumentNullException(nameof(name));
+                throw new ArgumentNullException(nameof(value));
             }
-            if (string.IsNullOrEmpty(name))
+            if (string.IsNullOrEmpty(value))
             {
-                throw new ArgumentException("Идентификатор не может быть пустым.", nameof(name));
+                throw new ArgumentException("Идентификатор не может быть пустым.", nameof(value));
             }
-            if (!NameIsValid(name))
+            if (!IsValid(value))
             {
                 throw new ArgumentException(
                     "Идентификатор должен начинаться с _ или буквы.\n" +
                     "Идентификатор не должен содержать пробелов и переносов строк.",
-                    nameof(name)
+                    nameof(value)
                 );
             }
 
-            _value = name;
+            _value = value;
         }
 
-        private static bool NameIsValid(string name)
+        private static bool IsValid(string value)
         {
             // Именем элемента должен быть валидный идентификатор.
             // Например: ИмяЭлемента1, _ИмяЭлемента2, elementName.
@@ -45,7 +45,7 @@ namespace OFP.ObjectModel.Common
             // Первый символ -- _ или буква юникода.
             // Остальные символы -- числа, буквы и _.
             var pattern = @"^[_\p{L}][_\d\p{L}]*$";
-            return Regex.IsMatch(name, pattern);
+            return Regex.IsMatch(value, pattern);
         }
 
         #region Object
