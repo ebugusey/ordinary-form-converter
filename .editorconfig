@@ -10,6 +10,12 @@ insert_final_newline = true
 [*.{txt,md}]
 indent_size = 2
 
+[*.xsd]
+indent_style = tab
+
+[*.csproj]
+indent_size = 2
+
 [*.{diff,patch}]
 trim_trailing_whitespace = unset
 charset = unset
