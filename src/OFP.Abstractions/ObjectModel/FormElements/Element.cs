@@ -64,7 +64,7 @@ namespace OFP.ObjectModel.FormElements
         /// </summary>
         public Position Position { get; set; }
 
-        public Element()
+        protected Element()
         {
             DataPath = string.Empty;
 
