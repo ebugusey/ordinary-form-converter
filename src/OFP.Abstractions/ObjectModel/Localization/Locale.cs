@@ -34,17 +34,11 @@ namespace OFP.ObjectModel.Localization
 
         public override bool Equals(object obj)
         {
-            bool result;
-            switch (obj)
+            var result = obj switch
             {
-                case Locale locale:
-                    result = Equals(in locale);
-                    break;
-                default:
-                    result = false;
-                    break;
-            }
-
+                Locale locale => Equals(in locale),
+                _ => false,
+            };
             return result;
         }
 
