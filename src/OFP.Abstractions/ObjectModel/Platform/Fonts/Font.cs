@@ -22,7 +22,7 @@ namespace OFP.ObjectModel.Platform.Fonts
         /// <summary>
         /// Имя.
         /// </summary>
-        public string FaceName { get; set; }
+        public string? FaceName { get; set; }
 
         /// <summary>
         /// Размер.
@@ -139,7 +139,7 @@ namespace OFP.ObjectModel.Platform.Fonts
         /// <summary>
         /// Имя.
         /// </summary>
-        public string FaceName { get; set; }
+        public string? FaceName { get; set; }
 
         /// <summary>
         /// Размер.

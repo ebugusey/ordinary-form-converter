@@ -10,6 +10,7 @@ namespace OFP.ObjectModel.FormElements.Data.Extensions
         /// <summary>
         /// ТипЗначенияСписка.
         /// </summary>
-        public TypeDescription ValueType { get; set; }
+        public TypeDescription ValueType { get; set; } =
+            new TypeDescription();
     }
 }

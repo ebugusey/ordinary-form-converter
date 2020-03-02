@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using OFP.ObjectModel.Common;
@@ -37,7 +38,7 @@ namespace OFP.ObjectModel.Platform.Pictures
             return _guidValues.TryGetValue(value, out picture);
         }
 
-        public static bool TryGetPicture(Identifier name, out PictureFromLib picture)
+        public static bool TryGetPicture(Identifier name, [NotNullWhen(true)] out PictureFromLib? picture)
         {
             bool result;
             if (_numericValueByName.TryGetValue(name, out var numeric))

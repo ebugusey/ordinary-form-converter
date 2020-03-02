@@ -3,6 +3,7 @@ using System;
 namespace OFP.ObjectModel.FormElements.Data.Extensions
 {
     public class ValueExtension<T> : ElementExtension
+        where T : struct
     {
         public override Guid Id => new Guid("9a7643d2-19e9-45e2-8893-280bc9195a97");
 

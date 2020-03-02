@@ -57,7 +57,7 @@ namespace OFP.ObjectModel.FormElements
         /// <summary>
         /// Привязки.
         /// </summary>
-        public BorderBindings Bindings { get; set; }
+        public BorderBindings? Bindings { get; set; }
 
         /// <summary>
         /// Расположение.

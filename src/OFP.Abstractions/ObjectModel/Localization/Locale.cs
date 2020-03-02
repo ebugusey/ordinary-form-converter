@@ -10,7 +10,7 @@ namespace OFP.ObjectModel.Localization
 
         private readonly string _value;
 
-        public Locale(string locale)
+        public Locale(string? locale)
         {
             if (string.IsNullOrEmpty(locale))
             {

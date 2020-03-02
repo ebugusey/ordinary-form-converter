@@ -38,7 +38,7 @@ namespace OFP.ObjectModel.Platform.Pictures
         /// <summary>
         /// Двоичные данные картинки.
         /// </summary>
-        public byte[] Value { get; set; }
+        public ReadOnlyMemory<byte> Value { get; set; }
     }
 
     /// <summary>

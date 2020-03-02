@@ -37,6 +37,8 @@ namespace OFP.ObjectModel.FormElements.Data
         {
             Title = new LocalizedString();
 
+            SelectionValue = new SimpleTypeValue();
+
             TitlePosition = TitleLocation.Right;
 
             Decoration = new RadioButtonDecoration();
