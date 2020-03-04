@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OFP.Abstractions\OFP.Abstractions.csproj" />
+    <ProjectReference Include="..\OFP.Library\OFP.Library.csproj" />
   </ItemGroup>
 
 </Project>
