@@ -16,18 +16,27 @@ namespace OFP.Parser
 
         public long GetNumber(ITerminalNode node)
         {
-            var value = _numbers.TryGet(node);
-            if (value == null)
-            {
-                throw new InvalidOperationException();
-            }
-
-            return (long)value;
+            return GetValue(_numbers, node);
         }
 
         public string GetString(ITerminalNode node)
         {
-            var value = _strings.TryGet(node);
+            return GetValue(_strings, node);
+        }
+
+        public Guid GetGuid(ITerminalNode node)
+        {
+            return GetValue(_guids, node);
+        }
+
+        public ReadOnlyMemory<byte> GetBase64(ITerminalNode node)
+        {
+            return GetValue(_base64Data, node);
+        }
+
+        private static T GetValue<T>(ParseTreeProperty<T> annotations, ITerminalNode node) where T : class
+        {
+            var value = annotations.TryGet(node);
             if (value == null)
             {
                 throw new InvalidOperationException();
@@ -36,26 +45,15 @@ namespace OFP.Parser
             return value;
         }
 
-        public Guid GetGuid(ITerminalNode node)
+        private static T GetValue<T>(ParseTreeValue<T> annotations, ITerminalNode node) where T : struct
         {
-            var value = _guids.TryGet(node);
+            var value = annotations.TryGet(node);
             if (value == null)
             {
                 throw new InvalidOperationException();
             }
 
-            return (Guid)value;
-        }
-
-        public ReadOnlyMemory<byte> GetBase64(ITerminalNode node)
-        {
-            var data = _base64Data.TryGet(node);
-            if (data == null)
-            {
-                throw new InvalidOperationException();
-            }
-
-            return data.AsMemory();
+            return (T)value;
         }
 
         public override void VisitTerminal(ITerminalNode node)
