@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Concurrent;
 using System.Globalization;
+using Antlr4.Runtime;
 using Antlr4.Runtime.Tree;
 using OFP.Parser.Annotations;
 using OFP.Parser.Extensions;
@@ -14,9 +16,20 @@ namespace OFP.Parser
         private readonly ParseTreeValue<Guid> _guids = new ParseTreeValue<Guid>();
         private readonly ParseTreeProperty<byte[]> _base64Data = new ParseTreeProperty<byte[]>();
 
+        private readonly ConcurrentDictionary<IToken, ITerminalNode> _terminalByToken =
+            new ConcurrentDictionary<IToken, ITerminalNode>();
+
         public long GetNumber(ITerminalNode node)
         {
             return GetValue(_numbers, node);
+        }
+
+        public long GetNumber(IToken token)
+        {
+            var node = GetTerminal(token);
+            var value = GetValue(_numbers, node);
+
+            return value;
         }
 
         public string GetString(ITerminalNode node)
@@ -24,14 +37,48 @@ namespace OFP.Parser
             return GetValue(_strings, node);
         }
 
+        public string GetString(IToken token)
+        {
+            var node = GetTerminal(token);
+            var value = GetValue(_strings, node);
+
+            return value;
+        }
+
         public Guid GetGuid(ITerminalNode node)
         {
             return GetValue(_guids, node);
         }
 
+        public Guid GetGuid(IToken token)
+        {
+            var node = GetTerminal(token);
+            var value = GetValue(_guids, node);
+
+            return value;
+        }
+
         public ReadOnlyMemory<byte> GetBase64(ITerminalNode node)
         {
             return GetValue(_base64Data, node);
+        }
+
+        public ReadOnlyMemory<byte> GetBase64(IToken token)
+        {
+            var node = GetTerminal(token);
+            var value = GetValue(_base64Data, node);
+
+            return value;
+        }
+
+        private ITerminalNode GetTerminal(IToken token)
+        {
+            if (!_terminalByToken.TryGetValue(token, out var terminal))
+            {
+                throw new InvalidOperationException();
+            }
+
+            return terminal;
         }
 
         private static T GetValue<T>(ParseTreeProperty<T> annotations, ITerminalNode node) where T : class
@@ -92,6 +139,7 @@ namespace OFP.Parser
                 CultureInfo.InvariantCulture);
 
             _numbers.Put(node, value);
+            _terminalByToken[node.Symbol] = node;
         }
 
         private void ParseString(ITerminalNode node)
@@ -105,6 +153,7 @@ namespace OFP.Parser
             value = value.Replace("\"\"", "\"");
 
             _strings.Put(node, value);
+            _terminalByToken[node.Symbol] = node;
         }
 
         private void ParseGuid(ITerminalNode node)
@@ -114,6 +163,7 @@ namespace OFP.Parser
             var value = Guid.Parse(text);
 
             _guids.Put(node, value);
+            _terminalByToken[node.Symbol] = node;
         }
 
         private void ParseBase64(ITerminalNode node)
@@ -126,6 +176,7 @@ namespace OFP.Parser
             var value = Convert.FromBase64String(base64);
 
             _base64Data.Put(node, value);
+            _terminalByToken[node.Symbol] = node;
         }
     }
 }
