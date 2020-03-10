@@ -27,15 +27,15 @@ localizedString
 :
     BLOCK_START
         NUMBER // 1
-        VS NUMBER // количество элементов
+        VS Count = NUMBER // количество элементов
         ( VS localizedStringItem )*
     BLOCK_END
 ;
 localizedStringItem
 :
     BLOCK_START
-        STRING // код языка
-        VS STRING // значение
+        Locale = STRING // код языка
+        VS Value = STRING // значение
     BLOCK_END
 ;
 

@@ -1422,6 +1422,7 @@ public partial class OrdinaryFormParser : Parser {
 	}
 
 	public partial class LocalizedStringContext : ParserRuleContext {
+		public IToken Count;
 		public ITerminalNode BLOCK_START() { return GetToken(OrdinaryFormParser.BLOCK_START, 0); }
 		public ITerminalNode[] NUMBER() { return GetTokens(OrdinaryFormParser.NUMBER); }
 		public ITerminalNode NUMBER(int i) {
@@ -1464,7 +1465,7 @@ public partial class OrdinaryFormParser : Parser {
 			State = 559; Match(BLOCK_START);
 			State = 560; Match(NUMBER);
 			State = 561; Match(VS);
-			State = 562; Match(NUMBER);
+			State = 562; _localctx.Count = Match(NUMBER);
 			State = 567;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
@@ -1494,13 +1495,15 @@ public partial class OrdinaryFormParser : Parser {
 	}
 
 	public partial class LocalizedStringItemContext : ParserRuleContext {
+		public IToken Locale;
+		public IToken Value;
 		public ITerminalNode BLOCK_START() { return GetToken(OrdinaryFormParser.BLOCK_START, 0); }
+		public ITerminalNode VS() { return GetToken(OrdinaryFormParser.VS, 0); }
+		public ITerminalNode BLOCK_END() { return GetToken(OrdinaryFormParser.BLOCK_END, 0); }
 		public ITerminalNode[] STRING() { return GetTokens(OrdinaryFormParser.STRING); }
 		public ITerminalNode STRING(int i) {
 			return GetToken(OrdinaryFormParser.STRING, i);
 		}
-		public ITerminalNode VS() { return GetToken(OrdinaryFormParser.VS, 0); }
-		public ITerminalNode BLOCK_END() { return GetToken(OrdinaryFormParser.BLOCK_END, 0); }
 		public LocalizedStringItemContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
@@ -1524,9 +1527,9 @@ public partial class OrdinaryFormParser : Parser {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 572; Match(BLOCK_START);
-			State = 573; Match(STRING);
+			State = 573; _localctx.Locale = Match(STRING);
 			State = 574; Match(VS);
-			State = 575; Match(STRING);
+			State = 575; _localctx.Value = Match(STRING);
 			State = 576; Match(BLOCK_END);
 			}
 		}
