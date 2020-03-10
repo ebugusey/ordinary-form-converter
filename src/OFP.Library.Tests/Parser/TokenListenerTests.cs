@@ -1,6 +1,7 @@
 using System;
 using Antlr4.Runtime.Tree;
 using FluentAssertions;
+using FluentAssertions.Execution;
 using NSubstitute;
 using NUnit.Framework;
 using OFP.Parser;
@@ -22,10 +23,15 @@ namespace OFP.Library.Tests.Parser
 
             // When.
             listener.VisitTerminal(node);
-            var result = listener.GetString(node);
+            var resultByTerminal = listener.GetString(node);
+            var resultByToken = listener.GetString(node.Symbol);
 
             // Then.
-            result.Should().Be(expectedValue);
+            using (new AssertionScope())
+            {
+                resultByTerminal.Should().Be(expectedValue);
+                resultByToken.Should().Be(expectedValue);
+            }
         }
 
         [Test]
@@ -42,10 +48,15 @@ namespace OFP.Library.Tests.Parser
 
             // When.
             listener.VisitTerminal(node);
-            var result = listener.GetNumber(node);
+            var resultByTerminal = listener.GetNumber(node);
+            var resultByToken = listener.GetNumber(node.Symbol);
 
             // Then.
-            result.Should().Be(expectedValue);
+            using (new AssertionScope())
+            {
+                resultByTerminal.Should().Be(expectedValue);
+                resultByToken.Should().Be(expectedValue);
+            }
         }
 
         [Test]
@@ -80,10 +91,15 @@ namespace OFP.Library.Tests.Parser
 
             // When.
             listener.VisitTerminal(node);
-            var result = listener.GetGuid(node);
+            var resultByTerminal = listener.GetGuid(node);
+            var resultByToken = listener.GetGuid(node.Symbol);
 
             // Then.
-            result.Should().Be(guid);
+            using (new AssertionScope())
+            {
+                resultByTerminal.Should().Be(guid);
+                resultByToken.Should().Be(guid);
+            }
         }
 
         [Test]
@@ -99,10 +115,15 @@ namespace OFP.Library.Tests.Parser
 
             // When.
             listener.VisitTerminal(node);
-            var result = listener.GetBase64(node);
+            var resultByTerminal = listener.GetBase64(node);
+            var resultByToken = listener.GetBase64(node.Symbol);
 
             // Then.
-            result.ToArray().Should().BeEquivalentTo(expectedData);
+            using (new AssertionScope())
+            {
+                resultByTerminal.ToArray().Should().BeEquivalentTo(expectedData);
+                resultByToken.ToArray().Should().BeEquivalentTo(expectedData);
+            }
         }
 
         [Test]
@@ -110,14 +131,20 @@ namespace OFP.Library.Tests.Parser
         {
             // Given.
             var listener = CreateListener();
-            var node = Substitute.For<ITerminalNode>();
+            var node = CreateTerminal();
 
             // When.
-            Action action =
+            Action byTerminal =
                 () => listener.GetNumber(node);
+            Action byToken =
+                () => listener.GetNumber(node.Symbol);
 
             // Then.
-            action.Should().Throw<InvalidOperationException>();
+            using (new AssertionScope())
+            {
+                byTerminal.Should().Throw<InvalidOperationException>();
+                byToken.Should().Throw<InvalidOperationException>();
+            }
         }
 
         [Test]
@@ -128,11 +155,17 @@ namespace OFP.Library.Tests.Parser
             var node = CreateTerminal();
 
             // When.
-            Action action =
+            Action byTerminal =
                 () => listener.GetString(node);
+            Action byToken =
+                () => listener.GetString(node.Symbol);
 
             // Then.
-            action.Should().Throw<InvalidOperationException>();
+            using (new AssertionScope())
+            {
+                byTerminal.Should().Throw<InvalidOperationException>();
+                byToken.Should().Throw<InvalidOperationException>();
+            }
         }
 
         [Test]
@@ -143,11 +176,17 @@ namespace OFP.Library.Tests.Parser
             var node = CreateTerminal();
 
             // When.
-            Action action =
+            Action byTerminal =
                 () => listener.GetGuid(node);
+            Action byToken =
+                () => listener.GetGuid(node.Symbol);
 
             // Then.
-            action.Should().Throw<InvalidOperationException>();
+            using (new AssertionScope())
+            {
+                byTerminal.Should().Throw<InvalidOperationException>();
+                byToken.Should().Throw<InvalidOperationException>();
+            }
         }
 
         [Test]
@@ -158,11 +197,17 @@ namespace OFP.Library.Tests.Parser
             var node = CreateTerminal();
 
             // When.
-            Action action =
+            Action byTerminal =
                 () => listener.GetBase64(node);
+            Action byToken =
+                () => listener.GetBase64(node.Symbol);
 
             // Then.
-            action.Should().Throw<InvalidOperationException>();
+            using (new AssertionScope())
+            {
+                byTerminal.Should().Throw<InvalidOperationException>();
+                byToken.Should().Throw<InvalidOperationException>();
+            }
         }
 
         private static TokenListener CreateListener()
