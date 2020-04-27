@@ -9,6 +9,9 @@ using Token = OFP.Parser.Generated.OrdinaryFormLexer;
 
 namespace OFP.Parser
 {
+    /// <summary>
+    /// Реализация разбора и хранения токенов (листьев дерева парсинга).
+    /// </summary>
     internal class TokenListener : Generated.OrdinaryFormBaseListener, ITokenCollector
     {
         private readonly ParseTreeValue<long> _numbers = new ParseTreeValue<long>();

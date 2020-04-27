@@ -6,6 +6,9 @@ using OFP.Parser.Generated;
 
 namespace OFP.Parser
 {
+    /// <summary>
+    /// Реализация разбора и хранения значений с типом <see cref="LocalizedString"/>.
+    /// </summary>
     internal class LocalizedStringListener : OrdinaryFormBaseListener, IValueCollector<LocalizedString>
     {
         private readonly ParseTreeProperty<LocalizedString> _values =

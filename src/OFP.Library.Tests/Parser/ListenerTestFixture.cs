@@ -17,6 +17,11 @@ namespace OFP.Library.Tests.Parser
     /// <typeparam name="T">Тип тестируемого listener-а.</typeparam>
     public abstract class ListenerTestFixture<T> where T : IOrdinaryFormListener
     {
+        /// <summary>
+        /// SUT, тестируемый класс.
+        /// Полностью иниализируется перед запуском каждого теста,
+        /// и очищается после завершения каждого теста.
+        /// </summary>
         public T TestSubject { get; set; } = default!;
 
         private IContainer _container = default!;
