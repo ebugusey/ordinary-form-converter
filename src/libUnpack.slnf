@@ -1,0 +1,9 @@
+{
+  "solution": {
+    "path": "OrdinaryFormConverter.sln",
+    "projects": [
+      "libUnpack.Test\\libUnpack.Test.csproj",
+      "libUnpack\\libUnpack.csproj"
+    ]
+  }
+}

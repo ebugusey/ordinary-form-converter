@@ -1,0 +1,11 @@
+{
+  "solution": {
+    "path": "OrdinaryFormConverter.sln",
+    "projects": [
+      "OFP.Abstractions\\OFP.Abstractions.csproj",
+      "OFP.Library.Tests\\OFP.Library.Tests.csproj",
+      "OFP.Library\\OFP.Library.csproj",
+      "OFP\\OFP.csproj"
+    ]
+  }
+}
