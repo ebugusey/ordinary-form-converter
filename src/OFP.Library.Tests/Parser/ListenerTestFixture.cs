@@ -35,6 +35,8 @@ namespace OFP.Library.Tests.Parser
         {
             var builder = new ContainerBuilder();
             builder.RegisterAssemblyTypes(typeof(OrdinaryFormParser).Assembly)
+                .AssignableTo<IOrdinaryFormListener>()
+                .Except<OrdinaryFormBaseListener>()
                 .AsImplementedInterfaces().AsSelf()
                 .InstancePerLifetimeScope();
 
