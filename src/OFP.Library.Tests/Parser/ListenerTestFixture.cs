@@ -78,7 +78,10 @@ namespace OFP.Library.Tests.Parser
             var lexer = new OrdinaryFormLexer(stream);
             var tokens = new CommonTokenStream(lexer);
 
-            var parser = new OrdinaryFormParser(tokens);
+            var parser = new OrdinaryFormParser(tokens)
+            {
+                ErrorHandler = new BailErrorStrategy(),
+            };
 
             return parser;
         }
