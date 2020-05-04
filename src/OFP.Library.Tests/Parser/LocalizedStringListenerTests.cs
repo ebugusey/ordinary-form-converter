@@ -51,6 +51,7 @@ namespace OFP.Library.Tests.Parser
             // Given.
             var parser = CreateParser(input);
             var tree = parser.localizedString();
+            WalkParseTree(tree);
 
             // When.
             var result = TestSubject.Get(tree);
