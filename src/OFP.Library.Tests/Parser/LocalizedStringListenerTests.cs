@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using FluentAssertions;
 using NUnit.Framework;
@@ -58,6 +59,22 @@ namespace OFP.Library.Tests.Parser
 
             // Then.
             result.Should().BeEquivalentTo(expected);
+        }
+
+        [Test]
+        public void LocalizedStringListener_Get_ThrowsWhenTreeDoesntHaveLocalizedString()
+        {
+            // Given.
+            var parser = CreateParser("{}");
+            var tree = parser.emptyBlock();
+            WalkParseTree(tree);
+
+            // When.
+            Action action =
+                () => TestSubject.Get(tree);
+
+            // Then.
+            action.Should().Throw<InvalidOperationException>();
         }
     }
 }
