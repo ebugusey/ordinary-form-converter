@@ -7,6 +7,9 @@ using OFP.Parser;
 
 namespace OFP.Library.Tests.Parser
 {
+    /// <summary>
+    /// Тесты на <see cref="LocalizedStringListener"/>.
+    /// </summary>
     [TestFixture]
     internal class LocalizedStringListenerTests : ListenerTestFixture<LocalizedStringListener>
     {
