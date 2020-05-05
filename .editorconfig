@@ -16,6 +16,9 @@ indent_style = tab
 [*.csproj]
 indent_size = 2
 
+[*.{yml,yaml}]
+indent_size = 2
+
 [*.{diff,patch}]
 trim_trailing_whitespace = unset
 charset = unset

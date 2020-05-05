@@ -1,0 +1,16 @@
+language: csharp
+mono: none
+dotnet: 3.1.201
+
+branches:
+  only:
+    - master
+
+solution: src/OrdinaryFormConverter.sln
+
+install:
+  - env | sort
+  - dotnet restore "$TRAVIS_SOLUTION"
+script:
+  - dotnet build --no-restore "$TRAVIS_SOLUTION"
+  - dotnet test --no-build "$TRAVIS_SOLUTION"
