@@ -3967,6 +3967,13 @@ public partial class OrdinaryFormParser : Parser {
 	}
 
 	public partial class AbsoluteFontContext : ParserRuleContext {
+		public IToken Size;
+		public IToken Bold;
+		public IToken Italic;
+		public IToken Underline;
+		public IToken Strikeout;
+		public IToken FaceName;
+		public IToken Scale;
 		public ITerminalNode BLOCK_START() { return GetToken(OrdinaryFormParser.BLOCK_START, 0); }
 		public ITerminalNode[] NUMBER() { return GetTokens(OrdinaryFormParser.NUMBER); }
 		public ITerminalNode NUMBER(int i) {
@@ -3976,8 +3983,8 @@ public partial class OrdinaryFormParser : Parser {
 		public ITerminalNode VS(int i) {
 			return GetToken(OrdinaryFormParser.VS, i);
 		}
-		public ITerminalNode STRING() { return GetToken(OrdinaryFormParser.STRING, 0); }
 		public ITerminalNode BLOCK_END() { return GetToken(OrdinaryFormParser.BLOCK_END, 0); }
+		public ITerminalNode STRING() { return GetToken(OrdinaryFormParser.STRING, 0); }
 		public AbsoluteFontContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
@@ -4007,7 +4014,7 @@ public partial class OrdinaryFormParser : Parser {
 			State = 1024; Match(VS);
 			State = 1025; Match(NUMBER);
 			State = 1026; Match(VS);
-			State = 1027; Match(NUMBER);
+			State = 1027; _localctx.Size = Match(NUMBER);
 			State = 1028; Match(VS);
 			State = 1029; Match(NUMBER);
 			State = 1030; Match(VS);
@@ -4015,13 +4022,13 @@ public partial class OrdinaryFormParser : Parser {
 			State = 1032; Match(VS);
 			State = 1033; Match(NUMBER);
 			State = 1034; Match(VS);
-			State = 1035; Match(NUMBER);
+			State = 1035; _localctx.Bold = Match(NUMBER);
 			State = 1036; Match(VS);
-			State = 1037; Match(NUMBER);
+			State = 1037; _localctx.Italic = Match(NUMBER);
 			State = 1038; Match(VS);
-			State = 1039; Match(NUMBER);
+			State = 1039; _localctx.Underline = Match(NUMBER);
 			State = 1040; Match(VS);
-			State = 1041; Match(NUMBER);
+			State = 1041; _localctx.Strikeout = Match(NUMBER);
 			State = 1042; Match(VS);
 			State = 1043; Match(NUMBER);
 			State = 1044; Match(VS);
@@ -4033,11 +4040,11 @@ public partial class OrdinaryFormParser : Parser {
 			State = 1050; Match(VS);
 			State = 1051; Match(NUMBER);
 			State = 1052; Match(VS);
-			State = 1053; Match(STRING);
+			State = 1053; _localctx.FaceName = Match(STRING);
 			State = 1054; Match(VS);
 			State = 1055; Match(NUMBER);
 			State = 1056; Match(VS);
-			State = 1057; Match(NUMBER);
+			State = 1057; _localctx.Scale = Match(NUMBER);
 			State = 1058; Match(BLOCK_END);
 			}
 		}

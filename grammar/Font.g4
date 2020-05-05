@@ -57,15 +57,15 @@ absoluteFont
         NUMBER // 7
         VS NUMBER // Вид
         VS NUMBER // 0 (маска)
-        VS NUMBER // размер
+        VS Size = NUMBER // размер
         VS NUMBER VS NUMBER VS NUMBER // 0,0,0
-        VS NUMBER // полужирный
-        VS NUMBER // курсив
-        VS NUMBER // подчеркнутый
-        VS NUMBER // зачеркнутый
+        VS Bold = NUMBER // полужирный
+        VS Italic = NUMBER // курсив
+        VS Underline = NUMBER // подчеркнутый
+        VS Strikeout = NUMBER // зачеркнутый
         VS NUMBER VS NUMBER VS NUMBER VS NUMBER VS NUMBER // 0,0,0,0,0
-        VS STRING // имя шрифта
+        VS FaceName = STRING // имя шрифта
         VS NUMBER // 1
-        VS NUMBER // масштаб
+        VS Scale = NUMBER // масштаб
     BLOCK_END
 ;
