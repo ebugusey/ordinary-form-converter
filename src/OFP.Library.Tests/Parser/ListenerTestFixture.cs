@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using Antlr4.Runtime;
+using Antlr4.Runtime.Tree;
 using Autofac;
 using NUnit.Framework;
+using OFP.Parser;
 using OFP.Parser.Generated;
 
 namespace OFP.Library.Tests.Parser
@@ -11,7 +13,8 @@ namespace OFP.Library.Tests.Parser
     /// дерева парсера.
     /// <para>
     /// Автоматически инициализирует <see cref="TestSubject"/> перед запуском
-    /// тестов и содержит методы для инициализации парсера со всеми его зависимостями.
+    /// тестов и содержит методы для инициализации парсера со всеми его зависимостями
+    /// и обхода дерева, полученного в результате работы парсера.
     /// </para>
     /// </summary>
     /// <typeparam name="T">Тип тестируемого listener-а.</typeparam>
@@ -19,7 +22,7 @@ namespace OFP.Library.Tests.Parser
     {
         /// <summary>
         /// SUT, тестируемый класс.
-        /// Полностью иниализируется перед запуском каждого теста,
+        /// Полностью инициализируется перед запуском каждого теста,
         /// и очищается после завершения каждого теста.
         /// </summary>
         public T TestSubject { get; set; } = default!;
@@ -32,6 +35,8 @@ namespace OFP.Library.Tests.Parser
         {
             var builder = new ContainerBuilder();
             builder.RegisterAssemblyTypes(typeof(OrdinaryFormParser).Assembly)
+                .AssignableTo<IOrdinaryFormListener>()
+                .Except<OrdinaryFormBaseListener>()
                 .AsImplementedInterfaces().AsSelf()
                 .InstancePerLifetimeScope();
 
@@ -60,26 +65,43 @@ namespace OFP.Library.Tests.Parser
         }
 
         /// <summary>
-        /// Создать парсер, которые будет парсить переданную
+        /// Создать парсер, который будет парсить переданную
         /// в <paramref name="input"/> строку.
+        /// <para>
+        /// Listener-ы подключаются, чтобы проверить их работу
+        /// используй <see cref="WalkParseTree(IParseTree)"/>.
+        /// </para>
         /// </summary>
         /// <param name="input">Разбираемая парсером строка.</param>
-        /// <returns>Инициализированные парсер с подключенными listener-ами.</returns>
+        /// <returns>Инициализированный парсер.</returns>
         protected OrdinaryFormParser CreateParser(string input)
         {
             var stream = CharStreams.fromstring(input);
             var lexer = new OrdinaryFormLexer(stream);
             var tokens = new CommonTokenStream(lexer);
 
-            var parser = new OrdinaryFormParser(tokens);
-
-            var listeners = _currentScope.Resolve<IEnumerable<IOrdinaryFormListener>>();
-            foreach (var listener in listeners)
+            var parser = new OrdinaryFormParser(tokens)
             {
-                parser.AddParseListener(listener);
-            }
+                ErrorHandler = new BailErrorStrategy(),
+            };
 
             return parser;
+        }
+
+        /// <summary>
+        /// Обойти дерево парсинга при помощи <see cref="ParseTreeWalker"/>.
+        /// Подключаются все listener-ы из сборки <see cref="OFP.Library"/>.
+        /// </summary>
+        /// <param name="tree">
+        /// Корень дерева, которое будет обходить <see cref="ParseTreeWalker"/>.
+        /// </param>
+        protected void WalkParseTree(IParseTree tree)
+        {
+            var listeners = _currentScope.Resolve<IEnumerable<IOrdinaryFormListener>>();
+            var dispatcher = new ProxyParseTreeListener(listeners);
+
+            var walker = ParseTreeWalker.Default;
+            walker.Walk(dispatcher, tree);
         }
     }
 }
