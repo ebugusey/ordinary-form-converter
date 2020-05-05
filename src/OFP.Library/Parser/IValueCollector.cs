@@ -19,7 +19,8 @@ namespace OFP.Parser
         /// <param name="node">Узел дерева парсинга, который представляет разбираемое значение.</param>
         /// <returns>Разобранное значение.</returns>
         /// <exception cref="InvalidOperationException">
-        /// Если парсер еще не заходил в этот узел.
+        /// Если парсер еще не заходил в этот узел
+        /// или в дереве нет узла, который может быть распарсен в <typeparamref name="T"/>.
         /// </exception>
         T Get(IParseTree node);
     }

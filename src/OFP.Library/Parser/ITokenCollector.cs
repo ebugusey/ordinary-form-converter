@@ -18,7 +18,8 @@ namespace OFP.Parser
         /// <param name="node">Узел дерева парсинга, в котором находится разобранный токен.</param>
         /// <returns>Разобранное значение.</returns>
         /// <exception cref="InvalidOperationException">
-        /// Если парсер еще на заходил в этот узел.
+        /// Если парсер еще на заходил в этот узел
+        /// или у токена другой тип значения.
         /// </exception>
         long GetNumber(ITerminalNode node);
 
@@ -28,7 +29,8 @@ namespace OFP.Parser
         /// <param name="token">Токен, который должен быть разобран как число.</param>
         /// <returns>Разобранное значение.</returns>
         /// <exception cref="InvalidOperationException">
-        /// Если парсер еще не доходил до этого токена.
+        /// Если парсер еще на заходил в этот узел
+        /// или у токена другой тип значения.
         /// </exception>
         long GetNumber(IToken token);
 
@@ -38,7 +40,8 @@ namespace OFP.Parser
         /// <param name="node">Узел дерева парсинга, в котором находится разобранный токен.</param>
         /// <returns>Разобранное значение.</returns>
         /// <exception cref="InvalidOperationException">
-        /// Если парсер еще на заходил в этот узел.
+        /// Если парсер еще на заходил в этот узел
+        /// или у токена другой тип значения.
         /// </exception>
         string GetString(ITerminalNode node);
 
@@ -48,7 +51,8 @@ namespace OFP.Parser
         /// <param name="token">Токен, который должен быть разобран как строка.</param>
         /// <returns>Разобранное значение.</returns>
         /// <exception cref="InvalidOperationException">
-        /// Если парсер еще не доходил до этого токена.
+        /// Если парсер еще на заходил в этот узел
+        /// или у токена другой тип значения.
         /// </exception>
         string GetString(IToken token);
 
@@ -58,7 +62,8 @@ namespace OFP.Parser
         /// <param name="node">Узел дерева парсинга, в котором находится разобранный токен.</param>
         /// <returns>Разобранное значение.</returns>
         /// <exception cref="InvalidOperationException">
-        /// Если парсер еще на заходил в этот узел.
+        /// Если парсер еще на заходил в этот узел
+        /// или у токена другой тип значения.
         /// </exception>
         Guid GetGuid(ITerminalNode node);
 
@@ -68,7 +73,8 @@ namespace OFP.Parser
         /// <param name="token">Токен, который должен быть разобран как <see cref="Guid"/>.</param>
         /// <returns>Разобранное значение.</returns>
         /// <exception cref="InvalidOperationException">
-        /// Если парсер еще не доходил до этого токена.
+        /// Если парсер еще на заходил в этот узел
+        /// или у токена другой тип значения.
         /// </exception>
         Guid GetGuid(IToken token);
 
@@ -79,7 +85,8 @@ namespace OFP.Parser
         /// <param name="node">Узел дерева парсинга, в котором находится разобранный токен.</param>
         /// <returns>Разобранное значение.</returns>
         /// <exception cref="InvalidOperationException">
-        /// Если парсер еще на заходил в этот узел.
+        /// Если парсер еще на заходил в этот узел
+        /// или у токена другой тип значения.
         /// </exception>
         ReadOnlyMemory<byte> GetBase64(ITerminalNode node);
 
@@ -89,7 +96,8 @@ namespace OFP.Parser
         /// <param name="token">Токен, который должен быть разобран как Base64-строка.</param>
         /// <returns>Разобранное значение.</returns>
         /// <exception cref="InvalidOperationException">
-        /// Если парсер еще не доходил до этого токена.
+        /// Если парсер еще на заходил в этот узел
+        /// или у токена другой тип значения.
         /// </exception>
         ReadOnlyMemory<byte> GetBase64(IToken token);
     }
