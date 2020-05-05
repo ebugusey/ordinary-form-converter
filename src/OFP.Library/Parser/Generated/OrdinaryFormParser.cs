@@ -3671,6 +3671,9 @@ public partial class OrdinaryFormParser : Parser {
 	}
 
 	public partial class AutoFontContext : ParserRuleContext {
+		public IToken Mask;
+		public IToken FaceName;
+		public IToken Scale;
 		public ITerminalNode BLOCK_START() { return GetToken(OrdinaryFormParser.BLOCK_START, 0); }
 		public ITerminalNode[] NUMBER() { return GetTokens(OrdinaryFormParser.NUMBER); }
 		public ITerminalNode NUMBER(int i) {
@@ -3709,7 +3712,7 @@ public partial class OrdinaryFormParser : Parser {
 			State = 940; Match(VS);
 			State = 941; Match(NUMBER);
 			State = 942; Match(VS);
-			State = 943; Match(NUMBER);
+			State = 943; _localctx.Mask = Match(NUMBER);
 			State = 946;
 			ErrorHandler.Sync(this);
 			switch ( Interpreter.AdaptivePredict(TokenStream,21,Context) ) {
@@ -3766,14 +3769,14 @@ public partial class OrdinaryFormParser : Parser {
 			case 1:
 				{
 				State = 964; Match(VS);
-				State = 965; Match(STRING);
+				State = 965; _localctx.FaceName = Match(STRING);
 				}
 				break;
 			}
 			State = 968; Match(VS);
 			State = 969; Match(NUMBER);
 			State = 970; Match(VS);
-			State = 971; Match(NUMBER);
+			State = 971; _localctx.Scale = Match(NUMBER);
 			State = 972; Match(BLOCK_END);
 			}
 		}

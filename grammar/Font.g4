@@ -14,15 +14,15 @@ autoFont
     BLOCK_START
         NUMBER // 7
         VS NUMBER // Вид
-        VS NUMBER // маска
+        VS Mask = NUMBER // маска
         ( VS NUMBER )? // размер * 10
         ( VS NUMBER )? // полужирный
         ( VS NUMBER )? // курсив
         ( VS NUMBER )? // подчеркнутый
         ( VS NUMBER )? // зачеркнутый
-        ( VS STRING )? // имя шрифта
+        ( VS FaceName = STRING )? // имя шрифта
         VS NUMBER // 1
-        VS NUMBER // масштаб
+        VS Scale = NUMBER // масштаб
     BLOCK_END
 ;
 

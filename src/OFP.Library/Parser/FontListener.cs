@@ -33,6 +33,67 @@ namespace OFP.Parser
             return value;
         }
 
+        public override void ExitAutoFont(OrdinaryFormParser.AutoFontContext context)
+        {
+            var font = new AutoFont
+            {
+                Scale = (ushort)_tokens.GetNumber(context.Scale),
+            };
+
+            var mask = (FontMask)_tokens.GetNumber(context.Mask);
+
+            var optionalValueSequence = new[]
+            {
+                FontMask.Size,
+                FontMask.Bold,
+                FontMask.Italic,
+                FontMask.Underline,
+                FontMask.Strikeout,
+            };
+
+            var offset = 3;
+            foreach (var flag in optionalValueSequence)
+            {
+                if ((mask & flag) == 0)
+                {
+                    continue;
+                }
+
+                var node = context.NUMBER(offset);
+                var value = _tokens.GetNumber(node);
+
+                switch (flag)
+                {
+                    case FontMask.Size:
+                        font.Size = ParseSize(value);
+                        break;
+                    case FontMask.Bold:
+                        font.Bold = ParseBold(value);
+                        break;
+                    case FontMask.Italic:
+                        font.Italic = ParseBoolean(value);
+                        break;
+                    case FontMask.Underline:
+                        font.Underline = ParseBoolean(value);
+                        break;
+                    case FontMask.Strikeout:
+                        font.Strikeout = ParseBoolean(value);
+                        break;
+                    default:
+                        break;
+                }
+
+                offset++;
+            }
+
+            if ((mask & FontMask.FaceName) != 0)
+            {
+                font.FaceName = _tokens.GetString(context.FaceName);
+            }
+
+            _values.Put(context.Parent, font);
+        }
+
         public override void ExitAbsoluteFont(OrdinaryFormParser.AbsoluteFontContext context)
         {
             var size = _tokens.GetNumber(context.Size);
