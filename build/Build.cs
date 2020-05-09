@@ -81,7 +81,7 @@ class Build : NukeBuild
     Target CI => _ => _
         .DependsOn(Clean, Compile, Test);
 
-    [PathExecutable]
+    [PathExecutable("java")]
     readonly Tool Java;
     AbsolutePath Antlr => RootDirectory / "antlr" / "antlr-4.8-complete.jar";
     AbsolutePath Grammar => RootDirectory / "grammar" / "OrdinaryForm.g4";
