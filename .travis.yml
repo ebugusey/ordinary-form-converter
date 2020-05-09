@@ -6,11 +6,11 @@ branches:
   only:
     - master
 
-solution: src/OrdinaryFormConverter.sln
+git:
+  depth: false
 
 install:
   - env | sort
-  - dotnet restore "$TRAVIS_SOLUTION"
+  - dotnet tool restore
 script:
-  - dotnet build --no-restore "$TRAVIS_SOLUTION"
-  - dotnet test --no-build "$TRAVIS_SOLUTION"
+  - dotnet nuke ci
