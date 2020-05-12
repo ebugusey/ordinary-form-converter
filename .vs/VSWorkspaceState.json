@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\OFP.Abstractions",
+    "\\src\\OFP.Abstractions\\ObjectModel",
+    "\\src\\OFP.Abstractions\\ObjectModel\\Platform",
+    "\\src\\OFP.Abstractions\\ObjectModel\\Platform\\Colors",
+    "\\src\\OFP.Library",
+    "\\src\\OFP.Library\\Parser"
+  ],
+  "SelectedNode": "\\src\\OFP.Library",
+  "PreviewInSolutionExplorer": false
+}
