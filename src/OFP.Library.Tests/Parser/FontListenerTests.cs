@@ -61,8 +61,11 @@ namespace OFP.Library.Tests.Parser
 
         private static IEnumerable<TestCaseData> GetRelativeFontCases()
         {
-            var input = "{7, 3, 0, 1, 100}";
-            var expected = new AutoFont
+            string input;
+            RelativeFont expected;
+
+            input = "{7, 3, 0, 1, 100}";
+            expected = new AutoFont
             {
                 Scale = 100,
             };
@@ -130,6 +133,21 @@ namespace OFP.Library.Tests.Parser
             yield return
                 new TestCaseData(input, expected)
                 .SetArgDisplayNames("Полностью заполнен");
+
+            input = "{7, 1, 61, { 0 }, 700, 1, 1, 1, \"Lucida Console\", 1, 160}";
+            expected = new WindowsFont
+            {
+                Bold = true,
+                Italic = true,
+                Underline = true,
+                Strikeout = true,
+                FaceName = "Lucida Console",
+                Scale = 160,
+            };
+
+            yield return
+                new TestCaseData(input, expected)
+                .SetArgDisplayNames("Полностью заполненный StyleBasedFont");
         }
 
         [Test]
@@ -147,7 +165,8 @@ namespace OFP.Library.Tests.Parser
             TestSubject.FillRelativeFont(font, tree.relativeFont());
 
             // Then.
-            font.Should().BeEquivalentTo(expected);
+            font.Should().BeEquivalentTo(expected, opt => opt
+                .Excluding(x => x.Type));
         }
 
         [Test]
