@@ -44,7 +44,7 @@ namespace OFP.Library.Tests.Parser
         }
 
         [Test]
-        public void FontListener_Get_ThrowsWhenTreeDoesntHaveAbsoluteFont()
+        public void FontListener_Get_ThrowsWhenTreeDoesntHaveFont()
         {
             // Given.
             var parser = CreateParser("{}");
