@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using Autofac;
 using FluentAssertions;
+using NSubstitute;
 using NUnit.Framework;
 using OFP.ObjectModel.Platform.Fonts;
 using OFP.Parser;
@@ -57,7 +59,7 @@ namespace OFP.Library.Tests.Parser
             action.Should().Throw<InvalidOperationException>();
         }
 
-        private static IEnumerable<TestCaseData> GetAutoFontCases()
+        private static IEnumerable<TestCaseData> GetRelativeFontCases()
         {
             var input = "{7, 3, 0, 1, 100}";
             var expected = new AutoFont
@@ -131,17 +133,48 @@ namespace OFP.Library.Tests.Parser
         }
 
         [Test]
-        [TestCaseSource(nameof(GetAutoFontCases))]
-        public void FontListener_Get_ReturnsParsedAutoFont(string input, AutoFont expected)
+        [TestCaseSource(nameof(GetRelativeFontCases))]
+        public void FontListener_FillRelativeFont_FillsRelativeFontOptionalValues(string input, RelativeFont expected)
         {
+            // Given.
+            var font = new AutoFont();
+
             var parser = CreateParser(input);
             var tree = parser.font();
             WalkParseTree(tree);
 
+            // When.
+            TestSubject.FillRelativeFont(font, tree.relativeFont());
+
+            // Then.
+            font.Should().BeEquivalentTo(expected);
+        }
+
+        [Test]
+        public void FontListener_Get_ReturnsParsedAutoFont()
+        {
+            // Given.
+            var input = "{7, 3, 12, 700, 1, 1, 100}";
+            var expected = new AutoFont
+            {
+                Bold = true,
+                Italic = true,
+                Scale = 100,
+            };
+
+            var parser = CreateParser(input);
+            var tree = parser.font();
+            WalkParseTree(tree);
+
+            // When.
             var font = TestSubject.Get(tree);
 
+            // Then.
             font.Should().BeOfType<AutoFont>()
                 .And.BeEquivalentTo(expected);
+
+            TestSubject.Received(1)
+                .FillRelativeFont((RelativeFont)font, tree.relativeFont());
         }
 
         [Test]
@@ -179,6 +212,14 @@ namespace OFP.Library.Tests.Parser
 
             // Then.
             result.Should().Be(expected);
+        }
+
+        protected override FontListener? SetupTestSubject()
+        {
+            var tokens = Container.Resolve<ITokenCollector>();
+            var testSubject = Substitute.ForPartsOf<FontListener>(tokens);
+
+            return testSubject;
         }
     }
 }

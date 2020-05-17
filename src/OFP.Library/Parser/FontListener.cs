@@ -47,6 +47,15 @@ namespace OFP.Parser
                     return;
             }
 
+            FillRelativeFont(font, context);
+
+            _values.Put(context.Parent, font);
+        }
+
+        internal virtual void FillRelativeFont(
+            RelativeFont font,
+            OrdinaryFormParser.RelativeFontContext context)
+        {
             var mask = (FontMask)_tokens.GetNumber(context.Mask);
 
             var optionalValueSequence = new[]
@@ -99,8 +108,6 @@ namespace OFP.Parser
             }
 
             font.Scale = (ushort)_tokens.GetNumber(context.Scale);
-
-            _values.Put(context.Parent, font);
         }
 
         public override void ExitAbsoluteFont(OrdinaryFormParser.AbsoluteFontContext context)
