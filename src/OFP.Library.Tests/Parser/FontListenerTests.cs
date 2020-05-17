@@ -242,6 +242,52 @@ namespace OFP.Library.Tests.Parser
                 .FillRelativeFont((RelativeFont)font, tree.relativeFont());
         }
 
+        private static IEnumerable<TestCaseData> GetStandardFontCases()
+        {
+            var input = "{7, 2, 0, { -20 }, 1, 100}";
+            var expected = new StandardFont
+            {
+                Style = StandardFontStyle.TextFont,
+                Scale = 100,
+            };
+
+            yield return
+                new TestCaseData(input, expected)
+                .SetArgDisplayNames(StandardFontStyle.TextFont.ToString());
+
+            input = "{7, 2, 16, { -33 }, 0, 1, 110}";
+            expected = new StandardFont
+            {
+                Style = StandardFontStyle.ExtraLargeTextFont,
+                Underline = false,
+                Scale = 110,
+            };
+
+            yield return
+                new TestCaseData(input, expected)
+                .SetArgDisplayNames(StandardFontStyle.ExtraLargeTextFont.ToString());
+        }
+
+        [Test]
+        [TestCaseSource(nameof(GetStandardFontCases))]
+        public void FontListener_Get_ReturnsParsedStandardFont(string input, StandardFont expected)
+        {
+            // Given.
+            var parser = CreateParser(input);
+            var tree = parser.font();
+            WalkParseTree(tree);
+
+            // When.
+            var font = TestSubject.Get(tree);
+
+            // Then.
+            font.Should().BeOfType<StandardFont>()
+                .And.BeEquivalentTo(expected);
+
+            TestSubject.Received(1)
+                .FillRelativeFont((RelativeFont)font, tree.relativeFont());
+        }
+
         [Test]
         [TestCase(100, (ushort)10)]
         [TestCase(110, (ushort)11)]

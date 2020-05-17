@@ -46,6 +46,9 @@ namespace OFP.Parser
                 case FontType.WindowsFont:
                     font = ParseWindowsFont(context);
                     break;
+                case FontType.StyleItem:
+                    font = ParseStyleItem(context);
+                    break;
                 default:
                     return;
             }
@@ -68,6 +71,21 @@ namespace OFP.Parser
             var style = (WindowsFontStyle)_tokens.GetNumber(fontStyle.Value);
 
             var font = new WindowsFont
+            {
+                Style = style,
+            };
+
+            FillRelativeFont(font, context);
+
+            return font;
+        }
+
+        private RelativeFont ParseStyleItem(OrdinaryFormParser.RelativeFontContext context)
+        {
+            var fontStyle = context.fontStyle();
+            var style = (StandardFontStyle)_tokens.GetNumber(fontStyle.Value);
+
+            var font = new StandardFont
             {
                 Style = style,
             };
