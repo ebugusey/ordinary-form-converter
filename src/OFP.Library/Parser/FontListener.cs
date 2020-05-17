@@ -83,14 +83,39 @@ namespace OFP.Parser
         private RelativeFont ParseStyleItem(OrdinaryFormParser.RelativeFontContext context)
         {
             var fontStyle = context.fontStyle();
-            var style = (StandardFontStyle)_tokens.GetNumber(fontStyle.Value);
+            var style = _tokens.GetNumber(fontStyle.Value);
+
+            RelativeFont font = style switch
+            {
+                0 => ParseFontFromConfiguration(fontStyle),
+                _ => ParseStandardFont(style),
+            };
+
+            FillRelativeFont(font, context);
+
+            return font;
+        }
+
+        private StandardFont ParseStandardFont(long fontStyle)
+        {
+            var style = (StandardFontStyle)fontStyle;
 
             var font = new StandardFont
             {
                 Style = style,
             };
 
-            FillRelativeFont(font, context);
+            return font;
+        }
+
+        private FontFromConfiguration ParseFontFromConfiguration(OrdinaryFormParser.FontStyleContext context)
+        {
+            var style = _tokens.GetGuid(context.StyleUuid);
+
+            var font = new FontFromConfiguration
+            {
+                Style = style,
+            };
 
             return font;
         }

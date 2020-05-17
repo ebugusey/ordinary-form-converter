@@ -3797,6 +3797,7 @@ public partial class OrdinaryFormParser : Parser {
 
 	public partial class FontStyleContext : ParserRuleContext {
 		public IToken Value;
+		public IToken StyleUuid;
 		public ITerminalNode BLOCK_START() { return GetToken(OrdinaryFormParser.BLOCK_START, 0); }
 		public ITerminalNode BLOCK_END() { return GetToken(OrdinaryFormParser.BLOCK_END, 0); }
 		public ITerminalNode NUMBER() { return GetToken(OrdinaryFormParser.NUMBER, 0); }
@@ -3833,7 +3834,7 @@ public partial class OrdinaryFormParser : Parser {
 			if (_la==VS) {
 				{
 				State = 977; Match(VS);
-				State = 978; Match(GUID);
+				State = 978; _localctx.StyleUuid = Match(GUID);
 				}
 			}
 

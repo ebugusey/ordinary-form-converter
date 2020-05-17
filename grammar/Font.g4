@@ -29,7 +29,7 @@ fontStyle
 :
     BLOCK_START
         Value = NUMBER
-        ( VS GUID )?
+        ( VS StyleUuid = GUID )?
     BLOCK_END
 ;
 

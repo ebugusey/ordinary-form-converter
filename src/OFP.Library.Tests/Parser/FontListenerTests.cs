@@ -289,6 +289,29 @@ namespace OFP.Library.Tests.Parser
         }
 
         [Test]
+        public void FontListener_Get_ReturnsParsedConfigurationFont()
+        {
+            var input = "{7, 2, 0, { 0, 65faf064-3c36-43da-a2e4-e853831118ae }, 1, 100 }";
+            var expected = new FontFromConfiguration
+            {
+                Style = new Guid("65faf064-3c36-43da-a2e4-e853831118ae"),
+                Scale = 100,
+            };
+
+            var parser = CreateParser(input);
+            var tree = parser.font();
+            WalkParseTree(tree);
+
+            var font = TestSubject.Get(tree);
+
+            font.Should().BeOfType<FontFromConfiguration>()
+                .And.BeEquivalentTo(expected);
+
+            TestSubject.Received(1)
+                .FillRelativeFont((RelativeFont)font, tree.relativeFont());
+        }
+
+        [Test]
         [TestCase(100, (ushort)10)]
         [TestCase(110, (ushort)11)]
         [TestCase(10, (ushort)1)]
