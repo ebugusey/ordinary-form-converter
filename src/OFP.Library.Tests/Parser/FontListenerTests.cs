@@ -177,6 +177,52 @@ namespace OFP.Library.Tests.Parser
                 .FillRelativeFont((RelativeFont)font, tree.relativeFont());
         }
 
+        private static IEnumerable<TestCaseData> GetWindowsFontCases()
+        {
+            var input = "{7, 1, 0, { 4 }, 1, 100}";
+            var expected = new WindowsFont
+            {
+                Style = WindowsFontStyle.SystemFont,
+                Scale = 100,
+            };
+
+            yield return
+                new TestCaseData(input, expected)
+                .SetArgDisplayNames(WindowsFontStyle.SystemFont.ToString());
+
+            input = "{7, 1, 4, { 0 }, 400, 1, 110}";
+            expected = new WindowsFont
+            {
+                Style = WindowsFontStyle.DefaultGUIFont,
+                Bold = false,
+                Scale = 110,
+            };
+
+            yield return
+                new TestCaseData(input, expected)
+                .SetArgDisplayNames(WindowsFontStyle.DefaultGUIFont.ToString());
+        }
+
+        [Test]
+        [TestCaseSource(nameof(GetWindowsFontCases))]
+        public void FontListener_Get_ReturnsParsedWindowsFont(string input, WindowsFont expected)
+        {
+            // Given.
+            var parser = CreateParser(input);
+            var tree = parser.font();
+            WalkParseTree(tree);
+
+            // When.
+            var font = TestSubject.Get(tree);
+
+            // Then.
+            font.Should().BeOfType<WindowsFont>()
+                .And.BeEquivalentTo(expected);
+
+            TestSubject.Received(1)
+                .FillRelativeFont((RelativeFont)font, tree.relativeFont());
+        }
+
         [Test]
         [TestCase(100, (ushort)10)]
         [TestCase(110, (ushort)11)]

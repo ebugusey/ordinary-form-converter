@@ -41,15 +41,40 @@ namespace OFP.Parser
             switch (kind)
             {
                 case FontType.AutoFont:
-                    font = new AutoFont();
+                    font = ParseAutoFont(context);
+                    break;
+                case FontType.WindowsFont:
+                    font = ParseWindowsFont(context);
                     break;
                 default:
                     return;
             }
 
+            _values.Put(context.Parent, font);
+        }
+
+        private AutoFont ParseAutoFont(OrdinaryFormParser.RelativeFontContext context)
+        {
+            var font = new AutoFont();
+
             FillRelativeFont(font, context);
 
-            _values.Put(context.Parent, font);
+            return font;
+        }
+
+        private WindowsFont ParseWindowsFont(OrdinaryFormParser.RelativeFontContext context)
+        {
+            var fontStyle = context.fontStyle();
+            var style = (WindowsFontStyle)_tokens.GetNumber(fontStyle.Value);
+
+            var font = new WindowsFont
+            {
+                Style = style,
+            };
+
+            FillRelativeFont(font, context);
+
+            return font;
         }
 
         internal virtual void FillRelativeFont(

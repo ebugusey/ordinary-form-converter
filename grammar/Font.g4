@@ -28,7 +28,7 @@ relativeFont
 fontStyle
 :
     BLOCK_START
-        NUMBER
+        Value = NUMBER
         ( VS GUID )?
     BLOCK_END
 ;
