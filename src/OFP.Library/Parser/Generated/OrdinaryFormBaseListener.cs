@@ -684,29 +684,17 @@ public partial class OrdinaryFormBaseListener : IOrdinaryFormListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitFont([NotNull] OrdinaryFormParser.FontContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="OrdinaryFormParser.autoFont"/>.
+	/// Enter a parse tree produced by <see cref="OrdinaryFormParser.relativeFont"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterAutoFont([NotNull] OrdinaryFormParser.AutoFontContext context) { }
+	public virtual void EnterRelativeFont([NotNull] OrdinaryFormParser.RelativeFontContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="OrdinaryFormParser.autoFont"/>.
+	/// Exit a parse tree produced by <see cref="OrdinaryFormParser.relativeFont"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitAutoFont([NotNull] OrdinaryFormParser.AutoFontContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="OrdinaryFormParser.styleBasedFont"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterStyleBasedFont([NotNull] OrdinaryFormParser.StyleBasedFontContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="OrdinaryFormParser.styleBasedFont"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitStyleBasedFont([NotNull] OrdinaryFormParser.StyleBasedFontContext context) { }
+	public virtual void ExitRelativeFont([NotNull] OrdinaryFormParser.RelativeFontContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="OrdinaryFormParser.fontStyle"/>.
 	/// <para>The default implementation does nothing.</para>

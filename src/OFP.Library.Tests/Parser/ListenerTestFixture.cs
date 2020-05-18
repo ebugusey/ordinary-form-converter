@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using Antlr4.Runtime;
 using Antlr4.Runtime.Tree;
 using Autofac;
@@ -18,14 +20,19 @@ namespace OFP.Library.Tests.Parser
     /// </para>
     /// </summary>
     /// <typeparam name="T">Тип тестируемого listener-а.</typeparam>
-    public abstract class ListenerTestFixture<T> where T : IOrdinaryFormListener
+    public abstract class ListenerTestFixture<T> where T : class, IOrdinaryFormListener
     {
         /// <summary>
         /// SUT, тестируемый класс.
         /// Полностью инициализируется перед запуском каждого теста,
         /// и очищается после завершения каждого теста.
         /// </summary>
-        public T TestSubject { get; set; } = default!;
+        protected T TestSubject { get; private set; } = default!;
+
+        /// <summary>
+        /// DI контейнер для разрешения зависимостей <see cref="T"/> в тестах.
+        /// </summary>
+        protected ILifetimeScope Container => _currentScope;
 
         private IContainer _container = default!;
         private ILifetimeScope _currentScope = default!;
@@ -37,8 +44,28 @@ namespace OFP.Library.Tests.Parser
             builder.RegisterAssemblyTypes(typeof(OrdinaryFormParser).Assembly)
                 .AssignableTo<IOrdinaryFormListener>()
                 .Except<OrdinaryFormBaseListener>()
+                .Except<T>()
                 .AsImplementedInterfaces().AsSelf()
                 .InstancePerLifetimeScope();
+
+            var setupMethod = GetType()
+                .GetMethod(nameof(SetupTestSubject), BindingFlags.Instance | BindingFlags.NonPublic);
+            var setupOverridden =
+                 setupMethod!.DeclaringType != typeof(ListenerTestFixture<T>);
+            if (setupOverridden)
+            {
+                builder.Register(_ => SetupTestSubject()!)
+                    .AsImplementedInterfaces()
+                    .AsSelf()
+                    .InstancePerLifetimeScope();
+            }
+            else
+            {
+                builder.RegisterType<T>()
+                    .AsImplementedInterfaces()
+                    .AsSelf()
+                    .InstancePerLifetimeScope();
+            }
 
             _container = builder.Build();
         }
@@ -55,6 +82,8 @@ namespace OFP.Library.Tests.Parser
         {
             _currentScope = _container.BeginLifetimeScope();
             _currentScope.InjectProperties(this);
+
+            TestSubject = _currentScope.Resolve<T>();
         }
 
         [TearDown]
@@ -62,6 +91,19 @@ namespace OFP.Library.Tests.Parser
         {
             _currentScope.Dispose();
             _currentScope = null!;
+        }
+
+        /// <summary>
+        /// Переопредели этот метод, чтобы настроить создание <see cref="TestSubject"/>.
+        /// Этот метод вызывается перед выполнением каждого теста.
+        /// </summary>
+        /// <returns>
+        /// Инициализированное значение с типом <see cref="T"/>,
+        /// которое должно быть установлено в качестве <see cref="TestSubject"/>.
+        /// </returns>
+        protected virtual T? SetupTestSubject()
+        {
+            return null;
         }
 
         /// <summary>
