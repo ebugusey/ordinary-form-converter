@@ -572,25 +572,15 @@ public interface IOrdinaryFormListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitFont([NotNull] OrdinaryFormParser.FontContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="OrdinaryFormParser.autoFont"/>.
+	/// Enter a parse tree produced by <see cref="OrdinaryFormParser.relativeFont"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterAutoFont([NotNull] OrdinaryFormParser.AutoFontContext context);
+	void EnterRelativeFont([NotNull] OrdinaryFormParser.RelativeFontContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="OrdinaryFormParser.autoFont"/>.
+	/// Exit a parse tree produced by <see cref="OrdinaryFormParser.relativeFont"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitAutoFont([NotNull] OrdinaryFormParser.AutoFontContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="OrdinaryFormParser.styleBasedFont"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterStyleBasedFont([NotNull] OrdinaryFormParser.StyleBasedFontContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="OrdinaryFormParser.styleBasedFont"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitStyleBasedFont([NotNull] OrdinaryFormParser.StyleBasedFontContext context);
+	void ExitRelativeFont([NotNull] OrdinaryFormParser.RelativeFontContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="OrdinaryFormParser.fontStyle"/>.
 	/// </summary>

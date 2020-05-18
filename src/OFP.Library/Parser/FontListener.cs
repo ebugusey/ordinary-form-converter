@@ -33,13 +33,29 @@ namespace OFP.Parser
             return value;
         }
 
-        public override void ExitAutoFont(OrdinaryFormParser.AutoFontContext context)
+        public override void ExitRelativeFont(OrdinaryFormParser.RelativeFontContext context)
         {
-            var font = new AutoFont
-            {
-                Scale = (ushort)_tokens.GetNumber(context.Scale),
-            };
+            var kind = (FontType)_tokens.GetNumber(context.Kind);
 
+            RelativeFont font;
+            switch (kind)
+            {
+                case FontType.AutoFont:
+                    font = new AutoFont();
+                    break;
+                default:
+                    return;
+            }
+
+            FillRelativeFont(font, context);
+
+            _values.Put(context.Parent, font);
+        }
+
+        internal virtual void FillRelativeFont(
+            RelativeFont font,
+            OrdinaryFormParser.RelativeFontContext context)
+        {
             var mask = (FontMask)_tokens.GetNumber(context.Mask);
 
             var optionalValueSequence = new[]
@@ -91,7 +107,7 @@ namespace OFP.Parser
                 font.FaceName = _tokens.GetString(context.FaceName);
             }
 
-            _values.Put(context.Parent, font);
+            font.Scale = (ushort)_tokens.GetNumber(context.Scale);
         }
 
         public override void ExitAbsoluteFont(OrdinaryFormParser.AbsoluteFontContext context)
