@@ -44,7 +44,7 @@ namespace OFP.Library.Tests.Parser
         }
 
         [Test]
-        public void FontListener_Get_ThrowsWhenTreeDoesntHaveAbsoluteFont()
+        public void FontListener_Get_ThrowsWhenTreeDoesntHaveFont()
         {
             // Given.
             var parser = CreateParser("{}");
@@ -61,8 +61,11 @@ namespace OFP.Library.Tests.Parser
 
         private static IEnumerable<TestCaseData> GetRelativeFontCases()
         {
-            var input = "{7, 3, 0, 1, 100}";
-            var expected = new AutoFont
+            string input;
+            RelativeFont expected;
+
+            input = "{7, 3, 0, 1, 100}";
+            expected = new AutoFont
             {
                 Scale = 100,
             };
@@ -130,6 +133,21 @@ namespace OFP.Library.Tests.Parser
             yield return
                 new TestCaseData(input, expected)
                 .SetArgDisplayNames("Полностью заполнен");
+
+            input = "{7, 1, 61, { 0 }, 700, 1, 1, 1, \"Lucida Console\", 1, 160}";
+            expected = new WindowsFont
+            {
+                Bold = true,
+                Italic = true,
+                Underline = true,
+                Strikeout = true,
+                FaceName = "Lucida Console",
+                Scale = 160,
+            };
+
+            yield return
+                new TestCaseData(input, expected)
+                .SetArgDisplayNames("Полностью заполненный StyleBasedFont");
         }
 
         [Test]
@@ -147,7 +165,8 @@ namespace OFP.Library.Tests.Parser
             TestSubject.FillRelativeFont(font, tree.relativeFont());
 
             // Then.
-            font.Should().BeEquivalentTo(expected);
+            font.Should().BeEquivalentTo(expected, opt => opt
+                .Excluding(x => x.Type));
         }
 
         [Test]
@@ -171,6 +190,121 @@ namespace OFP.Library.Tests.Parser
 
             // Then.
             font.Should().BeOfType<AutoFont>()
+                .And.BeEquivalentTo(expected);
+
+            TestSubject.Received(1)
+                .FillRelativeFont((RelativeFont)font, tree.relativeFont());
+        }
+
+        private static IEnumerable<TestCaseData> GetWindowsFontCases()
+        {
+            var input = "{7, 1, 0, { 4 }, 1, 100}";
+            var expected = new WindowsFont
+            {
+                Style = WindowsFontStyle.SystemFont,
+                Scale = 100,
+            };
+
+            yield return
+                new TestCaseData(input, expected)
+                .SetArgDisplayNames(WindowsFontStyle.SystemFont.ToString());
+
+            input = "{7, 1, 4, { 0 }, 400, 1, 110}";
+            expected = new WindowsFont
+            {
+                Style = WindowsFontStyle.DefaultGUIFont,
+                Bold = false,
+                Scale = 110,
+            };
+
+            yield return
+                new TestCaseData(input, expected)
+                .SetArgDisplayNames(WindowsFontStyle.DefaultGUIFont.ToString());
+        }
+
+        [Test]
+        [TestCaseSource(nameof(GetWindowsFontCases))]
+        public void FontListener_Get_ReturnsParsedWindowsFont(string input, WindowsFont expected)
+        {
+            // Given.
+            var parser = CreateParser(input);
+            var tree = parser.font();
+            WalkParseTree(tree);
+
+            // When.
+            var font = TestSubject.Get(tree);
+
+            // Then.
+            font.Should().BeOfType<WindowsFont>()
+                .And.BeEquivalentTo(expected);
+
+            TestSubject.Received(1)
+                .FillRelativeFont((RelativeFont)font, tree.relativeFont());
+        }
+
+        private static IEnumerable<TestCaseData> GetStandardFontCases()
+        {
+            var input = "{7, 2, 0, { -20 }, 1, 100}";
+            var expected = new StandardFont
+            {
+                Style = StandardFontStyle.TextFont,
+                Scale = 100,
+            };
+
+            yield return
+                new TestCaseData(input, expected)
+                .SetArgDisplayNames(StandardFontStyle.TextFont.ToString());
+
+            input = "{7, 2, 16, { -33 }, 0, 1, 110}";
+            expected = new StandardFont
+            {
+                Style = StandardFontStyle.ExtraLargeTextFont,
+                Underline = false,
+                Scale = 110,
+            };
+
+            yield return
+                new TestCaseData(input, expected)
+                .SetArgDisplayNames(StandardFontStyle.ExtraLargeTextFont.ToString());
+        }
+
+        [Test]
+        [TestCaseSource(nameof(GetStandardFontCases))]
+        public void FontListener_Get_ReturnsParsedStandardFont(string input, StandardFont expected)
+        {
+            // Given.
+            var parser = CreateParser(input);
+            var tree = parser.font();
+            WalkParseTree(tree);
+
+            // When.
+            var font = TestSubject.Get(tree);
+
+            // Then.
+            font.Should().BeOfType<StandardFont>()
+                .And.BeEquivalentTo(expected);
+
+            TestSubject.Received(1)
+                .FillRelativeFont((RelativeFont)font, tree.relativeFont());
+        }
+
+        [Test]
+        public void FontListener_Get_ReturnsParsedConfigurationFont()
+        {
+            var input = "{7, 2, 0, { 0, 65faf064-3c36-43da-a2e4-e853831118ae }, 1, 100 }";
+            var expected = new FontFromConfiguration
+            {
+                Style = new Guid("65faf064-3c36-43da-a2e4-e853831118ae"),
+                Scale = 100,
+            };
+
+            var parser = CreateParser(input);
+            var tree = parser.font();
+            WalkParseTree(tree);
+
+            var font = TestSubject.Get(tree);
+
+            font.Should().BeOfType<FontFromConfiguration>()
                 .And.BeEquivalentTo(expected);
 
             TestSubject.Received(1)

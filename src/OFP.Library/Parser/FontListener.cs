@@ -41,15 +41,83 @@ namespace OFP.Parser
             switch (kind)
             {
                 case FontType.AutoFont:
-                    font = new AutoFont();
+                    font = ParseAutoFont(context);
+                    break;
+                case FontType.WindowsFont:
+                    font = ParseWindowsFont(context);
+                    break;
+                case FontType.StyleItem:
+                    font = ParseStyleItem(context);
                     break;
                 default:
                     return;
             }
 
+            _values.Put(context.Parent, font);
+        }
+
+        private AutoFont ParseAutoFont(OrdinaryFormParser.RelativeFontContext context)
+        {
+            var font = new AutoFont();
+
             FillRelativeFont(font, context);
 
-            _values.Put(context.Parent, font);
+            return font;
+        }
+
+        private WindowsFont ParseWindowsFont(OrdinaryFormParser.RelativeFontContext context)
+        {
+            var fontStyle = context.fontStyle();
+            var style = (WindowsFontStyle)_tokens.GetNumber(fontStyle.Value);
+
+            var font = new WindowsFont
+            {
+                Style = style,
+            };
+
+            FillRelativeFont(font, context);
+
+            return font;
+        }
+
+        private RelativeFont ParseStyleItem(OrdinaryFormParser.RelativeFontContext context)
+        {
+            var fontStyle = context.fontStyle();
+            var style = _tokens.GetNumber(fontStyle.Value);
+
+            RelativeFont font = style switch
+            {
+                0 => ParseFontFromConfiguration(fontStyle),
+                _ => ParseStandardFont(style),
+            };
+
+            FillRelativeFont(font, context);
+
+            return font;
+        }
+
+        private StandardFont ParseStandardFont(long fontStyle)
+        {
+            var style = (StandardFontStyle)fontStyle;
+
+            var font = new StandardFont
+            {
+                Style = style,
+            };
+
+            return font;
+        }
+
+        private FontFromConfiguration ParseFontFromConfiguration(OrdinaryFormParser.FontStyleContext context)
+        {
+            var style = _tokens.GetGuid(context.StyleUuid);
+
+            var font = new FontFromConfiguration
+            {
+                Style = style,
+            };
+
+            return font;
         }
 
         internal virtual void FillRelativeFont(

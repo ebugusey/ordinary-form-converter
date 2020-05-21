@@ -3796,9 +3796,11 @@ public partial class OrdinaryFormParser : Parser {
 	}
 
 	public partial class FontStyleContext : ParserRuleContext {
+		public IToken Value;
+		public IToken StyleUuid;
 		public ITerminalNode BLOCK_START() { return GetToken(OrdinaryFormParser.BLOCK_START, 0); }
-		public ITerminalNode NUMBER() { return GetToken(OrdinaryFormParser.NUMBER, 0); }
 		public ITerminalNode BLOCK_END() { return GetToken(OrdinaryFormParser.BLOCK_END, 0); }
+		public ITerminalNode NUMBER() { return GetToken(OrdinaryFormParser.NUMBER, 0); }
 		public ITerminalNode VS() { return GetToken(OrdinaryFormParser.VS, 0); }
 		public ITerminalNode GUID() { return GetToken(OrdinaryFormParser.GUID, 0); }
 		public FontStyleContext(ParserRuleContext parent, int invokingState)
@@ -3825,14 +3827,14 @@ public partial class OrdinaryFormParser : Parser {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 975; Match(BLOCK_START);
-			State = 976; Match(NUMBER);
+			State = 976; _localctx.Value = Match(NUMBER);
 			State = 979;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
 			if (_la==VS) {
 				{
 				State = 977; Match(VS);
-				State = 978; Match(GUID);
+				State = 978; _localctx.StyleUuid = Match(GUID);
 				}
 			}
 
