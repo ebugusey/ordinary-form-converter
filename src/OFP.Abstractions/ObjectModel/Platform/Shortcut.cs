@@ -19,5 +19,8 @@ namespace OFP.ObjectModel.Platform
         {
             (Key, Modifiers) = (key, modifiers);
         }
+
+        public override string ToString() =>
+            $"{nameof(Shortcut)}: {Modifiers}+{Key}";
     }
 }
