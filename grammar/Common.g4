@@ -6,7 +6,7 @@ color
 :
     BLOCK_START
         NUMBER // 3
-        VS NUMBER // Вид
+        VS Kind = NUMBER // Вид
         VS colorValue
     BLOCK_END
 ;
