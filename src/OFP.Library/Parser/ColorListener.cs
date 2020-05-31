@@ -33,16 +33,20 @@ namespace OFP.Parser
 
         public override void ExitColor(OrdinaryFormParser.ColorContext context)
         {
+            var kind = (ColorType)_tokens.GetNumber(context.Kind);
 
-            var color = new AutoColor();
+            AutoColor color;
+            switch (kind)
+            {
+                case ColorType.AutoColor:
+                    color = new AutoColor();
+                    break;
+                default:
+                    return;
+            }
 
-
-
+            _values.Put(context, color);
 
         }
-
     }
-
-
-
 }
