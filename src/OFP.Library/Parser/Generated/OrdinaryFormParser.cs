@@ -1586,6 +1586,8 @@ public partial class OrdinaryFormParser : Parser {
 	}
 
 	public partial class ShortcutContext : ParserRuleContext {
+		public IToken Key;
+		public IToken Modifier;
 		public ITerminalNode BLOCK_START() { return GetToken(OrdinaryFormParser.BLOCK_START, 0); }
 		public ITerminalNode[] NUMBER() { return GetTokens(OrdinaryFormParser.NUMBER); }
 		public ITerminalNode NUMBER(int i) {
@@ -1621,9 +1623,9 @@ public partial class OrdinaryFormParser : Parser {
 			State = 580; Match(BLOCK_START);
 			State = 581; Match(NUMBER);
 			State = 582; Match(VS);
-			State = 583; Match(NUMBER);
+			State = 583; _localctx.Key = Match(NUMBER);
 			State = 584; Match(VS);
-			State = 585; Match(NUMBER);
+			State = 585; _localctx.Modifier = Match(NUMBER);
 			State = 586; Match(BLOCK_END);
 			}
 		}
