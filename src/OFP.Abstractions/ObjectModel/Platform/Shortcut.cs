@@ -3,7 +3,7 @@ namespace OFP.ObjectModel.Platform
     /// <summary>
     /// СочетаниеКлавиш.
     /// </summary>
-    public struct Shortcut
+    public readonly struct Shortcut
     {
         /// <summary>
         /// Alt, Ctrl, Shift.
