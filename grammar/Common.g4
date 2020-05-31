@@ -50,8 +50,8 @@ shortcut
 :
     BLOCK_START
         NUMBER // 0
-        VS NUMBER // Клавиша
-        VS NUMBER // маска (0x4, - Shift, 0x8 - Ctrl, 0x10 - Alt)
+        VS Key = NUMBER // Клавиша
+        VS Modifier = NUMBER // маска (0x4, - Shift, 0x8 - Ctrl, 0x10 - Alt)
     BLOCK_END
 ;
 
